@@ -1,0 +1,298 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>LAY-L — I Guess the Fortune Teller Was Right…</title>
+<meta name="description" content="LAY-L. The debut album I Guess the Fortune Teller Was Right…, out 7 May 2027.">
+<meta property="og:title" content="LAY-L — I Guess the Fortune Teller Was Right…">
+<meta property="og:image" content="site2-cover.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&amp;family=Inter+Tight:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#101013}
+a{color:inherit}a:hover{color:#F52B7B}
+@keyframes layl-marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.layl-marquee{animation:layl-marquee 60s linear infinite}
+.layl-card{transition:transform .25s ease, box-shadow .25s ease}
+.layl-card:hover{transform:translateY(-6px) rotate(-0.6deg);box-shadow:0 14px 0 -6px #101013}
+.layl-card:focus-visible{outline:3px solid #F52B7B;outline-offset:4px}
+.layl-btn:hover{background:#F52B7B !important;color:#101013 !important;border-color:#F52B7B !important}
+.layl-strip{scroll-snap-type:x mandatory}
+.layl-strip > figure{scroll-snap-align:start}
+@keyframes layl-float{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+.layl-float{animation:layl-float 7s ease-in-out infinite}
+@media (prefers-reduced-motion: reduce){.layl-marquee{animation:none}.layl-float{animation:none}.layl-card{transition:none}}
+</style>
+<style>[hidden]{display:none!important} #members,#shopGrid{display:contents}</style>
+</head>
+<body>
+<div style="background: #101013; color: #F9D9A6; font-family: 'Inter Tight', system-ui, sans-serif; min-height: 100vh; ">
+
+<header style="position: absolute; top: 0; left: 0; right: 0; z-index: 3;">
+<div style="max-width: 1360px; margin: 0 auto; padding: 24px 32px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px;">
+<a href="#top" style="font-family: 'Bodoni Moda', serif; font-style: italic; font-weight: 800; font-size: 32px; text-decoration: none; color: #F9D9A6;">LAY-L</a>
+<nav aria-label="Main" style="display: flex; flex-wrap: wrap; align-items: center; gap: 28px; font-size: 13px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase;">
+<a href="#reading" style="text-decoration: none;">The Reading</a>
+<a href="#spread" style="text-decoration: none;">The Spread</a>
+<a href="#band" style="text-decoration: none;">The Band</a>
+<a href="#videos" style="text-decoration: none;">Videos</a>
+<a href="#shop" style="text-decoration: none;">Shop</a>
+</nav>
+</div>
+</header>
+
+<section id="top" style="position: relative; overflow: hidden; background: #101013;">
+<div style="position: relative; z-index: 2; width: 100%; max-width: 1360px; margin: 0 auto; padding: 88px 32px 80px; box-sizing: border-box; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 24px;">
+<div style="width: min(92vw, 820px); flex-shrink: 0; margin-top: -24px;">
+<div class="layl-float" style="position: relative; width: 100%; aspect-ratio: 1 / 1;">
+<div style="position: absolute; left: 12.7%; top: 3.8%; width: 74.3%; height: 74.3%; border-radius: 50%; overflow: hidden; background: #101013;">
+<video id="hero" autoplay muted loop playsinline preload="auto" poster="v1-poster2.jpg" src="v1-ball-teaser2.mp4" aria-label="LAY-L album teaser playing inside a crystal ball" style="width: 100%; height: 100%; object-fit: cover; display: block; transform: scale(1.04); filter: brightness(1.35) contrast(1.05) saturate(1.1);"></video>
+<div style="position: absolute; inset: 0; border-radius: 50%; background: radial-gradient(circle at 50% 50%, rgba(16,16,19,0) 75%, rgba(16,16,19,0.2) 100%);"></div>
+</div>
+<img src="band-ball2.webp" alt="" aria-hidden="true" style="position: absolute; inset: 0; width: 100%; height: 100%; display: block; pointer-events: none;">
+</div>
+</div>
+<p style="margin: 0; font-size: 13px; font-weight: 600; letter-spacing: 3px; text-transform: uppercase; color: #ABD33F;">LAY-L · The debut album · 7 May 2027</p>
+<h1 style="margin: 0; font-family: 'Bodoni Moda', serif; font-weight: 600; font-size: clamp(44px, 7vw, 112px); line-height: 0.92; letter-spacing: -2px; max-width: 1100px;">I Guess the Fortune Teller <span style="font-style: italic; color: #ABD33F;">Was Right…</span></h1>
+<div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; padding-top: 8px;">
+<a href="#reading" class="layl-btn" style="text-decoration: none; background: #F9D9A6; color: #101013; padding: 16px 28px; border-radius: 999px; font-weight: 700; font-size: 15px; border: 2px solid #F9D9A6;">Draw a card</a>
+<button type="button" data-act="playAll" class="layl-btn" style="cursor: pointer; background: transparent; color: #F9D9A6; padding: 16px 28px; border-radius: 999px; font-weight: 700; font-size: 15px; border: 2px solid #F9D9A6; font-family: inherit;">Play the album</button>
+<button type="button" data-act="toggleSound" aria-pressed="false" id="soundBtn" class="layl-btn" style="cursor: pointer; background: transparent; color: #ABD33F; padding: 16px 24px; border-radius: 999px; font-weight: 700; font-size: 15px; border: 2px solid #ABD33F; font-family: inherit; display: flex; align-items: center; gap: 10px;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/><path d="M19 5a10 10 0 0 1 0 14"/></svg><span id="soundLabel">Sound on</span></button>
+</div>
+</div>
+</section>
+
+<div aria-hidden="true" style="background: #ABD33F; color: #101013; overflow: hidden; border-top: 2px solid #101013; border-bottom: 2px solid #101013;">
+<div class="layl-marquee" style="display: flex; width: max-content; padding: 18px 0; font-family: 'Bodoni Moda', serif; font-style: italic; font-size: 30px; white-space: nowrap;">
+<span style="padding-right: 48px;">Hey girl, hold my purse ✦ Turns out I was the touch ✦ Boo! (Not you!) ✦ Bon appétit ✦ Funny how you love me when I’m nonchalant-y ✦ Return to sad-turn ✦ I showed up in my birthday suit ✦ It’s alive! ✦</span>
+<span style="padding-right: 48px;">Hey girl, hold my purse ✦ Turns out I was the touch ✦ Boo! (Not you!) ✦ Bon appétit ✦ Funny how you love me when I’m nonchalant-y ✦ Return to sad-turn ✦ I showed up in my birthday suit ✦ It’s alive! ✦</span>
+</div>
+</div>
+
+<section id="reading" style="background: #101013; color: #F9D9A6; overflow: hidden;">
+<div style="max-width: 1360px; margin: 0 auto; padding: 112px 32px; display: flex; flex-wrap: wrap; align-items: center; gap: 72px;">
+<div style="flex: 0 1 360px; margin: 0 auto;">
+<img id="drawnCard" src="" alt="" style="width: 100%; aspect-ratio: 720 / 1073; object-fit: contain; display: block; filter: drop-shadow(12px 12px 0 #F52B7B); transform: rotate(-3deg);">
+</div>
+<div style="flex: 1 1 420px; display: flex; flex-direction: column; gap: 24px;">
+<p style="margin: 0; font-size: 13px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: #ABD33F;">The crystal ball says</p>
+<p style="margin: 0; font-family: 'Bodoni Moda', serif; font-style: italic; font-weight: 600; font-size: clamp(36px, 4.4vw, 64px); line-height: 1.05; letter-spacing: -1px;">“<span id="drawnLine"></span>”</p>
+<p style="margin: 0; font-size: 16px;"><span id="drawnMeta"></span></p>
+<div style="display: flex; flex-wrap: wrap; gap: 12px; padding-top: 8px;">
+<button type="button" data-act="playDrawn" class="layl-btn" style="cursor: pointer; background: #ABD33F; color: #101013; padding: 16px 28px; border-radius: 999px; font-weight: 700; font-size: 15px; border: 2px solid #ABD33F; font-family: inherit;">Play this song</button>
+<button type="button" data-act="draw" class="layl-btn" style="cursor: pointer; background: transparent; color: #F9D9A6; padding: 16px 28px; border-radius: 999px; font-weight: 700; font-size: 15px; border: 2px solid #F9D9A6; font-family: inherit;">Draw another card</button>
+</div>
+</div>
+</div>
+</section>
+
+<section id="spread" style="background: #F9D9A6; color: #101013;">
+<div style="max-width: 1360px; margin: 0 auto; padding: 112px 32px 96px;">
+<div style="display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 32px; padding-bottom: 24px; border-bottom: 2px solid #101013;">
+<div style="display: flex; align-items: flex-end; gap: 28px; flex-wrap: wrap;">
+<img src="site2-cover.jpg" alt="Album cover: the four members of LAY-L" style="width: 148px; height: 148px; object-fit: cover; display: block; border: 2px solid #101013; border-radius: 4px;">
+<div style="display: flex; flex-direction: column; gap: 8px;">
+<p style="margin: 0; font-size: 13px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase;">The spread · 14 cards · 54:40</p>
+<h2 style="margin: 0; font-family: 'Bodoni Moda', serif; font-weight: 600; font-size: clamp(44px, 5vw, 72px); line-height: 1; letter-spacing: -1px;">Every song is a card</h2>
+</div>
+</div>
+<p style="margin: 0; font-size: 15px; max-width: 320px; line-height: 1.5;">Tap any card to play it. Pre-master mixes, private preview.</p>
+</div>
+<div id="acts"></div>
+</div>
+</section>
+
+<section id="single" style="background: #ABD33F; color: #101013;">
+<div style="max-width: 1360px; margin: 0 auto; padding: 112px 32px; display: flex; flex-wrap: wrap; align-items: center; gap: 64px;">
+<div style="flex: 1.4 1 560px;">
+<img src="posters-p-voodoo.jpg" alt="Voodoo Doll poster: Lilac pinning a voodoo doll" style="width: 100%; aspect-ratio: 1344 / 768; object-fit: cover; display: block; border-radius: 4px;">
+</div>
+<div style="flex: 1 1 340px; display: flex; flex-direction: column; gap: 20px;">
+<p style="margin: 0; font-size: 13px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: #101013;">First single · Friday 22 January 2027</p>
+<h2 style="margin: 0; font-family: 'Bodoni Moda', serif; font-weight: 600; font-size: 72px; line-height: 0.95; letter-spacing: -1px;">Voodoo <span style="font-style: italic;">Doll</span></h2>
+<p style="margin: 0; font-size: 17px; line-height: 1.55; max-width: 420px;">A clever bit of payback with a beat drop. Pre-save it, then hand someone your purse.</p>
+<div style="display: flex; flex-wrap: wrap; gap: 12px;">
+<button type="button" data-act="playVoodoo" class="layl-btn" style="cursor: pointer; background: #101013; color: #F9D9A6; padding: 16px 28px; border-radius: 999px; font-weight: 700; font-size: 15px; border: 2px solid #101013; font-family: inherit;">Play Voodoo Doll</button>
+<a href="#follow" class="layl-btn" style="text-decoration: none; color: #101013; padding: 16px 28px; border-radius: 999px; font-weight: 700; font-size: 15px; border: 2px solid #101013;">Pre-save</a>
+</div>
+</div>
+</div>
+</section>
+
+<section id="band" style="background: #101013; border-top: 1px solid #2A2A2D;">
+<div style="max-width: 1360px; margin: 0 auto; padding: 112px 32px;">
+<div style="display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 24px; padding-bottom: 56px;">
+<h2 style="margin: 0; font-family: 'Bodoni Moda', serif; font-weight: 600; font-size: clamp(44px, 5vw, 72px); line-height: 1; letter-spacing: -1px;">Four readers. <span style="font-style: italic; color: #ABD33F;">One table.</span></h2>
+<p style="margin: 0; font-size: 15px; max-width: 360px; line-height: 1.5;">LAY-L is an animated band, made with AI tools and directed by people.</p>
+</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 32px;">
+<div id="members"></div>
+</div>
+</div>
+</section>
+
+<section id="posters" style="background: #101013; border-top: 1px solid #2A2A2D;">
+<div style="max-width: 1360px; margin: 0 auto; padding: 96px 32px 24px; display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 16px;">
+<h2 style="margin: 0; font-family: 'Bodoni Moda', serif; font-style: italic; font-weight: 600; font-size: 48px; letter-spacing: -1px;">From the reading room</h2>
+<p style="margin: 0; font-size: 13px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: #ABD33F;">More posters soon</p>
+</div>
+<div class="layl-strip" style="display: flex; gap: 24px; overflow-x: auto; padding: 24px 32px 96px; max-width: 1360px; margin: 0 auto; box-sizing: border-box;">
+<figure style="margin: 0; flex: 0 0 min(78vw, 760px); display: flex; flex-direction: column; gap: 12px;">
+<img src="posters-p-boo.jpg" alt="The band surrounded by green ghosts" style="width: 100%; aspect-ratio: 1344 / 768; object-fit: cover; display: block; border-radius: 4px;">
+<figcaption style="font-size: 13px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase;">Boo</figcaption>
+</figure>
+</div>
+</section>
+
+<section id="shop" style="background: #101013; color: #F9D9A6; border-top: 1px solid #2A2A2D;">
+<div style="max-width: 1360px; margin: 0 auto; padding: 112px 32px;">
+<div style="display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 24px; padding-bottom: 32px; border-bottom: 1px solid #3A3A3D;">
+<div style="display: flex; flex-direction: column; gap: 10px;">
+<p style="margin: 0; font-size: 13px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: #F52B7B;">The shop · coming 2027</p>
+<h2 style="margin: 0; font-family: 'Bodoni Moda', serif; font-weight: 600; font-size: clamp(44px, 5vw, 72px); line-height: 1; letter-spacing: -1px;">Wear the band. <span style="font-style: italic; color: #ABD33F;">Pour the potion.</span></h2>
+</div>
+<p style="margin: 0; font-size: 15px; max-width: 340px; line-height: 1.5;">Merch, objects and oddities from the world of LAY-L. Things you’ll actually use.</p>
+</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 28px; padding-top: 40px;">
+<div id="shopGrid"></div>
+</div>
+<p style="margin: 32px 0 0; font-size: 13px; color: #BFB39A;">Vinyl pre-orders open after the album. Potion No. 3 ships with a “Pay attention!” warning card. Please drink responsibly.</p>
+</div>
+</section>
+
+<section id="videos" style="background: #ABD33F; color: #101013;">
+<div style="max-width: 1360px; margin: 0 auto; padding: 112px 32px; display: flex; flex-wrap: wrap; gap: 48px; align-items: center;">
+<div style="flex: 1 1 300px; display: flex; flex-direction: column; gap: 16px;">
+<p style="margin: 0; font-size: 13px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase;">Watch</p>
+<h2 style="margin: 0; font-family: 'Bodoni Moda', serif; font-weight: 600; font-size: 64px; line-height: 0.95; letter-spacing: -1px;">The album <span style="font-style: italic;">teaser</span></h2>
+<p style="margin: 0; font-size: 16px; line-height: 1.55;">36 seconds on a mountaintop, then the ghosts arrive. Sound on.</p>
+</div>
+<div style="flex: 2 1 560px; border: 2px solid #101013; border-radius: 12px; padding: 10px; background: #101013;">
+<video controls preload="metadata" playsinline poster="vid-teaser-poster.jpg" src="vid-album-teaser.mp4" aria-label="LAY-L album teaser" style="width: 100%; aspect-ratio: 16 / 9; display: block; border-radius: 6px; background: #101013;"></video>
+</div>
+</div>
+</section>
+
+<footer id="follow" style="background: #101013;">
+<div style="max-width: 1360px; margin: 0 auto; padding: 96px 32px 40px; display: flex; flex-wrap: wrap; gap: 48px; justify-content: space-between;">
+<div style="flex: 1 1 420px; display: flex; flex-direction: column; gap: 18px;">
+<span style="font-family: 'Bodoni Moda', serif; font-weight: 600; font-size: 44px; line-height: 1; letter-spacing: -1px;">Get your reading <span style="font-style: italic; color: #ABD33F;">first.</span></span>
+<label for="email" style="font-size: 15px;">The album and every single, the day they land.</label>
+<div style="display: flex; flex-wrap: wrap; gap: 10px;">
+<input id="email" type="email" placeholder="you@example.com" style="flex: 1 1 220px; min-height: 52px; padding: 0 20px; border-radius: 999px; border: 2px solid #F9D9A6; background: transparent; color: #F9D9A6; font-size: 16px; font-family: inherit;">
+<button type="button" class="layl-btn" style="cursor: pointer; min-height: 52px; padding: 0 26px; border-radius: 999px; border: 2px solid #ABD33F; background: #ABD33F; color: #101013; font-weight: 700; font-size: 15px; font-family: inherit;">Sign up</button>
+</div>
+</div>
+<div style="flex: 1 1 300px; display: flex; flex-wrap: wrap; gap: 56px;">
+<div style="display: flex; flex-direction: column; gap: 12px; font-size: 15px;">
+<span style="font-size: 12px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: #ABD33F;">Stream</span>
+<a href="#follow" style="text-decoration: none;">Spotify</a>
+<a href="#follow" style="text-decoration: none;">Apple Music</a>
+<a href="#follow" style="text-decoration: none;">YouTube Music</a>
+<a href="#follow" style="text-decoration: none;">Anghami</a>
+</div>
+<div style="display: flex; flex-direction: column; gap: 12px; font-size: 15px;">
+<span style="font-size: 12px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: #ABD33F;">Follow</span>
+<a href="#follow" style="text-decoration: none;">Instagram @wearelayl</a>
+<a href="#follow" style="text-decoration: none;">TikTok @wearelayl</a>
+<a href="#follow" style="text-decoration: none;">YouTube @LAY-LMUSIC</a>
+</div>
+</div>
+</div>
+<div style="max-width: 1360px; margin: 0 auto; padding: 24px 32px 40px; border-top: 1px solid #2A2A2D; font-size: 13px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px;">
+<span>© 2027 QAUS Productions</span>
+<span>LAY-L is an animated band made with AI tools, directed by people.</span>
+</div>
+</footer>
+
+<div id="nowbar" hidden role="region" aria-label="Now playing" style="position: fixed; left: 16px; right: 16px; bottom: 16px; z-index: 10; max-width: 980px; margin: 0 auto; background: #101013; color: #F9D9A6; border: 2px solid #ABD33F; border-radius: 16px; padding: 10px 14px; display: flex; flex-wrap: wrap; align-items: center; gap: 14px; box-sizing: border-box;">
+<div style="flex: 1 1 280px; min-width: 0; display: flex; flex-wrap: nowrap; align-items: center; gap: 14px;">
+<img id="nowObj" src="" alt="" style="flex: 0 0 72px; width: 72px; height: 72px; object-fit: contain; display: block; margin: -20px 0 -8px; filter: drop-shadow(0 4px 10px rgba(0,0,0,0.6));">
+<div style="flex: 1 1 auto; min-width: 0; display: flex; flex-direction: column; gap: 2px;">
+<span style="font-size: 11px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; color: #ABD33F;">Now playing · <span id="nowNum"></span></span>
+<span style="font-family: 'Bodoni Moda', serif; font-style: italic; font-weight: 700; font-size: 20px; line-height: 1.15;" id="nowTitle"></span>
+</div>
+</div>
+<audio id="player" controls aria-label="Now playing" style="flex: 1 1 260px; height: 40px; color-scheme: dark;"></audio>
+<button type="button" data-act="next" class="layl-btn" style="cursor: pointer; background: transparent; color: #F9D9A6; border: 2px solid #F9D9A6; border-radius: 999px; padding: 10px 18px; font-weight: 700; font-size: 13px; font-family: inherit;">Next card</button>
+</div>
+
+
+</div>
+
+<script>
+const MAP={"c0c6ced60fdc14cd375ceea6a59b1d29": "site2-cover.jpg", "2dfc50861c7efcaa3151fe5dfa99174a": "band-ball2.webp", "7f8d313d94b859eb3256e17336150b65": "v1-ball-teaser2.mp4", "a59b1ddb6d52042662069449ae99fcd5": "v1-poster2.jpg", "ae011844041852d42edfefb2d380ba98": "vid-album-teaser.mp4", "31ebe0ac2732509023d119609b4029c3": "vid-teaser-poster.jpg", "387d6d9883b3f1b3e0e9748f8edc8cfe": "posters-p-voodoo.jpg", "3bf8f09092183e4c2b6afb71195923c4": "posters-p-boo.jpg", "fc7dcc50eccf873c18c4f312dcb9a948": "port-lilac_1536x2048.jpg", "2e262753e8336227d6246ed24823443d": "port-asmar_1536x2048.jpg", "0e89cd1ce10a794e8f268718cf4a19f0": "port-yamm_1536x2048.jpg", "19831b338b929d3a304159659cdb5bd8": "port-lattam_1536x2048.jpg", "e4ce63d7e0b62c23d48e7fc2ee0ddf17": "icons2-ghosts.webp", "0741205406c263acb0cf16107055318d": "icons2-mask2.webp", "97f7fb528741f904e90554df10191832": "icons2-frog.webp", "97be3ab33c0f2fc8c57d7de809fa0570": "icons2-computer.webp", "5dad0d60d102df047c1d9adb2420ea3f": "icons2-gram1.webp", "984c24b2b3305504ae27a2d09ce08e86": "icons2-moon.webp", "c971c929b20cd8d1d84187037000cc13": "icons2-planchette.webp", "c152115921b5498fb72ef41521587f31": "icons-scalpel.webp", "79120e2ec3a54e42522d07f7d6cfa987": "icons2-jar.webp", "d19c8dd29e66f2322e8c3206c278cd18": "icons2-planet.webp", "aa93056e6f94a8e7a32a9018465a966b": "icons2-doll.webp", "f9bbac44a97688f01ac57ad8432a1149": "icons2-eye.webp", "677480e32081c6149699f2318d308d53": "icons2-feather.webp", "dfe91f82b6a4c5f12f5326915e212fa0": "icons2-heart.webp", "f6fffcf5739245ddbd6513af13ca3922": "site3-boo.jpg", "9a1c1211245a335ae3e6e9fbb2ef604c": "site3-costume.jpg", "d376dafadc3eb6b6300aed8b33985509": "site3-frog.jpg", "2d7d2f9e783b3d6ee19a72ecd54687d9": "site3-auntie.jpg", "77a68842a1f87809285d2d9f2e7e7734": "site3-why.jpg", "c0b34eea2e3996deaf470e828e364c7e": "site3-moon.jpg", "20b3deecaaed5709abef72726dbaf965": "site3-soboard.jpg", "752154adc9a463960df974056eaaeee0": "site3-autopsy.jpg", "f03d241439d071073b6b45ccbcb86deb": "site3-crickets.jpg", "8e13fc4b50f593a5777564486c67a625": "site3-sadturn.jpg", "def08b95880ccae29b7acddca955d47f": "site3-voodoo.jpg", "df59be32ab6f132ae48e421ff69431dc": "site3-selfprot.jpg", "7204e1d57fdbbf4e0148377dea153d2a": "site3-birdie.jpg", "0773c2e30db2ef6eacb466a7fd6ba091": "site3-frankenstein.jpg", "520ab19cc1094280158fb19abf7fcdc3": "m4-boo.mp4", "4550d5f5ca96f2b81f32def40e477bb5": "m4-costume-party.mp4", "23838ded4766aac56b8b4e221c2a4222": "m4-frog-in-a-prince-suit.mp4", "536d07bba4ba22ceb2e0aa4833ef575a": "m4-auntie-ai.mp4", "00c5f4028ec3c9b722cda8eb781e861d": "m4-why-are-you-behaving-like-this.mp4", "d253ece9d74b44f300103b45746c804f": "m4-blame-the-moon.mp4", "03b20abd8607040887a59507e7bc9b33": "m4-so-board.mp4", "eff3dba88f78fa8916946d07fb7079cb": "m4-friendship-autopsy.mp4", "72374fdf834d10aca01b937092032a60": "m4-crickets.mp4", "0e0f6c09ca534acbfaad4f0179c33bd9": "m4-sadturn.mp4", "ed10dfcb6c2f502a12790638150dad9f": "m4-voodoo-doll.mp4", "8cf0f0f297cc09b8490b4d26d89dc61b": "m4-self-protection.mp4", "2cf91c64f310d9ef11ec3e9a0388a31e": "m4-bye-bye-birdie.mp4", "0550f5182fe318c862e224ea773cea97": "m4-frankenstein.mp4", "a75fb43c56b34630a3b6272dc806ef34": "shop-doll.jpg", "f407ee513dbc1f6ba591d0d391a7e204": "shop-keychain.jpg", "6a592f4933d556ebd10c955a3cc2370c": "shop-soboard.jpg", "8621d20095a2e2d8fc729fc63738f976": "shop-earring.jpg", "56392f2488d867d177c44e0b796bbd02": "shop-potion.jpg", "8aecd74a7a76e91b684eb098a6454af6": "shop-cap.jpg", "2f7f56b08496dd621a47512159de88a9": "shop-bandana.jpg", "acb5a598ed4c808cf3db0387b2c27cd2": "shop-tote.jpg", "da571eb8610262bb9f896a7c43348c94": "shop-bracelet.jpg", "ea5178696c01b77a246654b605ba8cf0": "shop-pins.jpg", "0c86b813b92148d268209b8efd38a252": "shop-lamp.jpg", "fd76773b3c93fb0ff90681f22c1989a5": "shop-vinyl.jpg", "f46c7f0614490a41e791f7ef283c296d": "shop-tees.jpg", "197e5b10279a6ec8e836926ce07164dc": "shop-mug.jpg", "25dbcd655ef4a62c731d58f2206265c7": "deck2-card01.webp", "06d47dfb2964442109d5987f605c1f02": "deck2-card02.webp", "85fe138f8b061afe8c4a425061cffabc": "deck2-card03.webp", "d23394cf0398bdeac55db00682774f1e": "deck2-card04.webp", "9621ba4e03aaf19c011008d1ea992742": "deck2-card05.webp", "561dc3ec486994e3a0eaa3dd2f0ae422": "deck2-card06.webp", "430d57f871473c3133f254bac37e1972": "deck2-card07.webp", "56978c2c954684f010a84125ec9cb05a": "deck2-card08.webp", "7033a04929681fb77cfd44ec3426d08d": "deck2-card09.webp", "5640e0af19223680783a2caf130889c7": "deck2-card10.webp", "f939f03a749d46cf9c18e075babfa3f4": "deck2-card11.webp", "83c01f1dc8b23349dc1513d6c0702c6d": "deck2-card12.webp", "a96d7d10f958628e73458b6d5f3b7ca4": "deck2-card13.webp", "bb80c0aeb8f3987ad39ce89066c9d868": "deck2-card14.webp"};
+const B=id=>MAP[id]||('missing/'+id);
+const R=['I','II','III','IV','V','VI','VII','VIII','IX','X','XI','XII','XIII','XIV'];
+const OBJ=['e4ce63d7e0b62c23d48e7fc2ee0ddf17','0741205406c263acb0cf16107055318d','97f7fb528741f904e90554df10191832','97be3ab33c0f2fc8c57d7de809fa0570','5dad0d60d102df047c1d9adb2420ea3f','984c24b2b3305504ae27a2d09ce08e86','c971c929b20cd8d1d84187037000cc13','c152115921b5498fb72ef41521587f31','79120e2ec3a54e42522d07f7d6cfa987','d19c8dd29e66f2322e8c3206c278cd18','aa93056e6f94a8e7a32a9018465a966b','f9bbac44a97688f01ac57ad8432a1149','677480e32081c6149699f2318d308d53','dfe91f82b6a4c5f12f5326915e212fa0']; const CARDS=['25dbcd655ef4a62c731d58f2206265c7','06d47dfb2964442109d5987f605c1f02','85fe138f8b061afe8c4a425061cffabc','d23394cf0398bdeac55db00682774f1e','9621ba4e03aaf19c011008d1ea992742','561dc3ec486994e3a0eaa3dd2f0ae422','430d57f871473c3133f254bac37e1972','56978c2c954684f010a84125ec9cb05a','7033a04929681fb77cfd44ec3426d08d','5640e0af19223680783a2caf130889c7','f939f03a749d46cf9c18e075babfa3f4','83c01f1dc8b23349dc1513d6c0702c6d','a96d7d10f958628e73458b6d5f3b7ca4','bb80c0aeb8f3987ad39ce89066c9d868'];
+const T=[
+      ['Boo', '3:44', 'f6fffcf5739245ddbd6513af13ca3922', '520ab19cc1094280158fb19abf7fcdc3', 'Boo! (Not you!) Boo! (Someone new!)', 'The Spectacle'],
+      ['Costume Party', '4:22', '9a1c1211245a335ae3e6e9fbb2ef604c', '4550d5f5ca96f2b81f32def40e477bb5', 'Everybody came disguised. I showed up in my birthday suit.', 'The Spectacle'],
+      ['Frog in a Prince Suit', '3:30', 'd376dafadc3eb6b6300aed8b33985509', '23838ded4766aac56b8b4e221c2a4222', 'You are not as cute as your brain computes.', 'The Spectacle'],
+      ['Auntie A.I.', '4:54', '2d7d2f9e783b3d6ee19a72ecd54687d9', '536d07bba4ba22ceb2e0aa4833ef575a', 'The vision is human, the machine just replies.', 'The Spectacle'],
+      ['Why Are You Behaving Like This?', '3:50', '77a68842a1f87809285d2d9f2e7e7734', '00c5f4028ec3c9b722cda8eb781e861d', 'Why are you behaving like this, nana?', 'The Unravelling'],
+      ['Blame the Moon', '4:39', 'c0b34eea2e3996deaf470e828e364c7e', 'd253ece9d74b44f300103b45746c804f', 'We crash on purpose then pretend it’s the moon.', 'The Unravelling'],
+      ['So Board', '3:33', '20b3deecaaed5709abef72726dbaf965', '03b20abd8607040887a59507e7bc9b33', 'If it points to no, then I guess I’ll know.', 'The Unravelling'],
+      ['Friendship Autopsy', '4:02', '752154adc9a463960df974056eaaeee0', 'eff3dba88f78fa8916946d07fb7079cb', 'Thought we were chosen family.', 'The Unravelling'],
+      ['Crickets', '3:03', 'f03d241439d071073b6b45ccbcb86deb', '72374fdf834d10aca01b937092032a60', 'I thought we were losing touch. Turns out I was the touch.', 'The Unravelling'],
+      ['SAdTURN', '4:04', '8e13fc4b50f593a5777564486c67a625', '0e0f6c09ca534acbfaad4f0179c33bd9', 'Return to Saturn. Return to sad-turn.', 'The Response'],
+      ['Voodoo Doll', '3:30', 'def08b95880ccae29b7acddca955d47f', 'ed10dfcb6c2f502a12790638150dad9f', 'Hey girl, hold my purse.', 'The Response'],
+      ['Self Protection', '4:17', 'df59be32ab6f132ae48e421ff69431dc', '8cf0f0f297cc09b8490b4d26d89dc61b', 'Baby, this ain’t love. This is just your self-protection.', 'The Response'],
+      ['Bye Bye Birdie', '3:54', '7204e1d57fdbbf4e0148377dea153d2a', '2cf91c64f310d9ef11ec3e9a0388a31e', 'Funny how you love me when I’m nonchalant-y.', 'The Response'],
+      ['Frankenstein', '3:20', '0773c2e30db2ef6eacb466a7fd6ba091', '0550f5182fe318c862e224ea773cea97', 'Dead or alive, zombies for life.', 'The Response']
+    ];
+const SHOP=[
+        { kind: 'Plush', name: 'The LAY-L Voodoo Doll', line: 'Lime, pink stitches, removable pin. A little bad luck for the right people.', img: B('a75fb43c56b34630a3b6272dc806ef34'), fit: 'cover', alt: 'Lime plush voodoo doll with pink stitches, button eyes and a pink scarf' },
+        { kind: 'Keychain', name: 'TLUV Keychain', line: 'A mini doll for your keys. Take a little magic with you.', img: B('f407ee513dbc1f6ba591d0d391a7e204'), fit: 'cover', alt: 'Small plush doll keychain with a TLUV charm' },
+        { kind: 'Spirit board', name: 'So Board', line: 'Custom board and planchette. Ask wisely. It might say I don\u2019t know.', img: B('6a592f4933d556ebd10c955a3cc2370c'), fit: 'cover', alt: 'Black and gold LAY-L spirit board with planchette' },
+        { kind: 'Jewellery', name: 'Lilac\u2019s Palm-Frond Earring', line: 'Sold single, the way she wears it. For the girls who keep the pins.', img: B('8621d20095a2e2d8fc729fc63738f976'), fit: 'cover', alt: 'Gold and purple palm-frond earring beside Lilac' },
+        { kind: 'Glassware', name: 'Potion No. 3 Shot Glasses', line: 'Set of three. Power of three. Drink responsibly.', img: B('56392f2488d867d177c44e0b796bbd02'), fit: 'cover', alt: 'Three black and gold potion shot glasses' },
+        { kind: 'Headwear', name: 'Asmar\u2019s Cap', line: 'Black, green strap, worn backwards. Same cut, same attitude.', img: B('8aecd74a7a76e91b684eb098a6454af6'), fit: 'cover', alt: 'Black cap with green strap' },
+        { kind: 'Bandana', name: 'Lattam\u2019s Bandana', line: 'Navy, starred. Says nothing. Like him.', img: B('2f7f56b08496dd621a47512159de88a9'), fit: 'cover', alt: 'Navy bandana beside Lattam' },
+        { kind: 'Tote', name: 'Hold My Purse Tote', line: '\u201cHey girl, hold my purse.\u201d For essentials, spells and drama.', img: B('acb5a598ed4c808cf3db0387b2c27cd2'), fit: 'cover', alt: 'Canvas tote reading Hey girl, hold my purse' },
+        { kind: 'Bracelet', name: 'Self Protection Bracelet', line: 'Charms for protection. This ain\u2019t love, it\u2019s self-protection.', img: B('da571eb8610262bb9f896a7c43348c94'), fit: 'cover', alt: 'Gold charm bracelet with evil eye and heart charms' },
+        { kind: 'Pins', name: 'LAY-L Enamel Pin Set', line: 'All four members. Four cards, one band.', img: B('ea5178696c01b77a246654b605ba8cf0'), fit: 'cover', alt: 'Four enamel pins of Lilac, Asmar, Yamm and Lattam' },
+        { kind: 'Lamp', name: 'Crickets Jar Lamp', line: 'A glowing jar of drifting cricket silhouettes. No fight. No goodbye.', img: B('0c86b813b92148d268209b8efd38a252'), fit: 'cover', alt: 'Glowing glass jar lamp' },
+        { kind: 'Vinyl', name: 'I Guess the Fortune Teller Was Right\u2026', line: 'The debut album on 12\u2033 vinyl, with lyric insert and poster.', img: B('fd76773b3c93fb0ff90681f22c1989a5'), fit: 'cover', alt: 'LAY-L vinyl record with sleeve and inserts' },
+        { kind: 'Apparel', name: 'LAY-L T-Shirts', line: 'Two designs for everyday magic.', img: B('f46c7f0614490a41e791f7ef283c296d'), fit: 'cover', alt: 'Black and cream LAY-L T-shirts' },
+        { kind: 'Mug', name: 'LAY-L Mug', line: 'For coffee, tea or potions.', img: B('197e5b10279a6ec8e836926ce07164dc'), fit: 'cover', alt: 'Black mug with pink cat eyes' }
+      ];
+const MEMBERS=[
+        { name: 'Lilac', role: 'Lead vocal', arcana: 'II · The High Priestess', img: B('fc7dcc50eccf873c18c4f312dcb9a948'), alt: 'Lilac as The High Priestess, seated on a throne with a black cat', accent: '#C9A4E0', line: 'Never forgets. Keeps the pins.' },
+        { name: 'Asmar', role: 'Guitar, vocal', arcana: 'XIII · Death', img: B('2e262753e8336227d6246ed24823443d'), alt: 'Asmar as Death, arms crossed beneath a reaper banner', accent: '#3FC4A4', line: 'Pulled the Death card. Shrugged.' },
+        { name: 'Yamm', role: 'Bass', arcana: 'I · The Magician', img: B('0e89cd1ce10a794e8f268718cf4a19f0'), alt: 'Yamm as The Magician, holding the Magician card', accent: '#D9B26A', line: 'Already saw how this ends.' },
+        { name: 'Lattam', role: 'Drums', arcana: 'IX · The Hermit', img: B('19831b338b929d3a304159659cdb5bd8'), alt: 'Lattam as The Hermit, beside a lantern marked IX', accent: '#8FA6D9', line: 'Says nothing. Reads everything.' }
+      ];
+const tracks=T.map((r,i)=>({title:r[0],len:r[1],audio:B(r[3]),line:r[4],num:R[i],card:B(CARDS[i]),obj:B(OBJ[i])}));
+let cur=null, drawn=10;
+const $=id=>document.getElementById(id);
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const hero=$('hero'), player=$('player');
+function renderActs(){
+  const acts=[['I','The Spectacle',0,4],['II','The Unravelling',4,9],['III','The Response',9,14]];
+  $('acts').innerHTML=acts.map(a=>`<div style="padding-top: 56px;"><div style="display: flex; align-items: baseline; gap: 16px; padding-bottom: 24px;"><span style="font-family: 'Bodoni Moda', serif; font-style: italic; font-size: 40px; font-weight: 700;">${a[0]}</span><h3 style="margin: 0; font-size: 13px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase;">${a[1]}</h3></div><div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 32px 28px;">`+
+   tracks.slice(a[2],a[3]).map((t,j)=>{const i=a[2]+j,on=i===cur;return `<button type="button" data-play="${i}" class="layl-card" aria-label="Play ${esc(t.title)}" style="cursor: pointer; font-family: inherit; color: #101013; background: transparent; border: 0; padding: 0; display: flex; flex-direction: column; gap: 10px; align-items: stretch;"><img src="${t.card}" alt="" loading="lazy" style="width: 100%; aspect-ratio: 720 / 1073; object-fit: contain; display: block; filter: ${on?'drop-shadow(0 0 0 #F52B7B) drop-shadow(0 0 10px #F52B7B)':'none'};"><span style="font-size: 12px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; text-align: center; color: ${on?'#F52B7B':'#101013'};">${on?'Playing':'Play'} · ${esc(t.title)}</span></button>`}).join('')+`</div></div>`).join('');
+}
+function renderDrawn(){const t=tracks[drawn]; $('drawnCard').src=t.card; $('drawnCard').alt='Tarot card '+t.num+': '+t.title; $('drawnLine').textContent=t.line; $('drawnMeta').textContent='From track '+t.num+', '+t.title+' · '+t.len;}
+function renderStatic(){
+  $('members').outerHTML=MEMBERS.map(m=>`<div style="display: flex; flex-direction: column; gap: 16px;"><img src="${m.img}" alt="${esc(m.alt)}" loading="lazy" style="width: 100%; aspect-ratio: 3 / 4; object-fit: cover; display: block; border: 2px solid #F9D9A6; border-radius: 6px; box-sizing: border-box;"><p style="margin: 0; font-size: 12px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: ${m.accent};">${m.arcana}</p><div style="display: flex; align-items: baseline; justify-content: space-between; gap: 8px; border-bottom: 1px solid #3A3A3D; padding-bottom: 12px;"><span style="font-family: 'Bodoni Moda', serif; font-style: italic; font-weight: 700; font-size: 36px;">${m.name}</span><span style="font-size: 13px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase;">${m.role}</span></div><p style="margin: 0; font-size: 15px; line-height: 1.5;">${esc(m.line)}</p></div>`).join('');
+  $('shopGrid').outerHTML=SHOP.map(p=>`<div style="display: flex; flex-direction: column; background: #F9D9A6; color: #101013; border-radius: 10px; overflow: hidden;"><div style="aspect-ratio: 4 / 3; background: #0B0B0D;"><img src="${p.img}" alt="${esc(p.alt)}" loading="lazy" style="width: 100%; height: 100%; object-fit: ${p.fit}; display: block;"></div><div style="padding: 16px 18px 18px; display: flex; flex-direction: column; gap: 6px; flex: 1;"><span style="font-size: 12px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: #7A1E46;">${p.kind}</span><span style="font-family: 'Bodoni Moda', serif; font-weight: 700; font-size: 22px; line-height: 1.15;">${esc(p.name)}</span><span style="font-size: 14px; line-height: 1.45; flex: 1;">${esc(p.line)}</span><a href="#follow" class="layl-btn" style="margin-top: 10px; align-self: flex-start; text-decoration: none; background: #101013; color: #F9D9A6; padding: 10px 18px; border-radius: 999px; font-weight: 700; font-size: 13px; border: 2px solid #101013;">Notify me</a></div></div>`).join('');
+}
+function setSound(on){ hero.muted=!on; if(on) hero.currentTime=0; hero.play().catch(()=>{}); $('soundLabel').textContent=on?'Sound off':'Sound on'; $('soundBtn').setAttribute('aria-pressed',String(on)); }
+function play(i){ cur=i; setSound(false); const t=tracks[i]; $('nowbar').hidden=false; document.body.style.paddingBottom='120px'; $('nowObj').src=t.obj; $('nowNum').textContent=t.num; $('nowTitle').textContent=t.title; player.src=t.audio; player.play().catch(()=>{}); renderActs(); }
+const nextIdx=()=>cur===null?0:(cur+1)%14;
+player.addEventListener('ended',()=>play(nextIdx()));
+document.addEventListener('click',e=>{
+  const p=e.target.closest('[data-play]'); if(p){play(+p.dataset.play);return;}
+  const a=e.target.closest('[data-act]'); if(!a) return; const k=a.dataset.act;
+  if(k==='playAll') play(0); else if(k==='playVoodoo') play(10); else if(k==='playDrawn') play(drawn);
+  else if(k==='next') play(nextIdx());
+  else if(k==='draw'){ let n=drawn; while(n===drawn) n=Math.floor(Math.random()*14); drawn=n; renderDrawn(); }
+  else if(k==='toggleSound') setSound(hero.muted);
+});
+hero.muted=true; hero.play().catch(()=>{});
+renderStatic(); renderActs(); renderDrawn();
+</script>
+</body>
+</html>
