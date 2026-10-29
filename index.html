@@ -25,6 +25,19 @@ a{color:inherit}a:hover{color:#F52B7B}
 @media (prefers-reduced-motion: reduce){.layl-marquee{animation:none}.layl-float{animation:none}.layl-card{transition:none}}
 </style>
 <style>[hidden]{display:none!important} #members,#shopGrid{display:contents}</style>
+<script src="lyrics-sync.js" defer></script>
+<style>
+#karaoke{flex:1 1 100%;min-width:0;padding:4px 4px 2px;text-align:center}
+#karaoke p{margin:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+#kLine{font-family:'Bodoni Moda',serif;font-weight:700;font-size:22px;line-height:1.3;min-height:1.3em}
+#kNext{font-size:13px;line-height:1.4;color:#6E6E73;min-height:1.4em}
+#kLine span{color:#77777C;transition:color .12s linear}
+#kLine span.on{color:#F9D9A6}
+#kLine span.now{color:#F52B7B}
+#kLine.gap{color:#ABD33F;font-style:italic;font-weight:400}
+@media (max-width:600px){#kLine{font-size:18px;white-space:normal;max-height:2.6em}#kNext{display:none}}
+@media (prefers-reduced-motion:reduce){#kLine span{transition:none}}
+</style>
 </head>
 <body>
 <div style="background: #101013; color: #F9D9A6; font-family: 'Inter Tight', system-ui, sans-serif; min-height: 100vh; ">
@@ -208,6 +221,7 @@ a{color:inherit}a:hover{color:#F52B7B}
 </footer>
 
 <div id="nowbar" hidden role="region" aria-label="Now playing" style="position: fixed; left: 16px; right: 16px; bottom: 16px; z-index: 10; max-width: 980px; margin: 0 auto; background: #101013; color: #F9D9A6; border: 2px solid #ABD33F; border-radius: 16px; padding: 10px 14px; display: flex; flex-wrap: wrap; align-items: center; gap: 14px; box-sizing: border-box;">
+<div id="karaoke" aria-hidden="true" hidden><p id="kLine"></p><p id="kNext"></p></div>
 <div style="flex: 1 1 280px; min-width: 0; display: flex; flex-wrap: nowrap; align-items: center; gap: 14px;">
 <img id="nowObj" src="" alt="" style="flex: 0 0 72px; width: 72px; height: 72px; object-fit: contain; display: block; margin: -20px 0 -8px; filter: drop-shadow(0 4px 10px rgba(0,0,0,0.6));">
 <div style="flex: 1 1 auto; min-width: 0; display: flex; flex-direction: column; gap: 2px;">
@@ -282,9 +296,35 @@ function renderStatic(){
   $('shopGrid').outerHTML=SHOP.map(p=>`<div style="display: flex; flex-direction: column; background: #F9D9A6; color: #101013; border-radius: 10px; overflow: hidden;"><div style="aspect-ratio: 4 / 3; background: #0B0B0D;"><img src="${p.img}" alt="${esc(p.alt)}" loading="lazy" style="width: 100%; height: 100%; object-fit: ${p.fit}; display: block;"></div><div style="padding: 16px 18px 18px; display: flex; flex-direction: column; gap: 6px; flex: 1;"><span style="font-size: 12px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: #7A1E46;">${p.kind}</span><span style="font-family: 'Bodoni Moda', serif; font-weight: 700; font-size: 22px; line-height: 1.15;">${esc(p.name)}</span><span style="font-size: 14px; line-height: 1.45; flex: 1;">${esc(p.line)}</span><a href="#follow" class="layl-btn" style="margin-top: 10px; align-self: flex-start; text-decoration: none; background: #101013; color: #F9D9A6; padding: 10px 18px; border-radius: 999px; font-weight: 700; font-size: 13px; border: 2px solid #101013;">Notify me</a></div></div>`).join('');
 }
 function setSound(on){ hero.muted=!on; if(on) hero.currentTime=0; hero.play().catch(()=>{}); $('soundLabel').textContent=on?'Sound off':'Sound on'; $('soundBtn').setAttribute('aria-pressed',String(on)); }
-function play(i){ cur=i; setSound(false); const t=tracks[i]; $('nowbar').hidden=false; document.body.style.paddingBottom='120px'; $('nowObj').src=t.obj; $('nowNum').textContent=t.num; $('nowTitle').textContent=t.title; $('nowLyrics').href='lyrics.html#'+t.title.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,''); player.src=t.audio; player.play().catch(()=>{}); renderActs(); }
+function play(i){ cur=i; setSound(false); const t=tracks[i]; $('nowbar').hidden=false; document.body.style.paddingBottom='120px'; $('nowObj').src=t.obj; $('nowNum').textContent=t.num; $('nowTitle').textContent=t.title; $('nowLyrics').href='lyrics.html#'+t.title.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,''); player.src=t.audio; kReset(); player.play().catch(()=>{}); renderActs(); }
 const nextIdx=()=>cur===null?0:(cur+1)%14;
 player.addEventListener('ended',()=>play(nextIdx()));
+const K={line:-1,word:-1,raf:0,data:null};
+function kReset(){K.line=-2;K.word=-1;K.data=(window.LYRICS_SYNC||{})[cur]||null;$('karaoke').hidden=!K.data;$('kLine').innerHTML='';$('kNext').textContent='';$('kLine').className='';document.body.style.paddingBottom=K.data?'190px':'120px';}
+function kFind(arr,t,get){let lo=0,hi=arr.length-1,r=-1;while(lo<=hi){const m=(lo+hi)>>1;if(get(arr[m])<=t){r=m;lo=m+1}else hi=m-1}return r;}
+function kTick(){
+  K.raf=0; if(!K.data) return;
+  const t=player.currentTime, L=K.data, kl=$('kLine');
+  let li=kFind(L,t+0.05,l=>l.t);
+  let show=li, gap=false;
+  if(li<0 || t>L[li].e){ const nx=li+1; if(nx<L.length && L[nx].t-t<1.8) show=nx; else gap=true; }
+  const key=gap?'gap'+li:show;
+  if(key!==K.line){
+    K.line=key; K.word=-2;
+    if(gap){ kl.className='gap'; kl.textContent='♪'; }
+    else { kl.className=''; kl.innerHTML=L[show].w.map(w=>'<span>'+esc(w[0])+'</span>').join(' '); }
+    const nx=L[gap?li+1:show+1]; $('kNext').textContent=nx?nx.w.map(w=>w[0]).join(' '):'';
+  }
+  if(!gap){
+    const ws=L[show].w, wi=t<ws[0][1]-0.05?-1:kFind(ws,t+0.05,w=>w[1]);
+    if(wi!==K.word){ K.word=wi; const sp=kl.children; for(let k=0;k<sp.length;k++) sp[k].className=k<wi?'on':(k===wi?'now':''); }
+  }
+  if(!player.paused) K.raf=requestAnimationFrame(kTick);
+}
+player.addEventListener('play',()=>{ if(!K.raf) K.raf=requestAnimationFrame(kTick); });
+player.addEventListener('seeked',()=>{ K.line=-2; kTick(); });
+player.addEventListener('loadedmetadata',kReset);
+
 document.addEventListener('click',e=>{
   const p=e.target.closest('[data-play]'); if(p){play(+p.dataset.play);return;}
   const a=e.target.closest('[data-act]'); if(!a) return; const k=a.dataset.act;
