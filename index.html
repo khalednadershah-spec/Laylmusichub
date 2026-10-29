@@ -35,6 +35,7 @@ a{color:inherit}a:hover{color:#F52B7B}
 <nav aria-label="Main" style="display: flex; flex-wrap: wrap; align-items: center; gap: 28px; font-size: 13px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase;">
 <a href="#reading" style="text-decoration: none;">The Reading</a>
 <a href="#spread" style="text-decoration: none;">The Spread</a>
+<a href="lyrics.html" style="text-decoration: none;">Lyrics</a>
 <a href="#band" style="text-decoration: none;">The Band</a>
 <a href="#videos" style="text-decoration: none;">Videos</a>
 <a href="#shop" style="text-decoration: none;">Shop</a>
@@ -215,6 +216,7 @@ a{color:inherit}a:hover{color:#F52B7B}
 </div>
 </div>
 <audio id="player" controls aria-label="Now playing" style="flex: 1 1 260px; height: 40px; color-scheme: dark;"></audio>
+<a id="nowLyrics" href="lyrics.html" class="layl-btn" style="text-decoration: none; background: transparent; color: #ABD33F; border: 2px solid #ABD33F; border-radius: 999px; padding: 10px 18px; font-weight: 700; font-size: 13px;">Lyrics</a>
 <button type="button" data-act="next" class="layl-btn" style="cursor: pointer; background: transparent; color: #F9D9A6; border: 2px solid #F9D9A6; border-radius: 999px; padding: 10px 18px; font-weight: 700; font-size: 13px; font-family: inherit;">Next card</button>
 </div>
 
@@ -280,7 +282,7 @@ function renderStatic(){
   $('shopGrid').outerHTML=SHOP.map(p=>`<div style="display: flex; flex-direction: column; background: #F9D9A6; color: #101013; border-radius: 10px; overflow: hidden;"><div style="aspect-ratio: 4 / 3; background: #0B0B0D;"><img src="${p.img}" alt="${esc(p.alt)}" loading="lazy" style="width: 100%; height: 100%; object-fit: ${p.fit}; display: block;"></div><div style="padding: 16px 18px 18px; display: flex; flex-direction: column; gap: 6px; flex: 1;"><span style="font-size: 12px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: #7A1E46;">${p.kind}</span><span style="font-family: 'Bodoni Moda', serif; font-weight: 700; font-size: 22px; line-height: 1.15;">${esc(p.name)}</span><span style="font-size: 14px; line-height: 1.45; flex: 1;">${esc(p.line)}</span><a href="#follow" class="layl-btn" style="margin-top: 10px; align-self: flex-start; text-decoration: none; background: #101013; color: #F9D9A6; padding: 10px 18px; border-radius: 999px; font-weight: 700; font-size: 13px; border: 2px solid #101013;">Notify me</a></div></div>`).join('');
 }
 function setSound(on){ hero.muted=!on; if(on) hero.currentTime=0; hero.play().catch(()=>{}); $('soundLabel').textContent=on?'Sound off':'Sound on'; $('soundBtn').setAttribute('aria-pressed',String(on)); }
-function play(i){ cur=i; setSound(false); const t=tracks[i]; $('nowbar').hidden=false; document.body.style.paddingBottom='120px'; $('nowObj').src=t.obj; $('nowNum').textContent=t.num; $('nowTitle').textContent=t.title; player.src=t.audio; player.play().catch(()=>{}); renderActs(); }
+function play(i){ cur=i; setSound(false); const t=tracks[i]; $('nowbar').hidden=false; document.body.style.paddingBottom='120px'; $('nowObj').src=t.obj; $('nowNum').textContent=t.num; $('nowTitle').textContent=t.title; $('nowLyrics').href='lyrics.html#'+t.title.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,''); player.src=t.audio; player.play().catch(()=>{}); renderActs(); }
 const nextIdx=()=>cur===null?0:(cur+1)%14;
 player.addEventListener('ended',()=>play(nextIdx()));
 document.addEventListener('click',e=>{
