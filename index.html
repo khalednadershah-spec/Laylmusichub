@@ -38,6 +38,27 @@ a{color:inherit}a:hover{color:#F52B7B}
 @media (max-width:600px){#kLine{font-size:18px;white-space:normal;max-height:2.6em}#kNext{display:none}}
 @media (prefers-reduced-motion:reduce){#kLine span{transition:none}}
 </style>
+<style>
+#lyPanel{position:fixed;left:16px;right:16px;top:16px;bottom:var(--nowbar-h,150px);z-index:9;max-width:980px;margin:0 auto;background:#101013;color:#F9D9A6;border:2px solid #ABD33F;border-radius:16px;display:flex;flex-direction:column;overflow:hidden;box-sizing:border-box;box-shadow:0 20px 60px rgba(0,0,0,.55)}
+.lyp-head{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:14px 18px;border-bottom:1px solid #2A2A2D}
+.lyp-head>div{display:flex;flex-direction:column;gap:2px;min-width:0}
+.lyp-k{font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:#ABD33F}
+.lyp-t{font-family:'Bodoni Moda',serif;font-style:italic;font-weight:700;font-size:22px}
+.lyp-x{cursor:pointer;background:transparent;color:#F9D9A6;border:2px solid #F9D9A6;border-radius:999px;padding:8px 16px;font:700 13px 'Inter Tight',system-ui,sans-serif}
+.lyp-x:hover{background:#F52B7B;border-color:#F52B7B;color:#101013}
+.lyp-body{flex:1;overflow-y:auto;padding:30vh 22px;text-align:center;scroll-behavior:smooth;overscroll-behavior:contain}
+.lyp-body p{margin:0;padding:5px 0;font-family:'Bodoni Moda',serif;font-weight:700;font-size:clamp(20px,3vw,30px);line-height:1.3;color:#4E4E53;cursor:pointer;transition:color .2s}
+.lyp-body p.gapb{margin-top:26px}
+.lyp-body p.past{color:#8A8A8F}
+.lyp-body p.cur{color:#77777C}
+.lyp-body p.cur span.on{color:#F9D9A6}
+.lyp-body p.cur span.now{color:#F52B7B}
+.lyp-body p:hover{color:#BFBFC4}
+.lyp-full{display:block;text-align:center;padding:10px;font-size:12px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:#8C8C90;border-top:1px solid #2A2A2D;text-decoration:none}
+#nowLyrics[aria-expanded="true"]{background:#ABD33F !important;color:#101013 !important}
+@media (max-width:600px){#lyPanel{left:8px;right:8px;top:8px}.lyp-body{padding:22vh 14px}}
+@media (prefers-reduced-motion:reduce){.lyp-body{scroll-behavior:auto}}
+</style>
 </head>
 <body>
 <div style="background: #101013; color: #F9D9A6; font-family: 'Inter Tight', system-ui, sans-serif; min-height: 100vh; ">
@@ -48,7 +69,7 @@ a{color:inherit}a:hover{color:#F52B7B}
 <nav aria-label="Main" style="display: flex; flex-wrap: wrap; align-items: center; gap: 28px; font-size: 13px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase;">
 <a href="#reading" style="text-decoration: none;">The Reading</a>
 <a href="#spread" style="text-decoration: none;">The Spread</a>
-<a href="lyrics.html" style="text-decoration: none;">Lyrics</a>
+<a href="lyrics.html" data-navlyrics style="text-decoration: none;">Lyrics</a>
 <a href="#band" style="text-decoration: none;">The Band</a>
 <a href="#videos" style="text-decoration: none;">Videos</a>
 <a href="#shop" style="text-decoration: none;">Shop</a>
@@ -220,6 +241,12 @@ a{color:inherit}a:hover{color:#F52B7B}
 </div>
 </footer>
 
+<div id="lyPanel" role="dialog" aria-label="Lyrics" hidden>
+<div class="lyp-head"><div><span class="lyp-k">Lyrics · <span id="lypNum"></span></span><span id="lypTitle" class="lyp-t"></span></div>
+<button type="button" data-act="lyclose" class="lyp-x" aria-label="Close lyrics">Close</button></div>
+<div id="lypBody" class="lyp-body"></div>
+<a id="lypFull" href="lyrics.html" target="_blank" rel="noopener" class="lyp-full">Open the full lyrics page in a new tab</a>
+</div>
 <div id="nowbar" hidden role="region" aria-label="Now playing" style="position: fixed; left: 16px; right: 16px; bottom: 16px; z-index: 10; max-width: 980px; margin: 0 auto; background: #101013; color: #F9D9A6; border: 2px solid #ABD33F; border-radius: 16px; padding: 10px 14px; display: flex; flex-wrap: wrap; align-items: center; gap: 14px; box-sizing: border-box;">
 <div id="karaoke" aria-hidden="true" hidden><p id="kLine"></p><p id="kNext"></p></div>
 <div style="flex: 1 1 280px; min-width: 0; display: flex; flex-wrap: nowrap; align-items: center; gap: 14px;">
@@ -230,7 +257,7 @@ a{color:inherit}a:hover{color:#F52B7B}
 </div>
 </div>
 <audio id="player" controls aria-label="Now playing" style="flex: 1 1 260px; height: 40px; color-scheme: dark;"></audio>
-<a id="nowLyrics" href="lyrics.html" class="layl-btn" style="text-decoration: none; background: transparent; color: #ABD33F; border: 2px solid #ABD33F; border-radius: 999px; padding: 10px 18px; font-weight: 700; font-size: 13px;">Lyrics</a>
+<a id="nowLyrics" href="lyrics.html" data-act="lyrics" role="button" aria-expanded="false" aria-controls="lyPanel" class="layl-btn" style="text-decoration: none; background: transparent; color: #ABD33F; border: 2px solid #ABD33F; border-radius: 999px; padding: 10px 18px; font-weight: 700; font-size: 13px;">Lyrics</a>
 <button type="button" data-act="next" class="layl-btn" style="cursor: pointer; background: transparent; color: #F9D9A6; border: 2px solid #F9D9A6; border-radius: 999px; padding: 10px 18px; font-weight: 700; font-size: 13px; font-family: inherit;">Next card</button>
 </div>
 
@@ -296,7 +323,7 @@ function renderStatic(){
   $('shopGrid').outerHTML=SHOP.map(p=>`<div style="display: flex; flex-direction: column; background: #F9D9A6; color: #101013; border-radius: 10px; overflow: hidden;"><div style="aspect-ratio: 4 / 3; background: #0B0B0D;"><img src="${p.img}" alt="${esc(p.alt)}" loading="lazy" style="width: 100%; height: 100%; object-fit: ${p.fit}; display: block;"></div><div style="padding: 16px 18px 18px; display: flex; flex-direction: column; gap: 6px; flex: 1;"><span style="font-size: 12px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: #7A1E46;">${p.kind}</span><span style="font-family: 'Bodoni Moda', serif; font-weight: 700; font-size: 22px; line-height: 1.15;">${esc(p.name)}</span><span style="font-size: 14px; line-height: 1.45; flex: 1;">${esc(p.line)}</span><a href="#follow" class="layl-btn" style="margin-top: 10px; align-self: flex-start; text-decoration: none; background: #101013; color: #F9D9A6; padding: 10px 18px; border-radius: 999px; font-weight: 700; font-size: 13px; border: 2px solid #101013;">Notify me</a></div></div>`).join('');
 }
 function setSound(on){ hero.muted=!on; if(on) hero.currentTime=0; hero.play().catch(()=>{}); $('soundLabel').textContent=on?'Sound off':'Sound on'; $('soundBtn').setAttribute('aria-pressed',String(on)); }
-function play(i){ cur=i; setSound(false); const t=tracks[i]; $('nowbar').hidden=false; document.body.style.paddingBottom='120px'; $('nowObj').src=t.obj; $('nowNum').textContent=t.num; $('nowTitle').textContent=t.title; $('nowLyrics').href='lyrics.html#'+t.title.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,''); player.src=t.audio; kReset(); player.play().catch(()=>{}); renderActs(); }
+function play(i){ cur=i; setSound(false); const t=tracks[i]; $('nowbar').hidden=false; document.body.style.paddingBottom='120px'; $('nowObj').src=t.obj; $('nowNum').textContent=t.num; $('nowTitle').textContent=t.title; player.src=t.audio; kReset(); if(LP.open){ lpBuild(); } player.play().catch(()=>{}); renderActs(); }
 const nextIdx=()=>cur===null?0:(cur+1)%14;
 player.addEventListener('ended',()=>play(nextIdx()));
 const K={line:-1,word:-1,raf:0,data:null};
@@ -319,11 +346,42 @@ function kTick(){
     const ws=L[show].w, wi=t<ws[0][1]-0.05?-1:kFind(ws,t+0.05,w=>w[1]);
     if(wi!==K.word){ K.word=wi; const sp=kl.children; for(let k=0;k<sp.length;k++) sp[k].className=k<wi?'on':(k===wi?'now':''); }
   }
+  lpTick(false);
   if(!player.paused) K.raf=requestAnimationFrame(kTick);
 }
+
+const LP={open:false,line:-1,word:-2,userAt:0};
+function lpBuild(){
+  const t=tracks[cur], L=K.data; $('lypNum').textContent=t.num; $('lypTitle').textContent=t.title;
+  $('lypFull').href='lyrics.html#'+t.title.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'');
+  $('lypBody').innerHTML=L?L.map((l,i)=>'<p data-i="'+i+'"'+(i&&l.t-L[i-1].e>1.5?' class="gapb"':'')+'>'+l.w.map(w=>'<span>'+esc(w[0])+'</span>').join(' ')+'</p>').join(''):'<p>No lyrics for this one.</p>';
+  LP.line=-1; LP.word=-2;
+}
+function nowbarH(){ const nb=$('nowbar'); document.documentElement.style.setProperty('--nowbar-h',(nb.offsetHeight+28)+'px'); }
+function lpOpen(on){ LP.open=on; $('lyPanel').hidden=!on; $('nowLyrics').setAttribute('aria-expanded',String(on)); if(on){ nowbarH(); lpBuild(); LP.userAt=0; lpTick(true); } }
+function lpTick(force){
+  if(!LP.open||!K.data) return;
+  const t=player.currentTime, L=K.data, ps=$('lypBody').children;
+  let li=kFind(L,t+0.05,l=>l.t);
+  if(li!==LP.line||force){
+    for(let k=0;k<ps.length;k++){ ps[k].classList.toggle('past',k<li); ps[k].classList.toggle('cur',k===li); if(k!==li) for(const sp of ps[k].children) sp.className=''; }
+    LP.line=li; LP.word=-2;
+    if(li>=0 && Date.now()-LP.userAt>4000){ const p=ps[li], b=$('lypBody'); b.scrollTo({top:p.offsetTop-b.clientHeight*0.4,behavior:force?'auto':'smooth'}); }
+  }
+  if(li>=0){ const ws=L[li].w, wi=kFind(ws,t+0.05,w=>w[1]); if(wi!==LP.word){ LP.word=wi; const sp=ps[li].children; for(let k=0;k<sp.length;k++) sp[k].className=k<wi?'on':(k===wi?'now':''); } }
+}
+['wheel','touchmove'].forEach(ev=>$('lypBody').addEventListener(ev,()=>{LP.userAt=Date.now();},{passive:true}));
+$('lypBody').addEventListener('click',e=>{ const p=e.target.closest('p[data-i]'); if(!p||!K.data) return; player.currentTime=Math.max(0,K.data[+p.dataset.i].t-0.15); LP.userAt=0; if(player.paused) player.play().catch(()=>{}); });
+document.addEventListener('click',e=>{
+  const n=e.target.closest('[data-navlyrics]'); if(n && cur!==null && !player.paused){ e.preventDefault(); lpOpen(true); return; }
+  const a=e.target.closest('[data-act="lyrics"],[data-act="lyclose"]'); if(!a) return; e.preventDefault(); e.stopPropagation();
+  lpOpen(a.dataset.act==='lyrics' ? !LP.open : false);
+},true);
+document.addEventListener('keydown',e=>{ if(e.key==='Escape'&&LP.open) lpOpen(false); });
+window.addEventListener('resize',()=>{ if(LP.open) nowbarH(); });
 player.addEventListener('play',()=>{ if(!K.raf) K.raf=requestAnimationFrame(kTick); });
-player.addEventListener('seeked',()=>{ K.line=-2; kTick(); });
-player.addEventListener('loadedmetadata',kReset);
+player.addEventListener('seeked',()=>{ K.line=-2; LP.line=-2; kTick(); });
+player.addEventListener('loadedmetadata',()=>{ kReset(); if(LP.open){ lpBuild(); lpTick(true); } });
 
 document.addEventListener('click',e=>{
   const p=e.target.closest('[data-play]'); if(p){play(+p.dataset.play);return;}
