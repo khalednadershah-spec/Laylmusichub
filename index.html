@@ -95,12 +95,13 @@ a{color:inherit}a:hover{color:#F52B7B}
 }
 /* --- marquee --- */
 .mq-track:hover,.mq-track:focus-within{animation-play-state:paused}
-.mq-l{all:unset;cursor:pointer;padding:0 6px;border-radius:6px;font:inherit;transition:background .15s,color .15s}
+.mq-run{line-height:1;text-box:trim-both cap alphabetic;display:flex;align-items:baseline}
+.mq-l{all:unset;line-height:1;cursor:pointer;padding:0 6px;border-radius:6px;font:inherit;transition:background .15s,color .15s}
 .mq-l:hover,.mq-l:focus-visible{background:#101013;color:#ABD33F}
 .mq-l.on{color:#F52B7B}
 .mq-s{padding:0 18px}
 .mq-hint{position:absolute;right:0;top:0;bottom:0;z-index:2;display:flex;align-items:center;padding:0 18px 0 36px;font:700 11px 'Inter Tight',system-ui,sans-serif;letter-spacing:2px;text-transform:uppercase;background:linear-gradient(90deg,rgba(171,211,63,0),#ABD33F 30%);pointer-events:none}
-@media (max-width:700px){.mq-track{font-size:24px !important;padding:14px 0 !important}.mq-hint{display:none}}
+@media (max-width:700px){.mq-track{font-size:24px !important;padding:18px 0 22px !important}.mq-hint{display:none}}
 /* --- draw --- */
 .draw-wrap{perspective:1400px}
 #drawnCard{transform:rotate(var(--tilt,-3deg));transition:transform .45s cubic-bezier(.3,.7,.3,1)}
