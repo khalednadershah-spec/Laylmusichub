@@ -249,6 +249,34 @@ a{color:inherit}a:hover{color:#F52B7B}
 .zdlg p{margin:12px 0 0;text-align:center;color:#F9D9A6;font:italic 700 22px 'Bodoni Moda',serif}
 .zdlg-x{position:absolute;top:-14px;right:-14px;width:40px;height:40px;border-radius:50%;border:2px solid #F9D9A6;background:#101013;color:#F9D9A6;font-size:22px;cursor:pointer}
 </style>
+<style>
+/* --- shop banner --- */
+.shopban{position:relative;overflow:hidden;background:#F52B7B;color:#101013;border-top:2px solid #101013;border-bottom:2px solid #101013}
+.shopban-ghost{position:absolute;left:-2vw;bottom:-.18em;font-family:'Bodoni Moda',serif;font-style:italic;font-weight:800;font-size:clamp(180px,30vw,460px);line-height:1;color:transparent;-webkit-text-stroke:2px #101013;opacity:.22;pointer-events:none;user-select:none}
+.shopban-in{position:relative;max-width:1360px;margin:0 auto;padding:96px 32px;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:48px;align-items:center}
+.shopban-k{margin:0 0 12px;font-size:13px;font-weight:700;letter-spacing:3px;text-transform:uppercase}
+.shopban h2{margin:0;font-family:'Bodoni Moda',serif;font-weight:700;font-size:clamp(46px,5.4vw,84px);line-height:.92;letter-spacing:-2px}
+.shopban h2 em{display:block;color:#F9D9A6;-webkit-text-stroke:1.5px #101013;margin-left:.6em}
+.shopban-p{margin:22px 0 28px;max-width:430px;font-size:17px;line-height:1.5}
+.shopban-btn{cursor:pointer;font:700 16px 'Inter Tight',system-ui,sans-serif;background:#101013;color:#F9D9A6;border:2px solid #101013;border-radius:999px;padding:18px 30px;box-shadow:6px 6px 0 #ABD33F;transition:transform .2s,box-shadow .2s}
+.shopban-btn:hover,.shopban-btn:focus-visible{transform:translate(-3px,-3px);box-shadow:9px 9px 0 #ABD33F}
+.shopban-btn span{color:#ABD33F;margin-left:6px}
+.shopban-fan{all:unset;cursor:pointer;position:relative;display:block;height:clamp(300px,34vw,440px)}
+.shopban-fan img{position:absolute;left:50%;bottom:4%;width:clamp(130px,14vw,200px);aspect-ratio:4/5;object-fit:cover;border-radius:10px;border:3px solid #101013;box-shadow:0 14px 26px rgba(16,16,19,.35);transform-origin:50% 140%;transform:translateX(-50%) rotate(calc((var(--i) - 2) * 11deg));transition:transform .45s cubic-bezier(.3,.7,.3,1)}
+.shopban-fan:hover img,.shopban-fan:focus-visible img{transform:translateX(-50%) rotate(calc((var(--i) - 2) * 17deg)) translateY(-14px)}
+.shopban-fan:focus-visible{outline:3px solid #101013;outline-offset:6px;border-radius:12px}
+@media (max-width:800px){.shopban-in{grid-template-columns:1fr;padding:64px 16px 48px;gap:8px}.shopban-fan{height:300px;order:-1}.shopban-fan img{width:120px}.shopban h2 em{margin-left:.4em}}
+/* --- shop dialog --- */
+.shopdlg{width:100vw;height:100dvh;max-width:none;max-height:none;margin:0;padding:0 max(16px,calc((100vw - 1360px)/2 + 32px)) 48px;border:0;background:#101013;color:#F9D9A6;box-sizing:border-box;overflow-y:auto;font-family:'Inter Tight',system-ui,sans-serif}
+.shopdlg::backdrop{background:#101013}
+.shopdlg[open]{animation:shopIn .45s cubic-bezier(.3,.7,.3,1)}
+@keyframes shopIn{from{opacity:0;transform:translateY(40px) scale(.98)}to{opacity:1;transform:none}}
+.shopdlg-head{position:sticky;top:0;z-index:2;display:flex;justify-content:space-between;align-items:flex-end;gap:16px;padding:calc(20px + env(safe-area-inset-top)) 0 18px;margin-bottom:24px;background:#101013;border-bottom:1px solid #3A3A3D}
+.shopdlg-head h2{margin:0;font-family:'Bodoni Moda',serif;font-style:italic;font-weight:700;font-size:clamp(34px,4vw,56px);line-height:1}
+.shopdlg-x{white-space:nowrap;cursor:pointer;font:700 14px 'Inter Tight',system-ui,sans-serif;background:transparent;color:#F9D9A6;border:2px solid #F9D9A6;border-radius:999px;padding:10px 18px}
+.shopdlg-x:hover{background:#F52B7B;border-color:#F52B7B;color:#101013}
+@media (prefers-reduced-motion:reduce){.shopdlg[open]{animation:none}.shopban-fan img,.shopban-btn{transition:none}}
+</style>
 </head>
 <body>
 <div style="background: #101013; color: #F9D9A6; font-family: 'Inter Tight', system-ui, sans-serif; min-height: 100vh; ">
@@ -401,19 +429,16 @@ a{color:inherit}a:hover{color:#F52B7B}
 </div>
 </section>
 
-<section id="shop" style="background: #101013; color: #F9D9A6; border-top: 1px solid #2A2A2D;">
-<div style="max-width: 1360px; margin: 0 auto; padding: 112px 32px;">
-<div style="display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 24px; padding-bottom: 32px; border-bottom: 1px solid #3A3A3D;">
-<div style="display: flex; flex-direction: column; gap: 10px;">
-<p style="margin: 0; font-size: 13px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: #F52B7B;">The shop · coming 2027</p>
-<h2 style="margin: 0; font-family: 'Bodoni Moda', serif; font-weight: 600; font-size: clamp(44px, 5vw, 72px); line-height: 1; letter-spacing: -1px;">Wear the band. <span style="font-style: italic; color: #ABD33F;">Pour the potion.</span></h2>
+<section id="shop" class="shopban" aria-labelledby="shopH">
+<span class="shopban-ghost" aria-hidden="true">Shop</span>
+<div class="shopban-in">
+<div class="shopban-copy">
+<p class="shopban-k">The curiosity shop · coming 2027</p>
+<h2 id="shopH">Wear the band. <em>Pour the potion.</em></h2>
+<p class="shopban-p">Plush curses, palm-frond gold, potion shots and a spirit board that sometimes says “I don’t know.” Eighteen oddities from the world of LAY-L.</p>
+<button type="button" class="shopban-btn" data-act="openShop" aria-haspopup="dialog">Open the shop <span aria-hidden="true">✦</span></button>
 </div>
-<p style="margin: 0; font-size: 15px; max-width: 340px; line-height: 1.5;">Merch, objects and oddities from the world of LAY-L. Things you’ll actually use.</p>
-</div>
-<div class="shop-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 28px; padding-top: 40px;">
-<div id="shopGrid"></div>
-</div>
-<p style="margin: 32px 0 0; font-size: 13px; color: #BFB39A;">Vinyl pre-orders open after the album. Potion Shots ship with a “Pay attention!” warning card. Please drink responsibly.</p>
+<button type="button" class="shopban-fan" data-act="openShop" aria-label="Open the shop"><img src="merch/merch-asmar-cap.webp" alt="" loading="lazy" style="--i:0"><img src="merch/merch-palm-earring.webp" alt="" loading="lazy" style="--i:1"><img src="merch/merch-keychain.webp" alt="" loading="lazy" style="--i:2"><img src="merch/merch-luv-cat.webp" alt="" loading="lazy" style="--i:3"><img src="merch/merch-voodoo-plush.webp" alt="" loading="lazy" style="--i:4"></button>
 </div>
 </section>
 
@@ -464,6 +489,16 @@ a{color:inherit}a:hover{color:#F52B7B}
 </div>
 </footer>
 
+<dialog id="shopDlg" class="shopdlg" aria-labelledby="shopDlgH">
+<div class="shopdlg-head">
+<div><p class="shopban-k" style="color:#F52B7B">The shop · coming 2027</p><h2 id="shopDlgH">The curiosity shop</h2></div>
+<form method="dialog" style="margin:0"><button class="shopdlg-x" aria-label="Close the shop">Close ×</button></form>
+</div>
+<div class="shop-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 24px;">
+<div id="shopGrid"></div>
+</div>
+<p style="margin: 28px 0 0; font-size: 13px; color: #BFB39A;">Nothing is for sale yet. Tap “Notify me” and we’ll tell you when it is. Vinyl pre-orders open after the album. Potion Shots ship with a “Pay attention!” warning card. Please drink responsibly.</p>
+</dialog>
 <dialog id="zoomDlg" class="zdlg" aria-label="Product photo"><form method="dialog" style="margin:0"><button class="zdlg-x" aria-label="Close">×</button></form><img id="zImg" src="" alt=""><p id="zName"></p></dialog>
 <dialog id="notifyDlg" class="ndlg" aria-labelledby="ndlgH">
 <form method="dialog" class="ndlg-x-f"><button class="ndlg-x" aria-label="Close">×</button></form>
@@ -743,6 +778,9 @@ document.addEventListener('click',e=>{
   if(d.showModal) d.showModal(); else d.setAttribute('open','');
 });
 $('zoomDlg').addEventListener('click',e=>{ if(e.target.id==='zoomDlg') e.target.close(); });
+
+/* ---- shop popup ---- */
+document.addEventListener('click',e=>{ if(!e.target.closest('[data-act="openShop"]')) return; const d=$('shopDlg'); d.showModal?d.showModal():d.setAttribute('open',''); d.scrollTop=0; });
 
 hero.muted=true; hero.play().catch(()=>{});
 renderStatic(); renderActs(); renderDrawn();
