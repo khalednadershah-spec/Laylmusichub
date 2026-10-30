@@ -59,14 +59,122 @@ a{color:inherit}a:hover{color:#F52B7B}
 @media (max-width:600px){#lyPanel{left:8px;right:8px;top:8px}.lyp-body{padding:22vh 14px}}
 @media (prefers-reduced-motion:reduce){.lyp-body{scroll-behavior:auto}}
 </style>
+<style>
+/* --- hero --- */
+.ball-sound{position:absolute;left:50%;top:66%;transform:translate(-50%,-50%);z-index:2;cursor:pointer;display:flex;align-items:center;gap:8px;padding:10px 18px;border-radius:999px;border:1.5px solid rgba(249,217,166,.7);background:rgba(16,16,19,.55);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);color:#F9D9A6;font:700 13px 'Inter Tight',system-ui,sans-serif;letter-spacing:1px;text-transform:uppercase}
+.ball-sound:hover,.ball-sound[aria-pressed="true"]{background:#ABD33F;color:#101013;border-color:#ABD33F}
+.ball-sound .w1,.ball-sound .w2{opacity:.35}
+.ball-sound[aria-pressed="true"] .w1,.ball-sound[aria-pressed="true"] .w2{opacity:1;animation:wave 1.2s ease-in-out infinite}
+.ball-sound[aria-pressed="true"] .w2{animation-delay:.2s}
+@keyframes wave{50%{opacity:.3}}
+@media (max-width:700px){
+ .site-head-in{padding:14px 16px !important;gap:6px !important;flex-direction:column;align-items:flex-start !important}
+ .site-nav{flex-wrap:nowrap !important;gap:18px !important;font-size:11px !important;letter-spacing:1.5px !important;overflow-x:auto;max-width:100%;scrollbar-width:none;padding-bottom:2px}
+ .site-nav::-webkit-scrollbar{display:none}
+ .site-nav a{white-space:nowrap}
+ .site-nav{-webkit-mask-image:linear-gradient(90deg,#000 82%,transparent);mask-image:linear-gradient(90deg,#000 82%,transparent);padding-right:40px;box-sizing:border-box;width:100%}
+ .hero-in{padding:86px 0 40px !important;gap:14px !important}
+ .hero-ball{width:112vw !important;margin:-6px -6vw -8px !important}
+ .hero-kick{font-size:11px !important;letter-spacing:2px !important;padding:0 16px}
+ .hero-title{font-size:38px !important;letter-spacing:-1px !important;padding:0 16px}
+ .hero-btns{padding:2px 16px 0 !important;gap:10px !important}
+ .hero-btns .layl-btn{padding:13px 20px !important;font-size:14px !important}
+ .ball-sound{top:64%;padding:9px 15px;font-size:12px}
+}
+/* --- marquee --- */
+.mq-track:hover,.mq-track:focus-within{animation-play-state:paused}
+.mq-l{all:unset;cursor:pointer;padding:0 6px;border-radius:6px;font:inherit;transition:background .15s,color .15s}
+.mq-l:hover,.mq-l:focus-visible{background:#101013;color:#ABD33F}
+.mq-l.on{color:#F52B7B}
+.mq-s{padding:0 18px}
+.mq-hint{position:absolute;right:0;top:0;bottom:0;z-index:2;display:flex;align-items:center;padding:0 18px 0 36px;font:700 11px 'Inter Tight',system-ui,sans-serif;letter-spacing:2px;text-transform:uppercase;background:linear-gradient(90deg,rgba(171,211,63,0),#ABD33F 30%);pointer-events:none}
+@media (max-width:700px){.mq-track{font-size:24px !important;padding:14px 0 !important}.mq-hint{display:none}}
+/* --- draw --- */
+.draw-wrap{perspective:1400px}
+#drawnCard{transform:rotate(var(--tilt,-3deg));transition:transform .45s cubic-bezier(.3,.7,.3,1)}
+#drawnCard.flip{transform:rotate(var(--tilt,-3deg)) rotateY(90deg) scale(.96)}
+/* --- spread: a reading laid on a table --- */
+.act{position:relative;padding:72px 0 8px}
+.act-num{position:absolute;left:-.08em;top:-.12em;font-family:'Bodoni Moda',serif;font-style:italic;font-weight:800;font-size:clamp(150px,19vw,290px);line-height:1;color:transparent;-webkit-text-stroke:2px #101013;opacity:.16;pointer-events:none;user-select:none}
+.act-name{position:relative;display:flex;align-items:baseline;gap:14px;margin:0 0 28px 30%;font-size:13px;font-weight:700;letter-spacing:3px;text-transform:uppercase}
+.act-name em{font-family:'Bodoni Moda',serif;font-size:40px;letter-spacing:0;text-transform:none}
+.act-cards{position:relative;display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:40px 30px;padding-left:9%}
+.act:nth-child(2) .act-cards{padding-left:0;padding-right:9%}
+.act:nth-child(2) .act-name{margin-left:0}
+.act:nth-child(2) .act-num{left:auto;right:-.05em}
+.spread-card{transform:translateY(var(--y,0)) rotate(var(--r,0deg));transition:transform .35s cubic-bezier(.3,.7,.3,1),filter .35s}
+.spread-card:hover,.spread-card:focus-visible{transform:translateY(calc(var(--y,0) - 14px)) rotate(0deg) scale(1.04);z-index:2}
+.spread-card img{filter:drop-shadow(0 10px 0 rgba(16,16,19,.12))}
+@media (max-width:700px){
+ .act{padding-top:48px}
+ .act-num{font-size:150px}
+ .act-name{margin-left:34%}
+ .act:nth-child(2) .act-name{margin-left:0}
+ .act-cards,.act:nth-child(2) .act-cards{grid-template-columns:1fr 1fr;gap:28px 16px;padding:0}
+ .spread-card span{font-size:10px !important;letter-spacing:1px !important}
+}
+@media (prefers-reduced-motion:reduce){.spread-card,#drawnCard{transition:none}}
+/* --- single: type collision --- */
+.single-ghost{position:absolute;right:-4vw;top:50%;transform:translateY(-52%);font-family:'Bodoni Moda',serif;font-style:italic;font-weight:800;font-size:clamp(160px,26vw,420px);line-height:.8;color:transparent;-webkit-text-stroke:2px #101013;opacity:.22;white-space:nowrap;pointer-events:none;user-select:none}
+.single-art img{transform:rotate(-2.5deg);box-shadow:14px 14px 0 #101013}
+.single-title{margin:0;font-family:'Bodoni Moda',serif;font-weight:700;font-size:clamp(64px,8vw,128px);line-height:.82;letter-spacing:-3px;display:flex;flex-direction:column}
+.single-title .i{font-style:italic;color:#F52B7B;-webkit-text-stroke:1.5px #101013;margin-left:.9em}
+@media (min-width:1100px){.single-copy{position:relative;z-index:2}.single-title{margin-left:-170px}.single-title span:first-child{background:#ABD33F;align-self:flex-start;padding:0 .14em 0 .1em;box-shadow:0 0 0 2px #101013}}
+@media (max-width:700px){.single-ghost{top:14%;font-size:150px}.single-art img{box-shadow:8px 8px 0 #101013}}
+/* --- band: staggered editorial --- */
+.band-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:28px;align-items:start}
+.member{position:relative;display:flex;flex-direction:column;gap:14px}
+.member:nth-child(even){margin-top:120px}
+.member img{width:100%;aspect-ratio:3/4;object-fit:cover;display:block;border-radius:6px;transition:transform .4s cubic-bezier(.3,.7,.3,1)}
+.member:hover img{transform:rotate(var(--r,-1.5deg)) scale(1.02)}
+.member-name{margin:-.62em 0 0 -.06em;position:relative;font-family:'Bodoni Moda',serif;font-style:italic;font-weight:800;font-size:clamp(56px,6.2vw,96px);line-height:1;letter-spacing:-2px;color:#F9D9A6;text-shadow:0 2px 0 #101013,0 0 24px rgba(16,16,19,.85)}
+.member-arc{position:absolute;top:14px;left:-12px;writing-mode:vertical-rl;transform:rotate(180deg);font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;background:#101013;padding:12px 6px;border-radius:4px}
+.member-role{font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase}
+@media (max-width:1000px){.band-grid{grid-template-columns:1fr 1fr;gap:36px 18px}.member:nth-child(even){margin-top:64px}.member-name{font-size:52px}}
+/* --- footer: spirit board signup --- */
+.board-wrap{max-width:1360px;margin:0 auto;padding:96px 32px 40px;position:relative}
+.board{position:relative;height:300px;margin-bottom:-24px;user-select:none}
+.b-letters{position:absolute;inset:0}
+.b-letters span,.b-yes,.b-no,.b-bye{position:absolute;transform:translate(-50%,-50%);font-family:'Bodoni Moda',serif;font-weight:600;color:#F9D9A6;opacity:.22;transition:opacity .3s,color .3s,text-shadow .3s}
+.b-letters span{font-size:clamp(20px,2.6vw,38px)}
+.b-yes,.b-no{top:12%;font-size:clamp(18px,2vw,28px);font-style:italic;letter-spacing:2px;text-transform:uppercase}
+.b-yes{left:6%}.b-no{left:94%}
+.b-bye{left:50%;top:84%;font-size:clamp(16px,1.6vw,22px);letter-spacing:6px;text-transform:uppercase;display:none}
+.board .lit{opacity:1;color:#ABD33F;text-shadow:0 0 18px rgba(171,211,63,.6)}
+.planchette{position:absolute;width:clamp(70px,8vw,110px);left:50%;top:60%;transform:translate(-50%,-38%) rotate(var(--pr,0deg));transition:left .55s cubic-bezier(.4,.1,.2,1),top .55s cubic-bezier(.4,.1,.2,1),transform .55s;filter:drop-shadow(0 8px 14px rgba(0,0,0,.6));pointer-events:none}
+.signup{position:relative;z-index:2;max-width:640px;margin:0 auto;text-align:center;display:flex;flex-direction:column;gap:14px;align-items:center}
+.signup-h{margin:0;font-family:'Bodoni Moda',serif;font-weight:600;font-size:clamp(38px,4.6vw,60px);line-height:1;letter-spacing:-1px}
+.signup-l{font-size:15px;max-width:440px;line-height:1.5}
+.signup-row{display:flex;flex-wrap:wrap;gap:10px;width:100%}
+.signup-row input[type=email]{flex:1 1 220px;min-height:52px;padding:0 20px;border-radius:999px;border:2px solid #F9D9A6;background:rgba(16,16,19,.85);color:#F9D9A6;font-size:16px;font-family:inherit;box-sizing:border-box}
+.signup-row button{cursor:pointer;min-height:52px;padding:0 26px;border-radius:999px;border:2px solid #ABD33F;background:#ABD33F;color:#101013;font-weight:700;font-size:15px;font-family:inherit}
+.signup-row button[disabled]{opacity:.6;cursor:wait}
+.signup-msg{margin:0;min-height:1.4em;font-size:14px}
+.signup-msg.ok{color:#ABD33F}.signup-msg.err{color:#F52B7B}
+.hp{position:absolute !important;left:-9999px !important;width:1px;height:1px;opacity:0}
+.foot-col{display:flex;flex-direction:column;gap:12px;font-size:15px}
+.foot-col a{text-decoration:none}
+.foot-k{font-size:12px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:#ABD33F}
+@media (max-width:700px){.board-wrap{padding:56px 16px 32px}.board{height:200px;margin-bottom:-6px}.b-letters span{font-size:17px}.b-yes,.b-no{font-size:14px}}
+@media (max-width:700px){.shop-grid{grid-template-columns:1fr 1fr !important;gap:14px !important}.shop-grid>div>div:last-child{padding:12px !important}.shop-grid>div>div:last-child>span:nth-child(2){font-size:17px !important}.shop-grid>div>div:last-child>span:nth-child(3){font-size:13px !important}.shop-grid .layl-btn{padding:8px 14px !important;font-size:12px !important}.member-arc{font-size:9px;letter-spacing:2px;padding:8px 4px}}
+/* --- notify dialog --- */
+.ndlg{border:2px solid #ABD33F;border-radius:16px;background:#101013;color:#F9D9A6;padding:28px;max-width:440px;width:calc(100% - 32px);box-sizing:border-box;font-family:'Inter Tight',system-ui,sans-serif}
+.ndlg::backdrop{background:rgba(16,16,19,.7);backdrop-filter:blur(3px)}
+.ndlg-x-f{position:absolute;top:10px;right:12px;margin:0}
+.ndlg-x{cursor:pointer;background:none;border:0;color:#F9D9A6;font-size:28px;line-height:1}
+.ndlg-k{margin:0;font-size:12px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:#ABD33F}
+.ndlg-h{margin:8px 0 6px;font-family:'Bodoni Moda',serif;font-style:italic;font-size:30px;line-height:1.1}
+.ndlg-p{margin:0 0 18px;font-size:15px;line-height:1.5}
+@media (prefers-reduced-motion:reduce){.planchette,.member img,.b-letters span{transition:none}.ball-sound .w1,.ball-sound .w2{animation:none}}
+</style>
 </head>
 <body>
 <div style="background: #101013; color: #F9D9A6; font-family: 'Inter Tight', system-ui, sans-serif; min-height: 100vh; ">
 
-<header style="position: absolute; top: 0; left: 0; right: 0; z-index: 3;">
-<div style="max-width: 1360px; margin: 0 auto; padding: 24px 32px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px;">
+<header class="site-head" style="position: absolute; top: 0; left: 0; right: 0; z-index: 3;">
+<div class="site-head-in" style="max-width: 1360px; margin: 0 auto; padding: 24px 32px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px;">
 <a href="#top" style="font-family: 'Bodoni Moda', serif; font-style: italic; font-weight: 800; font-size: 32px; text-decoration: none; color: #F9D9A6;">LAY-L</a>
-<nav aria-label="Main" style="display: flex; flex-wrap: wrap; align-items: center; gap: 28px; font-size: 13px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase;">
+<nav aria-label="Main" class="site-nav" style="display: flex; flex-wrap: wrap; align-items: center; gap: 28px; font-size: 13px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase;">
 <a href="#reading" style="text-decoration: none;">The Reading</a>
 <a href="#spread" style="text-decoration: none;">The Spread</a>
 <a href="lyrics.html" data-navlyrics style="text-decoration: none;">Lyrics</a>
@@ -78,40 +186,41 @@ a{color:inherit}a:hover{color:#F52B7B}
 </header>
 
 <section id="top" style="position: relative; overflow: hidden; background: #101013;">
-<div style="position: relative; z-index: 2; width: 100%; max-width: 1360px; margin: 0 auto; padding: 88px 32px 80px; box-sizing: border-box; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 24px;">
-<div style="width: min(92vw, 820px); flex-shrink: 0; margin-top: -24px;">
+<div class="hero-in" style="position: relative; z-index: 2; width: 100%; max-width: 1360px; margin: 0 auto; padding: 88px 32px 80px; box-sizing: border-box; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 24px;">
+<div class="hero-ball" style="width: min(92vw, 820px); flex-shrink: 0; margin-top: -24px;">
 <div class="layl-float" style="position: relative; width: 100%; aspect-ratio: 1 / 1;">
 <div style="position: absolute; left: 12.7%; top: 3.8%; width: 74.3%; height: 74.3%; border-radius: 50%; overflow: hidden; background: #101013;">
 <video id="hero" autoplay muted loop playsinline preload="auto" poster="v1-poster2.jpg" src="v1-ball-teaser2.mp4" aria-label="LAY-L album teaser playing inside a crystal ball" style="width: 100%; height: 100%; object-fit: cover; display: block; transform: scale(1.04); filter: brightness(1.35) contrast(1.05) saturate(1.1);"></video>
 <div style="position: absolute; inset: 0; border-radius: 50%; background: radial-gradient(circle at 50% 50%, rgba(16,16,19,0) 75%, rgba(16,16,19,0.2) 100%);"></div>
 </div>
 <img src="band-ball2.webp" alt="" aria-hidden="true" style="position: absolute; inset: 0; width: 100%; height: 100%; display: block; pointer-events: none;">
+<button type="button" data-act="toggleSound" aria-pressed="false" id="soundBtn" class="ball-sound"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path class="w1" d="M15.5 8.5a5 5 0 0 1 0 7"/><path class="w2" d="M19 5a10 10 0 0 1 0 14"/></svg><span id="soundLabel">Sound on</span></button>
 </div>
 </div>
-<p style="margin: 0; font-size: 13px; font-weight: 600; letter-spacing: 3px; text-transform: uppercase; color: #ABD33F;">LAY-L · The debut album · 7 May 2027</p>
-<h1 style="margin: 0; font-family: 'Bodoni Moda', serif; font-weight: 600; font-size: clamp(44px, 7vw, 112px); line-height: 0.92; letter-spacing: -2px; max-width: 1100px;">I Guess the Fortune Teller <span style="font-style: italic; color: #ABD33F;">Was Right…</span></h1>
-<div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; padding-top: 8px;">
+<p class="hero-kick" style="margin: 0; font-size: 13px; font-weight: 600; letter-spacing: 3px; text-transform: uppercase; color: #ABD33F;">LAY-L · The debut album · 7 May 2027</p>
+<h1 class="hero-title" style="margin: 0; font-family: 'Bodoni Moda', serif; font-weight: 600; font-size: clamp(44px, 7vw, 112px); line-height: 0.92; letter-spacing: -2px; max-width: 1100px;">I Guess the Fortune Teller <span style="font-style: italic; color: #ABD33F;">Was Right…</span></h1>
+<div class="hero-btns" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; padding-top: 8px;">
 <a href="#reading" class="layl-btn" style="text-decoration: none; background: #F9D9A6; color: #101013; padding: 16px 28px; border-radius: 999px; font-weight: 700; font-size: 15px; border: 2px solid #F9D9A6;">Draw a card</a>
 <button type="button" data-act="playAll" class="layl-btn" style="cursor: pointer; background: transparent; color: #F9D9A6; padding: 16px 28px; border-radius: 999px; font-weight: 700; font-size: 15px; border: 2px solid #F9D9A6; font-family: inherit;">Play the album</button>
-<button type="button" data-act="toggleSound" aria-pressed="false" id="soundBtn" class="layl-btn" style="cursor: pointer; background: transparent; color: #ABD33F; padding: 16px 24px; border-radius: 999px; font-weight: 700; font-size: 15px; border: 2px solid #ABD33F; font-family: inherit; display: flex; align-items: center; gap: 10px;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/><path d="M19 5a10 10 0 0 1 0 14"/></svg><span id="soundLabel">Sound on</span></button>
 </div>
 </div>
 </section>
 
-<div aria-hidden="true" style="background: #ABD33F; color: #101013; overflow: hidden; border-top: 2px solid #101013; border-bottom: 2px solid #101013;">
-<div class="layl-marquee" style="display: flex; width: max-content; padding: 18px 0; font-family: 'Bodoni Moda', serif; font-style: italic; font-size: 30px; white-space: nowrap;">
-<span style="padding-right: 48px;">Hey girl, hold my purse ✦ Turns out I was the touch ✦ Boo! (Not you!) ✦ Bon appétit ✦ Funny how you love me when I’m nonchalant-y ✦ Return to sad-turn ✦ I showed up in my birthday suit ✦ It’s alive! ✦</span>
-<span style="padding-right: 48px;">Hey girl, hold my purse ✦ Turns out I was the touch ✦ Boo! (Not you!) ✦ Bon appétit ✦ Funny how you love me when I’m nonchalant-y ✦ Return to sad-turn ✦ I showed up in my birthday suit ✦ It’s alive! ✦</span>
+<div class="mq" role="region" aria-label="Lyrics from the album. Tap one to hear it." style="background: #ABD33F; color: #101013; overflow: hidden; border-top: 2px solid #101013; border-bottom: 2px solid #101013; position: relative;">
+<span class="mq-hint" aria-hidden="true">Tap a lyric ▸ hear it</span>
+<div class="layl-marquee mq-track" style="display: flex; width: max-content; padding: 18px 0; font-family: 'Bodoni Moda', serif; font-style: italic; font-size: 30px; white-space: nowrap;">
+<span class="mq-run"><button type="button" class="mq-l" data-lyric="Hey girl, hold my purse" data-song="10">Hey girl, hold my purse</button><span class="mq-s" aria-hidden="true">✦</span><button type="button" class="mq-l" data-lyric="Turns out I was the touch" data-song="8">Turns out I was the touch</button><span class="mq-s" aria-hidden="true">✦</span><button type="button" class="mq-l" data-lyric="Boo! (Not you!)" data-song="0">Boo! (Not you!)</button><span class="mq-s" aria-hidden="true">✦</span><button type="button" class="mq-l" data-lyric="Bon appétit">Bon appétit</button><span class="mq-s" aria-hidden="true">✦</span><button type="button" class="mq-l" data-lyric="Funny how you love me when I’m nonchalant-y" data-song="12">Funny how you love me when I’m nonchalant-y</button><span class="mq-s" aria-hidden="true">✦</span><button type="button" class="mq-l" data-lyric="Return to sad-turn" data-song="9">Return to sad-turn</button><span class="mq-s" aria-hidden="true">✦</span><button type="button" class="mq-l" data-lyric="I showed up in my birthday suit" data-song="1">I showed up in my birthday suit</button><span class="mq-s" aria-hidden="true">✦</span><button type="button" class="mq-l" data-lyric="It’s alive!" data-song="13">It’s alive!</button><span class="mq-s" aria-hidden="true">✦</span></span>
+<span class="mq-run" aria-hidden="true"><button type="button" class="mq-l" data-lyric="Hey girl, hold my purse" data-song="10" tabindex="-1">Hey girl, hold my purse</button><span class="mq-s" aria-hidden="true">✦</span><button type="button" class="mq-l" data-lyric="Turns out I was the touch" data-song="8" tabindex="-1">Turns out I was the touch</button><span class="mq-s" aria-hidden="true">✦</span><button type="button" class="mq-l" data-lyric="Boo! (Not you!)" data-song="0" tabindex="-1">Boo! (Not you!)</button><span class="mq-s" aria-hidden="true">✦</span><button type="button" class="mq-l" data-lyric="Bon appétit" tabindex="-1">Bon appétit</button><span class="mq-s" aria-hidden="true">✦</span><button type="button" class="mq-l" data-lyric="Funny how you love me when I’m nonchalant-y" data-song="12" tabindex="-1">Funny how you love me when I’m nonchalant-y</button><span class="mq-s" aria-hidden="true">✦</span><button type="button" class="mq-l" data-lyric="Return to sad-turn" data-song="9" tabindex="-1">Return to sad-turn</button><span class="mq-s" aria-hidden="true">✦</span><button type="button" class="mq-l" data-lyric="I showed up in my birthday suit" data-song="1" tabindex="-1">I showed up in my birthday suit</button><span class="mq-s" aria-hidden="true">✦</span><button type="button" class="mq-l" data-lyric="It’s alive!" data-song="13" tabindex="-1">It’s alive!</button><span class="mq-s" aria-hidden="true">✦</span></span>
 </div>
 </div>
 
 <section id="reading" style="background: #101013; color: #F9D9A6; overflow: hidden;">
 <div style="max-width: 1360px; margin: 0 auto; padding: 112px 32px; display: flex; flex-wrap: wrap; align-items: center; gap: 72px;">
-<div style="flex: 0 1 360px; margin: 0 auto;">
-<img id="drawnCard" src="" alt="" style="width: 100%; aspect-ratio: 720 / 1073; object-fit: contain; display: block; filter: drop-shadow(12px 12px 0 #F52B7B); transform: rotate(-3deg);">
+<div class="draw-wrap" style="flex: 0 1 360px; margin: 0 auto;">
+<img id="drawnCard" src="" alt="" style="width: 100%; aspect-ratio: 720 / 1073; object-fit: contain; display: block; filter: drop-shadow(12px 12px 0 #F52B7B);">
 </div>
 <div style="flex: 1 1 420px; display: flex; flex-direction: column; gap: 24px;">
-<p style="margin: 0; font-size: 13px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: #ABD33F;">The crystal ball says</p>
+<p id="drawKick" style="margin: 0; font-size: 13px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: #ABD33F;">The crystal ball says</p>
 <p style="margin: 0; font-family: 'Bodoni Moda', serif; font-style: italic; font-weight: 600; font-size: clamp(36px, 4.4vw, 64px); line-height: 1.05; letter-spacing: -1px;">“<span id="drawnLine"></span>”</p>
 <p style="margin: 0; font-size: 16px;"><span id="drawnMeta"></span></p>
 <div style="display: flex; flex-wrap: wrap; gap: 12px; padding-top: 8px;">
@@ -122,7 +231,7 @@ a{color:inherit}a:hover{color:#F52B7B}
 </div>
 </section>
 
-<section id="spread" style="background: #F9D9A6; color: #101013;">
+<section id="spread" class="spread" style="background: #F9D9A6; color: #101013; overflow: hidden;">
 <div style="max-width: 1360px; margin: 0 auto; padding: 112px 32px 96px;">
 <div style="display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 32px; padding-bottom: 24px; border-bottom: 2px solid #101013;">
 <div style="display: flex; align-items: flex-end; gap: 28px; flex-wrap: wrap;">
@@ -138,18 +247,19 @@ a{color:inherit}a:hover{color:#F52B7B}
 </div>
 </section>
 
-<section id="single" style="background: #ABD33F; color: #101013;">
-<div style="max-width: 1360px; margin: 0 auto; padding: 112px 32px; display: flex; flex-wrap: wrap; align-items: center; gap: 64px;">
-<div style="flex: 1.4 1 560px;">
+<section id="single" class="single" style="background: #ABD33F; color: #101013; position: relative; overflow: hidden;">
+<span class="single-ghost" aria-hidden="true">Voodoo</span>
+<div class="single-in" style="position: relative; max-width: 1360px; margin: 0 auto; padding: 112px 32px; display: flex; flex-wrap: wrap; align-items: center; gap: 64px;">
+<div class="single-art" style="flex: 1.4 1 560px;">
 <img src="posters-p-voodoo.jpg" alt="Voodoo Doll poster: Lilac pinning a voodoo doll" style="width: 100%; aspect-ratio: 1344 / 768; object-fit: cover; display: block; border-radius: 4px;">
 </div>
-<div style="flex: 1 1 340px; display: flex; flex-direction: column; gap: 20px;">
+<div class="single-copy" style="flex: 1 1 340px; display: flex; flex-direction: column; gap: 20px;">
 <p style="margin: 0; font-size: 13px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: #101013;">First single · Friday 22 January 2027</p>
-<h2 style="margin: 0; font-family: 'Bodoni Moda', serif; font-weight: 600; font-size: 72px; line-height: 0.95; letter-spacing: -1px;">Voodoo <span style="font-style: italic;">Doll</span></h2>
+<h2 class="single-title"><span>Voodoo</span> <span class="i">Doll</span></h2>
 <p style="margin: 0; font-size: 17px; line-height: 1.55; max-width: 420px;">A clever bit of payback with a beat drop. Pre-save it, then hand someone your purse.</p>
 <div style="display: flex; flex-wrap: wrap; gap: 12px;">
 <button type="button" data-act="playVoodoo" class="layl-btn" style="cursor: pointer; background: #101013; color: #F9D9A6; padding: 16px 28px; border-radius: 999px; font-weight: 700; font-size: 15px; border: 2px solid #101013; font-family: inherit;">Play Voodoo Doll</button>
-<a href="#follow" class="layl-btn" style="text-decoration: none; color: #101013; padding: 16px 28px; border-radius: 999px; font-weight: 700; font-size: 15px; border: 2px solid #101013;">Pre-save</a>
+<button type="button" data-notify="Voodoo Doll pre-save" class="layl-btn" style="cursor: pointer; font-family: inherit; background: transparent; color: #101013; padding: 16px 28px; border-radius: 999px; font-weight: 700; font-size: 15px; border: 2px solid #101013;">Pre-save</button>
 </div>
 </div>
 </div>
@@ -161,7 +271,7 @@ a{color:inherit}a:hover{color:#F52B7B}
 <h2 style="margin: 0; font-family: 'Bodoni Moda', serif; font-weight: 600; font-size: clamp(44px, 5vw, 72px); line-height: 1; letter-spacing: -1px;">Four readers. <span style="font-style: italic; color: #ABD33F;">One table.</span></h2>
 <p style="margin: 0; font-size: 15px; max-width: 360px; line-height: 1.5;">LAY-L is an animated band, made with AI tools and directed by people.</p>
 </div>
-<div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 32px;">
+<div class="band-grid">
 <div id="members"></div>
 </div>
 </div>
@@ -189,7 +299,7 @@ a{color:inherit}a:hover{color:#F52B7B}
 </div>
 <p style="margin: 0; font-size: 15px; max-width: 340px; line-height: 1.5;">Merch, objects and oddities from the world of LAY-L. Things you’ll actually use.</p>
 </div>
-<div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 28px; padding-top: 40px;">
+<div class="shop-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 28px; padding-top: 40px;">
 <div id="shopGrid"></div>
 </div>
 <p style="margin: 32px 0 0; font-size: 13px; color: #BFB39A;">Vinyl pre-orders open after the album. Potion No. 3 ships with a “Pay attention!” warning card. Please drink responsibly.</p>
@@ -204,35 +314,48 @@ a{color:inherit}a:hover{color:#F52B7B}
 <p style="margin: 0; font-size: 16px; line-height: 1.55;">36 seconds on a mountaintop, then the ghosts arrive. Sound on.</p>
 </div>
 <div style="flex: 2 1 560px; border: 2px solid #101013; border-radius: 12px; padding: 10px; background: #101013;">
-<video controls preload="metadata" playsinline poster="vid-teaser-poster.jpg" src="vid-album-teaser.mp4" aria-label="LAY-L album teaser" style="width: 100%; aspect-ratio: 16 / 9; display: block; border-radius: 6px; background: #101013;"></video>
+<video id="teaser" controls preload="metadata" playsinline poster="vid-teaser-poster.jpg" src="vid-album-teaser.mp4" aria-label="LAY-L album teaser" style="width: 100%; aspect-ratio: 16 / 9; display: block; border-radius: 6px; background: #101013;"></video>
 </div>
 </div>
 </section>
 
 <footer id="follow" style="background: #101013;">
-<div style="max-width: 1360px; margin: 0 auto; padding: 96px 32px 40px; display: flex; flex-wrap: wrap; gap: 48px; justify-content: space-between;">
-<div style="flex: 1 1 420px; display: flex; flex-direction: column; gap: 18px;">
-<span style="font-family: 'Bodoni Moda', serif; font-weight: 600; font-size: 44px; line-height: 1; letter-spacing: -1px;">Get your reading <span style="font-style: italic; color: #ABD33F;">first.</span></span>
-<label for="email" style="font-size: 15px;">The album and every single, the day they land.</label>
-<div style="display: flex; flex-wrap: wrap; gap: 10px;">
-<input id="email" type="email" placeholder="you@example.com" style="flex: 1 1 220px; min-height: 52px; padding: 0 20px; border-radius: 999px; border: 2px solid #F9D9A6; background: transparent; color: #F9D9A6; font-size: 16px; font-family: inherit;">
-<button type="button" class="layl-btn" style="cursor: pointer; min-height: 52px; padding: 0 26px; border-radius: 999px; border: 2px solid #ABD33F; background: #ABD33F; color: #101013; font-weight: 700; font-size: 15px; font-family: inherit;">Sign up</button>
+<div class="board-wrap">
+<div class="board" id="board" aria-hidden="true">
+<span class="b-yes" data-k="YES">Yes</span><span class="b-no" data-k="NO">No</span>
+<div class="b-letters" id="bLetters"></div>
+<span class="b-bye" data-k="BYE">Goodbye</span>
+<img src="icons2-planchette.webp" alt="" class="planchette" id="planchette">
 </div>
+<form id="signupForm" class="signup" action="https://formspree.io/f/" method="POST" novalidate>
+<h2 class="signup-h">Get your reading <span style="font-style: italic; color: #ABD33F;">first.</span></h2>
+<label for="email" class="signup-l">The album and every single, the day they land. Type your email and watch the board.</label>
+<div class="signup-row">
+<input id="email" name="email" type="email" required autocomplete="email" placeholder="you@example.com">
+<input type="hidden" name="interest" value="Newsletter">
+<input type="text" name="_gotcha" tabindex="-1" autocomplete="off" class="hp" aria-hidden="true">
+<button type="submit" class="layl-btn">Sign up</button>
 </div>
-<div style="flex: 1 1 300px; display: flex; flex-wrap: wrap; gap: 56px;">
-<div style="display: flex; flex-direction: column; gap: 12px; font-size: 15px;">
-<span style="font-size: 12px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: #ABD33F;">Stream</span>
-<a href="#follow" style="text-decoration: none;">Spotify</a>
-<a href="#follow" style="text-decoration: none;">Apple Music</a>
-<a href="#follow" style="text-decoration: none;">YouTube Music</a>
-<a href="#follow" style="text-decoration: none;">Anghami</a>
+<p class="signup-msg" role="status" aria-live="polite"></p>
+</form>
 </div>
-<div style="display: flex; flex-direction: column; gap: 12px; font-size: 15px;">
-<span style="font-size: 12px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: #ABD33F;">Follow</span>
-<a href="#follow" style="text-decoration: none;">Instagram @wearelayl</a>
-<a href="#follow" style="text-decoration: none;">TikTok @wearelayl</a>
-<a href="#follow" style="text-decoration: none;">YouTube @LAY-LMUSIC</a>
+<div style="max-width: 1360px; margin: 0 auto; padding: 24px 32px 56px; display: flex; flex-wrap: wrap; gap: 56px; justify-content: space-between;">
+<div class="foot-col">
+<span class="foot-k">Listen</span>
+<p style="margin: 0; max-width: 320px; line-height: 1.5;">Voodoo Doll lands Friday 22 January 2027 on Spotify, Apple Music, YouTube Music and Anghami. Until then, every song plays right here.</p>
+<a href="#spread">Play the private preview ↑</a>
 </div>
+<div class="foot-col">
+<span class="foot-k">Follow</span>
+<a href="https://www.instagram.com/wearelayl/" target="_blank" rel="noopener">Instagram @wearelayl ↗</a>
+<a href="https://www.tiktok.com/@wearelayl" target="_blank" rel="noopener">TikTok @wearelayl ↗</a>
+<a href="https://www.youtube.com/@LAY-LMUSIC" target="_blank" rel="noopener">YouTube @LAY-LMUSIC ↗</a>
+</div>
+<div class="foot-col">
+<span class="foot-k">Read</span>
+<a href="lyrics.html">All the lyrics</a>
+<a href="#band">Meet the band</a>
+<a href="#shop">The shop</a>
 </div>
 </div>
 <div style="max-width: 1360px; margin: 0 auto; padding: 24px 32px 40px; border-top: 1px solid #2A2A2D; font-size: 13px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px;">
@@ -240,6 +363,20 @@ a{color:inherit}a:hover{color:#F52B7B}
 <span>LAY-L is an animated band made with AI tools, directed by people.</span>
 </div>
 </footer>
+
+<dialog id="notifyDlg" class="ndlg" aria-labelledby="ndlgH">
+<form method="dialog" class="ndlg-x-f"><button class="ndlg-x" aria-label="Close">×</button></form>
+<p class="ndlg-k" id="ndlgK">Notify me</p>
+<h2 id="ndlgH" class="ndlg-h"></h2>
+<p id="ndlgP" class="ndlg-p"></p>
+<form id="notifyForm" class="signup-row" action="https://formspree.io/f/" method="POST" novalidate>
+<input name="email" type="email" required autocomplete="email" placeholder="you@example.com" aria-label="Email">
+<input type="hidden" name="interest" value="">
+<input type="text" name="_gotcha" tabindex="-1" autocomplete="off" class="hp" aria-hidden="true">
+<button type="submit" class="layl-btn">Notify me</button>
+</form>
+<p class="signup-msg" role="status" aria-live="polite"></p>
+</dialog>
 
 <div id="lyPanel" role="dialog" aria-label="Lyrics" hidden>
 <div class="lyp-head"><div><span class="lyp-k">Lyrics · <span id="lypNum"></span></span><span id="lypTitle" class="lyp-t"></span></div>
@@ -314,16 +451,26 @@ const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;',
 const hero=$('hero'), player=$('player');
 function renderActs(){
   const acts=[['I','The Spectacle',0,4],['II','The Unravelling',4,9],['III','The Response',9,14]];
-  $('acts').innerHTML=acts.map(a=>`<div style="padding-top: 56px;"><div style="display: flex; align-items: baseline; gap: 16px; padding-bottom: 24px;"><span style="font-family: 'Bodoni Moda', serif; font-style: italic; font-size: 40px; font-weight: 700;">${a[0]}</span><h3 style="margin: 0; font-size: 13px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase;">${a[1]}</h3></div><div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 32px 28px;">`+
-   tracks.slice(a[2],a[3]).map((t,j)=>{const i=a[2]+j,on=i===cur;return `<button type="button" data-play="${i}" class="layl-card" aria-label="Play ${esc(t.title)}" style="cursor: pointer; font-family: inherit; color: #101013; background: transparent; border: 0; padding: 0; display: flex; flex-direction: column; gap: 10px; align-items: stretch;"><img src="${t.card}" alt="" loading="lazy" style="width: 100%; aspect-ratio: 720 / 1073; object-fit: contain; display: block; filter: ${on?'drop-shadow(0 0 0 #F52B7B) drop-shadow(0 0 10px #F52B7B)':'none'};"><span style="font-size: 12px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; text-align: center; color: ${on?'#F52B7B':'#101013'};">${on?'Playing':'Play'} · ${esc(t.title)}</span></button>`}).join('')+`</div></div>`).join('');
+  const R=[-4,2.5,-1.5,3.5,-2.5,1.5,-3,2], Y=[0,34,-8,22,6,40,-4,18];
+  $('acts').innerHTML=acts.map(a=>`<div class="act"><span class="act-num" aria-hidden="true">${a[0]}</span><h3 class="act-name"><em>${a[0]}</em>${a[1]}</h3><div class="act-cards">`+
+   tracks.slice(a[2],a[3]).map((t,j)=>{const i=a[2]+j,on=i===cur;return `<button type="button" data-play="${i}" class="layl-card spread-card" aria-label="Play ${esc(t.title)}" style="--r:${R[i%8]}deg;--y:${Y[(i+3)%8]}px;cursor: pointer; font-family: inherit; color: #101013; background: transparent; border: 0; padding: 0; display: flex; flex-direction: column; gap: 10px; align-items: stretch;"><img src="${t.card}" alt="" loading="lazy" width="720" height="1073" style="width: 100%; height: auto; aspect-ratio: 720 / 1073; object-fit: contain; display: block;${on?' filter: drop-shadow(0 0 0 #F52B7B) drop-shadow(0 0 12px #F52B7B);':''}"><span style="font-size: 12px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; text-align: center; color: ${on?'#F52B7B':'#101013'};">${on?'Playing':'Play'} · ${esc(t.title)}</span></button>`}).join('')+`</div></div>`).join('');
 }
-function renderDrawn(){const t=tracks[drawn]; $('drawnCard').src=t.card; $('drawnCard').alt='Tarot card '+t.num+': '+t.title; $('drawnLine').textContent=t.line; $('drawnMeta').textContent='From track '+t.num+', '+t.title+' · '+t.len;}
+let firstDraw=true; const deck=[];
+function renderDrawn(){const t=tracks[drawn]; $('drawnCard').src=t.card; $('drawnCard').alt='Tarot card '+t.num+': '+t.title; $('drawnLine').textContent=t.line;
+  if(firstDraw){ $('drawKick').textContent='Your first card is our first single'; $('drawnMeta').textContent='Track '+t.num+', '+t.title+' · out Friday 22 January 2027'; }
+  else { $('drawKick').textContent='The crystal ball says'; $('drawnMeta').textContent='From track '+t.num+', '+t.title+' · '+t.len; } }
+function drawNext(){
+  if(!deck.length){ for(let i=0;i<14;i++) if(i!==drawn) deck.push(i); for(let i=deck.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[deck[i],deck[j]]=[deck[j],deck[i]];} }
+  firstDraw=false; drawn=deck.pop(); const c=$('drawnCard');
+  if(matchMedia('(prefers-reduced-motion: reduce)').matches){ renderDrawn(); return; }
+  c.classList.add('flip'); setTimeout(()=>{ renderDrawn(); c.style.setProperty('--tilt',(Math.random()*8-4).toFixed(1)+'deg'); c.classList.remove('flip'); },260);
+}
 function renderStatic(){
-  $('members').outerHTML=MEMBERS.map(m=>`<div style="display: flex; flex-direction: column; gap: 16px;"><img src="${m.img}" alt="${esc(m.alt)}" loading="lazy" style="width: 100%; aspect-ratio: 3 / 4; object-fit: cover; display: block; border: 2px solid #F9D9A6; border-radius: 6px; box-sizing: border-box;"><p style="margin: 0; font-size: 12px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: ${m.accent};">${m.arcana}</p><div style="display: flex; align-items: baseline; justify-content: space-between; gap: 8px; border-bottom: 1px solid #3A3A3D; padding-bottom: 12px;"><span style="font-family: 'Bodoni Moda', serif; font-style: italic; font-weight: 700; font-size: 36px;">${m.name}</span><span style="font-size: 13px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase;">${m.role}</span></div><p style="margin: 0; font-size: 15px; line-height: 1.5;">${esc(m.line)}</p></div>`).join('');
-  $('shopGrid').outerHTML=SHOP.map(p=>`<div style="display: flex; flex-direction: column; background: #F9D9A6; color: #101013; border-radius: 10px; overflow: hidden;"><div style="aspect-ratio: 4 / 3; background: #0B0B0D;"><img src="${p.img}" alt="${esc(p.alt)}" loading="lazy" style="width: 100%; height: 100%; object-fit: ${p.fit}; display: block;"></div><div style="padding: 16px 18px 18px; display: flex; flex-direction: column; gap: 6px; flex: 1;"><span style="font-size: 12px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: #7A1E46;">${p.kind}</span><span style="font-family: 'Bodoni Moda', serif; font-weight: 700; font-size: 22px; line-height: 1.15;">${esc(p.name)}</span><span style="font-size: 14px; line-height: 1.45; flex: 1;">${esc(p.line)}</span><a href="#follow" class="layl-btn" style="margin-top: 10px; align-self: flex-start; text-decoration: none; background: #101013; color: #F9D9A6; padding: 10px 18px; border-radius: 999px; font-weight: 700; font-size: 13px; border: 2px solid #101013;">Notify me</a></div></div>`).join('');
+  $('members').outerHTML=MEMBERS.map((m,i)=>`<div class="member" style="--r:${i%2?1.5:-1.5}deg"><div style="position: relative;"><img src="${m.img}" alt="${esc(m.alt)}" loading="lazy" style="border: 2px solid ${m.accent};"><span class="member-arc" style="color: ${m.accent}; border: 1px solid ${m.accent};">${m.arcana}</span></div><span class="member-name">${m.name}</span><span class="member-role" style="color: ${m.accent};">${m.role}</span><p style="margin: 0; font-size: 15px; line-height: 1.5;">${esc(m.line)}</p></div>`).join('');
+  $('shopGrid').outerHTML=SHOP.map(p=>`<div style="display: flex; flex-direction: column; background: #F9D9A6; color: #101013; border-radius: 10px; overflow: hidden;"><div style="aspect-ratio: 4 / 3; background: #0B0B0D;"><img src="${p.img}" alt="${esc(p.alt)}" loading="lazy" style="width: 100%; height: 100%; object-fit: ${p.fit}; display: block;"></div><div style="padding: 16px 18px 18px; display: flex; flex-direction: column; gap: 6px; flex: 1;"><span style="font-size: 12px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: #7A1E46;">${p.kind}</span><span style="font-family: 'Bodoni Moda', serif; font-weight: 700; font-size: 22px; line-height: 1.15;">${esc(p.name)}</span><span style="font-size: 14px; line-height: 1.45; flex: 1;">${esc(p.line)}</span><button type="button" data-notify="${esc(p.name)}" class="layl-btn" style="cursor: pointer; font-family: inherit; margin-top: 10px; align-self: flex-start; background: #101013; color: #F9D9A6; padding: 10px 18px; border-radius: 999px; font-weight: 700; font-size: 13px; border: 2px solid #101013;">Notify me</button></div></div>`).join('');
 }
-function setSound(on){ hero.muted=!on; if(on) hero.currentTime=0; hero.play().catch(()=>{}); $('soundLabel').textContent=on?'Sound off':'Sound on'; $('soundBtn').setAttribute('aria-pressed',String(on)); }
-function play(i){ cur=i; setSound(false); const t=tracks[i]; $('nowbar').hidden=false; document.body.style.paddingBottom='120px'; $('nowObj').src=t.obj; $('nowNum').textContent=t.num; $('nowTitle').textContent=t.title; player.src=t.audio; kReset(); if(LP.open){ lpBuild(); } player.play().catch(()=>{}); renderActs(); }
+function setSound(on){ hero.muted=!on; if(on){ hero.currentTime=0; hush('hero'); } hero.play().catch(()=>{}); $('soundLabel').textContent=on?'Sound off':'Sound on'; $('soundBtn').setAttribute('aria-pressed',String(on)); }
+function play(i,at){ cur=i; setSound(false); const t=tracks[i]; $('nowbar').hidden=false; document.body.style.paddingBottom='120px'; $('nowObj').src=t.obj; $('nowNum').textContent=t.num; $('nowTitle').textContent=t.title; player.src=t.audio; kReset(); if(LP.open){ lpBuild(); } if(at){ player.addEventListener('loadedmetadata',()=>{ player.currentTime=at; },{once:true}); } player.play().catch(()=>{}); renderActs(); }
 const nextIdx=()=>cur===null?0:(cur+1)%14;
 player.addEventListener('ended',()=>play(nextIdx()));
 const K={line:-1,word:-1,raf:0,data:null};
@@ -388,9 +535,100 @@ document.addEventListener('click',e=>{
   const a=e.target.closest('[data-act]'); if(!a) return; const k=a.dataset.act;
   if(k==='playAll') play(0); else if(k==='playVoodoo') play(10); else if(k==='playDrawn') play(drawn);
   else if(k==='next') play(nextIdx());
-  else if(k==='draw'){ let n=drawn; while(n===drawn) n=Math.floor(Math.random()*14); drawn=n; renderDrawn(); }
+  else if(k==='draw') drawNext();
   else if(k==='toggleSound') setSound(hero.muted);
 });
+
+/* ---- one source of sound at a time ---- */
+const teaser=$('teaser');
+function hush(keep){
+  if(keep!=='player' && !player.paused) player.pause();
+  if(keep!=='teaser' && teaser && !teaser.paused) teaser.pause();
+  if(keep!=='hero' && !hero.muted){ hero.muted=true; $('soundLabel').textContent='Sound on'; $('soundBtn').setAttribute('aria-pressed','false'); }
+}
+player.addEventListener('play',()=>hush('player'));
+if(teaser) teaser.addEventListener('play',()=>hush('teaser'));
+
+/* ---- marquee lyrics play their song from that line ---- */
+const normW=x=>x.toLowerCase().replace(/[’']/g,"'").replace(/[^a-z0-9' ]/g,' ').replace(/\s+/g,' ').trim();
+function lyricAt(song,phrase){
+  const L=(window.LYRICS_SYNC||{})[song]; if(!L) return 0;
+  const want=normW(phrase).split(' ').slice(0,3).join(' ');
+  for(const l of L){ if(normW(l.w.map(w=>w[0]).join(' ')).includes(want)) return Math.max(0,l.t-0.4); }
+  return 0;
+}
+document.addEventListener('DOMContentLoaded',function(){ // resolve songs for phrases without a fixed song
+  document.querySelectorAll('.mq-l:not([data-song])').forEach(b=>{
+    const L=window.LYRICS_SYNC||{}; const want=normW(b.dataset.lyric);
+    for(const k in L){ if(L[k].some(l=>normW(l.w.map(w=>w[0]).join(' ')).includes(want))){ b.dataset.song=k; break; } }
+    if(!b.dataset.song){ b.disabled=true; b.style.cursor='default'; }
+  });
+});
+document.addEventListener('click',e=>{
+  const b=e.target.closest('.mq-l'); if(!b||b.dataset.song===undefined) return;
+  const i=+b.dataset.song; play(i,lyricAt(i,b.dataset.lyric));
+  document.querySelectorAll('.mq-l').forEach(x=>x.classList.toggle('on',x.dataset.lyric===b.dataset.lyric));
+});
+
+/* ---- signup (Formspree) ---- */
+const FORMSPREE_ID='';   // paste the Formspree form ID here, e.g. 'xyzabcd'
+function wireForm(form,onDone){
+  const msg=form.parentElement.querySelector('.signup-msg')||form.querySelector('.signup-msg');
+  form.addEventListener('submit',async e=>{
+    e.preventDefault();
+    const em=form.querySelector('input[type=email]'); const btn=form.querySelector('button[type=submit]');
+    msg.className='signup-msg';
+    if(!em.value || !em.checkValidity()){ msg.textContent='That email doesn’t look right yet.'; msg.classList.add('err'); em.focus(); return; }
+    if(!FORMSPREE_ID){ msg.textContent='Sign-ups open very soon. Follow @wearelayl in the meantime.'; msg.classList.add('err'); return; }
+    btn.disabled=true; msg.textContent='Sending…';
+    try{
+      const r=await fetch('https://formspree.io/f/'+FORMSPREE_ID,{method:'POST',body:new FormData(form),headers:{Accept:'application/json'}});
+      if(!r.ok) throw 0;
+      form.reset(); msg.textContent='You’re on the list. The cards will find you.'; msg.classList.add('ok'); onDone&&onDone(true);
+    }catch(_){ msg.textContent='The spirits dropped that one. Please try again.'; msg.classList.add('err'); onDone&&onDone(false); }
+    btn.disabled=false;
+  });
+}
+const dlg=$('notifyDlg');
+const NOTE={'Voodoo Doll pre-save':['Pre-save Voodoo Doll','Pre-save opens soon. Leave your email and we’ll send you the link the moment it’s live, then the song on 22 January.']};
+document.addEventListener('click',e=>{
+  const b=e.target.closest('[data-notify]'); if(!b) return;
+  const n=b.dataset.notify, t=NOTE[n]||['Tell me when the '+n.replace(/^The /,'')+' drops','The shop opens in 2027. One email when it’s ready, nothing else.'];
+  $('ndlgK').textContent=n.includes('pre-save')?'First single':'The shop';
+  $('ndlgH').textContent=t[0]; $('ndlgP').textContent=t[1];
+  const f=$('notifyForm'); f.reset(); f.querySelector('[name=interest]').value=n; f.querySelector('button').textContent=n.includes('pre-save')?'Remind me':'Notify me';
+  dlg.querySelector('.signup-msg').textContent='';
+  if(dlg.showModal) dlg.showModal(); else dlg.setAttribute('open','');
+  setTimeout(()=>f.querySelector('input[type=email]').focus(),50);
+});
+wireForm($('notifyForm'),ok=>{ if(ok) setTimeout(()=>dlg.close(),1600); });
+
+/* ---- spirit board: the planchette reads what you type ---- */
+(function(){
+  const board=$('board'), box=$('bLetters'), pl=$('planchette'); if(!board) return;
+  const rows=['ABCDEFGHIJKLM','NOPQRSTUVWXYZ','1234567890'];
+  const pos={};
+  rows.forEach((r,ri)=>{ [...r].forEach((ch,ci)=>{
+    const n=r.length, f=n>1?ci/(n-1):.5;
+    const spread=ri===2?.5:.84, x=50+(f-.5)*100*spread;
+    const arc=ri===2?0:Math.sin(f*Math.PI)*(ri===0?16:12);
+    const y=(ri===0?40:ri===1?60:80)-arc;
+    const sp=document.createElement('span'); sp.textContent=ch; sp.style.left=x+'%'; sp.style.top=y+'%'; if(ri===2) sp.style.fontSize='clamp(14px,1.6vw,22px)';
+    box.appendChild(sp); pos[ch]=[x,y,sp];
+  }); });
+  const yes=board.querySelector('.b-yes'), no=board.querySelector('.b-no');
+  pos.YES=[6,12,yes]; pos.NO=[94,12,no];
+  let lit=null;
+  function go(k){ const p=pos[k]; if(!p) return; pl.style.left=p[0]+'%'; pl.style.top=p[1]+'%'; pl.style.setProperty('--pr',((p[0]-50)/50*12).toFixed(1)+'deg'); if(lit) lit.classList.remove('lit'); lit=p[2]; lit.classList.add('lit'); }
+  const em=$('email'); let last='';
+  em.addEventListener('input',()=>{ const v=em.value; if(v.length>last.length){ const c=v[v.length-1].toUpperCase(); if(pos[c]) go(c); else if(c==='@') go('YES'); } last=v; });
+  em.addEventListener('blur',()=>{ if(lit){ lit.classList.remove('lit'); lit=null; } });
+  wireForm($('signupForm'),ok=>go(ok?'YES':'NO'));
+  // idle drift until someone types
+  const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches; let idle=0;
+  if(!reduce){ const word=['L','A','Y','L']; setInterval(()=>{ if(document.activeElement===em||em.value) return; if(board.getBoundingClientRect().top>innerHeight) return; go(word[idle++%4]); setTimeout(()=>{ if(lit&&document.activeElement!==em){ lit.classList.remove('lit'); lit=null; } },900); },1600); }
+})();
+
 hero.muted=true; hero.play().catch(()=>{});
 renderStatic(); renderActs(); renderDrawn();
 </script>
