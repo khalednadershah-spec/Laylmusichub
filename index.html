@@ -262,10 +262,10 @@ a{color:inherit}a:hover{color:#F52B7B}
 .shopban-btn:hover,.shopban-btn:focus-visible{transform:translate(-3px,-3px);box-shadow:9px 9px 0 #ABD33F}
 .shopban-btn span{color:#ABD33F;margin-left:6px}
 .shopban-fan{all:unset;cursor:pointer;position:relative;display:block;height:clamp(300px,34vw,440px)}
-.shopban-fan img{position:absolute;left:50%;bottom:4%;width:clamp(130px,14vw,200px);aspect-ratio:4/5;object-fit:cover;border-radius:10px;border:3px solid #101013;box-shadow:0 14px 26px rgba(16,16,19,.35);transform-origin:50% 140%;transform:translateX(-50%) rotate(calc((var(--i) - 2) * 11deg));transition:transform .45s cubic-bezier(.3,.7,.3,1)}
+.shopban-fan img{position:absolute;left:50%;bottom:4%;height:auto;width:clamp(130px,14vw,200px);aspect-ratio:4/5;object-fit:cover;border-radius:10px;border:3px solid #101013;box-shadow:0 14px 26px rgba(16,16,19,.35);transform-origin:50% 140%;transform:translateX(-50%) rotate(calc((var(--i) - 2) * 11deg));transition:transform .45s cubic-bezier(.3,.7,.3,1)}
 .shopban-fan:hover img,.shopban-fan:focus-visible img{transform:translateX(-50%) rotate(calc((var(--i) - 2) * 17deg)) translateY(-14px)}
 .shopban-fan:focus-visible{outline:3px solid #101013;outline-offset:6px;border-radius:12px}
-@media (max-width:800px){.shopban-in{grid-template-columns:1fr;padding:64px 16px 48px;gap:8px}.shopban-fan{height:300px;order:-1}.shopban-fan img{width:120px}.shopban h2 em{margin-left:.4em}}
+@media (max-width:800px){.shopban-in{grid-template-columns:1fr;padding:28px 16px 48px;gap:4px}.shopban-fan{height:232px;order:-1;margin-bottom:18px}.shopban-fan img{width:118px;bottom:6%}.shopban h2 em{margin-left:.4em}}
 /* --- shop dialog --- */
 .shopdlg{width:100vw;height:100dvh;max-width:none;max-height:none;margin:0;padding:0 max(16px,calc((100vw - 1360px)/2 + 32px)) 48px;border:0;background:#101013;color:#F9D9A6;box-sizing:border-box;overflow-y:auto;font-family:'Inter Tight',system-ui,sans-serif}
 .shopdlg::backdrop{background:#101013}
@@ -438,7 +438,7 @@ a{color:inherit}a:hover{color:#F52B7B}
 <p class="shopban-p">Plush curses, palm-frond gold, potion shots and a spirit board that sometimes says “I don’t know.” Eighteen oddities from the world of LAY-L.</p>
 <button type="button" class="shopban-btn" data-act="openShop" aria-haspopup="dialog">Open the shop <span aria-hidden="true">✦</span></button>
 </div>
-<button type="button" class="shopban-fan" data-act="openShop" aria-label="Open the shop"><img src="merch/merch-asmar-cap.webp" alt="" loading="lazy" style="--i:0"><img src="merch/merch-palm-earring.webp" alt="" loading="lazy" style="--i:1"><img src="merch/merch-keychain.webp" alt="" loading="lazy" style="--i:2"><img src="merch/merch-luv-cat.webp" alt="" loading="lazy" style="--i:3"><img src="merch/merch-voodoo-plush.webp" alt="" loading="lazy" style="--i:4"></button>
+<button type="button" class="shopban-fan" data-act="openShop" aria-label="Open the shop"><img src="merch/fan-lamp.webp" alt="" loading="lazy" width="440" height="550" style="--i:0"><img src="merch/fan-headwrap.webp" alt="" loading="lazy" width="440" height="550" style="--i:1"><img src="merch/fan-keychain.webp" alt="" loading="lazy" width="440" height="550" style="--i:2"><img src="merch/fan-cat.webp" alt="" loading="lazy" width="440" height="550" style="--i:3"><img src="merch/fan-voodoo.webp" alt="" loading="lazy" width="440" height="550" style="--i:4"></button>
 </div>
 </section>
 
