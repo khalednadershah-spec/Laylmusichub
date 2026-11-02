@@ -106,6 +106,7 @@ a{color:inherit}
 .art{width:100%;aspect-ratio:16/9;border-radius:10px;overflow:hidden;position:relative;background:
   repeating-linear-gradient(135deg,#1b1e26 0 10px,#20242e 10px 20px);display:grid;place-items:center}
 .art img{width:100%;height:100%;object-fit:cover;display:block}
+.art.sq{aspect-ratio:1}
 .art .ph{font-family:var(--jp);font-weight:900;color:var(--amber);font-size:44px;line-height:1;text-align:center}
 .art .ph small{display:block;font-family:var(--mono);font-size:9px;letter-spacing:.25em;color:#8b93a1;margin-top:8px;font-weight:700}
 .ptop{display:flex;justify-content:space-between;align-items:center;gap:10px;font-size:10px;letter-spacing:.24em;text-transform:uppercase;color:var(--ink2);font-weight:700}
@@ -291,7 +292,9 @@ footer a{text-decoration:none}footer a:hover{color:var(--amber)}
     art.innerHTML = '<div class="ph">'+t.kanji+'</div>';
     var img = new Image(); img.alt = t.name + " artwork";
     img.onload = function(){ art.innerHTML = ""; art.appendChild(img); };
-    img.src = t.art;
+    var sq = window.matchMedia && matchMedia("(max-width:820px)").matches;
+    art.classList.toggle("sq", !!sq);
+    img.src = sq ? t.art.replace("art-","sq-") : t.art;
   }
   function load(i, autoplay){
     cur = i; var t = TRACKS[i];
