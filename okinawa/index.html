@@ -254,6 +254,52 @@ footer a{text-decoration:none}footer a:hover{color:var(--amber)}
 .fly.big #lyrin{min-height:0}
 .lyrbox .none{color:#6f7787;font-size:11px;letter-spacing:.25em;text-transform:uppercase;text-align:center;padding:26px 0}
 @media (max-width:820px){.lyrbox{padding:0 12px 10px}.lyrbox .exp{right:20px;bottom:14px}}
+
+/* in-flight magazine */
+.mz{padding:70px 0 10px}
+.mz-head{text-align:center;max-width:720px;margin:0 auto 34px}
+.mz-kick{font-family:var(--jp);font-weight:700;color:var(--sea);letter-spacing:.3em;font-size:12px;text-transform:uppercase}
+.mz-head h2{font-family:var(--jp);font-weight:900;color:#f2f4f7;font-size:clamp(30px,5vw,52px);letter-spacing:.02em;margin:10px 0 12px}
+.mz-tag{color:var(--amber);font-weight:700;letter-spacing:.12em;font-size:12px;text-transform:uppercase;line-height:1.7}
+.mz-intro{max-width:760px;margin:0 auto;color:#c4c9d2;font-family:var(--jp);font-size:16px;line-height:1.75}
+.mz-intro p{margin:0 0 16px}
+.mz-kb{margin:22px 0 0;border-left:3px solid var(--hibiscus);padding:12px 16px;background:#11141b;border-radius:0 10px 10px 0;font-size:14.5px;color:#d9dde4}
+.mz-kb b{display:block;font-family:var(--mono);font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--hibiscus);margin-bottom:4px}
+.mz-sub{font-size:11px;letter-spacing:.26em;text-transform:uppercase;color:#6f7787;margin:46px 0 16px;text-align:center}
+.mz-route ol{list-style:none;display:grid;grid-template-columns:repeat(8,minmax(0,1fr));position:relative;padding:0;margin:0}
+.mz-route ol::before{content:"";position:absolute;left:6%;right:6%;top:9px;border-top:2px dashed #2f3746}
+.mz-route li{position:relative;text-align:center;padding:26px 4px 0;font-size:12px;color:#c4c9d2;line-height:1.35}
+.mz-route li::before{content:"";position:absolute;top:2px;left:50%;width:14px;height:14px;margin-left:-7px;border-radius:50%;background:var(--night);border:3px solid var(--amber)}
+.mz-route li:last-child::before{background:var(--amber)}
+.mz-route b{display:block;color:var(--amber);font-size:15px;margin-bottom:4px}
+.mz-route span{display:block;font-family:var(--jp);font-weight:700}
+.mz-route i{display:block;font-style:normal;color:var(--sea);font-size:10px;letter-spacing:.12em;margin-top:4px}
+.mz-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(310px,1fr));gap:22px}
+.mz-card{background:var(--board);border:1px solid #1f2430;border-radius:14px;overflow:hidden;display:flex;flex-direction:column}
+.mz-card.bonus{border-style:dashed;border-color:#2a4a48}
+.mz-art{position:relative;aspect-ratio:16/9;background:#111318}
+.mz-art img{width:100%;height:100%;object-fit:cover;display:block}
+.mz-era{position:absolute;left:12px;bottom:12px;background:rgba(7,9,13,.82);color:var(--amber);font-weight:800;font-size:12px;letter-spacing:.14em;padding:5px 9px;border-radius:6px}
+.mz-body{padding:18px 18px 20px;display:flex;flex-direction:column;flex:1}
+.mz-no{font-size:11px;letter-spacing:.2em;color:var(--sea);font-weight:700;text-transform:uppercase}
+.mz-card h3{font-family:var(--jp);font-weight:900;color:#f2f4f7;font-size:22px;line-height:1.2;margin:6px 0 4px}
+.mz-card h3 small{display:block;font-size:13px;color:#8b93a1;font-weight:700;margin-top:4px;letter-spacing:.08em}
+.mz-genre{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#8b93a1;margin-bottom:14px}
+.mz-card blockquote{font-family:var(--jp);font-weight:700;color:var(--amber);font-size:17px;line-height:1.45;border-left:3px solid var(--amber);padding:2px 0 2px 12px;margin:0 0 14px}
+.mz-body>p{font-family:var(--jp);font-size:14.5px;line-height:1.65;color:#c4c9d2;margin:0 0 12px}
+.mz-body .mz-jp,.mz-body .mz-theme{font-size:13.5px;color:#aab1bd}
+.mz-jp b,.mz-theme b{display:inline-block;margin-right:8px;font-family:var(--mono);font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--sea);border:1px solid #2a4a48;border-radius:4px;padding:1px 6px;vertical-align:1px}
+.mz-play{margin-top:auto;align-self:flex-start;background:transparent;border:1px solid #2f3746;color:#e7eaf0;font:inherit;font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;padding:10px 14px;border-radius:999px;cursor:pointer}
+.mz-play:hover{border-color:var(--amber);color:var(--amber)}
+@media (max-width:820px){
+  .mz{padding-top:54px}
+  .mz-intro{font-size:15px}
+  .mz-route ol{grid-template-columns:repeat(2,minmax(0,1fr));row-gap:22px}
+  .mz-route ol::before{display:none}
+  .mz-route li{text-align:left;padding:0 0 0 24px}
+  .mz-route li::before{left:0;margin-left:0;top:3px}
+  .mz-grid{grid-template-columns:1fr}
+}
 </style>
 </head>
 <body>
@@ -286,6 +332,139 @@ if("IntersectionObserver" in window)new IntersectionObserver(function(es){es.for
     <div class="bfoot"><span>All flights one way</span><span>Bonus flight · LYL 009</span></div>
   </section>
 
+
+  <section class="mz" id="about" aria-labelledby="mz-h">
+    <div class="mz-head">
+      <p class="mz-kick" lang="ja">機内誌 · In-flight magazine</p>
+      <h2 id="mz-h">About the album</h2>
+      <p class="mz-tag">Eight tracks. One bonus. Nine musical worlds. One-way ticket.</p>
+    </div>
+    <div class="mz-intro">
+      <p>Okinawa… One Way… is a journey through Japan as seen through film, music and pop culture: nine imaginary film soundtracks, each from a different decade and genre, all sharing one cinematic universe.</p><p>The title comes from Quentin Tarantino’s Kill Bill: Vol. 1, where The Bride asks for a one-way ticket to Okinawa. For LAY-L, that ticket is a promise: the freedom to travel between sounds and never return to the same one twice.</p><p>From 1960s garage rock and 1970s enka to city-pop disco, 90s R&amp;B, modern Japanese hip-hop and a Ghibli-style waltz, the songs follow fleeting relationships, strange attachments and ordinary things that turn out to matter. Some stories are absurd, some intimate, some provocative, and every one is sung with complete sincerity.</p>
+      <aside class="mz-kb"><b>The Kill Bill connection</b>Kill Bill is the album’s starting point: it gives the record its title, and two of its songs, Shura no Hana and The 5.6.7.8’s, inspire tracks 05 and 06.</aside>
+    </div>
+    <div class="mz-route"><p class="mz-sub">Route map · where each song takes off from</p><ol><li><b>1960s</b><span>Plastic Flower</span><i>LYL 006</i></li><li><b>1973</b><span>The Voice at Platform Two</span><i>LYL 005</i></li><li><b>1979</b><span>Why Would I?</span><i>LYL 004</i></li><li><b>1990s</b><span>Sakura</span><i>LYL 002</i></li><li><b>1996</b><span>Tamagotchi Luv</span><i>LYL 009</i></li><li><b>Y2K</b><span>Lost in Japan</span><i>LYL 003</i></li><li><b>2004</b><span>The Wind Called In Sick</span><i>LYL 008</i></li><li><b>Now</b><span>One Missed Call · ASMR</span><i>LYL 001</i></li></ol></div>
+    <p class="mz-sub">Nine destinations</p>
+    <div class="mz-grid">
+      <article class="mz-card">
+        <div class="mz-art"><img src="art-01.webp" alt="One Missed Call.. Two… artwork" loading="lazy" width="1600" height="900"><span class="mz-era">Now</span></div>
+        <div class="mz-body">
+          <p class="mz-no">LYL 001</p>
+          <h3>One Missed Call.. Two… <small lang="ja">不在着信…2件…</small></h3>
+          <p class="mz-genre">Modern Japanese Hip-Hop · Club Rap</p>
+          <blockquote>Tick-tock, running late<br>You still don’t know how to play the game</blockquote>
+          <p>Someone keeps calling, convinced persistence will earn a reply. It won’t. As the missed calls pile up, a would-be confrontation turns into a gleeful display of indifference: the joy of refusing to take part in someone else’s drama.</p>
+          <p class="mz-jp"><b lang="ja">日本</b>A hypnotic three-note shamisen riff over bass-heavy club rap, and a title that echoes Takashi Miike’s 2003 J-horror One Missed Call (着信アリ).</p>
+          <p class="mz-theme"><b>Theme</b>Indifference, boundaries and the power of silence</p>
+          <button type="button" class="mz-play" data-play="0">▶ Board flight LYL 001</button>
+        </div>
+      </article>
+      <article class="mz-card">
+        <div class="mz-art"><img src="art-02.webp" alt="Sakura artwork" loading="lazy" width="1600" height="900"><span class="mz-era">1990s</span></div>
+        <div class="mz-body">
+          <p class="mz-no">LYL 002</p>
+          <h3>Sakura <small lang="ja">桜</small></h3>
+          <p class="mz-genre">Late-90s Alt R&amp;B · Neo-Soul · Boom-Bap</p>
+          <blockquote>Cold rice and tempura<br>You were talking through the morning</blockquote>
+          <p>Someone keeps turning up, making themselves at home, then leaving without a word. She knows they’re unreliable, yet what she misses isn’t the relationship. It’s the small things: sitting on the floor, cold rice and tempura, talking about nothing until morning.</p>
+          <p class="mz-jp"><b lang="ja">日本</b>Sakura (桜), the cherry blossom and Japan’s best-known symbol, plus tempura and everyday intimacy, set to late-90s neo-soul.</p>
+          <p class="mz-theme"><b>Theme</b>Temporary intimacy and nostalgia for ordinary moments</p>
+          <button type="button" class="mz-play" data-play="1">▶ Board flight LYL 002</button>
+        </div>
+      </article>
+      <article class="mz-card">
+        <div class="mz-art"><img src="art-03.webp" alt="Lost in Japan artwork" loading="lazy" width="1600" height="900"><span class="mz-era">Y2K</span></div>
+        <div class="mz-body">
+          <p class="mz-no">LYL 003</p>
+          <h3>Lost in Japan <small lang="ja">日本で迷子</small></h3>
+          <p class="mz-genre">90s Gospel-R&amp;B · Y2K Alt Pop</p>
+          <blockquote>Funny how a city you’ve never seen<br>Can feel familiar on the first night</blockquote>
+          <p>A trip through Japan turns unexpectedly emotional. Matcha from a vending machine, the wrong train, a paper fortune carried off by the breeze: every new detail brings back someone who isn’t there. Hushed verses burst into huge gospel choruses.</p>
+          <p class="mz-jp"><b lang="ja">日本</b>The album’s most explicit link to Japan: Shibuya, train stations and vending machines, with a harmonising shamisen beneath the choir.</p>
+          <p class="mz-theme"><b>Theme</b>Travel, and familiar feelings in unfamiliar places</p>
+          <button type="button" class="mz-play" data-play="2">▶ Board flight LYL 003</button>
+        </div>
+      </article>
+      <article class="mz-card">
+        <div class="mz-art"><img src="art-07.webp" alt="Why Would I? artwork" loading="lazy" width="1600" height="900"><span class="mz-era">1979</span></div>
+        <div class="mz-body">
+          <p class="mz-no">LYL 004</p>
+          <h3>Why Would I? <small lang="ja">なぜ、私が？</small></h3>
+          <p class="mz-genre">1970s Japanese City Pop · Disco · Soul-Funk</p>
+          <blockquote>There’s a little difference<br>Between what I can and what I choose</blockquote>
+          <p>She could fix it. She could compromise, try again, make it work. Instead she asks a simpler question: why would I? No confrontation and no tears, just a disco groove and the easy confidence of choosing not to.</p>
+          <p class="mz-jp"><b lang="ja">日本</b>Rooted in the golden age of Japanese city pop, the era of Miki Matsubara’s 1979 classic Mayonaka no Door (Stay With Me).</p>
+          <p class="mz-theme"><b>Theme</b>Self-respect and personal choice</p>
+          <button type="button" class="mz-play" data-play="3">▶ Board flight LYL 004</button>
+        </div>
+      </article>
+      <article class="mz-card">
+        <div class="mz-art"><img src="art-04.webp" alt="The Voice at Platform Two artwork" loading="lazy" width="1600" height="900"><span class="mz-era">1973</span></div>
+        <div class="mz-body">
+          <p class="mz-no">LYL 005</p>
+          <h3>The Voice at Platform Two <small lang="ja">二番線の声</small></h3>
+          <p class="mz-genre">1970s Enka · Kayōkyoku · Cinematic Ballad</p>
+          <blockquote>I watched a woman disappear<br>Who’d never lived at all</blockquote>
+          <p>Every morning the same recorded voice asks passengers to stand behind the yellow line. One Tuesday it’s replaced. The trains still run on time and nobody notices, except her. A routine software update becomes a quiet, genuine tragedy.</p>
+          <p class="mz-jp"><b lang="ja">日本</b>Inspired by Meiko Kaji’s Shura no Hana, theme of the 1973 film Lady Snowblood, later used by Tarantino in Kill Bill: Vol. 1.</p>
+          <p class="mz-theme"><b>Theme</b>Attachment to the familiar, and unexpected grief</p>
+          <button type="button" class="mz-play" data-play="4">▶ Board flight LYL 005</button>
+        </div>
+      </article>
+      <article class="mz-card">
+        <div class="mz-art"><img src="art-05.webp" alt="Plastic Flower artwork" loading="lazy" width="1600" height="900"><span class="mz-era">1960s</span></div>
+        <div class="mz-body">
+          <p class="mz-no">LYL 006</p>
+          <h3>Plastic Flower <small lang="ja">プラスチック・フラワー</small></h3>
+          <p class="mz-genre">1960s Japanese Garage Rock · Surf · Rockabilly</p>
+          <blockquote>Who gave you permission to die?<br>You weren’t even alive!</blockquote>
+          <p>A waitress throws away her favourite fake rose. Everyone says it’s replaceable; it was never alive. She buys an identical one, but it stands up much too straight. A trivial loss blown up into a shouted, fuzz-drenched catastrophe.</p>
+          <p class="mz-jp"><b lang="ja">日本</b>Channels The 5.6.7.8’s, the Tokyo garage-rock band who play the House of Blue Leaves scene in Kill Bill: Vol. 1.</p>
+          <p class="mz-theme"><b>Theme</b>The value of “worthless” things</p>
+          <button type="button" class="mz-play" data-play="5">▶ Board flight LYL 006</button>
+        </div>
+      </article>
+      <article class="mz-card">
+        <div class="mz-art"><img src="art-06.webp" alt="ASMR Stimulation artwork" loading="lazy" width="1600" height="900"><span class="mz-era">Now</span></div>
+        <div class="mz-body">
+          <p class="mz-no">LYL 007</p>
+          <h3>ASMR Stimulation <small lang="ja">ASMR・スティミュレーション</small></h3>
+          <p class="mz-genre">Dark Electro-Funk · Alt R&amp;B · Trip-Hop</p>
+          <blockquote>Don’t get to the point<br>I prefer the scenic route</blockquote>
+          <p>An ordinary conversation becomes a seduction. Pauses, breaths, pronunciation and polite bureaucratic phrases take on double meanings, and the whole game is in the waiting. Clicks, whispers and binaural stereo make the sound itself the object of desire.</p>
+          <p class="mz-jp"><b lang="ja">日本</b>Drawn from Japan’s deep ASMR culture: mimikaki (耳かき), binaural recording and intimate “situation voice” (シチュエーションボイス) performances.</p>
+          <p class="mz-theme"><b>Theme</b>Auditory pleasure and the seduction of anticipation</p>
+          <button type="button" class="mz-play" data-play="6">▶ Board flight LYL 007</button>
+        </div>
+      </article>
+      <article class="mz-card">
+        <div class="mz-art"><img src="art-08.webp" alt="The Wind Called In Sick artwork" loading="lazy" width="1600" height="900"><span class="mz-era">2004</span></div>
+        <div class="mz-body">
+          <p class="mz-no">LYL 008</p>
+          <h3>The Wind Called In Sick <small lang="ja">風が病欠した日</small></h3>
+          <p class="mz-genre">Japanese Romantic Waltz · Cinematic Chamber Pop</p>
+          <blockquote>It comes to me in pieces<br>And leaves before it ends</blockquote>
+          <p>One afternoon the wind simply stops. In the stillness, a woman sings from an upstairs window and never reaches the last line. The melody stays half-remembered until, walking home, she sings the ending wrong. A small waltz about memory and the beauty of unfinished things.</p>
+          <p class="mz-jp"><b lang="ja">日本</b>Inspired by Joe Hisaishi’s Merry-Go-Round of Life from Studio Ghibli’s Howl’s Moving Castle.</p>
+          <p class="mz-theme"><b>Theme</b>Memory, impermanence and unfinished things</p>
+          <button type="button" class="mz-play" data-play="7">▶ Board flight LYL 008</button>
+        </div>
+      </article>
+      <article class="mz-card bonus">
+        <div class="mz-art"><img src="art-09.webp" alt="Tamagotchi Luv artwork" loading="lazy" width="1600" height="900"><span class="mz-era">1996</span></div>
+        <div class="mz-body">
+          <p class="mz-no">LYL 009 · Bonus track</p>
+          <h3>Tamagotchi Luv <small lang="ja">たまごっち・ラヴ</small></h3>
+          <p class="mz-genre">Dark R&amp;B · Alt R&amp;B</p>
+          <blockquote>You call it love but it’s luv with a u<br>You can’t call it love when it’s only you</blockquote>
+          <p>Love as a virtual pet: fed when it’s convenient, ignored when it isn’t, kept alive at a distance. A 90s toy’s innocence against the control games of adult relationships, and the question of whether you care for someone or just like being needed.</p>
+          <p class="mz-jp"><b lang="ja">日本</b>Built on Tamagotchi, the virtual pet Bandai launched in Japan in November 1996.</p>
+          <p class="mz-theme"><b>Theme</b>Conditional affection and the need to be needed</p>
+          <button type="button" class="mz-play" data-play="8">▶ Board flight LYL 009</button>
+        </div>
+      </article>
+    </div>
+  </section>
   <section class="passzone" aria-live="polite">
     <p class="hint" id="hint">Tap a flight to print your <b>boarding pass</b></p>
   </section>
@@ -331,12 +510,12 @@ if("IntersectionObserver" in window)new IntersectionObserver(function(es){es.for
 
   <footer>
     <a href="../">← LAY-L home</a>
-    <span>Okinawa.. One Way… · all aboard · v5</span>
+    <span>Okinawa.. One Way… · all aboard · v6</span>
   </footer>
 </div>
 
 <audio id="audio" preload="none"></audio>
-<script src="lyrics.js?v=4"></script>
+<script src="lyrics.js?v=6"></script>
 
 <script>
 (function(){
@@ -344,14 +523,14 @@ if("IntersectionObserver" in window)new IntersectionObserver(function(es){es.for
     {id:"LYL 001", title:"ONE MISSED CALL.. TWO…", name:"One Missed Call.. Two…", src:"one-missed-call.mp4", art:"art-01.webp", kanji:"着信", gate:"01", seat:"1A", from:"Missed call"},
     {id:"LYL 002", title:"SAKURA", name:"Sakura", src:"sakura.mp4", art:"art-02.webp", kanji:"桜", gate:"02", seat:"7C", from:"7:30 flight"},
     {id:"LYL 003", title:"LOST IN JAPAN", name:"Lost in Japan", src:"lost-in-japan.mp4", art:"art-03.webp", kanji:"迷子", gate:"03", seat:"3K", from:"Wrong train"},
-    {id:"LYL 004", title:"THE VOICE AT PLATFORM TWO", name:"The Voice at Platform Two", src:"the-voice-at-platform-two.mp4", art:"art-04.webp", kanji:"2番線", gate:"02", seat:"2B", from:"Platform 2"},
-    {id:"LYL 005", title:"PLASTIC FLOWER", name:"Plastic Flower", src:"plastic-flower.mp4", art:"art-05.webp", kanji:"造花", gate:"05", seat:"5F", from:"Last stop"},
-    {id:"LYL 006", title:"ASMR STIMULATION", name:"ASMR Stimulation", src:"asmr-stimulation.mp4", art:"art-06.webp", kanji:"囁き", gate:"06", seat:"6A", from:"Headphones on"},
-    {id:"LYL 007", title:"WHY WOULD I?", name:"Why Would I?", src:"why-would-i.mp4", art:"art-07.webp", kanji:"なぜ", gate:"07", seat:"7D", from:"Line cut"},
+    {id:"LYL 004", title:"WHY WOULD I?", name:"Why Would I?", src:"why-would-i.mp4", art:"art-07.webp", kanji:"なぜ", gate:"04", seat:"4D", from:"Line cut"},
+    {id:"LYL 005", title:"THE VOICE AT PLATFORM TWO", name:"The Voice at Platform Two", src:"the-voice-at-platform-two.mp4", art:"art-04.webp", kanji:"2番線", gate:"02", seat:"2B", from:"Platform 2"},
+    {id:"LYL 006", title:"PLASTIC FLOWER", name:"Plastic Flower", src:"plastic-flower.mp4", art:"art-05.webp", kanji:"造花", gate:"06", seat:"6F", from:"Last stop"},
+    {id:"LYL 007", title:"ASMR STIMULATION", name:"ASMR Stimulation", src:"asmr-stimulation.mp4", art:"art-06.webp", kanji:"囁き", gate:"07", seat:"7A", from:"Headphones on"},
     {id:"LYL 008", title:"THE WIND CALLED IN SICK", name:"The Wind Called In Sick", src:"the-wind-called-in-sick.mp4", art:"art-08.webp", kanji:"風", gate:"08", seat:"8A", from:"Final call"},
     {id:"LYL 009", title:"TAMAGOTCHI LUV (BONUS TRACK)", name:"Tamagotchi Luv (Bonus Track)", src:"tamagotchi-luv.mp4", art:"art-09.webp", kanji:"愛", gate:"09", seat:"9X", from:"Bonus flight", bonus:true}
   ];
-  var DUR = [124.6, 249.2, 205.6, 284.0, 192.0, 200.8, 305.0, 189.4, 246.8];
+  var DUR = [124.6, 249.2, 205.6, 305.0, 284.0, 192.0, 200.8, 189.4, 246.8];
   var reduce = window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches;
   var GLYPHS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789.:…()";
   function fmt(s){ s = Math.max(0, Math.floor(s||0)); return Math.floor(s/60) + ":" + ("0"+(s%60)).slice(-2); }
@@ -515,6 +694,7 @@ if("IntersectionObserver" in window)new IntersectionObserver(function(es){es.for
     else if (e.key === " " || e.key === "Enter"){ e.preventDefault(); toggle(); }
   });
 
+  document.querySelectorAll(".mz-play").forEach(function(b){ b.addEventListener("click", function(){ var i = +b.getAttribute("data-play"); if (cur === i){ openFly(); if (audio.paused) audio.play().catch(function(){}); } else load(i, true); }); });
   // Okinawa clock (JST)
   function tick(){
     try { document.getElementById("clock").textContent = new Date().toLocaleTimeString("en-GB",{hour:"2-digit",minute:"2-digit",timeZone:"Asia/Tokyo"}); } catch(e){}
