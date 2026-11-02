@@ -229,9 +229,11 @@ footer a{text-decoration:none}footer a:hover{color:var(--amber)}
   var TRACKS = [
     {id:"LYL 001", title:"ONE MISSED CALL.. TWO…", name:"One Missed Call.. Two…", src:"one-missed-call.mp4", art:"art-01.webp", kanji:"着信", gate:"01", seat:"1A", from:"Missed call"},
     {id:"LYL 002", title:"SAKURA", name:"Sakura", src:"sakura.mp4", art:"art-02.webp", kanji:"桜", gate:"02", seat:"7C", from:"7:30 flight"},
-    {id:"LYL 003", title:"LOST IN JAPAN", name:"Lost in Japan", src:"lost-in-japan.mp4", art:"art-03.webp", kanji:"迷子", gate:"03", seat:"3K", from:"Wrong train"}
+    {id:"LYL 003", title:"LOST IN JAPAN", name:"Lost in Japan", src:"lost-in-japan.mp4", art:"art-03.webp", kanji:"迷子", gate:"03", seat:"3K", from:"Wrong train"},
+    {id:"LYL 004", title:"THE VOICE AT PLATFORM TWO", name:"The Voice at Platform Two", src:"the-voice-at-platform-two.mp4", art:"art-04.webp", kanji:"2番線", gate:"02", seat:"2B", from:"Platform 2"},
+    {id:"LYL 005", title:"PLASTIC FLOWER", name:"Plastic Flower", src:"plastic-flower.mp4", art:"art-05.webp", kanji:"造花", gate:"05", seat:"5F", from:"Last stop"}
   ];
-  var DUR = [124.6, 249.2, 205.6];
+  var DUR = [124.6, 249.2, 205.6, 284.0, 192.0];
   var reduce = window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches;
   var GLYPHS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789.:…";
   function fmt(s){ s = Math.max(0, Math.floor(s||0)); return Math.floor(s/60) + ":" + ("0"+(s%60)).slice(-2); }
@@ -272,7 +274,7 @@ footer a{text-decoration:none}footer a:hover{color:var(--amber)}
     flapText(b.querySelector(".tt"), t.title, 800 + i*200);
     b.addEventListener("click", function(){ if (cur === i) toggle(); else load(i, true); });
   });
-  ["LYL 004","LYL 005"].forEach(function(id){
+  ["LYL 006"].forEach(function(id){
     var d = document.createElement("div"); d.className = "row tba"; d.setAttribute("aria-hidden","true");
     d.innerHTML = '<span class="fl"></span><span class="cells tt"></span><span class="tm">--:--</span><span class="gt">--</span><span class="rm"><i></i><span>Scheduled</span></span>';
     rowsEl.appendChild(d);
