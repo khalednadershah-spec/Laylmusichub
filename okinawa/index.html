@@ -63,7 +63,7 @@ a{color:inherit}
 .sub b{color:#e7eaf0;font-weight:700}
 .cover{position:relative;margin:-40px calc(50% - 50vw) -30px;width:100vw;overflow:hidden}
 .cover img{display:block;width:100%;height:clamp(300px,52vw,760px);object-fit:cover;object-position:22% 50%;-webkit-mask-image:linear-gradient(to bottom,transparent 0%,#000 26%,#000 66%,transparent 100%);mask-image:linear-gradient(to bottom,transparent 0%,#000 26%,#000 66%,transparent 100%)}
-@media (max-width:820px){.cover img{height:62vw;object-position:15% 50%}}
+@media (max-width:820px){.cover{margin-top:-6px}.cover img{height:62vw;object-position:15% 50%}}
 
 /* board */
 .board{margin:34px 0 0;background:var(--board);border:1px solid #1f2430;border-radius:14px;padding:18px clamp(12px,2.4vw,26px) 10px;box-shadow:0 30px 80px rgba(0,0,0,.55),inset 0 1px 0 rgba(255,255,255,.03)}
@@ -96,16 +96,37 @@ a{color:inherit}
 .passzone{padding:34px 0 70px;display:grid;place-items:center}
 .hint{font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:#6f7787;text-align:center}
 .hint b{color:var(--amber)}
-.pass{display:none;width:100%;max-width:860px;color:var(--ink);filter:drop-shadow(0 26px 50px rgba(0,0,0,.55))}
-.pass.show{display:flex;animation:print .55s cubic-bezier(.2,.8,.2,1)}
+.fly{position:fixed;inset:0;z-index:50;display:none;place-items:center;padding:16px;background:rgba(4,5,8,.74);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px)}
+.fly.open{display:grid}
+.xbtn{position:absolute;top:max(12px,env(safe-area-inset-top));right:14px;width:42px;height:42px;border-radius:50%;border:1px solid #2a3140;background:#0e1117;color:#d9dde4;font:inherit;font-size:20px;cursor:pointer;z-index:2}
+.xbtn:hover{border-color:var(--amber);color:var(--amber)}
+.pass{display:flex;width:100%;max-width:920px;max-height:calc(100vh - 32px);max-height:calc(100dvh - 32px);color:var(--ink);filter:drop-shadow(0 26px 50px rgba(0,0,0,.6))}
+.fly.open .pass{animation:print .55s cubic-bezier(.2,.8,.2,1)}
+.lyr{grid-column:1/-1;position:relative;height:min(34vh,260px);overflow:hidden;background:#111318;border-radius:10px}
+.lyr::before,.lyr::after{content:"";position:absolute;left:0;right:0;height:28%;z-index:1;pointer-events:none}
+.lyr::before{top:0;background:linear-gradient(#111318,rgba(17,19,24,0))}
+.lyr::after{bottom:0;background:linear-gradient(rgba(17,19,24,0),#111318)}
+.lyr-in{position:absolute;left:0;right:0;top:0;padding:0 22px;transition:transform .45s cubic-bezier(.2,.8,.2,1)}
+.ll{font-family:var(--jp);font-weight:700;font-size:clamp(16px,2.1vw,21px);line-height:1.35;padding:7px 0;color:#4b5160;transition:color .3s,opacity .3s}
+.ll.now{color:#8c7445}
+.ll .w{transition:color .12s}
+.ll.now .w.s{color:var(--amber)}
+.ll.past{color:#5d6372;opacity:.55}
+.ll.gap{height:14px;padding:0}
+.lyr .none{position:absolute;inset:0;display:grid;place-items:center;font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:#4b5160}
+.mini{position:fixed;left:50%;bottom:max(14px,env(safe-area-inset-bottom));transform:translateX(-50%);z-index:40;display:none;align-items:center;gap:10px;
+  background:var(--paper);color:var(--ink);border:0;border-radius:999px;padding:9px 16px 9px 10px;font:inherit;font-size:12px;font-weight:700;letter-spacing:.08em;cursor:pointer;box-shadow:0 12px 30px rgba(0,0,0,.5);max-width:calc(100vw - 32px)}
+.mini.show{display:flex}
+.mini i{width:26px;height:26px;border-radius:50%;background:var(--ink);color:var(--paper);display:grid;place-items:center;font-style:normal;font-size:11px;flex:none}
+.mini span{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 @keyframes print{from{transform:translateY(-26px);opacity:0;clip-path:inset(0 0 100% 0)}to{transform:none;opacity:1;clip-path:inset(0 0 0 0)}}
 .stub,.main{background:var(--paper);position:relative}
-.main{flex:1;border-radius:16px 0 0 16px;padding:22px 26px 22px;display:grid;grid-template-columns:1fr;gap:18px;min-width:0}
+.main{flex:1;border-radius:16px 0 0 16px;padding:22px 26px 22px;display:grid;grid-template-columns:150px minmax(0,1fr);gap:18px 22px;min-width:0;align-items:center;overflow:auto}
 .stub{width:200px;border-radius:0 16px 16px 0;padding:22px 20px;border-left:2px dashed #c9b996;background:var(--paper2)}
 .main::after,.stub::before{content:"";position:absolute;width:22px;height:22px;border-radius:50%;background:var(--night)}
 .main::after{right:-11px;top:-11px;box-shadow:0 calc(100% + 0px) 0 0 var(--night)}
 .stub::before{left:-12px;bottom:-11px}
-.art{width:100%;aspect-ratio:16/9;border-radius:10px;overflow:hidden;position:relative;background:
+.art{width:100%;aspect-ratio:1;border-radius:10px;overflow:hidden;position:relative;background:
   repeating-linear-gradient(135deg,#1b1e26 0 10px,#20242e 10px 20px);display:grid;place-items:center}
 .art img{width:100%;height:100%;object-fit:cover;display:block}
 .art.sq{aspect-ratio:1}
@@ -113,7 +134,7 @@ a{color:inherit}
 .art .ph small{display:block;font-family:var(--mono);font-size:9px;letter-spacing:.25em;color:#8b93a1;margin-top:8px;font-weight:700}
 .ptop{display:flex;justify-content:space-between;align-items:center;gap:10px;font-size:10px;letter-spacing:.24em;text-transform:uppercase;color:var(--ink2);font-weight:700}
 .ptop .ow{background:var(--ink);color:var(--paper);padding:4px 8px;border-radius:4px;letter-spacing:.2em}
-.ptitle{font-family:var(--jp);font-weight:900;font-size:clamp(22px,3.2vw,34px);line-height:1.05;margin:10px 0 14px;letter-spacing:.01em;word-break:break-word}
+.ptitle{font-family:var(--jp);font-weight:900;font-size:clamp(20px,2.8vw,30px);line-height:1.05;margin:8px 0 10px;letter-spacing:.01em;word-break:break-word}
 .route{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:12px}
 .iata{font-weight:800;font-size:clamp(22px,3vw,30px);letter-spacing:.04em}
 .iata small{display:block;font-size:9px;letter-spacing:.2em;color:var(--ink2);font-weight:700;margin-top:2px}
@@ -122,7 +143,7 @@ a{color:inherit}
 .path .fill{position:absolute;left:0;top:50%;height:2px;margin-top:-1px;background:var(--ink);width:0}
 .path .plane{position:absolute;top:50%;left:0;width:26px;height:26px;margin:-13px 0 0 -13px;transition:left .1s linear}
 .path:focus-visible{outline:2px solid var(--sea);outline-offset:4px;border-radius:4px}
-.ctrls{display:flex;align-items:center;gap:12px;margin-top:16px}
+.ctrls{display:flex;align-items:center;gap:12px;margin-top:10px}
 .btn{width:44px;height:44px;border-radius:50%;border:2px solid var(--ink);background:transparent;color:var(--ink);display:grid;place-items:center;cursor:pointer}
 .btn:hover{background:var(--ink);color:var(--paper)}
 .btn.big{width:56px;height:56px;background:var(--ink);color:var(--paper)}
@@ -146,8 +167,16 @@ footer a{text-decoration:none}footer a:hover{color:var(--amber)}
   .row{row-gap:6px}
   .bhead p{display:none}
   .fl{font-size:11px}
-  .pass.show{flex-direction:column}
-  .main{border-radius:16px 16px 0 0;grid-template-columns:1fr;padding:20px}
+  .fly{padding:10px;place-items:start center}
+  .pass{flex-direction:column;overflow:auto;max-height:calc(100dvh - 20px);margin-top:44px}
+  .main{border-radius:16px 16px 0 0;grid-template-columns:76px minmax(0,1fr);padding:16px;gap:12px 14px;overflow:visible}
+  .ptop{font-size:9px;letter-spacing:.16em}
+  .ptitle{font-size:19px;margin:6px 0 0}
+  .main .route,.main .ctrls{grid-column:1/-1}
+  .info{display:contents}
+  .lyr{height:38vh}
+  .stub{padding:14px 16px}
+  .barcode{height:30px;margin-top:10px}
   .main::after{display:none}
   .stub{width:auto;border-left:0;border-top:2px dashed #c9b996;border-radius:0 0 16px 16px}
   .stub::before{display:none}
@@ -182,12 +211,15 @@ footer a{text-decoration:none}footer a:hover{color:var(--amber)}
 
   <section class="passzone" aria-live="polite">
     <p class="hint" id="hint">Tap a flight to print your <b>boarding pass</b></p>
+  </section>
+  <div class="fly" id="fly" role="dialog" aria-modal="true" aria-label="Boarding pass player">
+    <button class="xbtn" id="xbtn" aria-label="Close">×</button>
     <article class="pass" id="pass">
       <div class="main">
         <div class="art" id="art"></div>
-        <div>
-          <div class="ptop"><span>Boarding pass · 搭乗券</span><span class="ow">One way</span></div>
-          <h2 class="ptitle" id="ptitle"></h2>
+        <div class="info">
+          <div class="head"><div class="ptop"><span>Boarding pass · 搭乗券</span><span class="ow">One way</span></div>
+          <h2 class="ptitle" id="ptitle"></h2></div>
           <div class="route">
             <div class="iata">LYL<small id="from">Departure</small></div>
             <div class="path" id="path" role="slider" tabindex="0" aria-label="Flight progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
@@ -203,6 +235,7 @@ footer a{text-decoration:none}footer a:hover{color:var(--amber)}
             <span class="times"><span id="cur">0:00</span> / <span id="dur">0:00</span></span>
           </div>
         </div>
+        <div class="lyr" id="lyr" aria-live="off"><div class="lyr-in" id="lyrin"></div></div>
       </div>
       <aside class="stub">
         <div class="kv">
@@ -216,7 +249,8 @@ footer a{text-decoration:none}footer a:hover{color:var(--amber)}
         <p class="jp">片道切符</p>
       </aside>
     </article>
-  </section>
+  </div>
+  <button class="mini" id="mini" type="button"><i>♪</i><span id="minitxt"></span></button>
 
   <footer>
     <a href="../">← LAY-L home</a>
@@ -225,6 +259,7 @@ footer a{text-decoration:none}footer a:hover{color:var(--amber)}
 </div>
 
 <audio id="audio" preload="none"></audio>
+<script src="lyrics.js"></script>
 
 <script>
 (function(){
@@ -279,7 +314,7 @@ footer a{text-decoration:none}footer a:hover{color:var(--amber)}
     rowsEl.appendChild(b); rows.push(b);
     b.querySelector(".fl").textContent = t.id;
     flapText(b.querySelector(".tt"), t.title, 800 + i*200);
-    b.addEventListener("click", function(){ if (cur === i) toggle(); else load(i, true); });
+    b.addEventListener("click", function(){ if (cur === i){ openFly(); if (audio.paused) audio.play().catch(function(){}); } else load(i, true); });
   });
   [].forEach(function(id){
     var d = document.createElement("div"); d.className = "row tba"; d.setAttribute("aria-hidden","true");
@@ -301,9 +336,7 @@ footer a{text-decoration:none}footer a:hover{color:var(--amber)}
     art.innerHTML = '<div class="ph">'+t.kanji+'</div>';
     var img = new Image(); img.alt = t.name + " artwork";
     img.onload = function(){ art.innerHTML = ""; art.appendChild(img); };
-    var sq = window.matchMedia && matchMedia("(max-width:820px)").matches;
-    art.classList.toggle("sq", !!sq);
-    img.src = sq ? t.art.replace("art-","sq-") : t.art;
+    img.src = t.art.replace("art-","sq-");
   }
   function load(i, autoplay){
     cur = i; var t = TRACKS[i];
@@ -316,8 +349,7 @@ footer a{text-decoration:none}footer a:hover{color:var(--amber)}
     document.getElementById("stime").textContent = fmt(DUR[i]);
     document.getElementById("dur").textContent = fmt(DUR[i]);
     setArt(t);
-    hint.style.display = "none";
-    pass.classList.remove("show"); void pass.offsetWidth; pass.classList.add("show");
+    buildLyrics(i); openFly();
     rows.forEach(function(r, k){
       r.classList.toggle("on", k===i);
       r.querySelector(".rm span").textContent = k===i ? "Now playing" : (r.classList.contains("done") ? "Departed" : (r.classList.contains("bonus") ? "Bonus" : "Boarding"));
@@ -325,6 +357,43 @@ footer a{text-decoration:none}footer a:hover{color:var(--amber)}
     progress(0);
     if (autoplay) audio.play().catch(function(){});
   }
+  // lyrics
+  var fly = document.getElementById("fly"), lyr = document.getElementById("lyr"), lyrin = document.getElementById("lyrin");
+  var mini = document.getElementById("mini"), lastFocus = null, LINES = [], curLine = -2;
+  function openFly(){ if (!fly.classList.contains("open")){ lastFocus = document.activeElement; fly.classList.add("open"); document.body.style.overflow = "hidden"; document.getElementById("play").focus({preventScroll:true}); } mini.classList.remove("show"); }
+  function closeFly(){ fly.classList.remove("open"); document.body.style.overflow = ""; if (cur >= 0){ document.getElementById("minitxt").textContent = TRACKS[cur].id + " · " + TRACKS[cur].name; mini.classList.add("show"); } if (lastFocus) lastFocus.focus({preventScroll:true}); }
+  document.getElementById("xbtn").addEventListener("click", closeFly);
+  fly.addEventListener("click", function(e){ if (e.target === fly) closeFly(); });
+  document.addEventListener("keydown", function(e){ if (e.key === "Escape" && fly.classList.contains("open")) closeFly(); });
+  mini.addEventListener("click", openFly);
+  function buildLyrics(i){
+    var data = (window.OKA_LYRICS || [])[i] || [];
+    lyrin.innerHTML = ""; LINES = []; curLine = -2; lyrin.style.transform = "translateY(0)";
+    var old = lyr.querySelector(".none"); if (old) old.remove();
+    if (!data.length){ var n = document.createElement("div"); n.className = "none"; n.textContent = "Lyrics boarding soon"; lyr.appendChild(n); return; }
+    data.forEach(function(L, k){
+      if (k && L[0] - data[k-1][1] > 6){ var g = document.createElement("div"); g.className = "ll gap"; lyrin.appendChild(g); }
+      var d = document.createElement("div"); d.className = "ll";
+      L[2].forEach(function(w, j){ var s = document.createElement("span"); s.className = "w"; s.textContent = w[0] + (j < L[2].length-1 ? " " : ""); d.appendChild(s); });
+      lyrin.appendChild(d); LINES.push({t:L[0], e:L[1], w:L[2], el:d, ws:d.querySelectorAll(".w")});
+    });
+  }
+  function syncLyrics(){
+    if (!LINES.length) return;
+    var ct = audio.currentTime + 0.08, k = -1;
+    for (var a = 0; a < LINES.length; a++){ if (LINES[a].t <= ct) k = a; else break; }
+    if (k !== curLine){
+      LINES.forEach(function(L, a){ L.el.classList.toggle("now", a === k); L.el.classList.toggle("past", a < k); if (a !== k) for (var b = 0; b < L.ws.length; b++) L.ws[b].classList.remove("s"); });
+      var target = LINES[Math.max(k, 0)].el;
+      lyrin.style.transform = "translateY(" + (lyr.clientHeight/2 - target.offsetTop - target.offsetHeight/2) + "px)";
+      curLine = k;
+    }
+    if (k >= 0){ var L = LINES[k]; for (var b = 0; b < L.w.length; b++) L.ws[b].classList.toggle("s", L.w[b][1] <= ct); }
+  }
+  (function loop(){ if (!audio.paused) syncLyrics(); requestAnimationFrame(loop); })();
+  audio.addEventListener("seeked", function(){ curLine = -2; syncLyrics(); });
+  window.addEventListener("resize", function(){ curLine = -2; syncLyrics(); });
+
   function toggle(){ if (cur < 0) return load(0, true); audio.paused ? audio.play().catch(function(){}) : audio.pause(); }
   function progress(p){
     p = Math.max(0, Math.min(1, p||0));
