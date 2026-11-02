@@ -84,6 +84,7 @@ a{color:inherit}
 .gt{color:#8b93a1}
 .rm{display:flex;align-items:center;gap:8px;font-weight:700;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--amber)}
 .rm i{width:8px;height:8px;border-radius:50%;background:var(--amber);flex:none}
+.row.bonus{border-top:1px dashed #2a3140}.row.bonus .rm{color:var(--sea)}.row.bonus .rm i{background:var(--sea)}
 .row.on .rm{color:var(--hibiscus)}.row.on .rm i{background:var(--hibiscus);animation:blink 1s steps(2,start) infinite}
 .row.done .rm{color:#6f7787}.row.done .rm i{background:#6f7787}
 .row.tba{cursor:default;opacity:.38}.row.tba:hover{background:transparent}
@@ -175,7 +176,7 @@ footer a{text-decoration:none}footer a:hover{color:var(--amber)}
     <div class="bhead"><h2><span>出発</span>DEPARTURES</h2><p>Destination · OKA Naha</p></div>
     <div class="cols" aria-hidden="true"><span>Flight</span><span>Track</span><span>Time</span><span class="c-gt">Gate</span><span class="c-rm">Remarks</span></div>
     <div id="rows"></div>
-    <div class="bfoot"><span>All flights one way</span><span>Final call · LYL 008</span></div>
+    <div class="bfoot"><span>All flights one way</span><span>Bonus flight · LYL 009</span></div>
   </section>
 
   <section class="passzone" aria-live="polite">
@@ -234,9 +235,10 @@ footer a{text-decoration:none}footer a:hover{color:var(--amber)}
     {id:"LYL 005", title:"PLASTIC FLOWER", name:"Plastic Flower", src:"plastic-flower.mp4", art:"art-05.webp", kanji:"造花", gate:"05", seat:"5F", from:"Last stop"},
     {id:"LYL 006", title:"ASMR STIMULATION", name:"ASMR Stimulation", src:"asmr-stimulation.mp4", art:"art-06.webp", kanji:"囁き", gate:"06", seat:"6A", from:"Headphones on"},
     {id:"LYL 007", title:"WHY WOULD I?", name:"Why Would I?", src:"why-would-i.mp4", art:"art-07.webp", kanji:"なぜ", gate:"07", seat:"7D", from:"Line cut"},
-    {id:"LYL 008", title:"THE WIND CALLED IN SICK", name:"The Wind Called In Sick", src:"the-wind-called-in-sick.mp4", art:"art-08.webp", kanji:"風", gate:"08", seat:"8A", from:"Final call"}
+    {id:"LYL 008", title:"THE WIND CALLED IN SICK", name:"The Wind Called In Sick", src:"the-wind-called-in-sick.mp4", art:"art-08.webp", kanji:"風", gate:"08", seat:"8A", from:"Final call"},
+    {id:"LYL 009", title:"TAMAGOTCHI LUV", name:"Tamagotchi Luv", src:"tamagotchi-luv.mp4", art:"art-09.webp", kanji:"愛", gate:"09", seat:"9X", from:"Bonus flight", bonus:true}
   ];
-  var DUR = [124.6, 249.2, 205.6, 284.0, 192.0, 200.8, 305.0, 189.4];
+  var DUR = [124.6, 249.2, 205.6, 284.0, 192.0, 200.8, 305.0, 189.4, 246.8];
   var reduce = window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches;
   var GLYPHS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789.:…";
   function fmt(s){ s = Math.max(0, Math.floor(s||0)); return Math.floor(s/60) + ":" + ("0"+(s%60)).slice(-2); }
@@ -271,7 +273,8 @@ footer a{text-decoration:none}footer a:hover{color:var(--amber)}
     var b = document.createElement("button");
     b.className = "row"; b.type = "button";
     b.setAttribute("aria-label", "Play " + t.name + ", " + fmt(DUR[i]));
-    b.innerHTML = '<span class="fl"></span><span class="cells tt"></span><span class="tm">'+fmt(DUR[i])+'</span><span class="gt">'+t.gate+'</span><span class="rm"><i></i><span>Boarding</span></span>';
+    b.innerHTML = '<span class="fl"></span><span class="cells tt"></span><span class="tm">'+fmt(DUR[i])+'</span><span class="gt">'+t.gate+'</span><span class="rm"><i></i><span>'+(t.bonus?'Bonus':'Boarding')+'</span></span>';
+    if (t.bonus) b.classList.add("bonus");
     rowsEl.appendChild(b); rows.push(b);
     b.querySelector(".fl").textContent = t.id;
     flapText(b.querySelector(".tt"), t.title, 800 + i*200);
@@ -316,7 +319,7 @@ footer a{text-decoration:none}footer a:hover{color:var(--amber)}
     pass.classList.remove("show"); void pass.offsetWidth; pass.classList.add("show");
     rows.forEach(function(r, k){
       r.classList.toggle("on", k===i);
-      r.querySelector(".rm span").textContent = k===i ? "Now playing" : (r.classList.contains("done") ? "Departed" : "Boarding");
+      r.querySelector(".rm span").textContent = k===i ? "Now playing" : (r.classList.contains("done") ? "Departed" : (r.classList.contains("bonus") ? "Bonus" : "Boarding"));
     });
     progress(0);
     if (autoplay) audio.play().catch(function(){});
