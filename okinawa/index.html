@@ -9,7 +9,7 @@
 <meta property="og:type" content="music.album">
 <meta property="og:url" content="https://khalednadershah-spec.github.io/Laylmusichub/okinawa/">
 <meta property="og:description" content="One way to OKA. Now boarding.">
-<meta property="og:image" content="https://khalednadershah-spec.github.io/Laylmusichub/brand/og-image.jpg">
+<meta property="og:image" content="https://khalednadershah-spec.github.io/Laylmusichub/okinawa/og.jpg">
 <meta name="theme-color" content="#07090d">
 <link rel="icon" href="../favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -59,6 +59,8 @@ a{color:inherit}
 .title .line{gap:clamp(14px,3.6vw,32px)}
 .sub{margin-top:26px;font-size:clamp(12px,1.4vw,14px);letter-spacing:.24em;text-transform:uppercase;color:#8b93a1}
 .sub b{color:#e7eaf0;font-weight:700}
+.cover{margin:34px auto 0;max-width:900px;border-radius:14px;overflow:hidden;border:1px solid #1f2430;box-shadow:0 30px 80px rgba(0,0,0,.55)}
+.cover img{display:block;width:100%;height:auto}
 
 /* board */
 .board{margin:34px 0 0;background:var(--board);border:1px solid #1f2430;border-radius:14px;padding:18px clamp(12px,2.4vw,26px) 10px;box-shadow:0 30px 80px rgba(0,0,0,.55),inset 0 1px 0 rgba(255,255,255,.03)}
@@ -94,12 +96,12 @@ a{color:inherit}
 .pass.show{display:flex;animation:print .55s cubic-bezier(.2,.8,.2,1)}
 @keyframes print{from{transform:translateY(-26px);opacity:0;clip-path:inset(0 0 100% 0)}to{transform:none;opacity:1;clip-path:inset(0 0 0 0)}}
 .stub,.main{background:var(--paper);position:relative}
-.main{flex:1;border-radius:16px 0 0 16px;padding:22px 26px 22px;display:grid;grid-template-columns:150px 1fr;gap:22px;min-width:0}
+.main{flex:1;border-radius:16px 0 0 16px;padding:22px 26px 22px;display:grid;grid-template-columns:1fr;gap:18px;min-width:0}
 .stub{width:200px;border-radius:0 16px 16px 0;padding:22px 20px;border-left:2px dashed #c9b996;background:var(--paper2)}
 .main::after,.stub::before{content:"";position:absolute;width:22px;height:22px;border-radius:50%;background:var(--night)}
 .main::after{right:-11px;top:-11px;box-shadow:0 calc(100% + 0px) 0 0 var(--night)}
 .stub::before{left:-12px;bottom:-11px}
-.art{width:150px;height:150px;border-radius:10px;overflow:hidden;position:relative;background:
+.art{width:100%;aspect-ratio:16/9;border-radius:10px;overflow:hidden;position:relative;background:
   repeating-linear-gradient(135deg,#1b1e26 0 10px,#20242e 10px 20px);display:grid;place-items:center}
 .art img{width:100%;height:100%;object-fit:cover;display:block}
 .art .ph{font-family:var(--jp);font-weight:900;color:var(--amber);font-size:44px;line-height:1;text-align:center}
@@ -144,7 +146,6 @@ footer a{text-decoration:none}footer a:hover{color:var(--amber)}
   .main::after{display:none}
   .stub{width:auto;border-left:0;border-top:2px dashed #c9b996;border-radius:0 0 16px 16px}
   .stub::before{display:none}
-  .art{width:100%;height:auto;aspect-ratio:1}
   .kv{grid-template-columns:repeat(3,1fr)}
 }
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
@@ -164,6 +165,7 @@ footer a{text-decoration:none}footer a:hover{color:var(--amber)}
       <span class="line" data-flap="ONE WAY…"></span>
     </h1>
     <p class="sub">LAY-L · <b>a new album</b> · in progress</p>
+    <figure class="cover"><img src="album.webp" width="1600" height="900" alt="Okinawa.. One Way… album art: Lilac in an aeroplane window seat above the Okinawan reefs"></figure>
   </header>
 
   <section class="board" aria-label="Departures: the tracks">
@@ -213,7 +215,7 @@ footer a{text-decoration:none}footer a:hover{color:var(--amber)}
 
   <footer>
     <a href="../">← LAY-L home</a>
-    <span>Okinawa.. One Way… · artwork arriving soon</span>
+    <span>Okinawa.. One Way… · more departures soon</span>
   </footer>
 </div>
 
@@ -221,7 +223,6 @@ footer a{text-decoration:none}footer a:hover{color:var(--amber)}
 
 <script>
 (function(){
-  // To add artwork later: drop art-01.webp, art-02.webp, art-03.webp into this folder.
   var TRACKS = [
     {id:"LYL 001", title:"ONE MISSED CALL.. TWO…", name:"One Missed Call.. Two…", src:"one-missed-call.mp4", art:"art-01.webp", kanji:"着信", gate:"01", seat:"1A", from:"Missed call"},
     {id:"LYL 002", title:"SAKURA", name:"Sakura", src:"sakura.mp4", art:"art-02.webp", kanji:"桜", gate:"02", seat:"7C", from:"7:30 flight"},
@@ -285,7 +286,7 @@ footer a{text-decoration:none}footer a:hover{color:var(--amber)}
 
   function setArt(t){
     var art = document.getElementById("art");
-    art.innerHTML = '<div class="ph">'+t.kanji+'<small>Art soon</small></div>';
+    art.innerHTML = '<div class="ph">'+t.kanji+'</div>';
     var img = new Image(); img.alt = t.name + " artwork";
     img.onload = function(){ art.innerHTML = ""; art.appendChild(img); };
     img.src = t.art;
