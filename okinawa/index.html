@@ -1,0 +1,356 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Okinawa.. One Way… — LAY-L</title>
+<meta name="description" content="LAY-L — Okinawa.. One Way… Departures now boarding.">
+<meta property="og:title" content="LAY-L — Okinawa.. One Way…">
+<meta property="og:type" content="music.album">
+<meta property="og:url" content="https://khalednadershah-spec.github.io/Laylmusichub/okinawa/">
+<meta property="og:description" content="One way to OKA. Now boarding.">
+<meta property="og:image" content="https://khalednadershah-spec.github.io/Laylmusichub/brand/og-image.jpg">
+<meta name="theme-color" content="#07090d">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;700;800&family=Zen+Kaku+Gothic+New:wght@500;700;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --night:#07090d; --board:#0e1117; --cell:#171a21; --cell2:#1d212a; --seam:#05060a;
+  --amber:#ffb22e; --amber-dim:#7a5a1e; --sea:#2fd6c6; --hibiscus:#ff4f5e;
+  --paper:#f3ead8; --paper2:#e9dcc3; --ink:#16181d; --ink2:#5d5a52;
+  --mono:"JetBrains Mono",ui-monospace,monospace; --jp:"Zen Kaku Gothic New",system-ui,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{background:var(--night);-webkit-text-size-adjust:100%}
+body{min-height:100vh;background:
+  radial-gradient(120% 60% at 50% -10%,#123b44 0%,rgba(18,59,68,0) 60%),
+  radial-gradient(80% 40% at 100% 100%,rgba(255,79,94,.10),rgba(0,0,0,0) 70%),
+  var(--night);
+  color:#d9dde4;font-family:var(--mono);overflow-x:hidden;
+  padding:env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left)}
+a{color:inherit}
+.wrap{max-width:1080px;margin:0 auto;padding:0 16px}
+
+/* top strip */
+.strip{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:18px 0 0;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:#8b93a1}
+.strip a{text-decoration:none;display:inline-flex;align-items:center;gap:8px}
+.strip a:hover{color:var(--amber)}
+.strip img{height:20px;width:auto;display:block}
+.clock{font-variant-numeric:tabular-nums;color:var(--sea)}
+
+/* hero */
+.hero{padding:44px 0 28px;text-align:center}
+.kicker{font-family:var(--jp);font-weight:700;letter-spacing:.5em;color:var(--sea);font-size:clamp(13px,1.6vw,16px);margin-bottom:22px;padding-left:.5em}
+.title{display:flex;flex-direction:column;align-items:center;gap:8px}
+.line{display:flex;gap:clamp(3px,.5vw,6px)}
+.flap{position:relative;display:inline-grid;place-items:center;
+  width:var(--w);height:calc(var(--w)*1.42);background:linear-gradient(var(--cell2) 0 50%,var(--cell) 50% 100%);
+  border-radius:calc(var(--w)*.09);color:var(--amber);font-weight:800;font-size:calc(var(--w)*.86);line-height:1;
+  box-shadow:inset 0 -1px 0 rgba(255,255,255,.04),0 2px 0 rgba(0,0,0,.6)}
+.flap::after{content:"";position:absolute;left:0;right:0;top:50%;height:max(1px,calc(var(--w)*.035));background:var(--seam)}
+.flap.space{background:transparent;box-shadow:none}.flap.space::after{display:none}
+.flap.tick{animation:tick .07s linear}
+@keyframes tick{50%{transform:scaleY(.86)}}
+.title .flap{--w:clamp(30px,8.4vw,74px)}
+.word{display:inline-flex;gap:2px}
+.title .word{gap:clamp(3px,.5vw,6px)}
+.title .line{gap:clamp(14px,3.6vw,32px)}
+.sub{margin-top:26px;font-size:clamp(12px,1.4vw,14px);letter-spacing:.24em;text-transform:uppercase;color:#8b93a1}
+.sub b{color:#e7eaf0;font-weight:700}
+
+/* board */
+.board{margin:34px 0 0;background:var(--board);border:1px solid #1f2430;border-radius:14px;padding:18px clamp(12px,2.4vw,26px) 10px;box-shadow:0 30px 80px rgba(0,0,0,.55),inset 0 1px 0 rgba(255,255,255,.03)}
+.bhead{display:flex;align-items:baseline;justify-content:space-between;gap:12px;border-bottom:1px solid #222836;padding-bottom:12px;margin-bottom:6px}
+.bhead h2{font-family:var(--jp);font-weight:900;font-size:clamp(20px,3vw,30px);letter-spacing:.06em;color:#f2f4f7}
+.bhead h2 span{color:var(--amber);margin-right:.4em}
+.bhead p{font-size:11px;letter-spacing:.2em;color:#6f7787;text-transform:uppercase}
+.cols,.row{display:grid;grid-template-columns:76px minmax(0,1fr) 64px 46px 150px;align-items:center;gap:14px}
+.cols{font-size:10.5px;letter-spacing:.22em;color:#6f7787;text-transform:uppercase;padding:8px 10px}
+.row{width:100%;text-align:left;background:transparent;border:0;color:inherit;font:inherit;cursor:pointer;padding:12px 10px;border-radius:10px;border-top:1px solid #161a22;position:relative}
+.row:hover{background:#121620}
+.row:focus-visible{outline:2px solid var(--sea);outline-offset:2px}
+.row.on{background:linear-gradient(90deg,rgba(47,214,198,.10),rgba(47,214,198,0) 70%)}
+.row.on::before{content:"";position:absolute;left:0;top:12px;bottom:12px;width:3px;border-radius:3px;background:var(--sea)}
+.row .flap{--w:clamp(13px,1.55vw,19px)}
+.cells{display:flex;flex-wrap:wrap;gap:5px 10px}
+.fl{color:var(--sea);font-weight:700;font-size:13px;letter-spacing:.08em;white-space:nowrap}
+.tm,.gt{font-variant-numeric:tabular-nums;color:#e7eaf0;font-weight:700;font-size:clamp(13px,1.4vw,16px)}
+.gt{color:#8b93a1}
+.rm{display:flex;align-items:center;gap:8px;font-weight:700;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--amber)}
+.rm i{width:8px;height:8px;border-radius:50%;background:var(--amber);flex:none}
+.row.on .rm{color:var(--hibiscus)}.row.on .rm i{background:var(--hibiscus);animation:blink 1s steps(2,start) infinite}
+.row.done .rm{color:#6f7787}.row.done .rm i{background:#6f7787}
+.row.tba{cursor:default;opacity:.38}.row.tba:hover{background:transparent}
+@keyframes blink{to{visibility:hidden}}
+.bfoot{display:flex;justify-content:space-between;gap:12px;font-size:10.5px;letter-spacing:.2em;color:#4f5664;text-transform:uppercase;padding:12px 10px 4px;border-top:1px solid #161a22}
+
+/* boarding pass */
+.passzone{padding:34px 0 70px;display:grid;place-items:center}
+.hint{font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:#6f7787;text-align:center}
+.hint b{color:var(--amber)}
+.pass{display:none;width:100%;max-width:860px;color:var(--ink);filter:drop-shadow(0 26px 50px rgba(0,0,0,.55))}
+.pass.show{display:flex;animation:print .55s cubic-bezier(.2,.8,.2,1)}
+@keyframes print{from{transform:translateY(-26px);opacity:0;clip-path:inset(0 0 100% 0)}to{transform:none;opacity:1;clip-path:inset(0 0 0 0)}}
+.stub,.main{background:var(--paper);position:relative}
+.main{flex:1;border-radius:16px 0 0 16px;padding:22px 26px 22px;display:grid;grid-template-columns:150px 1fr;gap:22px;min-width:0}
+.stub{width:200px;border-radius:0 16px 16px 0;padding:22px 20px;border-left:2px dashed #c9b996;background:var(--paper2)}
+.main::after,.stub::before{content:"";position:absolute;width:22px;height:22px;border-radius:50%;background:var(--night)}
+.main::after{right:-11px;top:-11px;box-shadow:0 calc(100% + 0px) 0 0 var(--night)}
+.stub::before{left:-12px;bottom:-11px}
+.art{width:150px;height:150px;border-radius:10px;overflow:hidden;position:relative;background:
+  repeating-linear-gradient(135deg,#1b1e26 0 10px,#20242e 10px 20px);display:grid;place-items:center}
+.art img{width:100%;height:100%;object-fit:cover;display:block}
+.art .ph{font-family:var(--jp);font-weight:900;color:var(--amber);font-size:44px;line-height:1;text-align:center}
+.art .ph small{display:block;font-family:var(--mono);font-size:9px;letter-spacing:.25em;color:#8b93a1;margin-top:8px;font-weight:700}
+.ptop{display:flex;justify-content:space-between;align-items:center;gap:10px;font-size:10px;letter-spacing:.24em;text-transform:uppercase;color:var(--ink2);font-weight:700}
+.ptop .ow{background:var(--ink);color:var(--paper);padding:4px 8px;border-radius:4px;letter-spacing:.2em}
+.ptitle{font-family:var(--jp);font-weight:900;font-size:clamp(22px,3.2vw,34px);line-height:1.05;margin:10px 0 14px;letter-spacing:.01em;word-break:break-word}
+.route{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:12px}
+.iata{font-weight:800;font-size:clamp(22px,3vw,30px);letter-spacing:.04em}
+.iata small{display:block;font-size:9px;letter-spacing:.2em;color:var(--ink2);font-weight:700;margin-top:2px}
+.path{position:relative;height:30px;cursor:pointer;touch-action:none}
+.path::before{content:"";position:absolute;left:0;right:0;top:50%;border-top:2px dashed #b9aa88}
+.path .fill{position:absolute;left:0;top:50%;height:2px;margin-top:-1px;background:var(--ink);width:0}
+.path .plane{position:absolute;top:50%;left:0;width:26px;height:26px;margin:-13px 0 0 -13px;transition:left .1s linear}
+.path:focus-visible{outline:2px solid var(--sea);outline-offset:4px;border-radius:4px}
+.ctrls{display:flex;align-items:center;gap:12px;margin-top:16px}
+.btn{width:44px;height:44px;border-radius:50%;border:2px solid var(--ink);background:transparent;color:var(--ink);display:grid;place-items:center;cursor:pointer}
+.btn:hover{background:var(--ink);color:var(--paper)}
+.btn.big{width:56px;height:56px;background:var(--ink);color:var(--paper)}
+.btn.big:hover{background:var(--hibiscus);border-color:var(--hibiscus)}
+.btn:focus-visible{outline:2px solid var(--sea);outline-offset:3px}
+.btn svg{width:18px;height:18px}.btn.big svg{width:22px;height:22px}
+.times{margin-left:auto;font-variant-numeric:tabular-nums;font-weight:700;font-size:13px;color:var(--ink2)}
+.kv{display:grid;grid-template-columns:1fr 1fr;gap:12px 10px;font-size:9.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink2);font-weight:700}
+.kv b{display:block;color:var(--ink);font-size:16px;letter-spacing:.04em;margin-top:3px}
+.kv .full{grid-column:1/-1}
+.barcode{margin-top:16px;height:44px;background:repeating-linear-gradient(90deg,var(--ink) 0 2px,transparent 2px 4px,var(--ink) 4px 5px,transparent 5px 8px,var(--ink) 8px 11px,transparent 11px 12px)}
+.jp{font-family:var(--jp);font-weight:700;color:var(--ink2);font-size:12px;letter-spacing:.3em;margin-top:10px}
+
+footer{border-top:1px solid #161a22;padding:22px 0 34px;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#4f5664}
+footer a{text-decoration:none}footer a:hover{color:var(--amber)}
+
+@media (max-width:820px){
+  .cols,.row{grid-template-columns:58px minmax(0,1fr) 48px;gap:10px}
+  .cols .c-gt,.cols .c-rm,.row .gt{display:none}
+  .row .rm{grid-column:2/4;font-size:10.5px}
+  .row{row-gap:6px}
+  .bhead p{display:none}
+  .fl{font-size:11px}
+  .pass.show{flex-direction:column}
+  .main{border-radius:16px 16px 0 0;grid-template-columns:1fr;padding:20px}
+  .main::after{display:none}
+  .stub{width:auto;border-left:0;border-top:2px dashed #c9b996;border-radius:0 0 16px 16px}
+  .stub::before{display:none}
+  .art{width:100%;height:auto;aspect-ratio:1}
+  .kv{grid-template-columns:repeat(3,1fr)}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="strip">
+    <a href="../" aria-label="Back to the LAY-L site"><img src="../brand/layl-logo-cream.svg" alt="LAY-L"></a>
+    <span>OKA · <span class="clock" id="clock">--:--</span> JST</span>
+  </div>
+
+  <header class="hero">
+    <p class="kicker">沖縄 ・ 片道</p>
+    <h1 class="title" aria-label="Okinawa.. One Way…">
+      <span class="line" data-flap="OKINAWA.."></span>
+      <span class="line" data-flap="ONE WAY…"></span>
+    </h1>
+    <p class="sub">LAY-L · <b>a new album</b> · in progress</p>
+  </header>
+
+  <section class="board" aria-label="Departures: the tracks">
+    <div class="bhead"><h2><span>出発</span>DEPARTURES</h2><p>Destination · OKA Naha</p></div>
+    <div class="cols" aria-hidden="true"><span>Flight</span><span>Track</span><span>Time</span><span class="c-gt">Gate</span><span class="c-rm">Remarks</span></div>
+    <div id="rows"></div>
+    <div class="bfoot"><span>All flights one way</span><span>More departures soon</span></div>
+  </section>
+
+  <section class="passzone" aria-live="polite">
+    <p class="hint" id="hint">Tap a flight to print your <b>boarding pass</b></p>
+    <article class="pass" id="pass">
+      <div class="main">
+        <div class="art" id="art"></div>
+        <div>
+          <div class="ptop"><span>Boarding pass · 搭乗券</span><span class="ow">One way</span></div>
+          <h2 class="ptitle" id="ptitle"></h2>
+          <div class="route">
+            <div class="iata">LYL<small id="from">Departure</small></div>
+            <div class="path" id="path" role="slider" tabindex="0" aria-label="Flight progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+              <div class="fill" id="fill"></div>
+              <svg class="plane" id="plane" viewBox="0 0 24 24" aria-hidden="true"><path fill="#16181d" d="M21 16v-2l-8-5V3.5a1.5 1.5 0 0 0-3 0V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5z" transform="rotate(90 12 12)"/></svg>
+            </div>
+            <div class="iata">OKA<small>Naha</small></div>
+          </div>
+          <div class="ctrls">
+            <button class="btn" id="prev" aria-label="Previous track"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M6 5h2v14H6zM20 5v14L9 12z"/></svg></button>
+            <button class="btn big" id="play" aria-label="Play"><svg viewBox="0 0 24 24" id="playicon"><path fill="currentColor" d="M7 4v16l13-8z"/></svg></button>
+            <button class="btn" id="next" aria-label="Next track"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M16 5h2v14h-2zM4 5v14l11-7z"/></svg></button>
+            <span class="times"><span id="cur">0:00</span> / <span id="dur">0:00</span></span>
+          </div>
+        </div>
+      </div>
+      <aside class="stub">
+        <div class="kv">
+          <div class="full">Passenger<b>You</b></div>
+          <div>Flight<b id="sflight"></b></div>
+          <div>Gate<b id="sgate"></b></div>
+          <div>Seat<b id="sseat"></b></div>
+          <div class="full">Flight time<b id="stime"></b></div>
+        </div>
+        <div class="barcode" aria-hidden="true"></div>
+        <p class="jp">片道切符</p>
+      </aside>
+    </article>
+  </section>
+
+  <footer>
+    <a href="../">← LAY-L home</a>
+    <span>Okinawa.. One Way… · artwork arriving soon</span>
+  </footer>
+</div>
+
+<audio id="audio" preload="none"></audio>
+
+<script>
+(function(){
+  // To add artwork later: drop art-01.webp, art-02.webp, art-03.webp into this folder.
+  var TRACKS = [
+    {id:"LYL 001", title:"ONE MISSED CALL.. TWO…", name:"One Missed Call.. Two…", src:"one-missed-call.mp4", art:"art-01.webp", kanji:"着信", gate:"01", seat:"1A", from:"Missed call"},
+    {id:"LYL 002", title:"SAKURA", name:"Sakura", src:"sakura.mp4", art:"art-02.webp", kanji:"桜", gate:"02", seat:"7C", from:"7:30 flight"},
+    {id:"LYL 003", title:"LOST IN JAPAN", name:"Lost in Japan", src:"lost-in-japan.mp4", art:"art-03.webp", kanji:"迷子", gate:"03", seat:"3K", from:"Wrong train"}
+  ];
+  var DUR = [124.6, 249.2, 205.6];
+  var reduce = window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var GLYPHS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789.:…";
+  function fmt(s){ s = Math.max(0, Math.floor(s||0)); return Math.floor(s/60) + ":" + ("0"+(s%60)).slice(-2); }
+
+  function flapText(el, text, delay){
+    el.innerHTML = "";
+    var cells = [], chars = [];
+    text.split(" ").forEach(function(word){
+      var w = document.createElement("span"); w.className = "word"; w.setAttribute("aria-hidden","true");
+      for (var i=0;i<word.length;i++){
+        var c = document.createElement("span"); c.className = "flap";
+        c.textContent = reduce ? word[i] : " ";
+        w.appendChild(c); cells.push(c); chars.push(word[i]);
+      }
+      el.appendChild(w);
+    });
+    if (reduce) return;
+    cells.forEach(function(c, i){
+      var spins = 5 + Math.floor(Math.random()*7), n = 0;
+      setTimeout(function step(){
+        if (n++ < spins){ c.textContent = GLYPHS[Math.floor(Math.random()*GLYPHS.length)]; c.classList.remove("tick"); void c.offsetWidth; c.classList.add("tick"); setTimeout(step, 55); }
+        else c.textContent = chars[i];
+      }, (delay||0) + i*35);
+    });
+  }
+
+  document.querySelectorAll("[data-flap]").forEach(function(el, k){ flapText(el, el.getAttribute("data-flap"), 200 + k*250); });
+
+  // board rows
+  var rowsEl = document.getElementById("rows"), rows = [];
+  TRACKS.forEach(function(t, i){
+    var b = document.createElement("button");
+    b.className = "row"; b.type = "button";
+    b.setAttribute("aria-label", "Play " + t.name + ", " + fmt(DUR[i]));
+    b.innerHTML = '<span class="fl"></span><span class="cells tt"></span><span class="tm">'+fmt(DUR[i])+'</span><span class="gt">'+t.gate+'</span><span class="rm"><i></i><span>Boarding</span></span>';
+    rowsEl.appendChild(b); rows.push(b);
+    b.querySelector(".fl").textContent = t.id;
+    flapText(b.querySelector(".tt"), t.title, 800 + i*200);
+    b.addEventListener("click", function(){ if (cur === i) toggle(); else load(i, true); });
+  });
+  ["LYL 004","LYL 005"].forEach(function(id){
+    var d = document.createElement("div"); d.className = "row tba"; d.setAttribute("aria-hidden","true");
+    d.innerHTML = '<span class="fl"></span><span class="cells tt"></span><span class="tm">--:--</span><span class="gt">--</span><span class="rm"><i></i><span>Scheduled</span></span>';
+    rowsEl.appendChild(d);
+    d.querySelector(".fl").textContent = id;
+    flapText(d.querySelector(".tt"), "TBA", 1350);
+  });
+
+  // player
+  var audio = document.getElementById("audio"), cur = -1;
+  var pass = document.getElementById("pass"), hint = document.getElementById("hint");
+  var playBtn = document.getElementById("play"), playIcon = document.getElementById("playicon");
+  var path = document.getElementById("path"), fill = document.getElementById("fill"), plane = document.getElementById("plane");
+  var PLAY = '<path fill="currentColor" d="M7 4v16l13-8z"/>', PAUSE = '<path fill="currentColor" d="M6 4h4v16H6zM14 4h4v16h-4z"/>';
+
+  function setArt(t){
+    var art = document.getElementById("art");
+    art.innerHTML = '<div class="ph">'+t.kanji+'<small>Art soon</small></div>';
+    var img = new Image(); img.alt = t.name + " artwork";
+    img.onload = function(){ art.innerHTML = ""; art.appendChild(img); };
+    img.src = t.art;
+  }
+  function load(i, autoplay){
+    cur = i; var t = TRACKS[i];
+    audio.src = t.src;
+    document.getElementById("ptitle").textContent = t.name;
+    document.getElementById("from").textContent = t.from;
+    document.getElementById("sflight").textContent = t.id;
+    document.getElementById("sgate").textContent = t.gate;
+    document.getElementById("sseat").textContent = t.seat;
+    document.getElementById("stime").textContent = fmt(DUR[i]);
+    document.getElementById("dur").textContent = fmt(DUR[i]);
+    setArt(t);
+    hint.style.display = "none";
+    pass.classList.remove("show"); void pass.offsetWidth; pass.classList.add("show");
+    rows.forEach(function(r, k){
+      r.classList.toggle("on", k===i);
+      r.querySelector(".rm span").textContent = k===i ? "Now playing" : (r.classList.contains("done") ? "Departed" : "Boarding");
+    });
+    progress(0);
+    if (autoplay) audio.play().catch(function(){});
+  }
+  function toggle(){ if (cur < 0) return load(0, true); audio.paused ? audio.play().catch(function(){}) : audio.pause(); }
+  function progress(p){
+    p = Math.max(0, Math.min(1, p||0));
+    fill.style.width = (p*100)+"%"; plane.style.left = (p*100)+"%";
+    path.setAttribute("aria-valuenow", Math.round(p*100));
+  }
+  playBtn.addEventListener("click", toggle);
+  document.getElementById("prev").addEventListener("click", function(){ if (audio.currentTime > 3) audio.currentTime = 0; else load((cur+TRACKS.length-1)%TRACKS.length, true); });
+  document.getElementById("next").addEventListener("click", function(){ load((cur+1)%TRACKS.length, true); });
+  audio.addEventListener("play", function(){ playIcon.innerHTML = PAUSE; playBtn.setAttribute("aria-label","Pause"); if (rows[cur]) rows[cur].querySelector(".rm span").textContent = "Now playing"; });
+  audio.addEventListener("pause", function(){ playIcon.innerHTML = PLAY; playBtn.setAttribute("aria-label","Play"); if (rows[cur] && !audio.ended) rows[cur].querySelector(".rm span").textContent = "On hold"; });
+  audio.addEventListener("timeupdate", function(){
+    var d = audio.duration || DUR[cur];
+    document.getElementById("cur").textContent = fmt(audio.currentTime);
+    progress(audio.currentTime / d);
+  });
+  audio.addEventListener("ended", function(){
+    rows[cur].classList.add("done"); rows[cur].querySelector(".rm span").textContent = "Departed";
+    if (cur < TRACKS.length-1) load(cur+1, true); else { progress(1); playIcon.innerHTML = PLAY; }
+  });
+  function seekFrom(e){
+    var r = path.getBoundingClientRect(), x = (e.touches ? e.touches[0].clientX : e.clientX);
+    var p = Math.max(0, Math.min(1, (x - r.left) / r.width)), d = audio.duration || DUR[cur];
+    audio.currentTime = p * d; progress(p);
+  }
+  var dragging = false;
+  path.addEventListener("pointerdown", function(e){ dragging = true; path.setPointerCapture(e.pointerId); seekFrom(e); });
+  path.addEventListener("pointermove", function(e){ if (dragging) seekFrom(e); });
+  path.addEventListener("pointerup", function(){ dragging = false; });
+  path.addEventListener("keydown", function(e){
+    if (e.key === "ArrowRight") audio.currentTime += 5;
+    else if (e.key === "ArrowLeft") audio.currentTime -= 5;
+    else if (e.key === " " || e.key === "Enter"){ e.preventDefault(); toggle(); }
+  });
+
+  // Okinawa clock (JST)
+  function tick(){
+    try { document.getElementById("clock").textContent = new Date().toLocaleTimeString("en-GB",{hour:"2-digit",minute:"2-digit",timeZone:"Asia/Tokyo"}); } catch(e){}
+  }
+  tick(); setInterval(tick, 15000);
+})();
+</script>
+</body>
+</html>
