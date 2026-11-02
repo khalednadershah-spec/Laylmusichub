@@ -243,6 +243,17 @@ footer a{text-decoration:none}footer a:hover{color:var(--amber)}
   .kv .full:last-child{display:none}
   .barcode{width:56px;height:22px}
 }
+/* lyrics panel v2: plain block, no transforms */
+.lyrbox{display:block;position:relative;flex:none;background:var(--paper);padding:0 16px 12px;cursor:pointer}
+#lyrin{display:block;background:#111318;border-radius:8px;padding:10px 14px;min-height:92px}
+.lyrbox .ln{display:block;font-family:var(--jp);font-weight:700;font-size:14px;line-height:1.35;color:#5d6372;min-height:19px;overflow:hidden;white-space:nowrap;text-overflow:ellipsis}
+.lyrbox .ln.cur{color:#fff3d6;font-size:16px;white-space:normal;margin:3px 0}
+.lyrbox .ln.cur .s{color:#ffb22e}
+.lyrbox .exp{position:absolute;right:24px;bottom:16px;font-size:8.5px;letter-spacing:.2em;text-transform:uppercase;color:#6f7787}
+.fly.big .lyrbox .ln{white-space:normal}
+.fly.big #lyrin{min-height:0}
+.lyrbox .none{color:#6f7787;font-size:11px;letter-spacing:.25em;text-transform:uppercase;text-align:center;padding:26px 0}
+@media (max-width:820px){.lyrbox{padding:0 12px 10px}.lyrbox .exp{right:20px;bottom:14px}}
 </style>
 </head>
 <body>
@@ -301,8 +312,8 @@ if("IntersectionObserver" in window)new IntersectionObserver(function(es){es.for
             <span class="times"><span id="cur">0:00</span> / <span id="dur">0:00</span></span>
           </div>
         </div>
-        <div class="lyr" id="lyr" aria-live="off" role="button" tabindex="0" aria-label="Expand lyrics"><div class="lyr-in" id="lyrin"></div><span class="exp" id="exp">Tap to expand</span></div>
       </div>
+      <div class="lyrbox" id="lyr" role="button" tabindex="0" aria-label="Expand lyrics"><div id="lyrin"></div><span class="exp" id="exp">Tap to expand</span></div>
       <aside class="stub">
         <div class="kv">
           <div class="full">Passenger<b>You</b></div>
@@ -432,32 +443,38 @@ if("IntersectionObserver" in window)new IntersectionObserver(function(es){es.for
   function padPage(){ requestAnimationFrame(function(){ document.body.style.paddingBottom = fly.classList.contains("open") ? (fly.offsetHeight + 24) + "px" : (mini.classList.contains("show") ? "70px" : ""); }); }
   document.addEventListener("keydown", function(e){ if (e.key === "Escape" && fly.classList.contains("open")) closeFly(); });
   mini.addEventListener("click", openFly);
-  function toggleBig(){ var big = fly.classList.toggle("big"); document.getElementById("exp").textContent = big ? "Tap to shrink" : "Tap to expand"; setTimeout(function(){ curLine = -2; syncLyrics(); padPage(); }, 380); }
+  function toggleBig(){ var big = fly.classList.toggle("big"); document.getElementById("exp").textContent = big ? "Tap to shrink" : "Tap to expand"; curLine = -2; lastSung = -1; renderLyrics(-1); syncLyrics(); padPage(); }
   lyr.addEventListener("click", toggleBig);
   lyr.addEventListener("keydown", function(e){ if (e.key === "Enter" || e.key === " "){ e.preventDefault(); toggleBig(); } });
   function buildLyrics(i){
     var data = (window.OKA_LYRICS || [])[i] || [];
-    lyrin.innerHTML = ""; LINES = []; curLine = -2; lyrin.style.transform = "translateY(0)";
-    var old = lyr.querySelector(".none"); if (old) old.remove();
-    if (!data.length){ var n = document.createElement("div"); n.className = "none"; n.textContent = "Lyrics boarding soon"; lyr.appendChild(n); return; }
-    data.forEach(function(L, k){
-      if (k && L[0] - data[k-1][1] > 6){ var g = document.createElement("div"); g.className = "ll gap"; lyrin.appendChild(g); }
-      var d = document.createElement("div"); d.className = "ll";
-      L[2].forEach(function(w, j){ var s = document.createElement("span"); s.className = "w"; s.textContent = w[0] + (j < L[2].length-1 ? " " : ""); d.appendChild(s); });
-      lyrin.appendChild(d); LINES.push({t:L[0], e:L[1], w:L[2], el:d, ws:d.querySelectorAll(".w")});
-    });
+    LINES = data.map(function(L){ return {t:L[0], e:L[1], w:L[2]}; }); curLine = -2;
+    if (!LINES.length){ lyrin.innerHTML = '<div class="none">Lyrics boarding soon</div>'; return; }
+    renderLyrics(-1);
   }
+  function lineHTML(L, ct, isCur){
+    var out = "";
+    for (var b = 0; b < L.w.length; b++){
+      var t = L.w[b][0].replace(/&/g,"&amp;").replace(/</g,"&lt;");
+      out += (isCur && L.w[b][1] <= ct ? '<span class="s">'+t+'</span>' : t) + (b < L.w.length-1 ? " " : "");
+    }
+    return out;
+  }
+  function renderLyrics(k, ct){
+    var big = fly.classList.contains("big"), before = big ? 3 : 1, after = big ? 4 : 1, html = "";
+    for (var a = k - before; a <= k + after; a++){
+      var L = LINES[a];
+      html += '<div class="ln'+(a === k ? ' cur' : '')+'">' + (L ? lineHTML(L, ct || 0, a === k) : "&nbsp;") + '</div>';
+    }
+    lyrin.innerHTML = html;
+  }
+  var lastSung = -1;
   function syncLyrics(){
     if (!LINES.length) return;
     var ct = audio.currentTime + 0.08, k = -1;
     for (var a = 0; a < LINES.length; a++){ if (LINES[a].t <= ct) k = a; else break; }
-    if (k !== curLine){
-      LINES.forEach(function(L, a){ L.el.classList.toggle("now", a === k); L.el.classList.toggle("past", a < k); if (a !== k) for (var b = 0; b < L.ws.length; b++) L.ws[b].classList.remove("s"); });
-      var target = LINES[Math.max(k, 0)].el;
-      lyrin.style.transform = "translateY(" + (lyr.clientHeight/2 - target.offsetTop - target.offsetHeight/2) + "px)";
-      curLine = k;
-    }
-    if (k >= 0){ var L = LINES[k]; for (var b = 0; b < L.w.length; b++) L.ws[b].classList.toggle("s", L.w[b][1] <= ct); }
+    var sung = 0; if (k >= 0) for (var b = 0; b < LINES[k].w.length; b++) if (LINES[k].w[b][1] <= ct) sung = b + 1;
+    if (k !== curLine || sung !== lastSung){ renderLyrics(k, ct); curLine = k; lastSung = sung; }
   }
   (function loop(){ if (!audio.paused) syncLyrics(); requestAnimationFrame(loop); })();
   audio.addEventListener("seeked", function(){ curLine = -2; syncLyrics(); });
