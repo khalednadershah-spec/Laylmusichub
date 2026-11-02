@@ -241,7 +241,13 @@ footer a{text-decoration:none}footer a:hover{color:var(--amber)}
       <span class="line" data-flap="ONE WAY…"></span>
     </h1>
     <p class="sub">LAY-L · <b>a new album</b> · in progress</p>
-    <figure class="cover"><video id="heroVid" autoplay muted loop playsinline preload="auto" poster="hero-poster.webp" aria-label="Lilac in an aeroplane window seat above the Okinawan reefs"></video><script>(function(){var v=document.getElementById("heroVid");v.src=(window.innerWidth<820?"hero-loop-sm.mp4":"hero-loop.mp4");v.muted=true;var p=v.play();if(p&&p.catch)p.catch(function(){});})();</script></figure>
+    <figure class="cover"><video id="heroVid" autoplay muted loop playsinline webkit-playsinline disablepictureinpicture disableremoteplayback preload="auto" poster="hero-poster.webp" aria-label="Lilac in an aeroplane window seat above the Okinawan reefs"><source src="hero-loop-sm.mp4" type="video/mp4" media="(max-width: 819px)"><source src="hero-loop.mp4" type="video/mp4"></video>
+<script>(function(){var v=document.getElementById("heroVid");v.muted=true;v.defaultMuted=true;v.setAttribute("muted","");
+function go(){if(!v.paused)return;var p=v.play();if(p&&p.catch)p.catch(function(){});}
+go();v.addEventListener("loadeddata",go);v.addEventListener("canplay",go);
+["touchstart","pointerdown","scroll","keydown"].forEach(function(e){window.addEventListener(e,go,{passive:true});});
+document.addEventListener("visibilitychange",function(){if(!document.hidden)go();});
+if("IntersectionObserver" in window)new IntersectionObserver(function(es){es.forEach(function(x){if(x.isIntersecting)go();});}).observe(v);})();</script></figure>
   </header>
 
   <section class="board" aria-label="Departures: the tracks">
