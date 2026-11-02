@@ -232,9 +232,10 @@ footer a{text-decoration:none}footer a:hover{color:var(--amber)}
     {id:"LYL 003", title:"LOST IN JAPAN", name:"Lost in Japan", src:"lost-in-japan.mp4", art:"art-03.webp", kanji:"迷子", gate:"03", seat:"3K", from:"Wrong train"},
     {id:"LYL 004", title:"THE VOICE AT PLATFORM TWO", name:"The Voice at Platform Two", src:"the-voice-at-platform-two.mp4", art:"art-04.webp", kanji:"2番線", gate:"02", seat:"2B", from:"Platform 2"},
     {id:"LYL 005", title:"PLASTIC FLOWER", name:"Plastic Flower", src:"plastic-flower.mp4", art:"art-05.webp", kanji:"造花", gate:"05", seat:"5F", from:"Last stop"},
-    {id:"LYL 006", title:"ASMR STIMULATION", name:"ASMR Stimulation", src:"asmr-stimulation.mp4", art:"art-06.webp", kanji:"囁き", gate:"06", seat:"6A", from:"Headphones on"}
+    {id:"LYL 006", title:"ASMR STIMULATION", name:"ASMR Stimulation", src:"asmr-stimulation.mp4", art:"art-06.webp", kanji:"囁き", gate:"06", seat:"6A", from:"Headphones on"},
+    {id:"LYL 007", title:"WHY WOULD I?", name:"Why Would I?", src:"why-would-i.mp4", art:"art-07.webp", kanji:"なぜ", gate:"07", seat:"7D", from:"Line cut"}
   ];
-  var DUR = [124.6, 249.2, 205.6, 284.0, 192.0, 200.8];
+  var DUR = [124.6, 249.2, 205.6, 284.0, 192.0, 200.8, 305.0];
   var reduce = window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches;
   var GLYPHS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789.:…";
   function fmt(s){ s = Math.max(0, Math.floor(s||0)); return Math.floor(s/60) + ":" + ("0"+(s%60)).slice(-2); }
@@ -275,7 +276,7 @@ footer a{text-decoration:none}footer a:hover{color:var(--amber)}
     flapText(b.querySelector(".tt"), t.title, 800 + i*200);
     b.addEventListener("click", function(){ if (cur === i) toggle(); else load(i, true); });
   });
-  ["LYL 007"].forEach(function(id){
+  ["LYL 008"].forEach(function(id){
     var d = document.createElement("div"); d.className = "row tba"; d.setAttribute("aria-hidden","true");
     d.innerHTML = '<span class="fl"></span><span class="cells tt"></span><span class="tm">--:--</span><span class="gt">--</span><span class="rm"><i></i><span>Scheduled</span></span>';
     rowsEl.appendChild(d);
