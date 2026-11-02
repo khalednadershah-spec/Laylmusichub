@@ -175,7 +175,7 @@ footer a{text-decoration:none}footer a:hover{color:var(--amber)}
     <div class="bhead"><h2><span>出発</span>DEPARTURES</h2><p>Destination · OKA Naha</p></div>
     <div class="cols" aria-hidden="true"><span>Flight</span><span>Track</span><span>Time</span><span class="c-gt">Gate</span><span class="c-rm">Remarks</span></div>
     <div id="rows"></div>
-    <div class="bfoot"><span>All flights one way</span><span>More departures soon</span></div>
+    <div class="bfoot"><span>All flights one way</span><span>Final call · LYL 008</span></div>
   </section>
 
   <section class="passzone" aria-live="polite">
@@ -218,7 +218,7 @@ footer a{text-decoration:none}footer a:hover{color:var(--amber)}
 
   <footer>
     <a href="../">← LAY-L home</a>
-    <span>Okinawa.. One Way… · more departures soon</span>
+    <span>Okinawa.. One Way… · all aboard</span>
   </footer>
 </div>
 
@@ -233,9 +233,10 @@ footer a{text-decoration:none}footer a:hover{color:var(--amber)}
     {id:"LYL 004", title:"THE VOICE AT PLATFORM TWO", name:"The Voice at Platform Two", src:"the-voice-at-platform-two.mp4", art:"art-04.webp", kanji:"2番線", gate:"02", seat:"2B", from:"Platform 2"},
     {id:"LYL 005", title:"PLASTIC FLOWER", name:"Plastic Flower", src:"plastic-flower.mp4", art:"art-05.webp", kanji:"造花", gate:"05", seat:"5F", from:"Last stop"},
     {id:"LYL 006", title:"ASMR STIMULATION", name:"ASMR Stimulation", src:"asmr-stimulation.mp4", art:"art-06.webp", kanji:"囁き", gate:"06", seat:"6A", from:"Headphones on"},
-    {id:"LYL 007", title:"WHY WOULD I?", name:"Why Would I?", src:"why-would-i.mp4", art:"art-07.webp", kanji:"なぜ", gate:"07", seat:"7D", from:"Line cut"}
+    {id:"LYL 007", title:"WHY WOULD I?", name:"Why Would I?", src:"why-would-i.mp4", art:"art-07.webp", kanji:"なぜ", gate:"07", seat:"7D", from:"Line cut"},
+    {id:"LYL 008", title:"THE WIND CALLED IN SICK", name:"The Wind Called In Sick", src:"the-wind-called-in-sick.mp4", art:"art-08.webp", kanji:"風", gate:"08", seat:"8A", from:"Final call"}
   ];
-  var DUR = [124.6, 249.2, 205.6, 284.0, 192.0, 200.8, 305.0];
+  var DUR = [124.6, 249.2, 205.6, 284.0, 192.0, 200.8, 305.0, 189.4];
   var reduce = window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches;
   var GLYPHS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789.:…";
   function fmt(s){ s = Math.max(0, Math.floor(s||0)); return Math.floor(s/60) + ":" + ("0"+(s%60)).slice(-2); }
@@ -276,7 +277,7 @@ footer a{text-decoration:none}footer a:hover{color:var(--amber)}
     flapText(b.querySelector(".tt"), t.title, 800 + i*200);
     b.addEventListener("click", function(){ if (cur === i) toggle(); else load(i, true); });
   });
-  ["LYL 008"].forEach(function(id){
+  [].forEach(function(id){
     var d = document.createElement("div"); d.className = "row tba"; d.setAttribute("aria-hidden","true");
     d.innerHTML = '<span class="fl"></span><span class="cells tt"></span><span class="tm">--:--</span><span class="gt">--</span><span class="rm"><i></i><span>Scheduled</span></span>';
     rowsEl.appendChild(d);
