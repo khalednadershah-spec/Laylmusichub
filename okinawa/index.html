@@ -58,6 +58,10 @@ a{color:inherit}
 .strip a{text-decoration:none;display:inline-flex;align-items:center;gap:8px}
 .strip a:hover{color:var(--amber)}
 .strip img{height:20px;width:auto;display:block}
+.strip-r{display:inline-flex;align-items:center;gap:18px}
+.navmag{color:var(--amber);font-weight:700;border:1px solid rgba(255,178,46,.45);border-radius:999px;padding:7px 12px}
+.navmag:hover{background:var(--amber);color:#16181d!important}
+@media (max-width:520px){.strip .clk{display:none}}
 .clock{font-variant-numeric:tabular-nums;color:var(--sea)}
 
 /* hero */
@@ -320,7 +324,7 @@ footer a{text-decoration:none}footer a:hover{color:var(--amber)}
 <div class="wrap">
   <div class="strip">
     <a href="../" aria-label="Back to the LAY-L site"><img src="../brand/layl-logo-cream.svg" alt="LAY-L"></a>
-    <span>OKA · <span class="clock" id="clock">--:--</span> JST</span>
+    <span class="strip-r"><a href="magazine.html" class="navmag">In-flight magazine</a><span class="clk">OKA · <span class="clock" id="clock">--:--</span> JST</span></span>
   </div>
 
   <header class="hero">
@@ -347,12 +351,6 @@ if("IntersectionObserver" in window)new IntersectionObserver(function(es){es.for
   </section>
 
 
-  <section class="mzlink" id="about">
-    <a href="about.html" class="mzcard">
-      <span class="mzimg"><img src="mag/x-cover.webp" alt="ONE WAY magazine cover" loading="lazy" width="1086" height="1448"><span class="am">LAY-L AIR · 片道航空</span></span>
-      <span class="mztx"><span class="mzk" lang="ja">機内誌 · In-flight magazine</span><b>ONE WAY</b><span class="mzd">Why Okinawa? Why one way? The story behind the album, and how each of the nine songs connects to Japan.</span><span class="mzd ar" dir="rtl" lang="ar">قصة الألبوم، ولماذا أوكيناوا، وصلة كلّ أغنية باليابان.</span><span class="mzgo">Read the magazine →</span></span>
-    </a>
-  </section>
   <section class="passzone" aria-live="polite">
     <p class="hint" id="hint">Tap a flight to print your <b>boarding pass</b></p>
   </section>
