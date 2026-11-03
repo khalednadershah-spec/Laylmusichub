@@ -343,7 +343,7 @@ if("IntersectionObserver" in window)new IntersectionObserver(function(es){es.for
     <div class="bhead"><h2><span>出発</span>DEPARTURES</h2><p>Destination · OKA Naha</p></div>
     <div class="cols" aria-hidden="true"><span>Flight</span><span>Track</span><span>Time</span><span class="c-gt">Gate</span><span class="c-rm">Remarks</span></div>
     <div id="rows"></div>
-    <div class="bfoot"><span>All flights one way</span><span>Bonus flights · LYL 009–010</span></div>
+    <div class="bfoot"><span>All flights one way</span><span>Bonus flight · LYL 010</span></div>
   </section>
 
 
@@ -403,7 +403,7 @@ if("IntersectionObserver" in window)new IntersectionObserver(function(es){es.for
 </div>
 
 <audio id="audio" preload="none"></audio>
-<script src="lyrics.js?v=8"></script>
+<script src="lyrics.js?v=9"></script>
 
 <script>
 (function(){
@@ -416,10 +416,10 @@ if("IntersectionObserver" in window)new IntersectionObserver(function(es){es.for
     {id:"LYL 006", title:"PLASTIC FLOWER", name:"Plastic Flower", src:"plastic-flower.mp4", art:"art-05.webp", kanji:"造花", gate:"06", seat:"6F", from:"Last stop"},
     {id:"LYL 007", title:"ASMR STIMULATION", name:"ASMR Stimulation", src:"asmr-stimulation.mp4", art:"art-06.webp", kanji:"囁き", gate:"07", seat:"7A", from:"Headphones on"},
     {id:"LYL 008", title:"THE WIND CALLED IN SICK", name:"The Wind Called In Sick", src:"the-wind-called-in-sick.mp4", art:"art-08.webp", kanji:"風", gate:"08", seat:"8A", from:"Final call"},
-    {id:"LYL 009", title:"TAMAGOTCHI LUV (BONUS TRACK)", name:"Tamagotchi Luv (Bonus Track)", src:"tamagotchi-luv.mp4", art:"art-09.webp", kanji:"愛", gate:"09", seat:"9X", from:"Bonus flight", bonus:true},
-    {id:"LYL 010", title:"REFRIGERATOR (BONUS TRACK)", name:"Refrigerator (Bonus Track)", src:"refrigerator.mp4", art:"art-10.webp", kanji:"冷蔵庫", gate:"10", seat:"10R", from:"Bonus flight", bonus:true}
+    {id:"LYL 009", title:"REFRIGERATOR", name:"Refrigerator", src:"refrigerator.mp4", art:"art-10.webp", kanji:"冷蔵庫", gate:"09", seat:"9R", from:"Cold front"},
+    {id:"LYL 010", title:"TAMAGOTCHI LUV (BONUS TRACK)", name:"Tamagotchi Luv (Bonus Track)", src:"tamagotchi-luv.mp4", art:"art-09.webp", kanji:"愛", gate:"10", seat:"10X", from:"Bonus flight", bonus:true}
   ];
-  var DUR = [124.6, 249.2, 205.6, 305.0, 284.0, 192.0, 200.8, 189.4, 246.8, 183.2];
+  var DUR = [124.6, 249.2, 205.6, 305.0, 284.0, 192.0, 200.8, 189.4, 183.2, 246.8];
   var reduce = window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches;
   var GLYPHS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789.:…()";
   function fmt(s){ s = Math.max(0, Math.floor(s||0)); return Math.floor(s/60) + ":" + ("0"+(s%60)).slice(-2); }
