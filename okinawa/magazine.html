@@ -1,234 +1,344 @@
 <!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>ONE WAY — About Okinawa… One Way… — LAY-L</title>
-<meta name="description" content="ONE WAY, the in-flight magazine of LAY-L: the story behind Okinawa… One Way…, and how each of its nine songs connects to Japan.">
+<title>ONE WAY — In-flight magazine — LAY-L</title>
+<meta name="description" content="ONE WAY, the in-flight magazine of LAY-L: the story behind Okinawa… One Way…, and how each of its songs connects to Japan.">
 <meta property="og:title" content="ONE WAY — the in-flight magazine of LAY-L"><meta property="og:description" content="Why Okinawa? Why one way? Nine songs, nine routes to Japan.">
 <meta property="og:image" content="https://khalednadershah-spec.github.io/Laylmusichub/okinawa/og.jpg"><meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#0e2747"><link rel="icon" href="../favicon.svg" type="image/svg+xml"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=JetBrains+Mono:wght@500;800&family=Zen+Kaku+Gothic+New:wght@400;700;900&family=Shippori+Mincho:wght@400;700;800&family=Lalezar&family=El+Messiri:wght@400;600;700&display=swap" rel="stylesheet"><style>
-:root{--ink:#17181c;--mute:#6a6760;--line:#e3ded3;--paper:#faf8f4}
+
+
 *{box-sizing:border-box;margin:0;padding:0}
-html{background:var(--paper);-webkit-text-size-adjust:100%}
-body{font-family:"Zen Kaku Gothic New",sans-serif;color:var(--ink);background:var(--paper);overflow-x:hidden}
-img{display:block;max-width:100%}
-a{color:inherit}
+body{font-family:"Zen Kaku Gothic New",sans-serif;color:#17181c;background:#0b1d36;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+.pg{width:540px;height:960px;position:relative;overflow:hidden;break-after:page;background:#faf8f4;padding:40px 36px 46px}
 .ar{font-family:"El Messiri",sans-serif;direction:rtl;text-align:right}
 .ad{font-family:"Lalezar","El Messiri",sans-serif;font-weight:400;direction:rtl}
 .jm{font-family:"Shippori Mincho",serif}
 .bod{font-family:"Bodoni Moda",serif}
 .mono{font-family:"JetBrains Mono",monospace}
-.wrap{max-width:760px;margin:0 auto;padding:0 20px}
-.sec{font:800 11px "JetBrains Mono";letter-spacing:.22em;text-transform:uppercase;color:var(--acc,#b0262e)}
-.h{font-family:"Bodoni Moda",serif;font-weight:800;font-size:clamp(38px,7vw,64px);line-height:.98;letter-spacing:-.01em;margin:12px 0 8px}
-.dek{font-family:"Bodoni Moda",serif;font-style:italic;font-size:clamp(17px,2.4vw,21px);line-height:1.4;color:#4a4740;margin:10px 0 18px}
-.p{font-size:16px;line-height:1.7;margin:0 0 12px;color:#22232a}
-.p.ar{font-size:17.5px;line-height:1.9}
-.dc::first-letter{font-family:"Bodoni Moda";font-weight:800;float:left;font-size:64px;line-height:.82;margin:6px 10px 0 0;color:var(--acc,#b0262e)}
-.blk{padding:64px 0;border-top:1px solid var(--line)}
-/* top bar */
-.bar{position:sticky;top:0;z-index:20;background:rgba(250,248,244,.92);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
-.bar .wrap{display:flex;justify-content:space-between;align-items:center;height:52px;max-width:1100px}
-.bar a{text-decoration:none;font:800 11px "JetBrains Mono";letter-spacing:.16em;text-transform:uppercase}
-.bar a:hover{color:#b0262e}
-.bar .t{font-family:"Bodoni Moda";font-weight:900;font-size:22px;letter-spacing:-.02em}
+.folio{position:absolute;left:36px;right:36px;bottom:20px;display:flex;justify-content:space-between;align-items:center;font:500 8.5px "JetBrains Mono";letter-spacing:.2em;text-transform:uppercase;color:#8c877c;border-top:1px solid #e3ded3;padding-top:9px}
+.folio b{color:#17181c;font-weight:800}
+.sec{font:800 9.5px "JetBrains Mono";letter-spacing:.24em;text-transform:uppercase;color:var(--acc,#b0262e)}
+.h{font-family:"Bodoni Moda",serif;font-weight:800;font-size:46px;line-height:.98;letter-spacing:-.01em;margin:12px 0 6px}
+.dek{font-family:"Bodoni Moda",serif;font-style:italic;font-size:17px;line-height:1.35;color:#4a4740;margin:10px 0 16px}
+.p{font-size:14px;line-height:1.62;margin:0 0 10px;color:#22232a}
+.p.ar{font-size:15.5px;line-height:1.85}
+.dc::first-letter{font-family:"Bodoni Moda";font-weight:800;float:left;font-size:58px;line-height:.82;margin:5px 8px 0 0;color:var(--acc,#b0262e)}
+.rule{border:0;border-top:1px solid #d9d3c6;margin:12px 0}
 /* cover */
-.cover{background:#0e2747;padding:40px 0 48px}
-.cover .in{max-width:1100px;margin:0 auto;padding:0 20px;display:grid;grid-template-columns:minmax(0,520px) 1fr;gap:44px;align-items:center}
-.cvbox img,.bkbox img{width:100%;height:auto}
-.cvbox{position:relative;border-radius:6px;overflow:hidden;box-shadow:0 30px 70px rgba(0,0,0,.5)}
-.airmark{position:absolute;left:0;top:0;width:40%;height:6.3%;background:#1f4a78;display:flex;align-items:center;gap:8px;padding:0 4%}
-.airmark img{height:52%}.airmark span{font:800 clamp(7px,1.3vw,10px)/1.15 "JetBrains Mono";letter-spacing:.12em;color:#fff}.airmark i{font-style:normal;font-family:"Zen Kaku Gothic New";color:#ffd38a}
-.cover .txt{color:#fff}
-.cover .txt .sec{color:#ffd38a}
-.cover .txt h1{font-family:"Bodoni Moda";font-weight:900;font-size:clamp(64px,10vw,120px);line-height:.85;letter-spacing:-.03em;margin:14px 0}
-.cover .txt h1 small{display:block;font-family:"Shippori Mincho";font-size:.3em;letter-spacing:.2em;color:#ffb22e;margin-top:12px}
-.cl{display:flex;justify-content:space-between;gap:14px;align-items:baseline;border-top:1px solid rgba(255,255,255,.25);padding:12px 0}
-.cl b{font-family:"Bodoni Moda";font-size:20px}.cl span{font-size:14px;color:#dbe4ee}
-a.cl,a.ti,a.ch{text-decoration:none;color:inherit}
+.cover{padding:0;background:#07090d;color:#fff}
+.cover .ph{position:absolute;inset:0;background:url(album-clean.webp) 20% 50%/cover}
+.cover .ph::after{content:"";position:absolute;inset:0;background:linear-gradient(rgba(7,9,13,.75),rgba(7,9,13,0) 30%,rgba(7,9,13,0) 52%,rgba(7,9,13,.92) 80%)}
+.mast{position:absolute;top:26px;left:30px;right:30px;z-index:2}
+.mast .t{font-family:"Bodoni Moda";font-weight:900;font-size:104px;line-height:.85;letter-spacing:-.03em;color:#fff}
+.mast .row{display:flex;justify-content:space-between;align-items:center;margin-top:10px;font:500 8.5px "JetBrains Mono";letter-spacing:.22em;text-transform:uppercase;color:#ffd38a}
+.mast .alt{position:absolute;right:0;top:4px;text-align:right}
+.mast .alt .jm{font-size:34px;font-weight:800;color:#ffb22e;letter-spacing:.1em;display:block}
+.clines{position:absolute;left:30px;right:30px;bottom:34px;z-index:2}
+.cl{border-top:1px solid rgba(255,255,255,.35);padding:10px 0 8px;display:grid;grid-template-columns:1fr auto;gap:12px;align-items:end}
+.cl b{display:block;font-family:"Bodoni Moda";font-weight:800;font-size:21px;line-height:1.05}
+.cl span{font-size:11.5px;color:#d6d9df}
+.cl .ar{font-size:14px;color:#fff;max-width:190px}
+.cover .badge{position:absolute;right:30px;top:300px;z-index:2;width:96px;height:96px;border-radius:50%;background:#ffb22e;color:#17181c;display:grid;place-items:center;text-align:center;transform:rotate(-10deg);font:800 10px/1.25 "JetBrains Mono";letter-spacing:.06em}
+.cover .badge b{display:block;font-family:"Bodoni Moda";font-size:30px;letter-spacing:0;line-height:1}
+.cv2{padding:0;background:#16365f;color:#fff}
+.cvimg{position:absolute;left:0;top:0;width:540px;height:720px;object-fit:cover;object-position:top}
+.airmark{position:absolute;left:0;top:0;width:216px;height:45px;background:#1f4a78;display:flex;align-items:center;gap:8px;padding:0 12px}
+.airmark img{height:18px}.airmark span{font:800 9px/1.15 "JetBrains Mono";letter-spacing:.14em;color:#fff}.airmark i{font-style:normal;font-family:"Zen Kaku Gothic New";letter-spacing:.2em;color:#ffd38a}
+.cvfoot{position:absolute;left:0;right:0;top:720px;bottom:0;padding:16px 30px;background:linear-gradient(#16365f,#0b1d36)}
+.cvfoot .k{font:800 8.5px "JetBrains Mono";letter-spacing:.18em;text-transform:uppercase;color:#ffd38a;margin-bottom:8px}
+.cvl{display:flex;justify-content:space-between;align-items:baseline;gap:10px;border-top:1px solid rgba(255,255,255,.25);padding:8px 0}
+.cvl b{font-family:"Bodoni Moda";font-weight:800;font-size:18px}.cvl .ar{font-size:13.5px;color:#e6ecf3}
+.cvfoot .k2{font:500 8.5px "JetBrains Mono";letter-spacing:.16em;text-transform:uppercase;color:#9fb3cc;margin-top:6px}
+.sph{height:210px;margin:-40px -36px 18px;background-size:cover;background-position:center}
+.arr2{padding:0}
+.arr2 .bg{position:absolute;inset:0;background:url(mag/x-drive.webp) 55% 50%/cover}
+.arr2 .bg::after{content:"";position:absolute;inset:0;background:linear-gradient(rgba(7,9,13,.15),rgba(7,9,13,.25) 40%,rgba(7,9,13,.92) 70%)}
+.arr2 .in{position:absolute;left:36px;right:36px;bottom:60px;text-align:center;color:#fff}
+.wimg .sph{height:150px;margin-bottom:12px}
+.wimg .pq{padding:4px 0 10px;margin:4px 0 10px}.wimg .pq .en{font-size:24px}.wimg .pq::before{font-size:96px;top:-22px}
+.wimg .pq .jm{font-size:12.5px}.wimg .pq .ar{font-size:14.5px}
+.wimg .p.dc{font-size:13.6px!important}.wimg .p.ar{font-size:14.6px!important;line-height:1.72}
+.wimg .box .p{font-size:12.8px}.wimg .box .p.ar{font-size:14px!important;line-height:1.68}
 /* contents */
-.tocS{display:grid;grid-template-columns:1fr 1fr;gap:0 20px;margin-top:16px}
-.ti{display:grid;grid-template-columns:44px 64px 1fr;gap:14px;align-items:center;padding:10px 0;border-bottom:1px solid var(--line);text-decoration:none}
-.tocS .ti{grid-template-columns:32px 1fr}
-.ti:hover b{color:var(--c,#b0262e)}
-.ti .n{font-family:"Bodoni Moda";font-weight:800;font-size:26px;color:var(--c,#b0262e)}
+.toc{margin-top:18px}
+.ti{display:grid;grid-template-columns:34px 64px 1fr;gap:12px;align-items:center;padding:8px 0;border-bottom:1px solid #e6e0d5}
+.ti .n{font-family:"Bodoni Moda";font-weight:800;font-size:24px;color:var(--c)}
 .ti img{width:64px;height:64px;object-fit:cover;border-radius:4px}
-.ti b{display:block;font-family:"Bodoni Moda";font-weight:800;font-size:19px;line-height:1.15}
-.ti span{display:block;font-size:12px;color:var(--mute);margin-top:2px}
-.ti .ar{font-size:14px;color:#4a4740;text-align:left;unicode-bidi:plaintext}
+.ti .tt b{display:block;font-family:"Bodoni Moda";font-weight:800;font-size:17px;line-height:1.1}
+.ti .tt span{font-size:10.5px;color:#6a6760}
+.ti .tt .ar{display:block;font-size:12.5px;color:#4a4740;text-align:left;direction:rtl;unicode-bidi:plaintext}
+.ti.sm{grid-template-columns:34px 1fr}
+.toc2{display:grid;grid-template-columns:1fr 1fr;gap:0 16px;margin-top:6px}
+.toc2 .ti{grid-template-columns:28px 46px 1fr;gap:8px;padding:7px 0}
+.toc2 .ti .n{font-size:18px}
+.toc2 .ti img{width:46px;height:46px}
+.toc2 .ti .tt b{font-size:13.5px}
+.toc2 .ti .tt span:not(.ar){display:none}
+.toc2 .ti .tt .ar{font-size:11.5px}
+.tocS{display:grid;grid-template-columns:1fr 1fr;gap:0 16px;margin-top:10px}
+.tocS .ti{grid-template-columns:26px 1fr;gap:8px;padding:7px 0}
+.tocS .ti .n{font-size:18px}.tocS .ti .tt b{font-size:13.5px}.tocS .ti .tt span:not(.ar){display:none}.tocS .ti .tt .ar{font-size:11px}
+.toc2{display:block!important;margin-top:4px}
+.toc2 .ti{grid-template-columns:34px 54px 1fr!important;gap:12px!important;padding:6px 0!important}
+.toc2 .ti .n{font-size:22px!important}
+.toc2 .ti img{width:54px!important;height:54px!important}
+.toc2 .ti .tt b{font-size:16px!important}
+.toc2 .ti .tt span:not(.ar){display:block!important;font-size:10px;color:#6a6760;margin-top:1px}
+.toc2 .ti .tt .ar{font-size:12px!important}
 /* philo */
-.pts{display:grid;grid-template-columns:1fr 1fr;gap:4px 28px}
-.pt{border-top:2px solid var(--ink);padding-top:12px;margin-top:18px}
-.pt h3{font-family:"Bodoni Moda";font-weight:800;font-size:22px;line-height:1.15;display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
-.pt h3 .ad{font-size:20px;color:#b0262e}
-.pt .p{font-size:15px;margin:8px 0 6px}.pt .p.ar{font-size:16px}
-.sig{font-family:"Bodoni Moda";font-style:italic;font-size:18px;margin-top:16px}
+.pt{border-top:2px solid #17181c;padding-top:10px;margin-top:14px}
+.pt h3{font-family:"Bodoni Moda";font-weight:800;font-size:19px;line-height:1.1;display:flex;justify-content:space-between;gap:10px}
+.pt h3 .ad{font-size:17px;color:#b0262e}
+.pt .p{font-size:13.2px;margin:6px 0 4px}
+.pt .p.ar{font-size:14.2px;line-height:1.7}
+.sig{font-family:"Bodoni Moda";font-style:italic;font-size:15px;margin-top:12px}
 /* feature */
-.feat-ph{width:100%;aspect-ratio:21/9;object-fit:cover;border-radius:6px;margin-bottom:26px}
-.kb{display:inline-block;background:var(--ink);color:#ffb22e;font:800 10px "JetBrains Mono";letter-spacing:.2em;padding:6px 9px;margin:8px 0}
+.feat{padding:0}
+.feat .ph{height:330px;background:url(mag/x-ticket.webp) 40% 50%/cover}
+.feat .in{padding:22px 36px 0}
+.kb{display:inline-block;background:#17181c;color:#ffb22e;font:800 9px "JetBrains Mono";letter-spacing:.2em;padding:5px 8px;margin-top:2px}
 /* map */
-.map{background:#0d2a3a;color:#e9eef2;border:0}
-.map .sec{color:#ffb22e}.map .h{color:#fff}
-.route{list-style:none;position:relative;margin-top:34px}
-.route::before{content:"";position:absolute;left:50%;top:6px;bottom:6px;border-left:2px dashed #ffb22e;opacity:.7}
-.route li{position:relative;width:50%;padding:14px 34px 14px 0;text-align:right}
-.route li:nth-child(even){margin-left:50%;padding:14px 0 14px 34px;text-align:left}
-.route li::after{content:"";position:absolute;top:22px;right:-9px;width:18px;height:18px;border-radius:50%;background:#0d2a3a;border:3px solid #ffb22e;box-sizing:border-box}
-.route li:nth-child(even)::after{right:auto;left:-9px}
-.route li:last-child::after{background:#ffb22e}
-.route b{display:block;font-family:"Bodoni Moda";font-weight:800;font-size:26px;color:#ffb22e;line-height:1}
-.route span{display:block;font-weight:700;font-size:16px;margin-top:4px}
-.route i{display:block;font-style:normal;font:800 10px "JetBrains Mono";letter-spacing:.14em;color:#7fd9cf;margin-top:4px}
-/* channels */
-.ch{display:grid;grid-template-columns:52px 64px 1fr;gap:14px;align-items:center;padding:10px 0;border-bottom:1px solid var(--line);text-decoration:none}
-.ch .no{font:800 12px/1.2 "JetBrains Mono";color:#fff;background:var(--c);border-radius:5px;text-align:center;padding:8px 0}
-.ch .no small{display:block;font-size:8px;letter-spacing:.14em;opacity:.85}
-.ch img{width:64px;height:64px;object-fit:cover;border-radius:4px}
-.ch .t2{display:flex;justify-content:space-between;gap:8px;align-items:baseline;flex-wrap:wrap}
-.ch b{font-family:"Bodoni Moda";font-weight:800;font-size:19px}
-.ch .t2 .ad{font-size:16px;color:#4a4740}
-.ch .g{display:block;font-size:12px;color:var(--mute);margin-top:3px}
-.ch:hover b{color:var(--c)}
-/* destinations */
-.dest{border-top:6px solid var(--acc);padding:0 0 64px}
-.dhero{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:0;background:color-mix(in srgb,var(--acc) 9%,var(--paper))}
-.dhero .art{aspect-ratio:1;object-fit:cover;width:100%}
-.dhero .meta{padding:34px 32px;display:flex;flex-direction:column;justify-content:center}
-.dhero .h{font-size:clamp(34px,4.6vw,54px)}
-.subs{display:flex;justify-content:space-between;gap:12px;align-items:baseline;flex-wrap:wrap}
-.subs .jm{font-size:18px;font-weight:700;color:var(--acc)}.subs .ad{font-size:22px}
-.facts{display:grid;grid-template-columns:1.3fr .6fr 1fr;border-top:2px solid var(--ink);border-bottom:1px solid #d9d3c6;margin:18px 0 16px}
-.facts div{padding:10px 10px 10px 0}.facts div+div{padding-left:10px;border-left:1px solid #d9d3c6}
-.facts small{display:block;font:800 8.5px "JetBrains Mono";letter-spacing:.14em;text-transform:uppercase;color:#8c877c;margin-bottom:4px}
-.facts b{font-size:13px;line-height:1.35;display:block}.facts .ar{font-size:12.5px;color:#4a4740;margin-top:3px}
-.lis small{font:800 9px "JetBrains Mono";letter-spacing:.18em;text-transform:uppercase;color:var(--acc)}
-.lis .p{font-size:14.5px;margin:4px 0}.lis .p.ar{font-size:15.5px}
-.play{margin-top:14px;align-self:flex-start;display:inline-flex;align-items:center;gap:8px;background:var(--ink);color:#fff;text-decoration:none;font:800 11px "JetBrains Mono";letter-spacing:.14em;text-transform:uppercase;padding:12px 16px;border-radius:999px}
-.play:hover{background:var(--acc)}
-.dbody{max-width:760px;margin:0 auto;padding:40px 20px 0}
-.sph{width:100%;aspect-ratio:21/8;object-fit:cover;border-radius:6px;margin-bottom:26px}
-.pq{position:relative;padding:6px 0 18px;margin:34px 0 22px;border-bottom:1px solid #d9d3c6}
-.pq::before{content:"“";position:absolute;left:-6px;top:-34px;font-family:"Bodoni Moda";font-weight:900;font-size:140px;color:var(--acc);line-height:1}
-.pq .en{font-family:"Bodoni Moda";font-style:italic;font-weight:600;font-size:clamp(26px,4vw,36px);line-height:1.18;padding-left:50px}
-.pq .tr{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:14px;padding-left:50px}
-.pq .jm{font-size:15px;line-height:1.65;color:#4a4740}.pq .ar{font-size:17px;line-height:1.6;color:#4a4740}
-.box{background:color-mix(in srgb,var(--acc) 11%,var(--paper));border-top:4px solid var(--acc);padding:18px 20px 8px;margin-top:10px}
-.box .hd{display:flex;justify-content:space-between;align-items:baseline;gap:8px;margin-bottom:8px}
-.box .hd b{font-family:"Bodoni Moda";font-weight:800;font-size:22px}.box .hd .ad{font-size:19px;color:var(--acc)}
-.box .ty{display:inline-block;font:800 9.5px "JetBrains Mono";letter-spacing:.14em;text-transform:uppercase;color:#fff;background:var(--acc);padding:4px 8px;margin-bottom:10px}
-.theme{margin-top:14px;font:500 10px "JetBrains Mono";letter-spacing:.12em;color:var(--mute)}
-/* back */
-.back{background:#0e2747;padding:60px 0;text-align:center;color:#fff}
-.bkbox{position:relative;max-width:520px;margin:0 auto;border-radius:6px;overflow:hidden;box-shadow:0 30px 70px rgba(0,0,0,.5)}
-.bkmark{position:absolute;left:50%;bottom:1.5%;transform:translateX(-50%);display:flex;align-items:center;justify-content:center;gap:10px;background:#16365f;border-radius:999px;width:58%;height:7.6%;white-space:nowrap}
-.bkmark img{height:42%}.bkmark span{font:800 clamp(8px,1.8vw,11px) "JetBrains Mono";letter-spacing:.14em}
-.back .cta{display:inline-block;margin-top:28px;background:#ffb22e;color:var(--ink);text-decoration:none;font:800 12px "JetBrains Mono";letter-spacing:.16em;text-transform:uppercase;padding:14px 22px;border-radius:999px}
-@media (max-width:820px){
-  .cover .in{grid-template-columns:1fr;gap:26px}
-  .tocS,.pts{grid-template-columns:1fr}
-  .dhero{grid-template-columns:1fr}
-  .dhero .meta{padding:24px 20px}
-  .facts{grid-template-columns:1fr 1fr}.facts div:last-child{grid-column:1/-1;border-left:0;padding-left:0;border-top:1px solid #d9d3c6}
-  .pq .tr{grid-template-columns:1fr;padding-left:0}
-  .pq .en{padding-left:40px}
-  .route::before{left:9px}
-  .route li,.route li:nth-child(even){width:auto;margin-left:0;padding:12px 0 12px 36px;text-align:left}
-  .route li::after,.route li:nth-child(even)::after{left:0;right:auto}
-  .blk{padding:48px 0}
-  .airmark span{display:none}
-  .bar .t{display:none}
-  .ti{grid-template-columns:36px 54px 1fr;gap:10px}.ti img{width:54px;height:54px}
-}
-</style></head><body><header class="bar"><div class="wrap"><a href="./">← Album · Tracklist</a><span class="t">ONE WAY</span><a href="./#rows">Listen ▸</a></div></header>
-<section class="cover"><div class="in"><div class="cvbox"><img src="mag/x-cover.webp" width="1086" height="1448" alt="ONE WAY magazine cover: Okinawa… One Way…"><div class="airmark"><img src="../brand/layl-logo-cream.svg" alt=""><span>LAY-L AIR<br><i>片道航空</i></span></div></div>
-<div class="txt"><p class="sec">The in-flight magazine of LAY-L · مجلة رحلة LAY-L</p><h1>ONE<br>WAY<small>片道 · ذهاب فقط</small></h1>
-<a class="cl" href="#why"><b>Why Okinawa? Why one way?</b><span class="ar">لماذا أوكيناوا؟</span></a>
-<a class="cl" href="#d01"><b>Nine songs, nine routes to Japan</b><span class="ar">تسع أغانٍ، تسع طرق إلى اليابان</span></a>
-<a class="cl" href="#map"><b>Route map: nine eras of Japan</b><span class="ar">خريطة الرحلة</span></a></div></div></section><section class="blk" style="border:0"><div class="wrap"><p class="sec">Contents · المحتويات · 目次</p><h2 class="h">This flight</h2>
-<div class="tocS"><a class="ti" href="#crew"><span class="n">→</span><span><b>Welcome aboard</b><span class="ar">مرحبًا بكم على متن الرحلة</span></span></a><a class="ti" href="#why"><span class="n">→</span><span><b>Why Okinawa? Why one way?</b><span class="ar">لماذا أوكيناوا؟</span></span></a><a class="ti" href="#map"><span class="n">→</span><span><b>Route map</b><span class="ar">خريطة الرحلة</span></span></a><a class="ti" href="#ent"><span class="n">→</span><span><b>In-flight entertainment</b><span class="ar">الترفيه على متن الطائرة</span></span></a></div>
-<p class="sec" style="margin-top:28px">Destinations · الوجهات · 目的地</p><a class="ti" href="#d01" style="--c:#8e3a8c"><span class="n">01</span><img src="art-01.webp" alt="" loading="lazy" style="object-fit:cover"><span><b>One Missed Call.. Two…</b><span>Modern Japanese Hip-Hop · Club Rap</span><span class="ar">مكالمة فائتة… اثنتان…</span></span></a><a class="ti" href="#d02" style="--c:#b06a1f"><span class="n">02</span><img src="art-02.webp" alt="" loading="lazy" style="object-fit:cover"><span><b>Sakura</b><span>Late-90s Alt R&amp;B · Neo-Soul · Boom-Bap</span><span class="ar">ساكورا</span></span></a><a class="ti" href="#d03" style="--c:#1d8466"><span class="n">03</span><img src="art-03.webp" alt="" loading="lazy" style="object-fit:cover"><span><b>Lost in Japan</b><span>90s Gospel-R&amp;B · Y2K Alt Pop</span><span class="ar">تائهة في اليابان</span></span></a><a class="ti" href="#d04" style="--c:#b0262e"><span class="n">04</span><img src="art-07.webp" alt="" loading="lazy" style="object-fit:cover"><span><b>Why Would I?</b><span>1970s Japanese City Pop · Disco · Soul-Funk</span><span class="ar">ولماذا قد أفعل؟</span></span></a><a class="ti" href="#d05" style="--c:#2c6d66"><span class="n">05</span><img src="art-04.webp" alt="" loading="lazy" style="object-fit:cover"><span><b>The Voice at Platform Two</b><span>1970s Enka · Kayōkyoku · Cinematic Ballad</span><span class="ar">الصوت عند المنصّة الثانية</span></span></a><a class="ti" href="#d06" style="--c:#d2574b"><span class="n">06</span><img src="art-05.webp" alt="" loading="lazy" style="object-fit:cover"><span><b>Plastic Flower</b><span>1960s Japanese Garage Rock · Surf · Rockabilly</span><span class="ar">زهرة بلاستيكية</span></span></a><a class="ti" href="#d07" style="--c:#c2306a"><span class="n">07</span><img src="art-06.webp" alt="" loading="lazy" style="object-fit:cover"><span><b>ASMR Stimulation</b><span>Dark Electro-Funk · Alt R&amp;B · Trip-Hop</span><span class="ar">تحفيز ASMR</span></span></a><a class="ti" href="#d08" style="--c:#c35e22"><span class="n">08</span><img src="art-08.webp" alt="" loading="lazy" style="object-fit:cover"><span><b>The Wind Called In Sick</b><span>Japanese Romantic Waltz · Cinematic Chamber Pop</span><span class="ar">الريح أخذت إجازة مرضية</span></span></a><a class="ti" href="#d09" style="--c:#2d48a0"><span class="n">09</span><img src="art-09.webp" alt="" loading="lazy" style="object-fit:cover"><span><b>Tamagotchi Luv ★</b><span>Dark R&amp;B · Alt R&amp;B</span><span class="ar">حبّ التاماغوتشي</span></span></a></div></section><section class="blk" id="crew"><div class="wrap"><p class="sec">Welcome aboard · مرحبًا بكم · ようこそ</p><h2 class="h">A word from your crew</h2>
-<p class="dek">Okinawa… One Way… is a journey through Japan as seen through film, music and pop culture. Here’s how to travel it.</p><div class="pts"><div class="pt"><h3><span>Japan, as you’ve experienced it</span><span class="ad">اليابان كما عشتَها</span></h3><p class="p">This isn’t an album trying to sound “traditionally Japanese”. It’s Japan as most of us actually meet it: through films, records, anime, toys and late-night internet rabbit holes.</p><p class="p ar">ليس ألبومًا يحاول أن يبدو «يابانيًّا تقليديًّا»، بل اليابان كما يلتقيها معظمنا فعلًا: عبر الأفلام والأسطوانات والأنمي والألعاب وجولات الإنترنت في آخر الليل.</p></div><div class="pt"><h3><span>Nine imaginary soundtracks</span><span class="ad">تسع موسيقى تصويرية متخيَّلة</span></h3><p class="p">Each song is the soundtrack to a film that doesn’t exist. Different stories, different eras, one shared cinematic universe.</p><p class="p ar">كلّ أغنية موسيقى تصويرية لفيلمٍ غير موجود. قصصٌ مختلفة، وعصورٌ مختلفة، وعالمٌ سينمائيّ واحد.</p></div><div class="pt"><h3><span>Big feelings for small things</span><span class="ad">مشاعر كبيرة لأشياء صغيرة</span></h3><p class="p">The narrators grieve what nobody else would: a recorded voice, a plastic flower, a half-heard song. The absurd is treated with complete sincerity.</p><p class="p ar">يحزن الرواة على ما لا يحزن عليه أحد: صوتٌ مسجَّل، وزهرةٌ بلاستيكية، وأغنيةٌ نصفُ مسموعة. ويُعامَل العبثيّ بصدقٍ كامل.</p></div><div class="pt"><h3><span>Freedom to move</span><span class="ad">حرّية التنقّل</span></h3><p class="p">The one-way ticket is permission to travel from 1960s garage rock to a Ghibli waltz without ever explaining yourself, and without going back.</p><p class="p ar">تذكرة الذهاب فقط إذنٌ بالسفر من روك الستينيات إلى فالس جيبلي دون تبريرٍ ودون عودة.</p></div></div><p class="sig">— LAY-L</p></div></section><section class="blk" id="why"><div class="wrap"><img class="feat-ph" src="mag/x-ticket.webp" alt="A hand holding a one-way ticket to Okinawa" loading="lazy"><p class="sec">Feature · مقال · 特集</p><h2 class="h">Why Okinawa?<br>Why one way?</h2>
-<p class="p dc">In Quentin Tarantino’s Kill Bill: Vol. 1, The Bride walks up to an airline counter and asks for a one-way ticket to Okinawa. She isn’t planning to come back the same person. LAY-L borrowed that moment for the album’s title: a tribute to cinema, and a statement of direction. A one-way ticket means no return trip to a single sound. Every song is a new destination, with its own decade, genre and story.</p><p class="p ar">في فيلم «<bdi>Kill Bill: Vol. 1</bdi>» لكوينتن تارانتينو، تتقدّم «العروس» إلى مكتب طيران وتطلب تذكرة ذهابٍ فقط إلى أوكيناوا. لا تنوي أن تعود الشخصَ نفسه. استعارت <bdi>LAY-L</bdi> تلك اللحظة عنوانًا للألبوم: تحيّةً للسينما، وإعلانًا عن الاتجاه. تذكرة الذهاب فقط تعني ألّا عودة إلى صوتٍ واحد. كلّ أغنية وجهةٌ جديدة، بعقدها ونوعها وقصّتها.</p>
-<span class="kb">THE KILL BILL THREAD</span><p class="p">Kill Bill runs through the whole record: the title comes from it, Shura no Hana (track 05) plays in it, and The 5.6.7.8’s (track 06) perform in it.</p><p class="p ar">يمتدّ «<bdi>Kill Bill</bdi>» عبر الألبوم كلّه: منه جاء العنوان، وفيه تُسمَع «<bdi>Shura no Hana</bdi>» (الأغنية <bdi>05)</bdi>، وفيه تعزف فرقة «<bdi>The 5.6.7.8’s</bdi>» (الأغنية <bdi>06).</bdi></p></div></section><section class="blk map" id="map"><div class="wrap"><p class="sec">Route map · خريطة الرحلة · 路線図</p><h2 class="h">Nine eras of Japan</h2>
-<p class="p" style="color:#cfd8de">Each song departs from a different moment in Japanese music, cinema and pop culture.</p>
-<ol class="route"><li><b>1960s</b><span>Plastic Flower</span><i>LYL 06</i></li><li><b>1973</b><span>The Voice at Platform Two</span><i>LYL 05</i></li><li><b>1979</b><span>Why Would I?</span><i>LYL 04</i></li><li><b>1990s</b><span>Sakura</span><i>LYL 02</i></li><li><b>1996</b><span>Tamagotchi Luv</span><i>LYL 09</i></li><li><b>Y2K</b><span>Lost in Japan</span><i>LYL 03</i></li><li><b>2004</b><span>The Wind Called In Sick</span><i>LYL 08</i></li><li><b>Now</b><span>One Missed Call · ASMR Stimulation</span><i>LYL 01 · 07</i></li></ol></div></section><section class="blk" id="ent"><div class="wrap"><p class="sec">In-flight entertainment · الترفيه · 機内エンターテインメント</p><h2 class="h">Audio channels</h2><a class="ch" href="#d01" style="--c:#8e3a8c"><span class="no"><small>CH</small>01</span><img src="art-01.webp" alt="" loading="lazy" style="object-fit:cover"><span><span class="t2"><b>One Missed Call.. Two…</b><span class="ad">مكالمة فائتة… اثنتان…</span></span><span class="g">Modern Japanese Hip-Hop · Club Rap · Instrumental · Cinematic</span></span></a><a class="ch" href="#d02" style="--c:#b06a1f"><span class="no"><small>CH</small>02</span><img src="art-02.webp" alt="" loading="lazy" style="object-fit:cover"><span><span class="t2"><b>Sakura</b><span class="ad">ساكورا</span></span><span class="g">Late-90s Alt R&amp;B · Neo-Soul · Boom-Bap · Lyrical · Cultural</span></span></a><a class="ch" href="#d03" style="--c:#1d8466"><span class="no"><small>CH</small>03</span><img src="art-03.webp" alt="" loading="lazy" style="object-fit:cover"><span><span class="t2"><b>Lost in Japan</b><span class="ad">تائهة في اليابان</span></span><span class="g">90s Gospel-R&amp;B · Y2K Alt Pop · Geographic · Instrumental</span></span></a><a class="ch" href="#d04" style="--c:#b0262e"><span class="no"><small>CH</small>04</span><img src="art-07.webp" alt="" loading="lazy" style="object-fit:cover"><span><span class="t2"><b>Why Would I?</b><span class="ad">ولماذا قد أفعل؟</span></span><span class="g">1970s Japanese City Pop · Disco · Soul-Funk · Musical</span></span></a><a class="ch" href="#d05" style="--c:#2c6d66"><span class="no"><small>CH</small>05</span><img src="art-04.webp" alt="" loading="lazy" style="object-fit:cover"><span><span class="t2"><b>The Voice at Platform Two</b><span class="ad">الصوت عند المنصّة الثانية</span></span><span class="g">1970s Enka · Kayōkyoku · Cinematic Ballad · Cinematic · Musical</span></span></a><a class="ch" href="#d06" style="--c:#d2574b"><span class="no"><small>CH</small>06</span><img src="art-05.webp" alt="" loading="lazy" style="object-fit:cover"><span><span class="t2"><b>Plastic Flower</b><span class="ad">زهرة بلاستيكية</span></span><span class="g">1960s Japanese Garage Rock · Surf · Rockabilly · Musical · Cinematic</span></span></a><a class="ch" href="#d07" style="--c:#c2306a"><span class="no"><small>CH</small>07</span><img src="art-06.webp" alt="" loading="lazy" style="object-fit:cover"><span><span class="t2"><b>ASMR Stimulation</b><span class="ad">تحفيز ASMR</span></span><span class="g">Dark Electro-Funk · Alt R&amp;B · Trip-Hop · Cultural · Listening experience</span></span></a><a class="ch" href="#d08" style="--c:#c35e22"><span class="no"><small>CH</small>08</span><img src="art-08.webp" alt="" loading="lazy" style="object-fit:cover"><span><span class="t2"><b>The Wind Called In Sick</b><span class="ad">الريح أخذت إجازة مرضية</span></span><span class="g">Japanese Romantic Waltz · Cinematic Chamber Pop · Cinematic · Musical</span></span></a><a class="ch" href="#d09" style="--c:#2d48a0"><span class="no"><small>CH</small>09</span><img src="art-09.webp" alt="" loading="lazy" style="object-fit:cover"><span><span class="t2"><b>Tamagotchi Luv ★</b><span class="ad">حبّ التاماغوتشي</span></span><span class="g">Dark R&amp;B · Alt R&amp;B · Pop culture</span></span></a>
-<p class="mono" style="font-size:10px;letter-spacing:.16em;color:#8c877c;margin-top:10px">★ BONUS TRACK · أغنية إضافية · ボーナストラック</p></div></section><section class="dest" id="d01" style="--acc:#8e3a8c"><div class="dhero"><img class="art" src="sq-01.webp" alt="One Missed Call.. Two… artwork" loading="lazy">
-<div class="meta"><p class="sec">Destination 01 / 09 · LYL 001</p><h2 class="h">One Missed Call.. Two…</h2><div class="subs"><span class="jm">不在着信…2件…</span><span class="ad">مكالمة فائتة… اثنتان…</span></div>
+.map{background:#0d2a3a;color:#e9eef2}
+.map .sec{color:#ffb22e}
+.map .h{color:#fff}
+.mapsvg{position:absolute;left:0;right:0;top:170px;height:690px}
+/* entertainment */
+.ch{display:grid;grid-template-columns:42px 58px 1fr;gap:12px;align-items:center;padding:8px 0;border-bottom:1px solid #e6e0d5}
+.ch .no{font:800 10px/1.2 "JetBrains Mono";color:#fff;background:var(--c);border-radius:4px;text-align:center;padding:6px 0}
+.ch .no small{display:block;font-size:7px;letter-spacing:.14em;opacity:.85}
+.ch img{width:58px;height:58px;object-fit:cover;border-radius:4px}
+.ch b{font-family:"Bodoni Moda";font-weight:800;font-size:16px;line-height:1.1}
+.ch .g{display:block;font-size:10px;color:#6a6760;margin-top:2px;letter-spacing:.02em}
+.ch .t2{display:flex;justify-content:space-between;gap:8px;align-items:baseline}
+.ch .t2 .ad{font-size:13px;color:#4a4740}
+/* destination A */
+.dA{padding:0}
+.dA .ph{height:540px;background-size:cover;background-position:center}
+.dA .in{padding:20px 36px 0}
+.dA .top{display:flex;justify-content:space-between;align-items:baseline}
+.dA .h{font-size:44px;margin:8px 0 4px}
+.dA .subs{display:flex;justify-content:space-between;align-items:baseline;gap:10px}
+.dA .subs .jm{font-size:16px;font-weight:700;color:var(--acc)}
+.dA .subs .ad{font-size:19px}
+.facts{display:grid;grid-template-columns:1.35fr .7fr 1fr;border-top:2px solid #17181c;border-bottom:1px solid #d9d3c6;margin:14px 0 12px}
+.facts div{padding:8px 10px 8px 0}
+.facts div+div{padding-left:10px;border-left:1px solid #d9d3c6}
+.facts small{display:block;font:800 7.5px "JetBrains Mono";letter-spacing:.16em;text-transform:uppercase;color:#8c877c;margin-bottom:3px}
+.facts b{font-size:11.5px;line-height:1.3;display:block}
+.facts .ar{font-size:11px;color:#4a4740;margin-top:2px;line-height:1.4}
+.lis small{font:800 8px "JetBrains Mono";letter-spacing:.18em;text-transform:uppercase;color:var(--acc)}
+.lis .p{font-size:12.6px;line-height:1.55;margin:3px 0 4px}
+.lis .p.ar{font-size:13.6px;line-height:1.7}
+/* destination B */
+.pq{position:relative;padding:8px 0 14px;margin:6px 0 14px;border-bottom:1px solid #d9d3c6}
+.pq::before{content:"“";position:absolute;left:-6px;top:-30px;font-family:"Bodoni Moda";font-weight:900;font-size:120px;color:var(--acc);opacity:.9;line-height:1}
+.pq .en{font-family:"Bodoni Moda";font-style:italic;font-weight:600;font-size:30px;line-height:1.16;padding-left:42px}
+.pq .tr{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:12px;padding-left:42px}
+.pq .jm{font-size:14px;line-height:1.65;color:#4a4740}
+.pq .ar{font-size:16.5px;line-height:1.6;color:#4a4740}
+.box{background:color-mix(in srgb,var(--acc) 11%,#faf8f4);border-top:4px solid var(--acc);padding:12px 14px 6px;margin-top:6px}
+.box .hd{display:flex;justify-content:space-between;align-items:baseline;gap:8px;margin-bottom:6px}
+.box .hd b{font-family:"Bodoni Moda";font-weight:800;font-size:18px}
+.box .hd .ad{font-size:16px;color:var(--acc)}
+.box .ty{display:inline-block;font:800 8.5px "JetBrains Mono";letter-spacing:.14em;text-transform:uppercase;color:#fff;background:var(--acc);padding:3px 7px;margin-bottom:7px}
+.box .p{font-size:14px;line-height:1.55}
+.box .p.ar{font-size:15.2px;line-height:1.75}
+/* arrivals */
+.arr{background:#07090d;color:#e9eef2;text-align:center;display:flex;flex-direction:column;justify-content:center;align-items:center}
+.arr .h{color:#fff}
+.arr .url{font:800 12px "JetBrains Mono";color:#ffb22e;margin-top:8px}
+*{box-sizing:border-box;margin:0;padding:0}
+.pg34{width:540px;height:720px;position:relative;overflow:hidden}
+.full{position:absolute;inset:0;width:540px;height:720px;object-fit:cover}
+.airmark{position:absolute;left:0;top:0;width:216px;height:45px;background:#1f4a78;display:flex;align-items:center;gap:8px;padding:0 12px}
+.airmark img{height:18px}.airmark span{font:800 9px/1.15 "JetBrains Mono";letter-spacing:.14em;color:#fff}.airmark i{font-style:normal;font-family:"Zen Kaku Gothic New";letter-spacing:.2em;color:#ffd38a}
+.bkmark{position:absolute;left:50%;bottom:12px;transform:translateX(-50%);display:flex;align-items:center;justify-content:center;gap:10px;background:#16365f;border-radius:999px;width:300px;height:54px;white-space:nowrap;box-shadow:0 0 0 6px rgba(22,54,95,.35)}
+.bkmark img{height:18px}.bkmark span{font:800 11px "JetBrains Mono";letter-spacing:.16em;color:#fff}
+.bkurl{position:absolute;left:0;right:0;top:20px;text-align:center;font:500 9px "JetBrains Mono";letter-spacing:.08em;color:#cfe0f0;line-height:1.7}
+.bkurl b{color:#ffd38a;font-weight:800;font-size:10px}
+
+html,body{height:100%;overflow:hidden;background:#0b1d36}
+body{-webkit-tap-highlight-color:transparent}
+.vbar{position:fixed;top:0;left:0;right:0;height:52px;z-index:10;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:0 16px;background:#0e2747;border-bottom:1px solid #1f3a60;color:#e9eef2}
+.vbar a{color:#e9eef2;text-decoration:none;font:800 11px "JetBrains Mono";letter-spacing:.14em;text-transform:uppercase}
+.vbar a:hover{color:#ffb22e}
+.vbar .t{font:900 21px "Bodoni Moda",serif;letter-spacing:-.01em}
+.vbar .t small{font:800 9px "JetBrains Mono";letter-spacing:.2em;color:#ffd38a;margin-left:8px;text-transform:uppercase}
+.stage{position:fixed;top:52px;bottom:46px;left:0;right:0;touch-action:pan-y pinch-zoom;user-select:none;-webkit-user-select:none}
+.view{position:absolute;left:50%;top:50%;display:none;transform-origin:0 0}
+.view.on{display:block;animation:turn .35s ease}
+@keyframes turn{from{opacity:0;filter:blur(2px)}to{opacity:1;filter:none}}
+.view .pg,.view .pg34{position:absolute;top:0;box-shadow:0 20px 50px rgba(0,0,0,.45)}
+.view .gut{position:absolute;top:0;bottom:0;width:30px;margin-left:-15px;pointer-events:none;background:linear-gradient(90deg,rgba(0,0,0,0),rgba(0,0,0,.18) 50%,rgba(0,0,0,0));z-index:2}
+.nav{position:fixed;top:50%;transform:translateY(-50%);z-index:11;width:44px;height:44px;border-radius:50%;border:1px solid #2f4e78;background:#0e2747;color:#fff;font-size:20px;cursor:pointer;display:grid;place-items:center}
+.nav:hover{border-color:#ffb22e;color:#ffb22e}.nav[disabled]{opacity:.25;cursor:default}
+#prev{left:12px}#next{right:12px}
+.foot2{position:fixed;left:0;right:0;bottom:0;height:46px;display:flex;align-items:center;gap:14px;padding:0 16px;color:#9fb3cc;font:800 10px "JetBrains Mono";letter-spacing:.16em;text-transform:uppercase}
+.prog{flex:1;height:3px;background:#1f3a60;border-radius:3px;overflow:hidden}.prog i{display:block;height:100%;background:#ffb22e;width:0;transition:width .3s}
+.hint{color:#6f86a3}
+.ti{cursor:pointer}.ti:hover b{text-decoration:underline}
+@media (max-width:700px){.vbar .t small,.hint{display:none}.nav{width:36px;height:36px;font-size:16px;top:auto;bottom:5px;transform:none}#prev{left:auto;right:56px}#next{right:12px}.foot2{padding-right:110px}}
+</style></head><body>
+<header class="vbar"><a href="./">← Album · Tracklist</a><span class="t">ONE WAY<small>In-flight magazine</small></span><a href="./#rows">Listen ▸</a></header>
+<main class="stage" id="stage" aria-label="Magazine pages"></main>
+<button class="nav" id="prev" aria-label="Previous page">‹</button><button class="nav" id="next" aria-label="Next page">›</button>
+<div class="foot2"><span id="pc">01 / 25</span><span class="prog"><i id="bar"></i></span><span class="hint">Swipe or use ← →</span></div>
+<template><section class="pg34"><img class="full" src="mag/x-cover.webp">
+<div class="airmark"><img src="../brand/layl-logo-cream.svg"><span>LAY-L AIR<br><i>片道航空</i></span></div></section></template><template><section class="pg"><p class="sec">Contents · المحتويات · 目次</p><h1 class="h" style="font-size:40px;margin-bottom:0">This flight</h1>
+<div class="toc tocS"><div class="ti sm"><span class="n" style="--c:#b0262e">03</span><div class="tt"><b>Welcome aboard</b><span>The philosophy of the album</span><span class="ar">مرحبًا بكم على متن الرحلة</span></div></div>
+<div class="ti sm"><span class="n" style="--c:#b0262e">04</span><div class="tt"><b>Why Okinawa? Why one way?</b><span>Where the title comes from</span><span class="ar">لماذا أوكيناوا؟ ولماذا ذهابٌ بلا عودة؟</span></div></div>
+<div class="ti sm"><span class="n" style="--c:#b0262e">05</span><div class="tt"><b>Route map</b><span>Nine eras of Japan</span><span class="ar">خريطة الرحلة</span></div></div>
+<div class="ti sm"><span class="n" style="--c:#b0262e">06</span><div class="tt"><b>In-flight entertainment</b><span>Audio channel guide</span><span class="ar">الترفيه على متن الطائرة</span></div></div></div><p class="sec" style="margin-top:12px">Destinations · الوجهات · 目的地</p><div class="toc2"><div class="ti"><span class="n" style="--c:#8e3a8c">07</span><img src="sq-01.webp"><div class="tt"><b>One Missed Call.. Two…</b><span>Modern Japanese Hip-Hop · Club Rap</span><span class="ar">مكالمة فائتة… اثنتان…</span></div></div><div class="ti"><span class="n" style="--c:#b06a1f">09</span><img src="sq-02.webp"><div class="tt"><b>Sakura</b><span>Late-90s Alt R&amp;B · Neo-Soul · Boom-Bap</span><span class="ar">ساكورا</span></div></div><div class="ti"><span class="n" style="--c:#1d8466">11</span><img src="sq-03.webp"><div class="tt"><b>Lost in Japan</b><span>90s Gospel-R&amp;B · Y2K Alt Pop</span><span class="ar">تائهة في اليابان</span></div></div><div class="ti"><span class="n" style="--c:#b0262e">13</span><img src="sq-07.webp"><div class="tt"><b>Why Would I?</b><span>1970s Japanese City Pop · Disco · Soul-Funk</span><span class="ar">ولماذا قد أفعل؟</span></div></div><div class="ti"><span class="n" style="--c:#2c6d66">15</span><img src="sq-04.webp"><div class="tt"><b>The Voice at Platform Two</b><span>1970s Enka · Kayōkyoku · Cinematic Ballad</span><span class="ar">الصوت عند المنصّة الثانية</span></div></div><div class="ti"><span class="n" style="--c:#d2574b">17</span><img src="sq-05.webp"><div class="tt"><b>Plastic Flower</b><span>1960s Japanese Garage Rock · Surf · Rockabilly</span><span class="ar">زهرة بلاستيكية</span></div></div><div class="ti"><span class="n" style="--c:#c2306a">19</span><img src="sq-06.webp"><div class="tt"><b>ASMR Stimulation</b><span>Dark Electro-Funk · Alt R&amp;B · Trip-Hop</span><span class="ar">تحفيز ASMR</span></div></div><div class="ti"><span class="n" style="--c:#c35e22">21</span><img src="sq-08.webp"><div class="tt"><b>The Wind Called In Sick</b><span>Japanese Romantic Waltz · Cinematic Chamber Pop</span><span class="ar">الريح أخذت إجازة مرضية</span></div></div><div class="ti"><span class="n" style="--c:#2d48a0">23</span><img src="sq-09.webp"><div class="tt"><b>Tamagotchi Luv</b><span>Dark R&amp;B · Alt R&amp;B</span><span class="ar">حبّ التاماغوتشي</span></div></div></div><div class="folio"><span><b>ONE WAY</b> · Issue Nº 2</span><span>Contents</span><span><b>02</b></span></div></section></template><template><section class="pg"><p class="sec">Welcome aboard · مرحبًا بكم · ようこそ</p><h1 class="h">A word from<br>your crew</h1>
+<p class="dek">Okinawa… One Way… is a journey through Japan as seen through film, music and pop culture. Here’s how to travel it.</p>
+<div class="pt"><h3><span>Japan, as you’ve experienced it</span><span class="ad">اليابان كما عشتَها</span></h3><p class="p">This isn’t an album trying to sound “traditionally Japanese”. It’s Japan as most of us actually meet it: through films, records, anime, toys and late-night internet rabbit holes.</p><p class="p ar">ليس ألبومًا يحاول أن يبدو «يابانيًّا تقليديًّا»، بل اليابان كما يلتقيها معظمنا فعلًا: عبر الأفلام والأسطوانات والأنمي والألعاب وجولات الإنترنت في آخر الليل.</p></div><div class="pt"><h3><span>Nine imaginary soundtracks</span><span class="ad">تسع موسيقى تصويرية متخيَّلة</span></h3><p class="p">Each song is the soundtrack to a film that doesn’t exist. Different stories, different eras, one shared cinematic universe.</p><p class="p ar">كلّ أغنية موسيقى تصويرية لفيلمٍ غير موجود. قصصٌ مختلفة، وعصورٌ مختلفة، وعالمٌ سينمائيّ واحد.</p></div><div class="pt"><h3><span>Big feelings for small things</span><span class="ad">مشاعر كبيرة لأشياء صغيرة</span></h3><p class="p">The narrators grieve what nobody else would: a recorded voice, a plastic flower, a half-heard song. The absurd is treated with complete sincerity.</p><p class="p ar">يحزن الرواة على ما لا يحزن عليه أحد: صوتٌ مسجَّل، وزهرةٌ بلاستيكية، وأغنيةٌ نصفُ مسموعة. ويُعامَل العبثيّ بصدقٍ كامل.</p></div><div class="pt"><h3><span>Freedom to move</span><span class="ad">حرّية التنقّل</span></h3><p class="p">The one-way ticket is permission to travel from 1960s garage rock to a Ghibli waltz without ever explaining yourself, and without going back.</p><p class="p ar">تذكرة الذهاب فقط إذنٌ بالسفر من روك الستينيات إلى فالس جيبلي دون تبريرٍ ودون عودة.</p></div><p class="sig">— LAY-L</p><div class="folio"><span><b>ONE WAY</b> · Issue Nº 2</span><span>Welcome aboard</span><span><b>03</b></span></div></section></template><template><section class="pg feat"><div class="ph"></div><div class="in"><p class="sec">Feature · مقال · 特集</p>
+<h1 class="h" style="font-size:40px">Why Okinawa?<br>Why one way?</h1>
+<p class="p dc">In Quentin Tarantino’s Kill Bill: Vol. 1, The Bride walks up to an airline counter and asks for a one-way ticket to Okinawa. She isn’t planning to come back the same person. LAY-L borrowed that moment for the album’s title: a tribute to cinema, and a statement of direction. A one-way ticket means no return trip to a single sound. Every song is a new destination, with its own decade, genre and story.</p>
+<p class="p ar">في فيلم «<bdi>Kill Bill: Vol. 1</bdi>» لكوينتن تارانتينو، تتقدّم «العروس» إلى مكتب طيران وتطلب تذكرة ذهابٍ فقط إلى أوكيناوا. لا تنوي أن تعود الشخصَ نفسه. استعارت <bdi>LAY-L</bdi> تلك اللحظة عنوانًا للألبوم: تحيّةً للسينما، وإعلانًا عن الاتجاه. تذكرة الذهاب فقط تعني ألّا عودة إلى صوتٍ واحد. كلّ أغنية وجهةٌ جديدة، بعقدها ونوعها وقصّتها.</p>
+<hr class="rule"><span class="kb">THE KILL BILL THREAD</span><p class="p" style="margin-top:7px;font-size:13px">Kill Bill runs through the whole record: the title comes from it, Shura no Hana (track 05) plays in it, and The 5.6.7.8’s (track 06) perform in it.</p><p class="p ar" style="font-size:14px">يمتدّ «<bdi>Kill Bill</bdi>» عبر الألبوم كلّه: منه جاء العنوان، وفيه تُسمَع «<bdi>Shura no Hana</bdi>» (الأغنية <bdi>05)</bdi>، وفيه تعزف فرقة «<bdi>The 5.6.7.8’s</bdi>» (الأغنية <bdi>06).</bdi></p>
+</div><div class="folio"><span><b>ONE WAY</b> · Issue Nº 2</span><span>Feature</span><span><b>04</b></span></div></section></template><template><section class="pg map"><p class="sec">Route map · خريطة الرحلة · 路線図</p><h1 class="h">Nine eras<br>of Japan</h1>
+<p class="p" style="color:#cfd8de;font-size:13px">Each song departs from a different moment in Japanese music, cinema and pop culture.</p><svg class="mapsvg" viewBox="0 0 540 690"><path d="M70,40 L390,110 L120,190 L400,270 L110,350 L380,430 L140,510 L330,600" fill="none" stroke="#ffb22e" stroke-width="2" stroke-dasharray="6 7"/><text x="330" y="660" text-anchor="end" font-family="JetBrains Mono" font-size="9" fill="#7fd9cf" letter-spacing="2">✈ ARRIVING OKA</text><circle cx="70" cy="40" r="9" fill="#0d2a3a" stroke="#ffb22e" stroke-width="3"/><text x="88" y="36" text-anchor="start" font-family="Bodoni Moda" font-weight="800" font-size="22" fill="#ffb22e">1960s</text><text x="88" y="56" text-anchor="start" font-family="Zen Kaku Gothic New" font-weight="700" font-size="13" fill="#fff">Plastic Flower</text><text x="88" y="72" text-anchor="start" font-family="JetBrains Mono" font-weight="800" font-size="9" fill="#7fd9cf" letter-spacing="1.5">LYL 06</text><circle cx="390" cy="110" r="9" fill="#0d2a3a" stroke="#ffb22e" stroke-width="3"/><text x="372" y="106" text-anchor="end" font-family="Bodoni Moda" font-weight="800" font-size="22" fill="#ffb22e">1973</text><text x="372" y="126" text-anchor="end" font-family="Zen Kaku Gothic New" font-weight="700" font-size="13" fill="#fff">The Voice at Platform Two</text><text x="372" y="142" text-anchor="end" font-family="JetBrains Mono" font-weight="800" font-size="9" fill="#7fd9cf" letter-spacing="1.5">LYL 05</text><circle cx="120" cy="190" r="9" fill="#0d2a3a" stroke="#ffb22e" stroke-width="3"/><text x="138" y="186" text-anchor="start" font-family="Bodoni Moda" font-weight="800" font-size="22" fill="#ffb22e">1979</text><text x="138" y="206" text-anchor="start" font-family="Zen Kaku Gothic New" font-weight="700" font-size="13" fill="#fff">Why Would I?</text><text x="138" y="222" text-anchor="start" font-family="JetBrains Mono" font-weight="800" font-size="9" fill="#7fd9cf" letter-spacing="1.5">LYL 04</text><circle cx="400" cy="270" r="9" fill="#0d2a3a" stroke="#ffb22e" stroke-width="3"/><text x="382" y="266" text-anchor="end" font-family="Bodoni Moda" font-weight="800" font-size="22" fill="#ffb22e">1990s</text><text x="382" y="286" text-anchor="end" font-family="Zen Kaku Gothic New" font-weight="700" font-size="13" fill="#fff">Sakura</text><text x="382" y="302" text-anchor="end" font-family="JetBrains Mono" font-weight="800" font-size="9" fill="#7fd9cf" letter-spacing="1.5">LYL 02</text><circle cx="110" cy="350" r="9" fill="#0d2a3a" stroke="#ffb22e" stroke-width="3"/><text x="128" y="346" text-anchor="start" font-family="Bodoni Moda" font-weight="800" font-size="22" fill="#ffb22e">1996</text><text x="128" y="366" text-anchor="start" font-family="Zen Kaku Gothic New" font-weight="700" font-size="13" fill="#fff">Tamagotchi Luv</text><text x="128" y="382" text-anchor="start" font-family="JetBrains Mono" font-weight="800" font-size="9" fill="#7fd9cf" letter-spacing="1.5">LYL 09</text><circle cx="380" cy="430" r="9" fill="#0d2a3a" stroke="#ffb22e" stroke-width="3"/><text x="362" y="426" text-anchor="end" font-family="Bodoni Moda" font-weight="800" font-size="22" fill="#ffb22e">Y2K</text><text x="362" y="446" text-anchor="end" font-family="Zen Kaku Gothic New" font-weight="700" font-size="13" fill="#fff">Lost in Japan</text><text x="362" y="462" text-anchor="end" font-family="JetBrains Mono" font-weight="800" font-size="9" fill="#7fd9cf" letter-spacing="1.5">LYL 03</text><circle cx="140" cy="510" r="9" fill="#0d2a3a" stroke="#ffb22e" stroke-width="3"/><text x="158" y="506" text-anchor="start" font-family="Bodoni Moda" font-weight="800" font-size="22" fill="#ffb22e">2004</text><text x="158" y="526" text-anchor="start" font-family="Zen Kaku Gothic New" font-weight="700" font-size="13" fill="#fff">The Wind Called In Sick</text><text x="158" y="542" text-anchor="start" font-family="JetBrains Mono" font-weight="800" font-size="9" fill="#7fd9cf" letter-spacing="1.5">LYL 08</text><circle cx="330" cy="600" r="9" fill="#0d2a3a" stroke="#ffb22e" stroke-width="3"/><text x="312" y="596" text-anchor="end" font-family="Bodoni Moda" font-weight="800" font-size="22" fill="#ffb22e">Now</text><text x="312" y="616" text-anchor="end" font-family="Zen Kaku Gothic New" font-weight="700" font-size="13" fill="#fff">One Missed Call · ASMR</text><text x="312" y="632" text-anchor="end" font-family="JetBrains Mono" font-weight="800" font-size="9" fill="#7fd9cf" letter-spacing="1.5">LYL 01 · 07</text></svg><div class="folio"><span><b>ONE WAY</b> · Issue Nº 2</span><span>Route map</span><span><b>05</b></span></div></section></template><template><section class="pg"><p class="sec">In-flight entertainment · الترفيه · 機内エンターテインメント</p><h1 class="h" style="font-size:40px">Audio channels</h1>
+<div style="margin-top:8px"><div class="ch" style="--c:#8e3a8c"><span class="no"><small>CH</small>01</span><img src="sq-01.webp"><div><div class="t2"><b>One Missed Call.. Two…</b><span class="ad">مكالمة فائتة… اثنتان…</span></div><span class="g">Modern Japanese Hip-Hop · Club Rap · Instrumental · Cinematic</span></div></div><div class="ch" style="--c:#b06a1f"><span class="no"><small>CH</small>02</span><img src="sq-02.webp"><div><div class="t2"><b>Sakura</b><span class="ad">ساكورا</span></div><span class="g">Late-90s Alt R&amp;B · Neo-Soul · Boom-Bap · Lyrical · Cultural</span></div></div><div class="ch" style="--c:#1d8466"><span class="no"><small>CH</small>03</span><img src="sq-03.webp"><div><div class="t2"><b>Lost in Japan</b><span class="ad">تائهة في اليابان</span></div><span class="g">90s Gospel-R&amp;B · Y2K Alt Pop · Geographic · Instrumental</span></div></div><div class="ch" style="--c:#b0262e"><span class="no"><small>CH</small>04</span><img src="sq-07.webp"><div><div class="t2"><b>Why Would I?</b><span class="ad">ولماذا قد أفعل؟</span></div><span class="g">1970s Japanese City Pop · Disco · Soul-Funk · Musical</span></div></div><div class="ch" style="--c:#2c6d66"><span class="no"><small>CH</small>05</span><img src="sq-04.webp"><div><div class="t2"><b>The Voice at Platform Two</b><span class="ad">الصوت عند المنصّة الثانية</span></div><span class="g">1970s Enka · Kayōkyoku · Cinematic Ballad · Cinematic · Musical</span></div></div><div class="ch" style="--c:#d2574b"><span class="no"><small>CH</small>06</span><img src="sq-05.webp"><div><div class="t2"><b>Plastic Flower</b><span class="ad">زهرة بلاستيكية</span></div><span class="g">1960s Japanese Garage Rock · Surf · Rockabilly · Musical · Cinematic</span></div></div><div class="ch" style="--c:#c2306a"><span class="no"><small>CH</small>07</span><img src="sq-06.webp"><div><div class="t2"><b>ASMR Stimulation</b><span class="ad">تحفيز ASMR</span></div><span class="g">Dark Electro-Funk · Alt R&amp;B · Trip-Hop · Cultural · Listening experience</span></div></div><div class="ch" style="--c:#c35e22"><span class="no"><small>CH</small>08</span><img src="sq-08.webp"><div><div class="t2"><b>The Wind Called In Sick</b><span class="ad">الريح أخذت إجازة مرضية</span></div><span class="g">Japanese Romantic Waltz · Cinematic Chamber Pop · Cinematic · Musical</span></div></div><div class="ch" style="--c:#2d48a0"><span class="no"><small>CH</small>09</span><img src="sq-09.webp"><div><div class="t2"><b>Tamagotchi Luv ★</b><span class="ad">حبّ التاماغوتشي</span></div><span class="g">Dark R&amp;B · Alt R&amp;B · Pop culture</span></div></div></div><p class="mono" style="font-size:8.5px;letter-spacing:.16em;color:#8c877c;margin-top:8px">★ BONUS TRACK · أغنية إضافية · ボーナストラック</p><div class="folio"><span><b>ONE WAY</b> · Issue Nº 2</span><span>Entertainment</span><span><b>06</b></span></div></section></template><template><section class="pg dA" style="--acc:#8e3a8c"><div class="ph" style="background-image:url(sq-01.webp)"></div><div class="in">
+<div class="top"><p class="sec">Destination 01 / 09</p><p class="sec" style="color:#8c877c">LYL 001</p></div>
+<h1 class="h">One Missed Call.. Two…</h1><div class="subs"><span class="jm">不在着信…2件…</span><span class="ad">مكالمة فائتة… اثنتان…</span></div>
 <div class="facts"><div><small>Genre · النوع</small><b>Modern Japanese Hip-Hop · Club Rap</b></div><div><small>Era · الحقبة</small><b>Now</b></div><div><small>Japan link · الصلة</small><b>Instrumental · Cinematic</b><p class="ar">الآلات · السينما</p></div></div>
 <div class="lis"><small>What to listen for · ماذا تسمع</small><p class="p">Bouncy, bass-heavy hip-hop with fierce female rap and a hypnotic three-note shamisen riff. The choruses are instrumental drops.</p><p class="p ar">هيب هوب نطّاط ثقيل الباص، وراب نسائي حادّ، وريف شاميسن منوِّم من ثلاث نغمات. أمّا الكورَس ففواصل موسيقية بلا غناء.</p></div>
-<a class="play" href="./?play=0#rows">▶ Board flight LYL 001</a></div></div>
-<div class="dbody"><img class="sph" src="mag/x-phone.webp" alt="" loading="lazy"><p class="sec">The story · القصة · ストーリー</p>
+</div><div class="folio"><span><b>ONE WAY</b> · Issue Nº 2</span><span>One Missed Call.. Two…</span><span><b>07</b></span></div></section></template><template><section class="pg wimg" style="--acc:#8e3a8c"><div class="sph" style="background-image:url(mag/x-phone.webp)"></div><p class="sec">The story · القصة · ストーリー</p>
 <div class="pq"><p class="en">Tick-tock, running late<br>You still don’t know how to play the game</p><div class="tr"><p class="jm">チクタク、遅刻だね<br>まだゲームのやり方もわからないの</p><p class="ar">تك-توك، تأخّرت<br>وما زلتَ لا تعرف كيف تلعب اللعبة</p></div></div>
-<p class="p dc">Someone keeps calling, convinced persistence will earn a reply. It won’t. As the missed calls pile up, a would-be confrontation turns into a gleeful display of indifference: the joy of refusing to take part in someone else’s drama.</p><p class="p ar">شخصٌ ما يواصل الاتصال، مقتنعًا بأن الإلحاح سيجلب ردًّا. لن يحدث. ومع تراكم المكالمات الفائتة، تتحوّل المواجهة المحتملة إلى استعراضٍ مرحٍ للامبالاة، ومتعةِ رفض المشاركة في دراما الآخرين.</p>
-<div class="box"><div class="hd"><b>Connection to Japan</b><span class="ad">الصلة باليابان</span></div><span class="ty">Instrumental · Cinematic · 楽器・映画</span><p class="p">Traditional Japanese instrumentation meets modern hip-hop: a three-note shamisen riff becomes the hook of a bass-heavy club track. The title also echoes Takashi Miike’s 2003 J-horror One Missed Call (着信アリ), where a ringing phone is the threat.</p><p class="p ar">تلتقي الآلات اليابانية التقليدية بالهيب هوب الحديث: ريف شاميسن من ثلاث نغمات يصبح لازمةَ أغنية نوادٍ ثقيلة الباص. ويذكّر العنوان أيضًا بفيلم الرعب الياباني «<bdi>One Missed Call</bdi>» عام <bdi>2003</bdi> لتاكاشي مييكه، حيث يكون رنين الهاتف هو الخطر.</p></div>
-<p class="theme">THEME · INDIFFERENCE, BOUNDARIES AND THE POWER OF SILENCE · 無関心、境界線、沈黙の力</p></div></section><section class="dest" id="d02" style="--acc:#b06a1f"><div class="dhero"><img class="art" src="sq-02.webp" alt="Sakura artwork" loading="lazy">
-<div class="meta"><p class="sec">Destination 02 / 09 · LYL 002</p><h2 class="h">Sakura</h2><div class="subs"><span class="jm">桜</span><span class="ad">ساكورا</span></div>
+<p class="p dc" style="font-size:15px">Someone keeps calling, convinced persistence will earn a reply. It won’t. As the missed calls pile up, a would-be confrontation turns into a gleeful display of indifference: the joy of refusing to take part in someone else’s drama.</p><p class="p ar" style="font-size:16.4px">شخصٌ ما يواصل الاتصال، مقتنعًا بأن الإلحاح سيجلب ردًّا. لن يحدث. ومع تراكم المكالمات الفائتة، تتحوّل المواجهة المحتملة إلى استعراضٍ مرحٍ للامبالاة، ومتعةِ رفض المشاركة في دراما الآخرين.</p>
+<div class="box"><div class="hd"><b>Connection to Japan</b><span class="ad">الصلة باليابان</span></div><span class="ty">Instrumental · Cinematic · 楽器・映画</span>
+<p class="p">Traditional Japanese instrumentation meets modern hip-hop: a three-note shamisen riff becomes the hook of a bass-heavy club track. The title also echoes Takashi Miike’s 2003 J-horror One Missed Call (着信アリ), where a ringing phone is the threat.</p><p class="p ar">تلتقي الآلات اليابانية التقليدية بالهيب هوب الحديث: ريف شاميسن من ثلاث نغمات يصبح لازمةَ أغنية نوادٍ ثقيلة الباص. ويذكّر العنوان أيضًا بفيلم الرعب الياباني «<bdi>One Missed Call</bdi>» عام <bdi>2003</bdi> لتاكاشي مييكه، حيث يكون رنين الهاتف هو الخطر.</p></div>
+<p class="mono" style="margin-top:10px;font-size:9px;letter-spacing:.12em;color:#6a6760">THEME · INDIFFERENCE, BOUNDARIES AND THE POWER OF SILENCE · 無関心、境界線、沈黙の力</p>
+<div class="folio"><span><b>ONE WAY</b> · Issue Nº 2</span><span>One Missed Call.. Two…</span><span><b>08</b></span></div></section></template><template><section class="pg dA" style="--acc:#b06a1f"><div class="ph" style="background-image:url(sq-02.webp)"></div><div class="in">
+<div class="top"><p class="sec">Destination 02 / 09</p><p class="sec" style="color:#8c877c">LYL 002</p></div>
+<h1 class="h">Sakura</h1><div class="subs"><span class="jm">桜</span><span class="ad">ساكورا</span></div>
 <div class="facts"><div><small>Genre · النوع</small><b>Late-90s Alt R&amp;B · Neo-Soul · Boom-Bap</b></div><div><small>Era · الحقبة</small><b>1990s</b></div><div><small>Japan link · الصلة</small><b>Lyrical · Cultural</b><p class="ar">الكلمات · الثقافة</p></div></div>
 <div class="lis"><small>What to listen for · ماذا تسمع</small><p class="p">Intimate late-90s R&amp;B at 72 BPM: melancholic Rhodes, dusty acoustic piano, laid-back boom-bap drums, warm bass, jazzy seventh chords and a husky, conversational voice.</p><p class="p ar"><bdi>R&amp;B</bdi> حميم من أواخر التسعينيات بسرعة <bdi>72</bdi> نبضة: بيانو رودز حزين، وبيانو صوتي مغبَّر، وطبول «بوم-باب» هادئة، وباص دافئ، وأوتار جازية، وصوتٌ أجشّ يشبه الحديث.</p></div>
-<a class="play" href="./?play=1#rows">▶ Board flight LYL 002</a></div></div>
-<div class="dbody"><p class="sec">The story · القصة · ストーリー</p>
+</div><div class="folio"><span><b>ONE WAY</b> · Issue Nº 2</span><span>Sakura</span><span><b>09</b></span></div></section></template><template><section class="pg" style="--acc:#b06a1f"><p class="sec">The story · القصة · ストーリー</p>
 <div class="pq"><p class="en">Cold rice and tempura<br>You were talking through the morning</p><div class="tr"><p class="jm">冷めたご飯と天ぷら<br>朝まで話し続けたあなた</p><p class="ar">رزٌّ باردٌ وتمبورا<br>وأنتَ تتكلّم حتى الصباح</p></div></div>
-<p class="p dc">Someone keeps turning up, making themselves at home, then leaving without a word. She knows they’re unreliable, yet what she misses isn’t the relationship. It’s the small things: sitting on the floor, cold rice and tempura, talking about nothing until morning.</p><p class="p ar">شخصٌ يظهر مرّةً بعد أخرى، يتصرّف وكأنه في بيته، ثم يرحل بلا كلمة. تعرف أنه لا يُعتمَد عليه، لكن ما تفتقده ليس العلاقة، بل التفاصيل الصغيرة: الجلوس على الأرض، رزٌّ بارد وتمبورا، والحديث عن لا شيء حتى الصباح.</p>
-<div class="box"><div class="hd"><b>Connection to Japan</b><span class="ad">الصلة باليابان</span></div><span class="ty">Lyrical · Cultural · 歌詞・文化</span><p class="p">Sakura (桜) means cherry blossom, Japan’s most recognisable symbol, and the lyrics are full of everyday Japan: cold rice, tempura, sitting on the floor. The production is American late-90s neo-soul, so the link is lyrical and cultural rather than musical.</p><p class="p ar">«ساكورا» (桜) تعني زهر الكرز، أشهر رموز اليابان، والكلمات مليئة باليابان اليومية: رزٌّ بارد، وتمبورا، والجلوس على الأرض. أمّا الإنتاج فنيو-سول أمريكي من أواخر التسعينيات، لذا فالصلة لغويّة وثقافيّة أكثر منها موسيقيّة.</p></div>
-<p class="theme">THEME · TEMPORARY INTIMACY AND NOSTALGIA FOR ORDINARY MOMENTS · 束の間の親密さと、ありふれた瞬間への郷愁</p></div></section><section class="dest" id="d03" style="--acc:#1d8466"><div class="dhero"><img class="art" src="sq-03.webp" alt="Lost in Japan artwork" loading="lazy">
-<div class="meta"><p class="sec">Destination 03 / 09 · LYL 003</p><h2 class="h">Lost in Japan</h2><div class="subs"><span class="jm">日本で迷子</span><span class="ad">تائهة في اليابان</span></div>
+<p class="p dc" style="font-size:15px">Someone keeps turning up, making themselves at home, then leaving without a word. She knows they’re unreliable, yet what she misses isn’t the relationship. It’s the small things: sitting on the floor, cold rice and tempura, talking about nothing until morning.</p><p class="p ar" style="font-size:16.4px">شخصٌ يظهر مرّةً بعد أخرى، يتصرّف وكأنه في بيته، ثم يرحل بلا كلمة. تعرف أنه لا يُعتمَد عليه، لكن ما تفتقده ليس العلاقة، بل التفاصيل الصغيرة: الجلوس على الأرض، رزٌّ بارد وتمبورا، والحديث عن لا شيء حتى الصباح.</p>
+<div class="box"><div class="hd"><b>Connection to Japan</b><span class="ad">الصلة باليابان</span></div><span class="ty">Lyrical · Cultural · 歌詞・文化</span>
+<p class="p">Sakura (桜) means cherry blossom, Japan’s most recognisable symbol, and the lyrics are full of everyday Japan: cold rice, tempura, sitting on the floor. The production is American late-90s neo-soul, so the link is lyrical and cultural rather than musical.</p><p class="p ar">«ساكورا» (桜) تعني زهر الكرز، أشهر رموز اليابان، والكلمات مليئة باليابان اليومية: رزٌّ بارد، وتمبورا، والجلوس على الأرض. أمّا الإنتاج فنيو-سول أمريكي من أواخر التسعينيات، لذا فالصلة لغويّة وثقافيّة أكثر منها موسيقيّة.</p></div>
+<p class="mono" style="margin-top:10px;font-size:9px;letter-spacing:.12em;color:#6a6760">THEME · TEMPORARY INTIMACY AND NOSTALGIA FOR ORDINARY MOMENTS · 束の間の親密さと、ありふれた瞬間への郷愁</p>
+<div class="folio"><span><b>ONE WAY</b> · Issue Nº 2</span><span>Sakura</span><span><b>10</b></span></div></section></template><template><section class="pg dA" style="--acc:#1d8466"><div class="ph" style="background-image:url(sq-03.webp)"></div><div class="in">
+<div class="top"><p class="sec">Destination 03 / 09</p><p class="sec" style="color:#8c877c">LYL 003</p></div>
+<h1 class="h">Lost in Japan</h1><div class="subs"><span class="jm">日本で迷子</span><span class="ad">تائهة في اليابان</span></div>
 <div class="facts"><div><small>Genre · النوع</small><b>90s Gospel-R&amp;B · Y2K Alt Pop</b></div><div><small>Era · الحقبة</small><b>Y2K</b></div><div><small>Japan link · الصلة</small><b>Geographic · Instrumental</b><p class="ar">المكان · الآلات</p></div></div>
 <div class="lis"><small>What to listen for · ماذا تسمع</small><p class="p">Warm hip-hop grooves, intimate female verses, enormous gospel-choir choruses and a harmonising shamisen underneath it all.</p><p class="p ar">إيقاعات هيب هوب دافئة، ومقاطع نسائية حميمة، وجوقات غوسبل هائلة، وشاميسن متناغم يسري تحتها كلّها.</p></div>
-<a class="play" href="./?play=2#rows">▶ Board flight LYL 003</a></div></div>
-<div class="dbody"><img class="sph" src="mag/x-crowd.webp" alt="" loading="lazy"><p class="sec">The story · القصة · ストーリー</p>
+</div><div class="folio"><span><b>ONE WAY</b> · Issue Nº 2</span><span>Lost in Japan</span><span><b>11</b></span></div></section></template><template><section class="pg wimg" style="--acc:#1d8466"><div class="sph" style="background-image:url(mag/x-crowd.webp)"></div><p class="sec">The story · القصة · ストーリー</p>
 <div class="pq"><p class="en">Funny how a city you’ve never seen<br>Can feel familiar on the first night</p><div class="tr"><p class="jm">不思議ね、見たこともない街が<br>最初の夜から懐かしいなんて</p><p class="ar">غريبٌ كيف لمدينةٍ لم ترَها من قبل<br>أن تبدو مألوفةً منذ الليلة الأولى</p></div></div>
-<p class="p dc">A trip through Japan turns unexpectedly emotional. Matcha from a vending machine, the wrong train, a paper fortune carried off by the breeze: every new detail brings back someone who isn’t there. Hushed verses burst into huge gospel choruses.</p><p class="p ar">رحلةٌ عبر اليابان تصبح عاطفيةً على نحوٍ غير متوقَّع. ماتشا من آلة بيع، وقطارٌ خاطئ، وورقةُ حظٍّ يحملها النسيم بعيدًا، وكلُّ تفصيلٍ جديد يستحضر شخصًا غائبًا. مقاطع هامسة تنفجر في جوقات غوسبل هائلة.</p>
-<div class="box"><div class="hd"><b>Connection to Japan</b><span class="ad">الصلة باليابان</span></div><span class="ty">Geographic · Instrumental · 地理・楽器</span><p class="p">The album’s most geographically explicit song: train stations, vending-machine matcha, getting lost in Shibuya, a paper fortune from a stand. A shamisen harmonises beneath the gospel choir, and that clash is the song’s identity.</p><p class="p ar">أكثر أغاني الألبوم ارتباطًا بالمكان: محطّات القطار، وماتشا آلات البيع، والضياع في شيبويا، وورقة حظٍّ من كشك صغير. شاميسن يتناغم تحت جوقة الغوسبل، وهذا التضادّ هو هوية الأغنية.</p></div>
-<p class="theme">THEME · TRAVEL, AND FAMILIAR FEELINGS IN UNFAMILIAR PLACES · 旅と、見知らぬ場所で出会う懐かしい感情</p></div></section><section class="dest" id="d04" style="--acc:#b0262e"><div class="dhero"><img class="art" src="sq-07.webp" alt="Why Would I? artwork" loading="lazy">
-<div class="meta"><p class="sec">Destination 04 / 09 · LYL 004</p><h2 class="h">Why Would I?</h2><div class="subs"><span class="jm">なぜ、私が？</span><span class="ad">ولماذا قد أفعل؟</span></div>
+<p class="p dc" style="font-size:15px">A trip through Japan turns unexpectedly emotional. Matcha from a vending machine, the wrong train, a paper fortune carried off by the breeze: every new detail brings back someone who isn’t there. Hushed verses burst into huge gospel choruses.</p><p class="p ar" style="font-size:16.4px">رحلةٌ عبر اليابان تصبح عاطفيةً على نحوٍ غير متوقَّع. ماتشا من آلة بيع، وقطارٌ خاطئ، وورقةُ حظٍّ يحملها النسيم بعيدًا، وكلُّ تفصيلٍ جديد يستحضر شخصًا غائبًا. مقاطع هامسة تنفجر في جوقات غوسبل هائلة.</p>
+<div class="box"><div class="hd"><b>Connection to Japan</b><span class="ad">الصلة باليابان</span></div><span class="ty">Geographic · Instrumental · 地理・楽器</span>
+<p class="p">The album’s most geographically explicit song: train stations, vending-machine matcha, getting lost in Shibuya, a paper fortune from a stand. A shamisen harmonises beneath the gospel choir, and that clash is the song’s identity.</p><p class="p ar">أكثر أغاني الألبوم ارتباطًا بالمكان: محطّات القطار، وماتشا آلات البيع، والضياع في شيبويا، وورقة حظٍّ من كشك صغير. شاميسن يتناغم تحت جوقة الغوسبل، وهذا التضادّ هو هوية الأغنية.</p></div>
+<p class="mono" style="margin-top:10px;font-size:9px;letter-spacing:.12em;color:#6a6760">THEME · TRAVEL, AND FAMILIAR FEELINGS IN UNFAMILIAR PLACES · 旅と、見知らぬ場所で出会う懐かしい感情</p>
+<div class="folio"><span><b>ONE WAY</b> · Issue Nº 2</span><span>Lost in Japan</span><span><b>12</b></span></div></section></template><template><section class="pg dA" style="--acc:#b0262e"><div class="ph" style="background-image:url(sq-07.webp)"></div><div class="in">
+<div class="top"><p class="sec">Destination 04 / 09</p><p class="sec" style="color:#8c877c">LYL 004</p></div>
+<h1 class="h">Why Would I?</h1><div class="subs"><span class="jm">なぜ、私が？</span><span class="ad">ولماذا قد أفعل؟</span></div>
 <div class="facts"><div><small>Genre · النوع</small><b>1970s Japanese City Pop · Disco · Soul-Funk</b></div><div><small>Era · الحقبة</small><b>1979</b></div><div><small>Japan link · الصلة</small><b>Musical</b><p class="ar">الموسيقى</p></div></div>
 <div class="lis"><small>What to listen for · ماذا تسمع</small><p class="p">Sophisticated city-pop disco: melodic basslines, warm electric piano, shimmering rhythm guitar, crisp live drums and lush harmonies made for dancing.</p><p class="p ar">ديسكو «سيتي بوب» راقٍ: خطوط باص لحنيّة، وبيانو كهربائي دافئ، وغيتار إيقاعي لامع، وطبول حيّة نقيّة، وتناغمات غنيّة تدعو إلى الرقص.</p></div>
-<a class="play" href="./?play=3#rows">▶ Board flight LYL 004</a></div></div>
-<div class="dbody"><p class="sec">The story · القصة · ストーリー</p>
+</div><div class="folio"><span><b>ONE WAY</b> · Issue Nº 2</span><span>Why Would I?</span><span><b>13</b></span></div></section></template><template><section class="pg" style="--acc:#b0262e"><p class="sec">The story · القصة · ストーリー</p>
 <div class="pq"><p class="en">There’s a little difference<br>Between what I can and what I choose</p><div class="tr"><p class="jm">ちょっとした違いがあるの<br>「できること」と「選ぶこと」の間には</p><p class="ar">ثمّة فرقٌ صغير<br>بين ما أستطيعه وما أختاره</p></div></div>
-<p class="p dc">She could fix it. She could compromise, try again, make it work. Instead she asks a simpler question: why would I? No confrontation and no tears, just a disco groove and the easy confidence of choosing not to.</p><p class="p ar">تستطيع إصلاح الأمر، والتنازل، والمحاولة من جديد. لكنها تطرح سؤالًا أبسط: ولماذا قد أفعل؟ لا مواجهة ولا دموع، بل إيقاعُ ديسكو وثقةٌ هادئة في اختيار ألّا تفعل.</p>
-<div class="box"><div class="hd"><b>Connection to Japan</b><span class="ad">الصلة باليابان</span></div><span class="ty">Musical · 音楽</span><p class="p">Built on the golden age of Japanese city pop, the sleek urban pop of the late 70s and 80s. Its reference point is Miki Matsubara’s 1979 Mayonaka no Door (Stay With Me), which found a huge new global audience decades later.</p><p class="p ar">مبنيّة على العصر الذهبي لموسيقى «سيتي بوب» اليابانية، البوب الحضري الأنيق في أواخر السبعينيات والثمانينيات. مرجعها أغنية ميكي ماتسوبارا «<bdi>Mayonaka no Door</bdi>» عام <bdi>1979</bdi>، التي وجدت جمهورًا عالميًّا جديدًا بعد عقود.</p></div>
-<p class="theme">THEME · SELF-RESPECT AND PERSONAL CHOICE · 自尊心と、自分で選ぶこと</p></div></section><section class="dest" id="d05" style="--acc:#2c6d66"><div class="dhero"><img class="art" src="sq-04.webp" alt="The Voice at Platform Two artwork" loading="lazy">
-<div class="meta"><p class="sec">Destination 05 / 09 · LYL 005</p><h2 class="h">The Voice at Platform Two</h2><div class="subs"><span class="jm">二番線の声</span><span class="ad">الصوت عند المنصّة الثانية</span></div>
+<p class="p dc" style="font-size:15px">She could fix it. She could compromise, try again, make it work. Instead she asks a simpler question: why would I? No confrontation and no tears, just a disco groove and the easy confidence of choosing not to.</p><p class="p ar" style="font-size:16.4px">تستطيع إصلاح الأمر، والتنازل، والمحاولة من جديد. لكنها تطرح سؤالًا أبسط: ولماذا قد أفعل؟ لا مواجهة ولا دموع، بل إيقاعُ ديسكو وثقةٌ هادئة في اختيار ألّا تفعل.</p>
+<div class="box"><div class="hd"><b>Connection to Japan</b><span class="ad">الصلة باليابان</span></div><span class="ty">Musical · 音楽</span>
+<p class="p">Built on the golden age of Japanese city pop, the sleek urban pop of the late 70s and 80s. Its reference point is Miki Matsubara’s 1979 Mayonaka no Door (Stay With Me), which found a huge new global audience decades later.</p><p class="p ar">مبنيّة على العصر الذهبي لموسيقى «سيتي بوب» اليابانية، البوب الحضري الأنيق في أواخر السبعينيات والثمانينيات. مرجعها أغنية ميكي ماتسوبارا «<bdi>Mayonaka no Door</bdi>» عام <bdi>1979</bdi>، التي وجدت جمهورًا عالميًّا جديدًا بعد عقود.</p></div>
+<p class="mono" style="margin-top:10px;font-size:9px;letter-spacing:.12em;color:#6a6760">THEME · SELF-RESPECT AND PERSONAL CHOICE · 自尊心と、自分で選ぶこと</p>
+<div class="folio"><span><b>ONE WAY</b> · Issue Nº 2</span><span>Why Would I?</span><span><b>14</b></span></div></section></template><template><section class="pg dA" style="--acc:#2c6d66"><div class="ph" style="background-image:url(sq-04.webp)"></div><div class="in">
+<div class="top"><p class="sec">Destination 05 / 09</p><p class="sec" style="color:#8c877c">LYL 005</p></div>
+<h1 class="h">The Voice at Platform Two</h1><div class="subs"><span class="jm">二番線の声</span><span class="ad">الصوت عند المنصّة الثانية</span></div>
 <div class="facts"><div><small>Genre · النوع</small><b>1970s Enka · Kayōkyoku · Cinematic Ballad</b></div><div><small>Era · الحقبة</small><b>1973</b></div><div><small>Japan link · الصلة</small><b>Cinematic · Musical</b><p class="ar">السينما · الموسيقى</p></div></div>
 <div class="lis"><small>What to listen for · ماذا تسمع</small><p class="p">Haunting enka in the spirit of Shura no Hana: restrained vocals, vintage electric guitar, delicate percussion and sweeping, bittersweet strings.</p><p class="p ar">إنكا مؤرِّقة على روح «<bdi>Shura no Hana</bdi>»: غناءٌ متحفّظ، وغيتار كهربائي عتيق، وإيقاع رقيق، ووتريّات واسعة حلوة ومرّة.</p></div>
-<a class="play" href="./?play=4#rows">▶ Board flight LYL 005</a></div></div>
-<div class="dbody"><img class="sph" src="mag/x-speaker.webp" alt="" loading="lazy"><p class="sec">The story · القصة · ストーリー</p>
+</div><div class="folio"><span><b>ONE WAY</b> · Issue Nº 2</span><span>The Voice at Platform Two</span><span><b>15</b></span></div></section></template><template><section class="pg wimg" style="--acc:#2c6d66"><div class="sph" style="background-image:url(mag/x-speaker.webp)"></div><p class="sec">The story · القصة · ストーリー</p>
 <div class="pq"><p class="en">I watched a woman disappear<br>Who’d never lived at all</p><div class="tr"><p class="jm">消えていく女を見た<br>一度も生きていなかった女を</p><p class="ar">شاهدتُ امرأةً تختفي<br>امرأةً لم تكن موجودةً أصلًا</p></div></div>
-<p class="p dc">Every morning the same recorded voice asks passengers to stand behind the yellow line. One Tuesday it’s replaced. The trains still run on time and nobody notices, except her. A routine software update becomes a quiet, genuine tragedy.</p><p class="p ar">كلَّ صباح، يطلب الصوتُ المسجَّل نفسُه من الركّاب الوقوفَ خلف الخطّ الأصفر. وذات ثلاثاء، يُستبدَل. تبقى القطارات في مواعيدها ولا يلاحظ أحد، إلّاها. تحديثٌ تقنيٌّ عاديّ يصبح مأساةً هادئةً وحقيقية.</p>
-<div class="box"><div class="hd"><b>Connection to Japan</b><span class="ad">الصلة باليابان</span></div><span class="ty">Cinematic · Musical · 映画・音楽</span><p class="p">Directly inspired by Meiko Kaji’s Shura no Hana, the theme of the 1973 film Lady Snowblood, which Tarantino later used in Kill Bill: Vol. 1. It recreates the restrained, melancholic elegance of enka and kayōkyoku.</p><p class="p ar">مستوحاة مباشرةً من أغنية ميكو كاجي «<bdi>Shura no Hana</bdi>»، أغنيةِ فيلم «<bdi>Lady Snowblood</bdi>» عام <bdi>1973</bdi>، التي استخدمها تارانتينو لاحقًا في «<bdi>Kill Bill: Vol. 1</bdi>». وتستعيد الأناقة الحزينة المتحفّظة لموسيقى الإنكا والكايوكيوكو.</p></div>
-<p class="theme">THEME · ATTACHMENT TO THE FAMILIAR, AND UNEXPECTED GRIEF · 慣れ親しんだものへの愛着と、思いがけない喪失</p></div></section><section class="dest" id="d06" style="--acc:#d2574b"><div class="dhero"><img class="art" src="sq-05.webp" alt="Plastic Flower artwork" loading="lazy">
-<div class="meta"><p class="sec">Destination 06 / 09 · LYL 006</p><h2 class="h">Plastic Flower</h2><div class="subs"><span class="jm">プラスチック・フラワー</span><span class="ad">زهرة بلاستيكية</span></div>
+<p class="p dc" style="font-size:15px">Every morning the same recorded voice asks passengers to stand behind the yellow line. One Tuesday it’s replaced. The trains still run on time and nobody notices, except her. A routine software update becomes a quiet, genuine tragedy.</p><p class="p ar" style="font-size:16.4px">كلَّ صباح، يطلب الصوتُ المسجَّل نفسُه من الركّاب الوقوفَ خلف الخطّ الأصفر. وذات ثلاثاء، يُستبدَل. تبقى القطارات في مواعيدها ولا يلاحظ أحد، إلّاها. تحديثٌ تقنيٌّ عاديّ يصبح مأساةً هادئةً وحقيقية.</p>
+<div class="box"><div class="hd"><b>Connection to Japan</b><span class="ad">الصلة باليابان</span></div><span class="ty">Cinematic · Musical · 映画・音楽</span>
+<p class="p">Directly inspired by Meiko Kaji’s Shura no Hana, the theme of the 1973 film Lady Snowblood, which Tarantino later used in Kill Bill: Vol. 1. It recreates the restrained, melancholic elegance of enka and kayōkyoku.</p><p class="p ar">مستوحاة مباشرةً من أغنية ميكو كاجي «<bdi>Shura no Hana</bdi>»، أغنيةِ فيلم «<bdi>Lady Snowblood</bdi>» عام <bdi>1973</bdi>، التي استخدمها تارانتينو لاحقًا في «<bdi>Kill Bill: Vol. 1</bdi>». وتستعيد الأناقة الحزينة المتحفّظة لموسيقى الإنكا والكايوكيوكو.</p></div>
+<p class="mono" style="margin-top:10px;font-size:9px;letter-spacing:.12em;color:#6a6760">THEME · ATTACHMENT TO THE FAMILIAR, AND UNEXPECTED GRIEF · 慣れ親しんだものへの愛着と、思いがけない喪失</p>
+<div class="folio"><span><b>ONE WAY</b> · Issue Nº 2</span><span>The Voice at Platform Two</span><span><b>16</b></span></div></section></template><template><section class="pg dA" style="--acc:#d2574b"><div class="ph" style="background-image:url(sq-05.webp)"></div><div class="in">
+<div class="top"><p class="sec">Destination 06 / 09</p><p class="sec" style="color:#8c877c">LYL 006</p></div>
+<h1 class="h">Plastic Flower</h1><div class="subs"><span class="jm">プラスチック・フラワー</span><span class="ad">زهرة بلاستيكية</span></div>
 <div class="facts"><div><small>Genre · النوع</small><b>1960s Japanese Garage Rock · Surf · Rockabilly</b></div><div><small>Era · الحقبة</small><b>1960s</b></div><div><small>Japan link · الصلة</small><b>Musical · Cinematic</b><p class="ar">الموسيقى · السينما</p></div></div>
 <div class="lis"><small>What to listen for · ماذا تسمع</small><p class="p">Raw garage rock: twangy surf guitars, dirty fuzz, pounding stripped-down drums, rockabilly rhythms and shouted group chants.</p><p class="p ar">روك «غراج» خام: غيتارات «سيرف» رنّانة، وتشويش «فَز» متّسخ، وطبول قويّة بسيطة، وإيقاعات «روكابيلي»، وهتافات جماعية.</p></div>
-<a class="play" href="./?play=5#rows">▶ Board flight LYL 006</a></div></div>
-<div class="dbody"><img class="sph" src="mag/x-flower.webp" alt="" loading="lazy"><p class="sec">The story · القصة · ストーリー</p>
+</div><div class="folio"><span><b>ONE WAY</b> · Issue Nº 2</span><span>Plastic Flower</span><span><b>17</b></span></div></section></template><template><section class="pg wimg" style="--acc:#d2574b"><div class="sph" style="background-image:url(mag/x-flower.webp)"></div><p class="sec">The story · القصة · ストーリー</p>
 <div class="pq"><p class="en">Who gave you permission to die?<br>You weren’t even alive!</p><div class="tr"><p class="jm">誰が死んでいいって言ったの？<br>生きてもいなかったくせに！</p><p class="ar">من أذِن لكِ أن تموتي؟<br>لم تكوني حيّةً أصلًا!</p></div></div>
-<p class="p dc">A waitress throws away her favourite fake rose. Everyone says it’s replaceable; it was never alive. She buys an identical one, but it stands up much too straight. A trivial loss blown up into a shouted, fuzz-drenched catastrophe.</p><p class="p ar">نادلةٌ ترمي وردتها البلاستيكية المفضّلة. الجميع يقول إنها قابلةٌ للاستبدال، فهي لم تكن حيّةً أصلًا. تشتري واحدةً مطابقة، لكنها تقف مستقيمةً أكثر من اللازم. خسارةٌ تافهة تتضخّم إلى كارثةٍ صاخبة.</p>
-<div class="box"><div class="hd"><b>Connection to Japan</b><span class="ad">الصلة باليابان</span></div><span class="ty">Musical · Cinematic · 音楽・映画</span><p class="p">Inspired by The 5.6.7.8’s, the Tokyo garage-rock band who perform in Kill Bill: Vol. 1. Their sound reinterprets 50s and 60s American rockabilly and surf through Japan’s underground rock scene.</p><p class="p ar">مستوحاة من فرقة «<bdi>The 5.6.7.8’s</bdi>»، فرقة الروك من طوكيو التي تعزف في «<bdi>Kill Bill: Vol. 1</bdi>». يعيد صوتها تفسير روكابيلي وسيرف الخمسينيات والستينيات الأمريكي عبر مشهد الروك الياباني المستقلّ.</p></div>
-<p class="theme">THEME · THE VALUE OF “WORTHLESS” THINGS · 「価値のないもの」の価値</p></div></section><section class="dest" id="d07" style="--acc:#c2306a"><div class="dhero"><img class="art" src="sq-06.webp" alt="ASMR Stimulation artwork" loading="lazy">
-<div class="meta"><p class="sec">Destination 07 / 09 · LYL 007</p><h2 class="h">ASMR Stimulation</h2><div class="subs"><span class="jm">ASMR・スティミュレーション</span><span class="ad">تحفيز <bdi>ASMR</bdi></span></div>
+<p class="p dc" style="font-size:15px">A waitress throws away her favourite fake rose. Everyone says it’s replaceable; it was never alive. She buys an identical one, but it stands up much too straight. A trivial loss blown up into a shouted, fuzz-drenched catastrophe.</p><p class="p ar" style="font-size:16.4px">نادلةٌ ترمي وردتها البلاستيكية المفضّلة. الجميع يقول إنها قابلةٌ للاستبدال، فهي لم تكن حيّةً أصلًا. تشتري واحدةً مطابقة، لكنها تقف مستقيمةً أكثر من اللازم. خسارةٌ تافهة تتضخّم إلى كارثةٍ صاخبة.</p>
+<div class="box"><div class="hd"><b>Connection to Japan</b><span class="ad">الصلة باليابان</span></div><span class="ty">Musical · Cinematic · 音楽・映画</span>
+<p class="p">Inspired by The 5.6.7.8’s, the Tokyo garage-rock band who perform in Kill Bill: Vol. 1. Their sound reinterprets 50s and 60s American rockabilly and surf through Japan’s underground rock scene.</p><p class="p ar">مستوحاة من فرقة «<bdi>The 5.6.7.8’s</bdi>»، فرقة الروك من طوكيو التي تعزف في «<bdi>Kill Bill: Vol. 1</bdi>». يعيد صوتها تفسير روكابيلي وسيرف الخمسينيات والستينيات الأمريكي عبر مشهد الروك الياباني المستقلّ.</p></div>
+<p class="mono" style="margin-top:10px;font-size:9px;letter-spacing:.12em;color:#6a6760">THEME · THE VALUE OF “WORTHLESS” THINGS · 「価値のないもの」の価値</p>
+<div class="folio"><span><b>ONE WAY</b> · Issue Nº 2</span><span>Plastic Flower</span><span><b>18</b></span></div></section></template><template><section class="pg dA" style="--acc:#c2306a"><div class="ph" style="background-image:url(sq-06.webp)"></div><div class="in">
+<div class="top"><p class="sec">Destination 07 / 09</p><p class="sec" style="color:#8c877c">LYL 007</p></div>
+<h1 class="h">ASMR Stimulation</h1><div class="subs"><span class="jm">ASMR・スティミュレーション</span><span class="ad">تحفيز <bdi>ASMR</bdi></span></div>
 <div class="facts"><div><small>Genre · النوع</small><b>Dark Electro-Funk · Alt R&amp;B · Trip-Hop</b></div><div><small>Era · الحقبة</small><b>Now</b></div><div><small>Japan link · الصلة</small><b>Cultural · Listening experience</b><p class="ar">الثقافة · تجربة الاستماع</p></div></div>
 <div class="lis"><small>What to listen for · ماذا تسمع</small><p class="p">Dark electro-funk: deep elastic bass, hypnotic trip-hop rhythms, intimate vocals with male interjections, tactile percussion and binaural sound design.</p><p class="p ar">إلكترو-فانك داكن: باص عميق مرن، وإيقاعات «تريب-هوب» منوِّمة، وغناءٌ حميم تتخلّله مداخلات رجاليّة، وإيقاعات ملموسة، وتصميم صوتي مجسَّم.</p></div>
-<a class="play" href="./?play=6#rows">▶ Board flight LYL 007</a></div></div>
-<div class="dbody"><img class="sph" src="mag/x-mouth.webp" alt="" loading="lazy"><p class="sec">The story · القصة · ストーリー</p>
+</div><div class="folio"><span><b>ONE WAY</b> · Issue Nº 2</span><span>ASMR Stimulation</span><span><b>19</b></span></div></section></template><template><section class="pg wimg" style="--acc:#c2306a"><div class="sph" style="background-image:url(mag/x-mouth.webp)"></div><p class="sec">The story · القصة · ストーリー</p>
 <div class="pq"><p class="en">Don’t get to the point<br>I prefer the scenic route</p><div class="tr"><p class="jm">本題に入らないで<br>遠回りのほうが好きなの</p><p class="ar">لا تدخل في صُلب الموضوع<br>أفضّل الطريق الأطول والأجمل</p></div></div>
-<p class="p dc">An ordinary conversation becomes a seduction. Pauses, breaths, pronunciation and polite bureaucratic phrases take on double meanings, and the whole game is in the waiting. Clicks, whispers and binaural stereo make the sound itself the object of desire.</p><p class="p ar">محادثةٌ عادية تتحوّل إلى إغواء. الوقفات والأنفاس والنطق والعبارات الرسمية المهذّبة تكتسب معانيَ مزدوجة، واللعبة كلّها في الانتظار. نقراتٌ وهمساتٌ وصوتٌ مجسَّم تجعل الصوتَ نفسَه موضعَ الرغبة.</p>
-<div class="box"><div class="hd"><b>Connection to Japan</b><span class="ad">الصلة باليابان</span></div><span class="ty">Cultural · Listening experience · 文化・聴く体験</span><p class="p">Japan has one of the world’s most developed ASMR cultures: mimikaki (耳かき) ear-cleaning recordings, binaural audio and “situation voice” performances. Here the Japanese influence isn’t in the instruments or melody, but in the listening experience itself.</p><p class="p ar">تمتلك اليابان واحدةً من أكثر ثقافات الـ<bdi>ASMR</bdi> تطوّرًا في العالم: تسجيلات «ميميكاكي» لتنظيف الأذن، والصوت المجسَّم، وعروض «الصوت التمثيلي». التأثير الياباني هنا ليس في الآلات أو اللحن، بل في تجربة الاستماع نفسها.</p></div>
-<p class="theme">THEME · AUDITORY PLEASURE AND THE SEDUCTION OF ANTICIPATION · 聴く快楽と、焦らしの誘惑</p></div></section><section class="dest" id="d08" style="--acc:#c35e22"><div class="dhero"><img class="art" src="sq-08.webp" alt="The Wind Called In Sick artwork" loading="lazy">
-<div class="meta"><p class="sec">Destination 08 / 09 · LYL 008</p><h2 class="h">The Wind Called In Sick</h2><div class="subs"><span class="jm">風が病欠した日</span><span class="ad">الريح أخذت إجازة مرضية</span></div>
+<p class="p dc" style="font-size:15px">An ordinary conversation becomes a seduction. Pauses, breaths, pronunciation and polite bureaucratic phrases take on double meanings, and the whole game is in the waiting. Clicks, whispers and binaural stereo make the sound itself the object of desire.</p><p class="p ar" style="font-size:16.4px">محادثةٌ عادية تتحوّل إلى إغواء. الوقفات والأنفاس والنطق والعبارات الرسمية المهذّبة تكتسب معانيَ مزدوجة، واللعبة كلّها في الانتظار. نقراتٌ وهمساتٌ وصوتٌ مجسَّم تجعل الصوتَ نفسَه موضعَ الرغبة.</p>
+<div class="box"><div class="hd"><b>Connection to Japan</b><span class="ad">الصلة باليابان</span></div><span class="ty">Cultural · Listening experience · 文化・聴く体験</span>
+<p class="p">Japan has one of the world’s most developed ASMR cultures: mimikaki (耳かき) ear-cleaning recordings, binaural audio and “situation voice” performances. Here the Japanese influence isn’t in the instruments or melody, but in the listening experience itself.</p><p class="p ar">تمتلك اليابان واحدةً من أكثر ثقافات الـ<bdi>ASMR</bdi> تطوّرًا في العالم: تسجيلات «ميميكاكي» لتنظيف الأذن، والصوت المجسَّم، وعروض «الصوت التمثيلي». التأثير الياباني هنا ليس في الآلات أو اللحن، بل في تجربة الاستماع نفسها.</p></div>
+<p class="mono" style="margin-top:10px;font-size:9px;letter-spacing:.12em;color:#6a6760">THEME · AUDITORY PLEASURE AND THE SEDUCTION OF ANTICIPATION · 聴く快楽と、焦らしの誘惑</p>
+<div class="folio"><span><b>ONE WAY</b> · Issue Nº 2</span><span>ASMR Stimulation</span><span><b>20</b></span></div></section></template><template><section class="pg dA" style="--acc:#c35e22"><div class="ph" style="background-image:url(sq-08.webp)"></div><div class="in">
+<div class="top"><p class="sec">Destination 08 / 09</p><p class="sec" style="color:#8c877c">LYL 008</p></div>
+<h1 class="h">The Wind Called In Sick</h1><div class="subs"><span class="jm">風が病欠した日</span><span class="ad">الريح أخذت إجازة مرضية</span></div>
 <div class="facts"><div><small>Genre · النوع</small><b>Japanese Romantic Waltz · Cinematic Chamber Pop</b></div><div><small>Era · الحقبة</small><b>2004</b></div><div><small>Japan link · الصلة</small><b>Cinematic · Musical</b><p class="ar">السينما · الموسيقى</p></div></div>
 <div class="lis"><small>What to listen for · ماذا تسمع</small><p class="p">A melancholic romantic waltz in 3/4: expressive piano, dancing violins, lyrical cello and minimal, delicate vocals.</p><p class="p ar">فالس رومانسي حزين بإيقاع ثلاثي: بيانو معبِّر، وكمنجات راقصة، وتشيلو غنائي، وغناءٌ رقيق قليل.</p></div>
-<a class="play" href="./?play=7#rows">▶ Board flight LYL 008</a></div></div>
-<div class="dbody"><img class="sph" src="mag/x-wind.webp" alt="" loading="lazy"><p class="sec">The story · القصة · ストーリー</p>
+</div><div class="folio"><span><b>ONE WAY</b> · Issue Nº 2</span><span>The Wind Called In Sick</span><span><b>21</b></span></div></section></template><template><section class="pg wimg" style="--acc:#c35e22"><div class="sph" style="background-image:url(mag/x-wind.webp)"></div><p class="sec">The story · القصة · ストーリー</p>
 <div class="pq"><p class="en">It comes to me in pieces<br>And leaves before it ends</p><div class="tr"><p class="jm">かけらになってやって来て<br>終わる前に去っていく</p><p class="ar">يأتيني على شكل قِطَع<br>ويرحل قبل أن ينتهي</p></div></div>
-<p class="p dc">One afternoon the wind simply stops. In the stillness, a woman sings from an upstairs window and never reaches the last line. The melody stays half-remembered until, walking home, she sings the ending wrong. A small waltz about memory and the beauty of unfinished things.</p><p class="p ar">ذات ظهيرة، تتوقّف الريح ببساطة. في السكون، تغنّي امرأةٌ من نافذةٍ علوية ولا تصل أبدًا إلى السطر الأخير. يبقى اللحن نصفَ متذكَّر، حتى تغنّي نهايته خطأً في طريق العودة. فالسٌ صغير عن الذاكرة وجمال الأشياء غير المكتملة.</p>
-<div class="box"><div class="hd"><b>Connection to Japan</b><span class="ad">الصلة باليابان</span></div><span class="ty">Cinematic · Musical · 映画・音楽</span><p class="p">Inspired by Joe Hisaishi’s Merry-Go-Round of Life from Studio Ghibli’s Howl’s Moving Castle. It explores the romantic, melancholic side of Japanese film scoring: a European-style waltz with Hisaishi’s melodic sensibility.</p><p class="p ar">مستوحاة من مقطوعة جو هيسايشي «<bdi>Merry-Go-Round of Life</bdi>» من فيلم استوديو جيبلي «قلعة هاول المتحرّكة». تستكشف الجانب الرومانسي الحزين من الموسيقى السينمائية اليابانية: فالسٌ أوروبيّ الطابع بحسّ هيسايشي اللحني.</p></div>
-<p class="theme">THEME · MEMORY, IMPERMANENCE AND UNFINISHED THINGS · 記憶、無常、未完成の美</p></div></section><section class="dest" id="d09" style="--acc:#2d48a0"><div class="dhero"><img class="art" src="sq-09.webp" alt="Tamagotchi Luv artwork" loading="lazy">
-<div class="meta"><p class="sec">Destination 09 / 09 · Bonus track · LYL 009</p><h2 class="h">Tamagotchi Luv</h2><div class="subs"><span class="jm">たまごっち・ラヴ</span><span class="ad">حبّ التاماغوتشي</span></div>
+<p class="p dc" style="font-size:15px">One afternoon the wind simply stops. In the stillness, a woman sings from an upstairs window and never reaches the last line. The melody stays half-remembered until, walking home, she sings the ending wrong. A small waltz about memory and the beauty of unfinished things.</p><p class="p ar" style="font-size:16.4px">ذات ظهيرة، تتوقّف الريح ببساطة. في السكون، تغنّي امرأةٌ من نافذةٍ علوية ولا تصل أبدًا إلى السطر الأخير. يبقى اللحن نصفَ متذكَّر، حتى تغنّي نهايته خطأً في طريق العودة. فالسٌ صغير عن الذاكرة وجمال الأشياء غير المكتملة.</p>
+<div class="box"><div class="hd"><b>Connection to Japan</b><span class="ad">الصلة باليابان</span></div><span class="ty">Cinematic · Musical · 映画・音楽</span>
+<p class="p">Inspired by Joe Hisaishi’s Merry-Go-Round of Life from Studio Ghibli’s Howl’s Moving Castle. It explores the romantic, melancholic side of Japanese film scoring: a European-style waltz with Hisaishi’s melodic sensibility.</p><p class="p ar">مستوحاة من مقطوعة جو هيسايشي «<bdi>Merry-Go-Round of Life</bdi>» من فيلم استوديو جيبلي «قلعة هاول المتحرّكة». تستكشف الجانب الرومانسي الحزين من الموسيقى السينمائية اليابانية: فالسٌ أوروبيّ الطابع بحسّ هيسايشي اللحني.</p></div>
+<p class="mono" style="margin-top:10px;font-size:9px;letter-spacing:.12em;color:#6a6760">THEME · MEMORY, IMPERMANENCE AND UNFINISHED THINGS · 記憶、無常、未完成の美</p>
+<div class="folio"><span><b>ONE WAY</b> · Issue Nº 2</span><span>The Wind Called In Sick</span><span><b>22</b></span></div></section></template><template><section class="pg dA" style="--acc:#2d48a0"><div class="ph" style="background-image:url(sq-09.webp)"></div><div class="in">
+<div class="top"><p class="sec">Destination 09 / 09 · Bonus track</p><p class="sec" style="color:#8c877c">LYL 009</p></div>
+<h1 class="h">Tamagotchi Luv</h1><div class="subs"><span class="jm">たまごっち・ラヴ</span><span class="ad">حبّ التاماغوتشي</span></div>
 <div class="facts"><div><small>Genre · النوع</small><b>Dark R&amp;B · Alt R&amp;B</b></div><div><small>Era · الحقبة</small><b>1996</b></div><div><small>Japan link · الصلة</small><b>Pop culture</b><p class="ar">الثقافة الشعبية</p></div></div>
 <div class="lis"><small>What to listen for · ماذا تسمع</small><p class="p">Dark, intimate R&amp;B: deep bass, hypnotic rhythms, atmospheric textures, restrained percussion and sensual vocals.</p><p class="p ar"><bdi>R&amp;B</bdi> داكن وحميم: باص عميق، وإيقاعات منوِّمة، وأجواء كثيفة، وإيقاع متحفّظ، وغناءٌ حسّي.</p></div>
-<a class="play" href="./?play=8#rows">▶ Board flight LYL 009</a></div></div>
-<div class="dbody"><img class="sph" src="mag/x-luv.webp" alt="" loading="lazy"><p class="sec">The story · القصة · ストーリー</p>
+</div><div class="folio"><span><b>ONE WAY</b> · Issue Nº 2</span><span>Tamagotchi Luv</span><span><b>23</b></span></div></section></template><template><section class="pg wimg" style="--acc:#2d48a0"><div class="sph" style="background-image:url(mag/x-luv.webp)"></div><p class="sec">The story · القصة · ストーリー</p>
 <div class="pq"><p class="en">You call it love but it’s luv with a u<br>You can’t call it love when it’s only you</p><div class="tr"><p class="jm">それを愛と呼ぶけど、綴りがひとつ違う<br>あなただけなら、愛とは呼べない</p><p class="ar">تسمّيه حبًّا، لكنه حبٌّ ناقصُ حرف<br>لا يُسمّى حبًّا إن كنتَ وحدك فيه</p></div></div>
-<p class="p dc">Love as a virtual pet: fed when it’s convenient, ignored when it isn’t, kept alive at a distance. A 90s toy’s innocence against the control games of adult relationships, and the question of whether you care for someone or just like being needed.</p><p class="p ar">الحبّ كحيوانٍ أليفٍ افتراضي: يُطعَم حين يكون ذلك مريحًا، ويُهمَل حين لا يكون، ويبقى حيًّا عن بُعد. براءةُ لعبةٍ من التسعينيات في مواجهة ألعاب السيطرة في علاقات الكبار، والسؤال: هل تهتمّ بشخصٍ ما، أم تحبّ فقط أن يحتاجك؟</p>
-<div class="box"><div class="hd"><b>Connection to Japan</b><span class="ad">الصلة باليابان</span></div><span class="ty">Pop culture · ポップカルチャー</span><p class="p">Built on Tamagotchi, the virtual pet Bandai launched in Japan in November 1996, which had to be fed and cared for to stay alive. That 90s Japanese pop-culture icon becomes a metaphor for love and control.</p><p class="p ar">مبنيّة على «تاماغوتشي»، الحيوان الأليف الافتراضي الذي أطلقته «بانداي» في اليابان في نوفمبر <bdi>1996</bdi>، والذي يحتاج إلى إطعام ورعاية كي يبقى حيًّا. تتحوّل هذه الأيقونة اليابانية إلى استعارة للحبّ والسيطرة.</p></div>
-<p class="theme">THEME · CONDITIONAL AFFECTION AND THE NEED TO BE NEEDED · 条件付きの愛情と、必要とされたい欲求</p></div></section><section class="back"><div class="bkbox"><img src="mag/x-back.webp" width="1089" height="1445" alt="Enjoy our flight" loading="lazy"><div class="bkmark"><img src="../brand/layl-logo-cream.svg" alt=""><span>LAY-L AIR · 片道航空</span></div></div>
-<a class="cta" href="./#rows">Listen with live lyrics ▸</a></section></body></html>
+<p class="p dc" style="font-size:15px">Love as a virtual pet: fed when it’s convenient, ignored when it isn’t, kept alive at a distance. A 90s toy’s innocence against the control games of adult relationships, and the question of whether you care for someone or just like being needed.</p><p class="p ar" style="font-size:16.4px">الحبّ كحيوانٍ أليفٍ افتراضي: يُطعَم حين يكون ذلك مريحًا، ويُهمَل حين لا يكون، ويبقى حيًّا عن بُعد. براءةُ لعبةٍ من التسعينيات في مواجهة ألعاب السيطرة في علاقات الكبار، والسؤال: هل تهتمّ بشخصٍ ما، أم تحبّ فقط أن يحتاجك؟</p>
+<div class="box"><div class="hd"><b>Connection to Japan</b><span class="ad">الصلة باليابان</span></div><span class="ty">Pop culture · ポップカルチャー</span>
+<p class="p">Built on Tamagotchi, the virtual pet Bandai launched in Japan in November 1996, which had to be fed and cared for to stay alive. That 90s Japanese pop-culture icon becomes a metaphor for love and control.</p><p class="p ar">مبنيّة على «تاماغوتشي»، الحيوان الأليف الافتراضي الذي أطلقته «بانداي» في اليابان في نوفمبر <bdi>1996</bdi>، والذي يحتاج إلى إطعام ورعاية كي يبقى حيًّا. تتحوّل هذه الأيقونة اليابانية إلى استعارة للحبّ والسيطرة.</p></div>
+<p class="mono" style="margin-top:10px;font-size:9px;letter-spacing:.12em;color:#6a6760">THEME · CONDITIONAL AFFECTION AND THE NEED TO BE NEEDED · 条件付きの愛情と、必要とされたい欲求</p>
+<div class="folio"><span><b>ONE WAY</b> · Issue Nº 2</span><span>Tamagotchi Luv</span><span><b>24</b></span></div></section></template><template><section class="pg34"><img class="full" src="mag/x-back.webp">
+<div class="bkmark"><img src="../brand/layl-logo-cream.svg"><span>LAY-L AIR · 片道航空</span></div>
+<div class="bkurl">Listen with live lyrics · استمع مع الكلمات<br><b>khalednadershah-spec.github.io/Laylmusichub/okinawa</b></div></section></template><script>
+(function(){
+  var tpls=[].slice.call(document.querySelectorAll("template")), N=tpls.length, stage=document.getElementById("stage");
+  function spreadMode(){ return innerWidth>=900 && innerWidth/innerHeight>1.05; }
+  function views(){
+    if(!spreadMode()) return tpls.map(function(_,i){return [i];});
+    var v=[[0],[1]]; for(var i=2;i<N-1;i+=2){ v.push(i+1<N-1?[i,i+1]:[i]); } v.push([N-1]); return v;
+  }
+  var V=[], cur=0, built={};
+  function el(i){ if(!built[i]){ var d=document.createElement("div"); d.appendChild(tpls[i].content.cloneNode(true)); built[i]=d.firstElementChild; } return built[i]; }
+  function vIndexOfPage(p){ for(var k=0;k<V.length;k++) if(V[k].indexOf(p)>=0) return k; return 0; }
+  var box=document.createElement("div"); box.className="view"; stage.appendChild(box);
+  function render(){
+    var pages=V[cur], w=0, h=0; box.innerHTML="";
+    pages.forEach(function(p,j){ var e=el(p); var pw=e.classList.contains("pg34")?540:540, ph=e.classList.contains("pg34")?720:960;
+      e.style.left=w+"px"; box.appendChild(e); w+=pw; h=Math.max(h,ph); });
+    if(pages.length==2){ var g=document.createElement("div"); g.className="gut"; g.style.left="540px"; box.appendChild(g); }
+    var r=stage.getBoundingClientRect(), pad=innerWidth<700?8:70;
+    var s=Math.min((r.width-pad*2)/w,(r.height-16)/h);
+    box.style.width=w+"px"; box.style.height=h+"px";
+    box.style.transform="scale("+s+") translate("+(-w/2)+"px,"+(-h/2)+"px)";
+    box.classList.remove("on"); void box.offsetWidth; box.classList.add("on");
+    var first=pages[0]+1, last=pages[pages.length-1]+1;
+    document.getElementById("pc").textContent=(first==last?pad2(first):pad2(first)+"–"+pad2(last))+" / "+pad2(N);
+    document.getElementById("bar").style.width=(100*last/N)+"%";
+    document.getElementById("prev").disabled=cur==0; document.getElementById("next").disabled=cur==V.length-1;
+    try{ history.replaceState(null,"","#p"+first); }catch(e){}
+  }
+  function pad2(n){return (n<10?"0":"")+n;}
+  function go(k){ cur=Math.max(0,Math.min(V.length-1,k)); render(); }
+  function gotoPage(p){ go(vIndexOfPage(p)); }
+  function layout(){ var p=V.length?V[cur][0]:0; V=views(); cur=vIndexOfPage(p); render(); }
+  document.getElementById("prev").onclick=function(){go(cur-1);};
+  document.getElementById("next").onclick=function(){go(cur+1);};
+  addEventListener("keydown",function(e){ if(e.key=="ArrowRight"||e.key=="PageDown"||e.key==" ") {e.preventDefault();go(cur+1);} if(e.key=="ArrowLeft"||e.key=="PageUp") go(cur-1); });
+  var x0=null,y0=null;
+  stage.addEventListener("pointerdown",function(e){x0=e.clientX;y0=e.clientY;});
+  stage.addEventListener("pointerup",function(e){ if(x0==null)return; var dx=e.clientX-x0, dy=e.clientY-y0; x0=null;
+    if(Math.abs(dx)>45&&Math.abs(dx)>Math.abs(dy)){ go(cur+(dx<0?1:-1)); return; }
+    var ti=e.target.closest&&e.target.closest(".ti"); if(ti&&Math.abs(dx)<8){ var n=parseInt((ti.querySelector(".n")||{}).textContent,10); if(n) gotoPage(n-1); } });
+  addEventListener("resize",layout);
+  V=views(); var m=/#p(\d+)/.exec(location.hash); if(m) cur=vIndexOfPage(Math.min(N,+m[1])-1);
+  render();
+})();
+</script></body></html>
