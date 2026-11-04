@@ -406,19 +406,19 @@ if("IntersectionObserver" in window)new IntersectionObserver(function(es){es.for
 <script>
 (function(){
   var TRACKS = [
-    {id:"LYL 001", title:"ONE MISSED CALL.. TWO…", name:"One Missed Call.. Two…", src:"one-missed-call.mp4", art:"art-01.webp?v=2", kanji:"着信", gate:"01", seat:"1A", from:"Missed call"},
-    {id:"LYL 002", title:"SAKURA", name:"Sakura", src:"sakura.mp4", art:"art-02.webp?v=2", kanji:"桜", gate:"02", seat:"7C", from:"7:30 flight"},
-    {id:"LYL 003", title:"LOST IN JAPAN", name:"Lost in Japan", src:"lost-in-japan.mp4", art:"art-03.webp?v=2", kanji:"迷子", gate:"03", seat:"3K", from:"Wrong train"},
-    {id:"LYL 004", title:"WHY WOULD I?", name:"Why Would I?", src:"why-would-i.mp4", art:"art-07.webp?v=2", kanji:"なぜ", gate:"04", seat:"4D", from:"Line cut"},
-    {id:"LYL 006", title:"THE VOICE AT PLATFORM TWO", name:"The Voice at Platform Two", src:"the-voice-at-platform-two.mp4", art:"art-04.webp?v=2", kanji:"2番線", gate:"06", seat:"6B", from:"Platform 2"},
-    {id:"LYL 007", title:"PLASTIC FLOWER", name:"Plastic Flower", src:"plastic-flower.mp4", art:"art-05.webp?v=2", kanji:"造花", gate:"07", seat:"7F", from:"Last stop"},
-    {id:"LYL 008", title:"CRICKETS", name:"Crickets", src:"../m4-crickets.mp4", art:"art-11.webp?v=2", kanji:"虫の音", gate:"08", seat:"8C", from:"Silent phone"},
-    {id:"LYL 009", title:"SADTURN", name:"SAdTURN", src:"../m4-sadturn.mp4", art:"art-13.webp?v=2", kanji:"土星", gate:"09", seat:"9S", from:"Saturn return"},
-    {id:"LYL 010", title:"ASMR STIMULATION", name:"ASMR Stimulation", src:"asmr-stimulation.mp4", art:"art-06.webp?v=2", kanji:"囁き", gate:"10", seat:"10A", from:"Headphones on"},
-    {id:"LYL 011", title:"REFRIGERATOR", name:"Refrigerator", src:"refrigerator.mp4", art:"art-10.webp?v=2", kanji:"冷蔵庫", gate:"11", seat:"11R", from:"Cold front"},
-    {id:"LYL 012", title:"THE WIND CALLED IN SICK", name:"The Wind Called In Sick", src:"the-wind-called-in-sick.mp4", art:"art-08.webp?v=2", kanji:"風", gate:"12", seat:"12A", from:"Final call"},
-    {id:"LYL 013", title:"TAMAGOTCHI LUV (BONUS TRACK)", name:"Tamagotchi Luv (Bonus Track)", src:"tamagotchi-luv.mp4", art:"art-09.webp?v=2", kanji:"愛", gate:"13", seat:"13X", from:"Bonus flight", bonus:true},
-    {id:"LYL 014", title:"VOODOO DOLL (BONUS TRACK)", name:"Voodoo Doll (Bonus Track)", src:"voodoo-doll.mp4", art:"art-12.webp?v=2", kanji:"藁人形", gate:"14", seat:"14V", from:"Bonus flight", bonus:true}
+    {id:"LYL 001", title:"ONE MISSED CALL.. TWO…", name:"One Missed Call.. Two…", src:"one-missed-call.mp4", art:"art-01.webp?v=3", kanji:"着信", gate:"01", seat:"1A", from:"Missed call"},
+    {id:"LYL 002", title:"SAKURA", name:"Sakura", src:"sakura.mp4", art:"art-02.webp?v=3", kanji:"桜", gate:"02", seat:"7C", from:"7:30 flight"},
+    {id:"LYL 003", title:"LOST IN JAPAN", name:"Lost in Japan", src:"lost-in-japan.mp4", art:"art-03.webp?v=3", kanji:"迷子", gate:"03", seat:"3K", from:"Wrong train"},
+    {id:"LYL 004", title:"WHY WOULD I?", name:"Why Would I?", src:"why-would-i.mp4", art:"art-07.webp?v=3", kanji:"なぜ", gate:"04", seat:"4D", from:"Line cut"},
+    {id:"LYL 006", title:"THE VOICE AT PLATFORM TWO", name:"The Voice at Platform Two", src:"the-voice-at-platform-two.mp4", art:"art-04.webp?v=3", kanji:"2番線", gate:"06", seat:"6B", from:"Platform 2"},
+    {id:"LYL 007", title:"PLASTIC FLOWER", name:"Plastic Flower", src:"plastic-flower.mp4", art:"art-05.webp?v=3", kanji:"造花", gate:"07", seat:"7F", from:"Last stop"},
+    {id:"LYL 008", title:"CRICKETS", name:"Crickets", src:"../m4-crickets.mp4", art:"art-11.webp?v=3", kanji:"虫の音", gate:"08", seat:"8C", from:"Silent phone"},
+    {id:"LYL 009", title:"SADTURN", name:"SAdTURN", src:"../m4-sadturn.mp4", art:"art-13.webp?v=3", kanji:"土星", gate:"09", seat:"9S", from:"Saturn return"},
+    {id:"LYL 010", title:"ASMR STIMULATION", name:"ASMR Stimulation", src:"asmr-stimulation.mp4", art:"art-06.webp?v=3", kanji:"囁き", gate:"10", seat:"10A", from:"Headphones on"},
+    {id:"LYL 011", title:"REFRIGERATOR", name:"Refrigerator", src:"refrigerator.mp4", art:"art-10.webp?v=3", kanji:"冷蔵庫", gate:"11", seat:"11R", from:"Cold front"},
+    {id:"LYL 012", title:"THE WIND CALLED IN SICK", name:"The Wind Called In Sick", src:"the-wind-called-in-sick.mp4", art:"art-08.webp?v=3", kanji:"風", gate:"12", seat:"12A", from:"Final call"},
+    {id:"LYL 013", title:"TAMAGOTCHI LUV (BONUS TRACK)", name:"Tamagotchi Luv (Bonus Track)", src:"tamagotchi-luv.mp4", art:"art-09.webp?v=3", kanji:"愛", gate:"13", seat:"13X", from:"Bonus flight", bonus:true},
+    {id:"LYL 014", title:"VOODOO DOLL (BONUS TRACK)", name:"Voodoo Doll (Bonus Track)", src:"voodoo-doll.mp4", art:"art-12.webp?v=3", kanji:"藁人形", gate:"14", seat:"14V", from:"Bonus flight", bonus:true}
   ];
   var TBA = {"LYL 006":"LYL 005"};
   var DUR = [124.6, 249.2, 205.6, 305.0, 284.0, 192.0, 183.2, 243.6, 200.8, 183.2, 189.4, 246.8, 253.5];
@@ -487,6 +487,8 @@ if("IntersectionObserver" in window)new IntersectionObserver(function(es){es.for
     var img = new Image(); img.alt = t.name + " artwork";
     img.onload = function(){ art.innerHTML = ""; art.appendChild(img); };
     img.src = t.art.replace("art-","sq-");
+    try { if ("mediaSession" in navigator) navigator.mediaSession.metadata = new MediaMetadata({ title: t.name, artist: "LAY-L", album: "Okinawa… One Way…",
+      artwork: [{ src: new URL(t.art.replace("art-","sq-"), location.href).href, sizes: "900x900", type: "image/webp" }] }); } catch(e){}
   }
   function load(i, autoplay){
     cur = i; var t = TRACKS[i];
