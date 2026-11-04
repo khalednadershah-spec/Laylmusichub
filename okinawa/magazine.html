@@ -3,11 +3,11 @@
 <meta name="description" content="ONE WAY, the in-flight magazine of LAY-L AIR: fourteen channels of in-flight entertainment from Okinawa… One Way….">
 <meta property="og:title" content="ONE WAY — the in-flight magazine of LAY-L"><meta property="og:description" content="Fourteen channels, one cinematic universe.">
 <meta property="og:image" content="https://khalednadershah-spec.github.io/Laylmusichub/okinawa/og.jpg"><meta name="twitter:card" content="summary_large_image">
-<meta name="theme-color" content="#111215"><link rel="icon" href="../favicon.svg" type="image/svg+xml"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=Inter:wght@400;600;700&family=Shippori+Mincho:wght@400;700;800&family=El+Messiri:wght@400;600&display=swap" rel="stylesheet"><style>
+<meta name="theme-color" content="#111215"><link rel="icon" href="../favicon.svg" type="image/svg+xml"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@500;700;900&family=Shippori+Mincho:wght@400;700;800&family=El+Messiri:wght@400;600&display=swap" rel="stylesheet"><style>
 :root{--paper:#f3eee4;--ink:#17161a;--ink2:#5e5850;--red:#c62a1f;--night:#0f0f11;--ivory:#efe4cf}
 *{box-sizing:border-box;margin:0;padding:0}
 html,body{height:100%;overflow:hidden;background:#1a1c20}
-body{font-family:"Source Serif 4",Georgia,serif;color:var(--ink);-webkit-font-smoothing:antialiased}
+body{font-family:"Shippori Mincho",serif;color:var(--ink);-webkit-font-smoothing:antialiased}
 .pg{position:relative;width:600px;height:800px;overflow:hidden;background:var(--paper);padding:46px 46px 64px}
 .pg.dark{background:var(--night);color:var(--ivory)}
 .pg.cover{padding:0;background:#000}
@@ -16,74 +16,104 @@ body{font-family:"Source Serif 4",Georgia,serif;color:var(--ink);-webkit-font-sm
 .shade{position:absolute;inset:0;background:linear-gradient(rgba(8,8,10,.1),rgba(8,8,10,0) 35%,rgba(8,8,10,.88))}
 .shade.deep{background:linear-gradient(rgba(8,8,10,.45),rgba(8,8,10,0) 25%,rgba(8,8,10,0) 45%,rgba(8,8,10,.95))}
 .over{position:absolute;left:46px;right:46px;bottom:70px}
-.folio{position:absolute;left:46px;right:46px;bottom:24px;display:flex;justify-content:space-between;align-items:center;font:600 8.5px/1 Inter,sans-serif;letter-spacing:.18em;text-transform:uppercase;color:var(--ink2);border-top:1px solid rgba(23,22,26,.18);padding-top:10px;z-index:2}
+.folio{position:absolute;left:46px;right:46px;bottom:24px;display:flex;justify-content:space-between;align-items:center;font:600 8.5px/1 "Zen Kaku Gothic New",sans-serif;letter-spacing:.18em;text-transform:uppercase;color:var(--ink2);border-top:1px solid rgba(23,22,26,.18);padding-top:10px;z-index:2}
 .folio.dk{color:#a39c90;border-top-color:rgba(239,228,207,.2)}
-.folio .pn{font:700 11px/1 "Bodoni Moda",serif;letter-spacing:0;color:var(--red)}
-.kick{font:600 9px/1.3 Inter,sans-serif;letter-spacing:.22em;text-transform:uppercase;color:var(--ink2);margin-bottom:14px}
+.folio .pn{font:700 11px/1 "Knewave",cursive;letter-spacing:0;color:var(--red)}
+.kick{font:600 9px/1.3 "Zen Kaku Gothic New",sans-serif;letter-spacing:.22em;text-transform:uppercase;color:var(--ink2);margin-bottom:14px}
 .kick.red{color:var(--red)}.kick.lt{color:#e6d9bf}
-.h1{font:700 40px/1.02 "Bodoni Moda",serif;letter-spacing:-.015em;margin-bottom:18px}
+.h1{font:700 40px/1.02 "Knewave",cursive;letter-spacing:-.015em;margin-bottom:18px}
 .h1.lt{color:#fff}.h1.big{font-size:50px}.h1.huge{font-size:78px;line-height:.92}
-.lede{font:italic 400 16px/1.45 "Source Serif 4",serif;margin-bottom:10px}.lede.lt{color:#efe6d6}
-.body{font:400 13px/1.6 "Source Serif 4",serif;margin-bottom:10px}
-.drop::first-letter{float:left;font:700 48px/.85 "Bodoni Moda",serif;margin:4px 8px 0 0;color:var(--red)}
+.lede{font:italic 400 16px/1.45 "Shippori Mincho",serif;margin-bottom:10px}.lede.lt{color:#efe6d6}
+.body{font:400 13px/1.6 "Shippori Mincho",serif;margin-bottom:10px}
+.drop::first-letter{float:left;font:700 48px/.85 "Knewave",cursive;margin:4px 8px 0 0;color:var(--red)}
 .ja{font:400 11.5px/1.85 "Shippori Mincho",serif;color:#2c2a2e;margin-top:6px}
 .ar{font:400 14px/1.7 "El Messiri",sans-serif;text-align:right}.ar.lt{color:#e6d9bf}
 .topimg{display:block;width:calc(100% + 92px);margin:-46px -46px 26px;height:340px;object-fit:cover}
 .topimg.short{height:260px}
 /* cover marks: hide the old airline logo */
 .airmark{position:absolute;left:0;top:0;width:250px;height:52px;background:#1f4a78;display:flex;align-items:center;gap:9px;padding:0 13px}
-.airmark img{height:20px}.airmark span{font:700 10px/1.15 Inter;letter-spacing:.16em;color:#fff;display:grid}.airmark i{font-style:normal;font-family:"Shippori Mincho";letter-spacing:.2em;color:#ffd38a}
+.airmark img{height:20px}.airmark span{font:700 10px/1.15 "Zen Kaku Gothic New";letter-spacing:.16em;color:#fff;display:grid}.airmark i{font-style:normal;font-family:"Shippori Mincho";letter-spacing:.2em;color:#ffd38a}
 .bkmark{position:absolute;left:50%;bottom:14px;transform:translateX(-50%);display:flex;align-items:center;justify-content:center;gap:11px;background:#16365f;border-radius:999px;width:336px;height:60px;white-space:nowrap;box-shadow:0 0 0 7px rgba(22,54,95,.35)}
-.bkmark img{height:20px}.bkmark span{font:700 12px Inter;letter-spacing:.16em;color:#fff}
+.bkmark img{height:20px}.bkmark span{font:700 12px "Zen Kaku Gothic New";letter-spacing:.16em;color:#fff}
 /* ads */
-.ad-tag{position:absolute;top:30px;left:34px;font:600 8.5px Inter;letter-spacing:.24em;color:#fff;border:1px solid rgba(255,255,255,.6);padding:5px 8px;z-index:2}
+.ad-tag{position:absolute;top:30px;left:34px;font:700 8.5px "Zen Kaku Gothic New";letter-spacing:.24em;color:#fff;border:1px solid rgba(255,255,255,.6);padding:5px 8px;z-index:2}
 .ad-tx{position:absolute;left:40px;right:40px;bottom:60px;color:#fff}
-.ad-tx b{display:block;font:900 78px/.88 "Bodoni Moda",serif;letter-spacing:-.03em}
-.ad-tx span{display:block;margin-top:16px;font:600 9px Inter;letter-spacing:.22em;text-transform:uppercase;color:#f0d9b0}
+.ad-tx b{display:block;font:900 78px/.88 "Knewave",cursive;letter-spacing:-.03em}
+.ad-tx span{display:block;margin-top:16px;font:700 9px "Zen Kaku Gothic New";letter-spacing:.22em;text-transform:uppercase;color:#f0d9b0}
 .ad-ar{font:400 16px "El Messiri";text-align:right;color:#e8eef5;margin-top:8px}
 /* contents wall */
 .wall{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
 .tile{position:relative;aspect-ratio:1;overflow:hidden;cursor:pointer;background:#ddd5c5}
 .tile img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .3s}.tile:hover img{transform:scale(1.06)}
-.tile b{position:absolute;left:5px;bottom:4px;font:700 15px "Bodoni Moda";color:#fff;text-shadow:0 1px 6px rgba(0,0,0,.8)}
-.tile.tba{display:grid;place-items:center;cursor:default}.tile.tba span{font:600 10px Inter;letter-spacing:.2em;color:var(--ink2)}.tile.tba b{color:var(--ink2);text-shadow:none}
+.tile b{position:absolute;left:5px;bottom:4px;font:700 15px "Knewave";color:#fff;text-shadow:0 1px 6px rgba(0,0,0,.8)}
+.tile.tba{display:grid;place-items:center;cursor:default}.tile.tba span{font:700 10px "Zen Kaku Gothic New";letter-spacing:.2em;color:var(--ink2)}.tile.tba b{color:var(--ink2);text-shadow:none}
 .toc2{display:grid;grid-template-columns:1fr 1fr;gap:8px 18px;margin-top:20px;border-top:2px solid var(--ink);padding-top:12px}
-.toc2 .ti{font:700 15px "Bodoni Moda";cursor:pointer}.toc2 .n{color:var(--red);margin-right:8px}.toc2 .ti:hover{color:var(--red)}
+.toc2 .ti{font:700 15px "Knewave";cursor:pointer}.toc2 .n{color:var(--red);margin-right:8px}.toc2 .ti:hover{color:var(--red)}
 /* ideas */
 .ideas{display:grid;grid-template-columns:1fr 1fr;gap:18px 22px}
-.idea span{font:700 26px/1 "Bodoni Moda";color:var(--red)}.idea h3{font:700 18px/1.1 "Bodoni Moda";margin:6px 0 3px}
-.idea em{display:block;font:400 10.5px "Shippori Mincho";font-style:normal;color:var(--ink2);margin-bottom:6px}.idea p{font:400 11.8px/1.5 "Source Serif 4"}
+.idea span{font:700 26px/1 "Knewave";color:var(--red)}.idea h3{font:700 18px/1.1 "Knewave";margin:6px 0 3px}
+.idea em{display:block;font:400 10.5px "Shippori Mincho";font-style:normal;color:var(--ink2);margin-bottom:6px}.idea p{font:400 11.8px/1.5 "Shippori Mincho"}
 /* guide */
 .guide{border-top:2px solid var(--ink)}
 .ch{display:grid;grid-template-columns:104px 30px 1fr auto 28px;gap:12px;align-items:center;padding:8px 0;border-bottom:1px solid rgba(23,22,26,.16);cursor:pointer}
 .ch img,.ch .ph0{width:104px;height:58px;object-fit:cover;display:block}
-.ch .ph0{display:grid;place-items:center;background:#ddd5c5;font:700 11px Inter;letter-spacing:.2em;color:var(--ink2)}
-.ch .cn{font:700 20px/1 "Bodoni Moda";color:var(--red)}
-.ch .cd b{display:block;font:700 15px/1.15 "Bodoni Moda"}.ch .cd b i{font:600 7.5px Inter;letter-spacing:.16em;text-transform:uppercase;color:#fff;background:var(--red);padding:2px 5px;vertical-align:3px;margin-left:5px}
+.ch .ph0{display:grid;place-items:center;background:#ddd5c5;font:700 11px "Zen Kaku Gothic New";letter-spacing:.2em;color:var(--ink2)}
+.ch .cn{font:700 20px/1 "Knewave";color:var(--red)}
+.ch .cd b{display:block;font:700 15px/1.15 "Knewave"}.ch .cd b i{font:700 7.5px "Zen Kaku Gothic New";letter-spacing:.16em;text-transform:uppercase;color:#fff;background:var(--red);padding:2px 5px;vertical-align:3px;margin-left:5px}
 .ch .cd em{display:block;font:400 10.5px "Shippori Mincho";font-style:normal;color:var(--ink2);margin-top:2px}
-.ch .rt{font:600 10px Inter;color:var(--ink2)}
+.ch .rt{font:700 10px "Zen Kaku Gothic New";color:var(--ink2)}
 .ch .pl{width:26px;height:26px;border-radius:50%;background:var(--ink);color:var(--paper);display:grid;place-items:center;font-size:9px;text-decoration:none}.ch .pl:hover{background:var(--red)}
 .ch.tba{opacity:.55;cursor:default}.ch:not(.tba):hover .cd b{color:var(--red)}
-.note{margin-top:16px;font:600 9px Inter;letter-spacing:.16em;text-transform:uppercase;color:var(--ink2)}
+.note{margin-top:16px;font:700 9px "Zen Kaku Gothic New";letter-spacing:.16em;text-transform:uppercase;color:var(--ink2)}
 /* channel opener */
-.chtop{position:absolute;top:26px;left:40px;right:40px;display:flex;justify-content:space-between;font:600 9px Inter;letter-spacing:.24em;text-transform:uppercase;color:#fff;z-index:2}
-.chno{font:900 120px/.8 "Bodoni Moda";color:var(--red);letter-spacing:-.04em;margin-bottom:10px}
-.ctitle{font:700 46px/1 "Bodoni Moda";color:#fff;letter-spacing:-.015em}
-.cja{font:700 20px "Shippori Mincho";color:#fff;margin-top:12px}.cen{font:italic 400 13px "Source Serif 4";color:#d9cdb5;margin-top:3px}
+.chtop{position:absolute;top:26px;left:40px;right:40px;display:flex;justify-content:space-between;font:700 9px "Zen Kaku Gothic New";letter-spacing:.24em;text-transform:uppercase;color:#fff;z-index:2}
+.chno{font:900 120px/.8 "Knewave";color:var(--red);letter-spacing:-.04em;margin-bottom:10px}
+.ctitle{font:700 46px/1 "Knewave";color:#fff;letter-spacing:-.015em}
+.cja{font:700 20px "Shippori Mincho";color:#fff;margin-top:12px}.cen{font:italic 400 13px "Shippori Mincho";color:#d9cdb5;margin-top:3px}
 /* channel programme page */
 .pg.dark .poster{display:block;width:calc(100% + 92px);margin:-46px -46px 0;aspect-ratio:16/9;object-fit:cover}
 .pb{padding-top:22px}.pb .kick{color:#c9bca4}
-.pq{border-left:3px solid var(--red);padding:2px 0 2px 14px;margin:0 0 14px;font:italic 400 18px/1.35 "Source Serif 4";color:#fff}
+.pq{border-left:3px solid var(--red);padding:2px 0 2px 14px;margin:0 0 14px;font:italic 400 18px/1.35 "Shippori Mincho";color:#fff}
 .pg.dark .body{color:#e6dccb}
-.jp{font:400 12px/1.55 "Source Serif 4";color:#bdb3a1;margin-bottom:14px}.jp b{font:600 8.5px Inter;letter-spacing:.2em;text-transform:uppercase;color:var(--red);margin-right:6px}
+.jp{font:400 12px/1.55 "Shippori Mincho";color:#bdb3a1;margin-bottom:14px}.jp b{font:700 8.5px "Zen Kaku Gothic New";letter-spacing:.2em;text-transform:uppercase;color:var(--red);margin-right:6px}
 .icon{position:absolute;right:40px;bottom:64px;width:170px;height:170px;object-fit:contain;filter:drop-shadow(0 10px 18px rgba(0,0,0,.55));transform:rotate(-6deg)}
 .ticon{position:absolute;right:40px;bottom:66px;width:210px;transform:rotate(-8deg);filter:drop-shadow(0 10px 18px rgba(0,0,0,.25))}
-.play{position:absolute;left:46px;bottom:74px;font:600 9.5px Inter;letter-spacing:.2em;text-transform:uppercase;color:#fff;background:var(--red);padding:10px 15px;text-decoration:none}.play:hover{background:#e0382c}
-.links{display:grid;gap:8px;margin-top:16px}.links a{font:700 18px "Bodoni Moda";color:var(--ink);text-decoration:none;border-bottom:1px solid rgba(23,22,26,.16);padding-bottom:8px}.links a:hover{color:var(--red)}
+.play{position:absolute;left:46px;bottom:74px;font:700 9.5px "Zen Kaku Gothic New";letter-spacing:.2em;text-transform:uppercase;color:#fff;background:var(--red);padding:10px 15px;text-decoration:none}.play:hover{background:#e0382c}
+.links{display:grid;gap:8px;margin-top:16px}.links a{font:700 18px "Knewave";color:var(--ink);text-decoration:none;border-bottom:1px solid rgba(23,22,26,.16);padding-bottom:8px}.links a:hover{color:var(--red)}
+
+@font-face{font-family:"Knewave";src:url(mag/knewave.woff2) format("woff2");font-display:swap}
+:root{--paper:#e9dcc0;--ink:#1c1612;--ink2:#7a6a55;--red:#c8281e;--night:#16110e;--ivory:#f1e6cf}
+.pg{background:var(--paper)}
+.pg::before{content:"";position:absolute;inset:0;pointer-events:none;z-index:3;opacity:.5;mix-blend-mode:multiply;
+ background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .35 0 0 0 0 .27 0 0 0 0 .18 0 0 0 .22 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+.pg::after{content:"";position:absolute;inset:0;pointer-events:none;z-index:3;box-shadow:inset 0 0 70px rgba(70,45,20,.35)}
+.pg.dark::before{mix-blend-mode:screen;opacity:.35}.pg.dark::after{box-shadow:inset 0 0 90px rgba(0,0,0,.55)}
+.pg.cover::before,.pg.cover::after{display:none}
+.h1,.ctitle,.ad-tx b,.idea h3,.ch .cd b,.toc2 .ti,.links a{font-weight:400;letter-spacing:.005em;transform:skewX(-4deg);transform-origin:left}
+.h1{font-size:38px;line-height:1.05;color:var(--ink)}.h1.lt{color:var(--ivory)}.h1.big{font-size:44px}.h1.huge{font-size:70px;line-height:.98}
+.h1::after{content:"";display:block;width:62%;height:9px;margin-top:10px;background:var(--red);border-radius:2px 60% 60% 2px/2px 100% 100% 2px;transform:skewX(-12deg)}
+.ctitle{font-size:44px;color:var(--ivory)}
+.chno{font-family:"Knewave";font-weight:400;font-size:104px;color:var(--red);text-shadow:0 3px 0 rgba(0,0,0,.35)}
+.cja,.tag span{font-family:"Shippori Mincho";font-weight:800}
+.kick{font-family:"Zen Kaku Gothic New";font-weight:700;letter-spacing:.24em;color:var(--ink2)}
+.kick.red{color:var(--red)}
+.pg.dark .kick,.pb .kick{color:#b8a688}
+.body,.ch .cd em,.idea p,.jp{font-family:"Shippori Mincho"}
+.pq{font-family:"Shippori Mincho";font-style:normal;font-weight:700;color:var(--ivory)}
+.drop::first-letter{font-family:"Knewave";font-weight:400}
+.ad-tx b{font-size:72px;color:var(--ivory)}
+.ch .cn,.idea span,.toc2 .n,.folio .pn,.tile b{font-family:"Knewave";font-weight:400}
+.folio{font-family:"Zen Kaku Gothic New";color:var(--ink2);border-top-color:rgba(28,22,18,.25)}
+.folio.dk{color:#a8977c;border-top-color:rgba(241,230,207,.2)}
+.guide{border-top-color:var(--ink)}.ch .pl{background:var(--red);color:var(--ivory)}
+.play{font-family:"Zen Kaku Gothic New";font-weight:900;background:var(--red);border-radius:2px;transform:skewX(-8deg)}
+.tile{border-radius:6px;box-shadow:0 3px 8px rgba(60,40,20,.35)}
+.vbar{background:#16110e;border-bottom-color:#2c241d}.vbar .t{font-family:"Knewave";font-weight:400;color:var(--ivory)}
+.nav{background:#16110e;border-color:#3a3027}.prog2 i{background:var(--red)}
 
 .vbar{position:fixed;top:0;left:0;right:0;height:52px;z-index:10;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:0 16px;background:#111215;border-bottom:1px solid #2a2c31;color:#efe4cf}
-.vbar a{color:#efe4cf;text-decoration:none;font:600 10.5px Inter;letter-spacing:.16em;text-transform:uppercase}.vbar a:hover{color:#ff5a4c}
-.vbar .t{font:900 22px "Bodoni Moda";letter-spacing:-.01em}.vbar .t small{font:600 9px Inter;letter-spacing:.2em;color:#c62a1f;margin-left:8px;text-transform:uppercase}
+.vbar a{color:#efe4cf;text-decoration:none;font:700 10.5px "Zen Kaku Gothic New";letter-spacing:.16em;text-transform:uppercase}.vbar a:hover{color:#ff5a4c}
+.vbar .t{font:900 22px "Knewave";letter-spacing:-.01em}.vbar .t small{font:700 9px "Zen Kaku Gothic New";letter-spacing:.2em;color:#c62a1f;margin-left:8px;text-transform:uppercase}
 .stage{position:fixed;top:52px;bottom:52px;left:0;right:0;touch-action:pinch-zoom;perspective:2800px}
 .book{position:absolute;left:50%;top:50%;width:1200px;height:800px;transform-origin:0 0;transform-style:preserve-3d}
 .one .book{width:600px}
@@ -104,7 +134,7 @@ body{font-family:"Source Serif 4",Georgia,serif;color:var(--ink);-webkit-font-sm
 .nav{position:fixed;top:50%;transform:translateY(-50%);z-index:11;width:46px;height:46px;border-radius:50%;border:1px solid #3a3c42;background:#111215;color:#fff;font-size:22px;cursor:pointer;display:grid;place-items:center}
 .nav:hover{border-color:#c62a1f;color:#ff5a4c}.nav[disabled]{opacity:.25;cursor:default}
 #prev{left:12px}#next{right:12px}
-.foot2{position:fixed;left:0;right:0;bottom:0;height:52px;display:flex;align-items:center;gap:14px;padding:0 16px;color:#9a948a;font:600 10px Inter;letter-spacing:.16em;text-transform:uppercase}
+.foot2{position:fixed;left:0;right:0;bottom:0;height:52px;display:flex;align-items:center;gap:14px;padding:0 16px;color:#9a948a;font:700 10px "Zen Kaku Gothic New";letter-spacing:.16em;text-transform:uppercase}
 .prog2{flex:1;height:3px;background:#2a2c31;border-radius:3px;overflow:hidden}.prog2 i{display:block;height:100%;background:#c62a1f;width:0;transition:width .3s}
 @media (max-width:820px){.vbar .t small{display:none}.nav{width:42px;height:42px;font-size:20px;top:auto;bottom:5px;transform:none}#prev{left:auto;right:64px}#next{right:12px}.foot2{padding-right:120px}}
 </style></head><body>
@@ -112,8 +142,7 @@ body{font-family:"Source Serif 4",Georgia,serif;color:var(--ink);-webkit-font-sm
 <main class="stage" id="stage" aria-label="Magazine pages"></main>
 <button class="nav" id="prev" aria-label="Previous page">‹</button><button class="nav" id="next" aria-label="Next page">›</button>
 <div class="foot2"><span id="pc">01 / 38</span><span class="prog2"><i id="bar"></i></span></div>
-<template><section class="pg cover"><img class="bleed" src="mag/x-cover.webp" alt="ONE WAY in-flight magazine cover">
-<div class="airmark"><img src="../brand/layl-logo-cream.svg" alt=""><span>LAY-L AIR<i>片道航空</i></span></div></section></template><template><section class="pg dark"><img class="bleed" src="mag/x-drive.webp" alt="" style="object-position:62% 50%"><div class="shade"></div><span class="ad-tag">LAY-L AIR · 片道航空</span>
+<template><section class="pg cover"><img class="bleed" src="mag/x-cover2.webp" alt="ONE WAY in-flight magazine cover"></section></template><template><section class="pg dark"><img class="bleed" src="mag/x-drive.webp" alt="" style="object-position:62% 50%"><div class="shade"></div><span class="ad-tag">LAY-L AIR · 片道航空</span>
 <div class="ad-tx"><b>Fly<br>one way.</b><span>No return trip required</span><p class="ad-ar" dir="rtl" lang="ar">سافر ذهابًا فقط. لا حاجة لتذكرة العودة.</p></div></section></template><template><section class="pg"><div class="kick">Contents · 目次</div><h2 class="h1">Now showing</h2>
 <div class="wall"><div class="ti tile"><span class="n" hidden>10</span><img src="sq-01.webp" alt=""><b>01</b></div><div class="ti tile"><span class="n" hidden>12</span><img src="sq-02.webp" alt=""><b>02</b></div><div class="ti tile"><span class="n" hidden>14</span><img src="sq-03.webp" alt=""><b>03</b></div><div class="ti tile"><span class="n" hidden>16</span><img src="sq-07.webp" alt=""><b>04</b></div><div class="tile tba"><span>TBA</span><b>05</b></div><div class="ti tile"><span class="n" hidden>18</span><img src="sq-04.webp" alt=""><b>06</b></div><div class="ti tile"><span class="n" hidden>20</span><img src="sq-05.webp" alt=""><b>07</b></div><div class="ti tile"><span class="n" hidden>22</span><img src="sq-11.webp" alt=""><b>08</b></div><div class="ti tile"><span class="n" hidden>24</span><img src="sq-13.webp" alt=""><b>09</b></div><div class="ti tile"><span class="n" hidden>26</span><img src="sq-06.webp" alt=""><b>10</b></div><div class="ti tile"><span class="n" hidden>28</span><img src="sq-10.webp" alt=""><b>11</b></div><div class="ti tile"><span class="n" hidden>30</span><img src="sq-08.webp" alt=""><b>12</b></div><div class="ti tile"><span class="n" hidden>32</span><img src="sq-09.webp" alt=""><b>13</b></div><div class="ti tile"><span class="n" hidden>34</span><img src="sq-12.webp" alt=""><b>14</b></div></div>
 <div class="toc2"><span class="ti"><span class="n">04</span>Welcome aboard</span><span class="ti"><span class="n">05</span>Why Okinawa?</span><span class="ti"><span class="n">06</span>The idea</span><span class="ti"><span class="n">08</span>Channel guide</span></div>
@@ -267,9 +296,8 @@ body{font-family:"Source Serif 4",Georgia,serif;color:var(--ink);-webkit-font-sm
 <img class="icon" src="mag/i-14.webp" alt="" loading="lazy">
 <a class="play" href="./?play=12">▶ Play channel 14</a></div><div class="folio"><span>ONE WAY · Issue 01</span><span>Voodoo Doll</span><span class="pn">35</span></div></section></template><template><section class="pg"><img class="topimg" src="mag/x-ticket.webp" alt="" style="object-position:30% 50%"><div class="kick">Arrival · 到着</div><h2 class="h1">Thank you for flying LAY-L AIR.</h2>
 <p class="body">Every channel stays open on board, with synced lyrics.</p>
-<img class="ticon" src="mag/i-pass.webp" alt=""><div class="links"><a href="./">Album &amp; tracklist ▸</a><a href="./#rows">Listen on board ▸</a><a href="../lyrics.html">Lyrics ▸</a></div><div class="folio"><span>ONE WAY · Issue 01</span><span>Arrival</span><span class="pn">36</span></div></section></template><template><section class="pg dark"><img class="bleed" src="album-clean.webp" alt="" style="object-position:0% 50%"><div class="shade"></div><span class="ad-tag">LAY-L AIR · 片道航空</span>
-<div class="ad-tx"><b>Listen<br>on board.</b><span>Fourteen channels · Synced lyrics</span></div></section></template><template><section class="pg cover"><img class="bleed" src="mag/x-back.webp" alt="">
-<div class="bkmark"><img src="../brand/layl-logo-cream.svg" alt=""><span>LAY-L AIR · 片道航空</span></div></section></template><script>
+<img class="ticon" src="mag/i-pass.webp" alt=""><div class="links"><a href="./">Departures board · tracklist ▸</a><a href="./?play=0">Play from channel 01 ▸</a></div><div class="folio"><span>ONE WAY · Issue 01</span><span>Arrival</span><span class="pn">36</span></div></section></template><template><section class="pg dark"><img class="bleed" src="album-clean.webp" alt="" style="object-position:0% 50%"><div class="shade"></div><span class="ad-tag">LAY-L AIR · 片道航空</span>
+<div class="ad-tx"><b>Listen<br>on board.</b><span>Fourteen channels · Synced lyrics</span></div></section></template><template><section class="pg cover"><img class="bleed" src="mag/x-back2.webp" alt="ONE WAY back cover"></section></template><script>
 (function(){
   var tpls=[].slice.call(document.querySelectorAll("template")), N=tpls.length, one=false, V=[];
   var stage=document.getElementById("stage"), book=document.createElement("div"); book.className="book"; stage.appendChild(book);
