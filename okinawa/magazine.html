@@ -14,7 +14,8 @@ body{font-family:"Shippori Mincho",serif;color:var(--ink);-webkit-font-smoothing
 .bleed{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 .bleed.zoom{transform:scale(1.9);transform-origin:var(--o,50% 50%)}
 .shade{position:absolute;inset:0;background:linear-gradient(rgba(8,8,10,.1),rgba(8,8,10,0) 35%,rgba(8,8,10,.88))}
-.shade.deep{background:linear-gradient(rgba(8,8,10,.45),rgba(8,8,10,0) 25%,rgba(8,8,10,0) 45%,rgba(8,8,10,.95))}
+.shade.deep{z-index:1;background:linear-gradient(to top,rgba(8,6,5,.97) 0%,rgba(8,6,5,.9) 22%,rgba(8,6,5,.6) 42%,rgba(8,6,5,0) 64%),linear-gradient(rgba(8,6,5,.5),rgba(8,6,5,0) 16%)}
+.over,.chtop{z-index:2}
 .over{position:absolute;left:46px;right:46px;bottom:70px}
 .folio{position:absolute;left:46px;right:46px;bottom:24px;display:flex;justify-content:space-between;align-items:center;font:600 8.5px/1 "Zen Kaku Gothic New",sans-serif;letter-spacing:.18em;text-transform:uppercase;color:var(--ink2);border-top:1px solid rgba(23,22,26,.18);padding-top:10px;z-index:2}
 .folio.dk{color:#a39c90;border-top-color:rgba(239,228,207,.2)}
@@ -137,7 +138,15 @@ body{font-family:"Shippori Mincho",serif;color:var(--ink);-webkit-font-smoothing
 .foot2{position:fixed;left:0;right:0;bottom:0;height:52px;display:flex;align-items:center;gap:14px;padding:0 16px;color:#9a948a;font:700 10px "Zen Kaku Gothic New";letter-spacing:.16em;text-transform:uppercase}
 .prog2{flex:1;height:3px;background:#2a2c31;border-radius:3px;overflow:hidden}.prog2 i{display:block;height:100%;background:#c62a1f;width:0;transition:width .3s}
 @media (max-width:820px){.vbar .t small{display:none}.nav{width:42px;height:42px;font-size:20px;top:auto;bottom:5px;transform:none}#prev{left:auto;right:64px}#next{right:12px}.foot2{padding-right:120px}}
-</style></head><body>
+</style><script>(function(){
+  if (window.parent === window){ location.replace("./?open=" + encodeURIComponent(location.pathname.split("/").pop() + location.hash)); return; }
+  document.addEventListener("click", function(e){ var a = e.target.closest && e.target.closest("a"); if (!a) return; var h = a.getAttribute("href") || "";
+    var m = /^\.\/\?play=(\d+)/.exec(h);
+    if (m){ e.preventDefault(); e.stopPropagation(); parent.postMessage({t:"play", i:+m[1]}, location.origin); return; }
+    if (h === "./" || h.indexOf("./#") === 0){ e.preventDefault(); e.stopPropagation(); parent.postMessage({t:"close"}, location.origin); }
+  }, true);
+})();</script>
+</head><body>
 <header class="vbar"><a href="./">← Album</a><span class="t">ONE WAY<small>In-flight magazine</small></span><a href="./#rows">Listen ▸</a></header>
 <main class="stage" id="stage" aria-label="Magazine pages"></main>
 <button class="nav" id="prev" aria-label="Previous page">‹</button><button class="nav" id="next" aria-label="Next page">›</button>
@@ -296,7 +305,7 @@ body{font-family:"Shippori Mincho",serif;color:var(--ink);-webkit-font-smoothing
 <img class="icon" src="mag/i-14.webp" alt="" loading="lazy">
 <a class="play" href="./?play=12">▶ Play channel 14</a></div><div class="folio"><span>ONE WAY · Issue 01</span><span>Voodoo Doll</span><span class="pn">35</span></div></section></template><template><section class="pg"><img class="topimg" src="mag/x-ticket.webp" alt="" style="object-position:30% 50%"><div class="kick">Arrival · 到着</div><h2 class="h1">Thank you for flying LAY-L AIR.</h2>
 <p class="body">Every channel stays open on board, with synced lyrics.</p>
-<img class="ticon" src="mag/i-pass.webp" alt=""><div class="links"><a href="./">Departures board · tracklist ▸</a><a href="./?play=0">Play from channel 01 ▸</a></div><div class="folio"><span>ONE WAY · Issue 01</span><span>Arrival</span><span class="pn">36</span></div></section></template><template><section class="pg dark"><img class="bleed" src="album-clean.webp" alt="" style="object-position:0% 50%"><div class="shade"></div><span class="ad-tag">LAY-L AIR · 片道航空</span>
+<img class="ticon" src="mag/i-pass.webp" alt=""><div class="links"><a href="./">Departures board · tracklist ▸</a><a href="./?play=0">Play from channel 01 ▸</a><a href="lyrics.html">All the lyrics ▸</a></div><div class="folio"><span>ONE WAY · Issue 01</span><span>Arrival</span><span class="pn">36</span></div></section></template><template><section class="pg dark"><img class="bleed" src="album-clean.webp" alt="" style="object-position:0% 50%"><div class="shade"></div><span class="ad-tag">LAY-L AIR · 片道航空</span>
 <div class="ad-tx"><b>Listen<br>on board.</b><span>Fourteen channels · Synced lyrics</span></div></section></template><template><section class="pg cover"><img class="bleed" src="mag/x-back2.webp" alt="ONE WAY back cover"></section></template><script>
 (function(){
   var tpls=[].slice.call(document.querySelectorAll("template")), N=tpls.length, one=false, V=[];

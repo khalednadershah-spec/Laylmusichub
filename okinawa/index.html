@@ -139,6 +139,8 @@ a{color:inherit}
 .mini{position:fixed;left:50%;bottom:max(14px,env(safe-area-inset-bottom));transform:translateX(-50%);z-index:40;display:none;align-items:center;gap:10px;
   background:var(--paper);color:var(--ink);border:0;border-radius:999px;padding:9px 16px 9px 10px;font:inherit;font-size:12px;font-weight:700;letter-spacing:.08em;cursor:pointer;box-shadow:0 12px 30px rgba(0,0,0,.5);max-width:calc(100vw - 32px)}
 .mini.show{display:flex}
+#ovl{position:fixed;inset:0;z-index:30;display:none;background:#16110e}#ovl.show{display:block}#ovl iframe{width:100%;height:100%;border:0;display:block}
+
 .mini i{width:26px;height:26px;border-radius:50%;background:var(--ink);color:var(--paper);display:grid;place-items:center;font-style:normal;font-size:11px;flex:none}
 .mini span{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 @keyframes print{from{transform:translateY(-26px);opacity:0;clip-path:inset(0 0 100% 0)}to{transform:none;opacity:1;clip-path:inset(0 0 0 0)}}
@@ -324,7 +326,7 @@ footer a{text-decoration:none}footer a:hover{color:var(--amber)}
 <div class="wrap">
   <div class="strip">
     <a href="../" aria-label="Back to the LAY-L site"><img src="../brand/layl-logo-cream.svg" alt="LAY-L"></a>
-    <span class="strip-r"><a href="magazine.html" class="navmag">In-flight magazine</a><span class="clk">OKA · <span class="clock" id="clock">--:--</span> JST</span></span>
+    <span class="strip-r"><a href="lyrics.html" class="navmag">Lyrics</a> <a href="magazine.html" class="navmag">In-flight magazine</a><span class="clk">OKA · <span class="clock" id="clock">--:--</span> JST</span></span>
   </div>
 
   <header class="hero">
@@ -591,6 +593,21 @@ if("IntersectionObserver" in window)new IntersectionObserver(function(es){es.for
   });
 
   document.querySelectorAll(".mz-play").forEach(function(b){ b.addEventListener("click", function(){ var i = +b.getAttribute("data-play"); if (cur === i){ openFly(); if (audio.paused) audio.play().catch(function(){}); } else load(i, true); }); });
+  // magazine + lyrics open over the album page, so the music keeps playing
+  var ovl = document.createElement("div"); ovl.id = "ovl"; ovl.innerHTML = '<iframe id="ovf" title="LAY-L"></iframe>'; document.body.appendChild(ovl);
+  var ovf = ovl.firstChild, OKP = /^(magazine|lyrics)\.html(#[\w-]*)?$/;
+  function openOvl(h, replace){ if (!OKP.test(h)) return; ovf.src = h; ovl.classList.add("show"); document.documentElement.style.overflow = "hidden";
+    if (fly.classList.contains("open")) closeFly();
+    try { history[replace ? "replaceState" : "pushState"]({ovl:h}, "", "?open=" + encodeURIComponent(h)); } catch(e){} }
+  function shutOvl(push){ ovl.classList.remove("show"); document.documentElement.style.overflow = ""; ovf.src = "about:blank";
+    if (push !== false){ try { history.pushState(null, "", location.pathname); } catch(e){} } }
+  document.addEventListener("click", function(e){ var a = e.target.closest && e.target.closest('a[href="magazine.html"],a[href="lyrics.html"]'); if (!a) return; e.preventDefault(); openOvl(a.getAttribute("href")); });
+  addEventListener("message", function(e){ if (e.origin !== location.origin) return; var d = e.data || {};
+    if (d.t === "play" && TRACKS[d.i]){ if (cur === d.i){ if (audio.paused) audio.play().catch(function(){}); } else load(d.i, true);
+      closeFly(); setTimeout(function(){ if (audio.paused) openFly(); }, 900); }
+    if (d.t === "close") shutOvl(); });
+  addEventListener("popstate", function(){ var o = new URLSearchParams(location.search).get("open"); if (o && OKP.test(o)){ ovf.src = o; ovl.classList.add("show"); document.documentElement.style.overflow = "hidden"; } else shutOvl(false); });
+  try { var op = new URLSearchParams(location.search).get("open"); if (op) openOvl(op, true); } catch(e){}
   try { var qp = new URLSearchParams(location.search).get("play"); if (qp !== null && TRACKS[+qp]) load(+qp, true); } catch(e){}
   // Okinawa clock (JST)
   function tick(){
