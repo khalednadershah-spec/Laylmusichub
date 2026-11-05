@@ -1,0 +1,790 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>LAY-L — I Guess the Fortuneteller Is Right…</title>
+<meta name="description" content="LAY-L. The album I Guess the Fortuneteller Is Right…, out 7 May 2027.">
+<meta property="og:title" content="LAY-L — I Guess the Fortuneteller Is Right…">
+<meta property="og:type" content="music.album">
+<meta property="og:url" content="https://khalednadershah-spec.github.io/Laylmusichub/">
+<meta property="og:description" content="The album from LAY-L, out 7 May 2027. First single Voodoo Doll, 22 January 2027.">
+<meta property="og:image" content="https://khalednadershah-spec.github.io/Laylmusichub/brand/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="LAY-L — I Guess the Fortuneteller Is Right…">
+<meta name="twitter:image" content="https://khalednadershah-spec.github.io/Laylmusichub/brand/og-image.jpg">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="icon" href="brand/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="brand/apple-touch-icon.png">
+<meta name="theme-color" content="#101013">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&amp;family=Inter+Tight:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#101013}
+a{color:inherit}a:hover{color:#F52B7B}
+@keyframes layl-marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.layl-marquee{animation:layl-marquee 60s linear infinite}
+.layl-card{transition:transform .25s ease, box-shadow .25s ease}
+.layl-card:hover{transform:translateY(-6px) rotate(-0.6deg);box-shadow:0 14px 0 -6px #101013}
+.layl-card:focus-visible{outline:3px solid #F52B7B;outline-offset:4px}
+.layl-btn:hover{background:#F52B7B !important;color:#101013 !important;border-color:#F52B7B !important}
+.layl-strip{scroll-snap-type:x mandatory}
+.layl-strip > figure{scroll-snap-align:start}
+@keyframes layl-float{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+.layl-float{animation:layl-float 7s ease-in-out infinite}
+@media (prefers-reduced-motion: reduce){.layl-marquee{animation:none}.layl-float{animation:none}.layl-card{transition:none}}
+</style>
+<style>[hidden]{display:none!important} #members,#shopGrid{display:contents}</style>
+<script src="lyrics-sync.js" defer></script>
+<style>
+#karaoke{flex:1 1 100%;min-width:0;padding:4px 4px 2px;text-align:center}
+#karaoke p{margin:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+#kLine{font-family:'Bodoni Moda',serif;font-weight:700;font-size:22px;line-height:1.3;min-height:1.3em}
+#kNext{font-size:13px;line-height:1.4;color:#6E6E73;min-height:1.4em}
+#kLine span{color:#77777C;transition:color .12s linear}
+#kLine span.on{color:#F9D9A6}
+#kLine span.now{color:#F52B7B}
+#kLine.gap{color:#ABD33F;font-style:italic;font-weight:400}
+@media (max-width:600px){#kLine{font-size:18px;white-space:normal;max-height:2.6em}#kNext{display:none}}
+@media (prefers-reduced-motion:reduce){#kLine span{transition:none}}
+</style>
+<style>
+#lyPanel{position:fixed;left:16px;right:16px;top:16px;bottom:var(--nowbar-h,150px);z-index:9;max-width:980px;margin:0 auto;background:#101013;color:#F9D9A6;border:2px solid #ABD33F;border-radius:16px;display:flex;flex-direction:column;overflow:hidden;box-sizing:border-box;box-shadow:0 20px 60px rgba(0,0,0,.55)}
+.lyp-head{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:14px 18px;border-bottom:1px solid #2A2A2D}
+.lyp-head>div{display:flex;flex-direction:column;gap:2px;min-width:0}
+.lyp-k{font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:#ABD33F}
+.lyp-t{font-family:'Bodoni Moda',serif;font-style:italic;font-weight:700;font-size:22px}
+.lyp-x{cursor:pointer;background:transparent;color:#F9D9A6;border:2px solid #F9D9A6;border-radius:999px;padding:8px 16px;font:700 13px 'Inter Tight',system-ui,sans-serif}
+.lyp-x:hover{background:#F52B7B;border-color:#F52B7B;color:#101013}
+.lyp-body{flex:1;overflow-y:auto;padding:30vh 22px;text-align:center;scroll-behavior:smooth;overscroll-behavior:contain}
+.lyp-body p{margin:0;padding:5px 0;font-family:'Bodoni Moda',serif;font-weight:700;font-size:clamp(20px,3vw,30px);line-height:1.3;color:#4E4E53;cursor:pointer;transition:color .2s}
+.lyp-body p.gapb{margin-top:26px}
+.lyp-body p.past{color:#8A8A8F}
+.lyp-body p.cur{color:#77777C}
+.lyp-body p.cur span.on{color:#F9D9A6}
+.lyp-body p.cur span.now{color:#F52B7B}
+.lyp-body p:hover{color:#BFBFC4}
+.lyp-full{display:block;text-align:center;padding:10px;font-size:12px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:#8C8C90;border-top:1px solid #2A2A2D;text-decoration:none}
+#nowLyrics[aria-expanded="true"]{background:#ABD33F !important;color:#101013 !important}
+@media (max-width:600px){#lyPanel{left:8px;right:8px;top:8px}.lyp-body{padding:22vh 14px}}
+@media (prefers-reduced-motion:reduce){.lyp-body{scroll-behavior:auto}}
+</style>
+<style>
+/* --- hero --- */
+.ball-sound{position:absolute;left:50%;top:66%;transform:translate(-50%,-50%);z-index:2;cursor:pointer;display:flex;align-items:center;gap:8px;padding:10px 18px;border-radius:999px;border:1.5px solid rgba(249,217,166,.7);background:rgba(16,16,19,.55);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);color:#F9D9A6;font:700 13px 'Inter Tight',system-ui,sans-serif;letter-spacing:1px;text-transform:uppercase}
+.ball-sound:hover,.ball-sound[aria-pressed="true"]{background:#ABD33F;color:#101013;border-color:#ABD33F}
+.ball-sound .w1,.ball-sound .w2{opacity:.35}
+.ball-sound[aria-pressed="true"] .w1,.ball-sound[aria-pressed="true"] .w2{opacity:1;animation:wave 1.2s ease-in-out infinite}
+.ball-sound[aria-pressed="true"] .w2{animation-delay:.2s}
+@keyframes wave{50%{opacity:.3}}
+@media (max-width:700px){
+ .site-head-in{padding:14px 16px !important;gap:6px !important;flex-direction:column;align-items:flex-start !important}
+ .site-nav{flex-wrap:nowrap !important;gap:18px !important;font-size:11px !important;letter-spacing:1.5px !important;overflow-x:auto;max-width:100%;scrollbar-width:none;padding-bottom:2px}
+ .site-nav::-webkit-scrollbar{display:none}
+ .site-nav a{white-space:nowrap}
+ .site-nav{-webkit-mask-image:linear-gradient(90deg,#000 82%,transparent);mask-image:linear-gradient(90deg,#000 82%,transparent);padding-right:40px;box-sizing:border-box;width:100%}
+ .hero-in{padding:86px 0 40px !important;gap:14px !important}
+ .hero-ball{width:112vw !important;margin:-6px -6vw -8px !important}
+ .hero-kick{font-size:11px !important;letter-spacing:2px !important;padding:0 16px}
+ .hero-title{font-size:38px !important;letter-spacing:-1px !important;padding:0 16px}
+ .hero-btns{padding:2px 16px 0 !important;gap:10px !important}
+ .hero-btns .layl-btn{padding:13px 20px !important;font-size:14px !important}
+ .ball-sound{top:64%;padding:9px 15px;font-size:12px}
+}
+/* --- marquee --- */
+.mq-track:hover,.mq-track:focus-within{animation-play-state:paused}
+.mq-run{line-height:1;text-box:trim-both cap alphabetic;display:flex;align-items:baseline}
+.mq-l{all:unset;line-height:1;cursor:pointer;padding:0 6px;border-radius:6px;font:inherit;transition:background .15s,color .15s}
+.mq-l:hover,.mq-l:focus-visible{background:#101013;color:#ABD33F}
+.mq-l.on{color:#F52B7B}
+.mq-s{padding:0 18px}
+.mq-hint{position:absolute;right:0;top:0;bottom:0;z-index:2;display:flex;align-items:center;padding:0 18px 0 36px;font:700 11px 'Inter Tight',system-ui,sans-serif;letter-spacing:2px;text-transform:uppercase;background:linear-gradient(90deg,rgba(171,211,63,0),#ABD33F 30%);pointer-events:none}
+@media (max-width:700px){.mq-track{font-size:24px !important;padding:18px 0 22px !important}.mq-hint{display:none}}
+/* --- draw --- */
+.draw-wrap{perspective:1400px}
+#drawnCard{transform:rotate(var(--tilt,-3deg));transition:transform .45s cubic-bezier(.3,.7,.3,1)}
+#drawnCard.flip{transform:rotate(var(--tilt,-3deg)) rotateY(90deg) scale(.96)}
+/* --- spread: a reading laid on a table --- */
+.act{position:relative;padding:72px 0 8px}
+.act-num{position:absolute;left:-.08em;top:-.12em;font-family:'Bodoni Moda',serif;font-style:italic;font-weight:800;font-size:clamp(150px,19vw,290px);line-height:1;color:transparent;-webkit-text-stroke:2px #101013;opacity:.16;pointer-events:none;user-select:none}
+.act-name{position:relative;display:flex;align-items:baseline;gap:14px;margin:0 0 28px 30%;font-size:13px;font-weight:700;letter-spacing:3px;text-transform:uppercase}
+.act-name em{font-family:'Bodoni Moda',serif;font-size:40px;letter-spacing:0;text-transform:none}
+.act-cards{position:relative;display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:40px 30px;padding-left:9%}
+.act:nth-child(2) .act-cards{padding-left:0;padding-right:9%}
+.act:nth-child(2) .act-name{margin-left:0}
+.act:nth-child(2) .act-num{left:auto;right:-.05em}
+.spread-card{transform:translateY(var(--y,0)) rotate(var(--r,0deg));transition:transform .35s cubic-bezier(.3,.7,.3,1),filter .35s}
+.spread-card:hover,.spread-card:focus-visible{transform:translateY(calc(var(--y,0) - 14px)) rotate(0deg) scale(1.04);z-index:2}
+.spread-card img{filter:drop-shadow(0 10px 0 rgba(16,16,19,.12))}
+@media (max-width:700px){
+ .act{padding-top:48px}
+ .act-num{font-size:150px}
+ .act-name{margin-left:34%}
+ .act:nth-child(2) .act-name{margin-left:0}
+ .act-cards,.act:nth-child(2) .act-cards{grid-template-columns:1fr 1fr;gap:28px 16px;padding:0}
+ .spread-card span{font-size:10px !important;letter-spacing:1px !important}
+}
+@media (prefers-reduced-motion:reduce){.spread-card,#drawnCard{transition:none}}
+/* --- single: type collision --- */
+.single-ghost{position:absolute;right:-4vw;top:50%;transform:translateY(-52%);font-family:'Bodoni Moda',serif;font-style:italic;font-weight:800;font-size:clamp(160px,26vw,420px);line-height:.8;color:transparent;-webkit-text-stroke:2px #101013;opacity:.22;white-space:nowrap;pointer-events:none;user-select:none}
+.single-art img{transform:rotate(-2.5deg);box-shadow:14px 14px 0 #101013}
+.single-title{margin:0;font-family:'Bodoni Moda',serif;font-weight:700;font-size:clamp(64px,8vw,128px);line-height:.82;letter-spacing:-3px;display:flex;flex-direction:column}
+.single-title .i{font-style:italic;color:#F52B7B;-webkit-text-stroke:1.5px #101013;margin-left:.9em}
+@media (min-width:1100px){.single-copy{position:relative;z-index:2}.single-title{margin-left:-170px}.single-title span:first-child{background:#ABD33F;align-self:flex-start;padding:0 .14em 0 .1em;box-shadow:0 0 0 2px #101013}}
+@media (max-width:700px){.single-ghost{top:14%;font-size:150px}.single-art img{box-shadow:8px 8px 0 #101013}}
+/* --- band: staggered editorial --- */
+.band-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:28px;align-items:start}
+.member{position:relative;display:flex;flex-direction:column;gap:14px}
+.member:nth-child(even){margin-top:120px}
+.member img{width:100%;aspect-ratio:3/4;object-fit:cover;display:block;border-radius:6px;transition:transform .4s cubic-bezier(.3,.7,.3,1)}
+.member:hover img{transform:rotate(var(--r,-1.5deg)) scale(1.02)}
+.member-name{margin:-.62em 0 0 -.06em;position:relative;font-family:'Bodoni Moda',serif;font-style:italic;font-weight:800;font-size:clamp(56px,6.2vw,96px);line-height:1;letter-spacing:-2px;color:#F9D9A6;text-shadow:0 2px 0 #101013,0 0 24px rgba(16,16,19,.85)}
+.member-arc{position:absolute;top:14px;left:-12px;writing-mode:vertical-rl;transform:rotate(180deg);font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;background:#101013;padding:12px 6px;border-radius:4px}
+.member-role{font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase}
+@media (max-width:1000px){.band-grid{grid-template-columns:1fr 1fr;gap:36px 18px}.member:nth-child(even){margin-top:64px}.member-name{font-size:52px}}
+/* --- footer: spirit board signup --- */
+.board-wrap{max-width:1360px;margin:0 auto;padding:96px 32px 40px;position:relative}
+.board{position:relative;height:300px;margin-bottom:-24px;user-select:none}
+.b-letters{position:absolute;inset:0}
+.b-letters span,.b-yes,.b-no,.b-bye{position:absolute;transform:translate(-50%,-50%);font-family:'Bodoni Moda',serif;font-weight:600;color:#F9D9A6;opacity:.22;transition:opacity .3s,color .3s,text-shadow .3s}
+.b-letters span{font-size:clamp(20px,2.6vw,38px)}
+.b-yes,.b-no{top:12%;font-size:clamp(18px,2vw,28px);font-style:italic;letter-spacing:2px;text-transform:uppercase}
+.b-yes{left:6%}.b-no{left:94%}
+.b-bye{left:50%;top:84%;font-size:clamp(16px,1.6vw,22px);letter-spacing:6px;text-transform:uppercase;display:none}
+.board .lit{opacity:1;color:#ABD33F;text-shadow:0 0 18px rgba(171,211,63,.6)}
+.planchette{position:absolute;width:clamp(70px,8vw,110px);left:50%;top:60%;transform:translate(-50%,-38%) rotate(var(--pr,0deg));transition:left .55s cubic-bezier(.4,.1,.2,1),top .55s cubic-bezier(.4,.1,.2,1),transform .55s;filter:drop-shadow(0 8px 14px rgba(0,0,0,.6));pointer-events:none}
+.signup{position:relative;z-index:2;max-width:640px;margin:0 auto;text-align:center;display:flex;flex-direction:column;gap:14px;align-items:center}
+.signup-h{margin:0;font-family:'Bodoni Moda',serif;font-weight:600;font-size:clamp(38px,4.6vw,60px);line-height:1;letter-spacing:-1px}
+.signup-l{font-size:15px;max-width:440px;line-height:1.5}
+.signup-row{display:flex;flex-wrap:wrap;gap:10px;width:100%}
+.signup-row input[type=email]{flex:1 1 220px;min-height:52px;padding:0 20px;border-radius:999px;border:2px solid #F9D9A6;background:rgba(16,16,19,.85);color:#F9D9A6;font-size:16px;font-family:inherit;box-sizing:border-box}
+.signup-row button{cursor:pointer;min-height:52px;padding:0 26px;border-radius:999px;border:2px solid #ABD33F;background:#ABD33F;color:#101013;font-weight:700;font-size:15px;font-family:inherit}
+.signup-row button[disabled]{opacity:.6;cursor:wait}
+.signup-msg{margin:0;min-height:1.4em;font-size:14px}
+.signup-msg.ok{color:#ABD33F}.signup-msg.err{color:#F52B7B}
+.hp{position:absolute !important;left:-9999px !important;width:1px;height:1px;opacity:0}
+.foot-col{display:flex;flex-direction:column;gap:12px;font-size:15px}
+.foot-col a{text-decoration:none}
+.foot-k{font-size:12px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:#ABD33F}
+@media (max-width:700px){.board-wrap{padding:56px 16px 32px}.board{height:200px;margin-bottom:-6px}.b-letters span{font-size:17px}.b-yes,.b-no{font-size:14px}}
+@media (max-width:700px){.shop-grid{grid-template-columns:1fr 1fr !important;gap:14px !important}.shop-grid>div>div:last-child{padding:12px !important}.shop-grid>div>div:last-child>span:nth-child(2){font-size:17px !important}.shop-grid>div>div:last-child>span:nth-child(3){font-size:13px !important}.shop-grid .layl-btn{padding:8px 14px !important;font-size:12px !important}.member-arc{font-size:9px;letter-spacing:2px;padding:8px 4px}}
+/* --- notify dialog --- */
+.ndlg{border:2px solid #ABD33F;border-radius:16px;background:#101013;color:#F9D9A6;padding:28px;max-width:440px;width:calc(100% - 32px);box-sizing:border-box;font-family:'Inter Tight',system-ui,sans-serif}
+.ndlg::backdrop{background:rgba(16,16,19,.7);backdrop-filter:blur(3px)}
+.ndlg-x-f{position:absolute;top:10px;right:12px;margin:0}
+.ndlg-x{cursor:pointer;background:none;border:0;color:#F9D9A6;font-size:28px;line-height:1}
+.ndlg-k{margin:0;font-size:12px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:#ABD33F}
+.ndlg-h{margin:8px 0 6px;font-family:'Bodoni Moda',serif;font-style:italic;font-size:30px;line-height:1.1}
+.ndlg-p{margin:0 0 18px;font-size:15px;line-height:1.5}
+@media (prefers-reduced-motion:reduce){.planchette,.member img,.b-letters span{transition:none}.ball-sound .w1,.ball-sound .w2{animation:none}}
+</style>
+<style>
+.site-logo{display:block;line-height:0}
+.site-logo img{height:46px;width:auto;display:block}
+.foot-brand{display:flex;align-items:center;gap:16px}
+.foot-brand img{height:36px;width:auto;display:block}
+#nowbar{bottom:calc(16px + env(safe-area-inset-bottom)) !important}
+#lyPanel{top:calc(16px + env(safe-area-inset-top))}
+@media (max-width:700px){.site-logo img{height:36px}#lyPanel{top:calc(8px + env(safe-area-inset-top))}}
+:focus-visible{outline:3px solid #F52B7B;outline-offset:3px}
+</style>
+<style>
+/* --- gallery: 1998 magazine spread --- */
+.gallery{padding:96px 0 72px;color:#F9D9A6;overflow:hidden}
+.g-head{max-width:1360px;margin:0 auto;padding:0 32px 36px;display:grid;grid-template-columns:auto 1fr auto;align-items:end;gap:28px}
+.g-head h2{margin:0;font-family:'Bodoni Moda',serif;font-weight:600;font-size:clamp(40px,5vw,72px);line-height:.95;letter-spacing:-1px}
+.g-head h2 span{font-style:italic;color:#ABD33F}
+.g-dek{margin:0;max-width:340px;justify-self:end;font-size:14px;line-height:1.5;color:#CFC3AA}
+.g-ctrl{display:flex;gap:8px}
+.g-btn{cursor:pointer;width:52px;height:52px;border-radius:50%;border:2px solid #F9D9A6;background:transparent;color:#F9D9A6;font-size:20px;font-family:inherit}
+.g-btn:hover{background:#F52B7B;border-color:#F52B7B;color:#101013}
+.g-strip{--sh:clamp(420px,62vh,620px);display:flex;align-items:stretch;gap:44px;height:var(--sh);overflow-x:auto;overflow-y:hidden;padding:0 max(32px,calc((100vw - 1360px)/2 + 32px));scroll-snap-type:x proximity;scrollbar-width:none;cursor:grab;-webkit-overflow-scrolling:touch;overscroll-behavior-x:contain}
+.g-strip::-webkit-scrollbar{display:none}
+.g-strip.drag{cursor:grabbing;scroll-snap-type:none}
+.g-strip:focus-visible{outline:3px solid #F52B7B;outline-offset:-3px}
+.g-it{margin:0;flex:0 0 auto;display:flex;flex-direction:column;gap:10px;scroll-snap-align:center;position:relative}
+.g-it:not(.g-vcap){width:min-content}
+.g-it img{display:block;height:var(--h);width:auto;max-width:none;border-radius:2px;user-select:none;-webkit-user-drag:none}
+.g-xl{--h:calc(var(--sh) - 76px)}.g-l{--h:calc(var(--sh) * .74 - 50px)}.g-m{--h:calc(var(--sh) * .56 - 40px)}.g-s{--h:calc(var(--sh) * .4 - 30px)}
+.g-vcap.g-xl,.g-vcap.g-l,.g-vcap.g-m,.g-vcap.g-s{--h:calc(var(--sh) * .74)}
+.g-start{align-self:flex-start}.g-center{align-self:center}.g-end{align-self:flex-end}
+.g-it figcaption{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 12px;border-top:1px solid #3A3A3D;padding-top:8px;max-width:100%}
+.g-no{font:700 10px/1 ui-monospace,Menlo,monospace;letter-spacing:2px;color:#F52B7B}
+.g-t{font-family:'Bodoni Moda',serif;font-style:italic;font-weight:700;font-size:20px;line-height:1.1}
+.g-m{font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:#9E937C;width:100%}
+.g-play{all:unset;cursor:pointer;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#ABD33F;padding:2px 0}
+.g-play:hover,.g-play:focus-visible{color:#F52B7B;text-decoration:underline}
+.g-vcap{flex-direction:row;align-items:flex-end}
+.g-vcap figcaption{writing-mode:vertical-rl;transform:rotate(180deg);border-top:0;border-left:1px solid #3A3A3D;padding:0 8px 0 0;max-height:var(--h);flex-wrap:nowrap}
+.g-vcap .g-m{width:auto}
+.g-note{flex:0 0 auto;display:flex;align-items:center;gap:14px;padding:0 4px}
+.g-big{font-family:'Bodoni Moda',serif;font-weight:800;font-style:italic;font-size:clamp(160px,22vh,260px);line-height:.8;color:#F52B7B;letter-spacing:-6px}
+.g-big-o{color:transparent;-webkit-text-stroke:2px #ABD33F}
+.g-vert{writing-mode:vertical-rl;font-size:12px;font-weight:700;letter-spacing:4px;text-transform:uppercase;color:#CFC3AA;max-height:420px}
+.g-vert-l{transform:rotate(180deg)}
+.g-progress{max-width:1296px;margin:28px auto 0;height:2px;background:#2A2A2D;position:relative}
+.g-progress span{position:absolute;left:0;top:0;bottom:0;width:10%;background:#ABD33F;transition:width .15s linear}
+@media (max-width:700px){
+ .gallery{padding:64px 0 48px}
+ .g-head{grid-template-columns:1fr auto;padding:0 16px 24px;gap:16px}
+ .g-dek{grid-column:1 / -1;grid-row:2;justify-self:start}
+ .g-strip{--sh:440px;gap:26px;padding:0 16px}
+ .g-xl{--h:300px}
+ .g-btn{width:44px;height:44px}
+ .g-progress{margin:20px 16px 0}
+ .g-big{font-size:150px}
+}
+@media (prefers-reduced-motion:reduce){.g-progress span{transition:none}}
+</style>
+<style>
+.hero-art{margin:0;line-height:0;width:min(88vw,860px)}
+.hero-art img{display:block;width:100%;height:auto}
+@media (max-width:700px){.hero-art{width:calc(100vw - 32px) !important;padding:0 !important}}
+.shop-img{cursor:zoom-in;display:block;width:100%;height:100%;padding:0;border:0;background:none}
+.shop-img:focus-visible{outline:3px solid #F52B7B;outline-offset:-3px}
+.zdlg{border:0;padding:0;background:transparent;max-width:min(92vw,720px);max-height:92vh;overflow:visible}
+.zdlg::backdrop{background:rgba(16,16,19,.88)}
+.zdlg img{display:block;max-width:100%;max-height:84vh;width:auto;height:auto;border-radius:10px;margin:0 auto}
+.zdlg p{margin:12px 0 0;text-align:center;color:#F9D9A6;font:italic 700 22px 'Bodoni Moda',serif}
+.zdlg-x{position:absolute;top:-14px;right:-14px;width:40px;height:40px;border-radius:50%;border:2px solid #F9D9A6;background:#101013;color:#F9D9A6;font-size:22px;cursor:pointer}
+</style>
+<style>
+/* --- shop banner --- */
+.shopban{position:relative;overflow:hidden;background:#F52B7B;color:#101013;border-top:2px solid #101013;border-bottom:2px solid #101013}
+.shopban-ghost{position:absolute;left:-2vw;bottom:-.18em;font-family:'Bodoni Moda',serif;font-style:italic;font-weight:800;font-size:clamp(180px,30vw,460px);line-height:1;color:transparent;-webkit-text-stroke:2px #101013;opacity:.22;pointer-events:none;user-select:none}
+.shopban-in{position:relative;max-width:1360px;margin:0 auto;padding:96px 32px;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:48px;align-items:center}
+.shopban-k{margin:0 0 12px;font-size:13px;font-weight:700;letter-spacing:3px;text-transform:uppercase}
+.shopban h2{margin:0;font-family:'Bodoni Moda',serif;font-weight:700;font-size:clamp(46px,5.4vw,84px);line-height:.92;letter-spacing:-2px}
+.shopban h2 em{display:block;color:#F9D9A6;-webkit-text-stroke:1.5px #101013;margin-left:.6em}
+.shopban-p{margin:22px 0 28px;max-width:430px;font-size:17px;line-height:1.5}
+.shopban-btn{cursor:pointer;font:700 16px 'Inter Tight',system-ui,sans-serif;background:#101013;color:#F9D9A6;border:2px solid #101013;border-radius:999px;padding:18px 30px;box-shadow:6px 6px 0 #ABD33F;transition:transform .2s,box-shadow .2s}
+.shopban-btn:hover,.shopban-btn:focus-visible{transform:translate(-3px,-3px);box-shadow:9px 9px 0 #ABD33F}
+.shopban-btn span{color:#ABD33F;margin-left:6px}
+.shopban-fan{all:unset;cursor:pointer;position:relative;display:block;height:clamp(300px,34vw,440px)}
+.shopban-fan img{position:absolute;left:50%;bottom:4%;height:auto;width:clamp(130px,14vw,200px);aspect-ratio:4/5;object-fit:cover;border-radius:10px;border:3px solid #101013;box-shadow:0 14px 26px rgba(16,16,19,.35);transform-origin:50% 140%;transform:translateX(-50%) rotate(calc((var(--i) - 2) * 11deg));transition:transform .45s cubic-bezier(.3,.7,.3,1)}
+.shopban-fan:hover img,.shopban-fan:focus-visible img{transform:translateX(-50%) rotate(calc((var(--i) - 2) * 17deg)) translateY(-14px)}
+.shopban-fan:focus-visible{outline:3px solid #101013;outline-offset:6px;border-radius:12px}
+@media (max-width:800px){.shopban-in{grid-template-columns:1fr;padding:28px 16px 48px;gap:4px}.shopban-fan{height:232px;order:-1;margin-bottom:18px}.shopban-fan img{width:118px;bottom:6%}.shopban h2 em{margin-left:.4em}}
+/* --- shop dialog --- */
+.shopdlg{width:100vw;height:100dvh;max-width:none;max-height:none;margin:0;padding:0 max(16px,calc((100vw - 1360px)/2 + 32px)) 48px;border:0;background:#101013;color:#F9D9A6;box-sizing:border-box;overflow-y:auto;font-family:'Inter Tight',system-ui,sans-serif}
+.shopdlg::backdrop{background:#101013}
+.shopdlg[open]{animation:shopIn .45s cubic-bezier(.3,.7,.3,1)}
+@keyframes shopIn{from{opacity:0;transform:translateY(40px) scale(.98)}to{opacity:1;transform:none}}
+.shopdlg-head{position:sticky;top:0;z-index:2;display:flex;justify-content:space-between;align-items:flex-end;gap:16px;padding:calc(20px + env(safe-area-inset-top)) 0 18px;margin-bottom:24px;background:#101013;border-bottom:1px solid #3A3A3D}
+.shopdlg-head h2{margin:0;font-family:'Bodoni Moda',serif;font-style:italic;font-weight:700;font-size:clamp(34px,4vw,56px);line-height:1}
+.shopdlg-x{white-space:nowrap;cursor:pointer;font:700 14px 'Inter Tight',system-ui,sans-serif;background:transparent;color:#F9D9A6;border:2px solid #F9D9A6;border-radius:999px;padding:10px 18px}
+.shopdlg-x:hover{background:#F52B7B;border-color:#F52B7B;color:#101013}
+@media (prefers-reduced-motion:reduce){.shopdlg[open]{animation:none}.shopban-fan img,.shopban-btn{transition:none}}
+</style>
+</head>
+<body>
+<div style="background: #101013; color: #F9D9A6; font-family: 'Inter Tight', system-ui, sans-serif; min-height: 100vh; ">
+
+<header class="site-head" style="position: absolute; top: 0; left: 0; right: 0; z-index: 3;">
+<div class="site-head-in" style="max-width: 1360px; margin: 0 auto; padding: 24px 32px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px;">
+<a href="#top" class="site-logo" aria-label="LAY-L, back to top"><img src="brand/layl-logo-cream.svg" alt="LAY-L" width="200" height="88"></a>
+<nav aria-label="Main" class="site-nav" style="display: flex; flex-wrap: wrap; align-items: center; gap: 28px; font-size: 13px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase;">
+<a href="#reading" style="text-decoration: none;">The Reading</a>
+<a href="#spread" style="text-decoration: none;">The Spread</a>
+<a href="lyrics.html" data-navlyrics style="text-decoration: none;">Lyrics</a>
+<a href="#band" style="text-decoration: none;">The Band</a>
+<a href="#videos" style="text-decoration: none;">Videos</a>
+<a href="#shop" style="text-decoration: none;">Shop</a>
+</nav>
+</div>
+</header>
+
+<section id="top" style="position: relative; overflow: hidden; background: #101013;">
+<div class="hero-in" style="position: relative; z-index: 2; width: 100%; max-width: 1360px; margin: 0 auto; padding: 88px 32px 80px; box-sizing: border-box; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 24px;">
+<div class="hero-ball" style="width: min(92vw, 820px); flex-shrink: 0; margin-top: -24px;">
+<div class="layl-float" style="position: relative; width: 100%; aspect-ratio: 1 / 1;">
+<div style="position: absolute; left: 12.7%; top: 3.8%; width: 74.3%; height: 74.3%; border-radius: 50%; overflow: hidden; background: #101013; filter: brightness(1.35) contrast(1.05) saturate(1.1);">
+<video id="hero" autoplay muted loop playsinline preload="auto" poster="v1-poster2.jpg" src="v1-ball-teaser2.mp4" aria-label="LAY-L album teaser playing inside a crystal ball" style="width: 100%; height: 100%; object-fit: cover; display: block; transform: scale(1.04);"></video>
+<div style="position: absolute; inset: 0; border-radius: 50%; background: radial-gradient(circle at 50% 50%, rgba(16,16,19,0) 75%, rgba(16,16,19,0.2) 100%);"></div>
+</div>
+<img src="band-ball2.webp" alt="" aria-hidden="true" style="position: absolute; inset: 0; width: 100%; height: 100%; display: block; pointer-events: none;">
+<button type="button" data-act="toggleSound" aria-pressed="false" id="soundBtn" class="ball-sound"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path class="w1" d="M15.5 8.5a5 5 0 0 1 0 7"/><path class="w2" d="M19 5a10 10 0 0 1 0 14"/></svg><span id="soundLabel">Sound on</span></button>
+</div>
+</div>
+<p class="hero-kick" style="margin: 0; font-size: 13px; font-weight: 600; letter-spacing: 3px; text-transform: uppercase; color: #ABD33F;">LAY-L · The album · 7 May 2027</p>
+<h1 class="hero-title hero-art"><img src="brand/album-title-cream.png" width="2113" height="651" alt="I Guess the Fortuneteller Is Right…" fetchpriority="high"></h1>
+<div class="hero-btns" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; padding-top: 8px;">
+<a href="#reading" class="layl-btn" style="text-decoration: none; background: #F9D9A6; color: #101013; padding: 16px 28px; border-radius: 999px; font-weight: 700; font-size: 15px; border: 2px solid #F9D9A6;">Draw a card</a>
+<button type="button" data-act="playAll" class="layl-btn" style="cursor: pointer; background: transparent; color: #F9D9A6; padding: 16px 28px; border-radius: 999px; font-weight: 700; font-size: 15px; border: 2px solid #F9D9A6; font-family: inherit;">Play the album</button>
+</div>
+</div>
+</section>
+
+<div class="mq" role="region" aria-label="Lyrics from the album. Tap one to hear it." style="background: #ABD33F; color: #101013; overflow: hidden; border-top: 2px solid #101013; border-bottom: 2px solid #101013; position: relative;">
+<span class="mq-hint" aria-hidden="true">Tap a lyric ▸ hear it</span>
+<div class="layl-marquee mq-track" style="display: flex; width: max-content; padding: 18px 0; font-family: 'Bodoni Moda', serif; font-style: italic; font-size: 30px; white-space: nowrap;">
+<span class="mq-run"><button type="button" class="mq-l" data-lyric="Hey girl, hold my purse" data-song="10" data-at="46.03">Hey girl, hold my purse</button><span class="mq-s" aria-hidden="true">✦</span><button type="button" class="mq-l" data-lyric="Turns out I was the touch" data-song="8" data-at="41.59">Turns out I was the touch</button><span class="mq-s" aria-hidden="true">✦</span><button type="button" class="mq-l" data-lyric="Boo! (Not you!)" data-song="0" data-at="60.52">Boo! (Not you!)</button><span class="mq-s" aria-hidden="true">✦</span><button type="button" class="mq-l" data-lyric="Bon appétit" data-song="2" data-at="194.35">Bon appétit</button><span class="mq-s" aria-hidden="true">✦</span><button type="button" class="mq-l" data-lyric="Funny how you love me when I’m nonchalant-y" data-song="12" data-at="61.0">Funny how you love me when I’m nonchalant-y</button><span class="mq-s" aria-hidden="true">✦</span><button type="button" class="mq-l" data-lyric="Return to sad-turn" data-song="9" data-at="73.9">Return to sad-turn</button><span class="mq-s" aria-hidden="true">✦</span><button type="button" class="mq-l" data-lyric="I showed up in my birthday suit" data-song="1" data-at="92.14">I showed up in my birthday suit</button><span class="mq-s" aria-hidden="true">✦</span><button type="button" class="mq-l" data-lyric="It’s alive!" data-song="13" data-at="139.48">It’s alive!</button><span class="mq-s" aria-hidden="true">✦</span></span>
+<span class="mq-run" aria-hidden="true"><button type="button" class="mq-l" data-lyric="Hey girl, hold my purse" data-song="10" data-at="46.03" tabindex="-1">Hey girl, hold my purse</button><span class="mq-s" aria-hidden="true">✦</span><button type="button" class="mq-l" data-lyric="Turns out I was the touch" data-song="8" data-at="41.59" tabindex="-1">Turns out I was the touch</button><span class="mq-s" aria-hidden="true">✦</span><button type="button" class="mq-l" data-lyric="Boo! (Not you!)" data-song="0" data-at="60.52" tabindex="-1">Boo! (Not you!)</button><span class="mq-s" aria-hidden="true">✦</span><button type="button" class="mq-l" data-lyric="Bon appétit" data-song="2" data-at="194.35" tabindex="-1">Bon appétit</button><span class="mq-s" aria-hidden="true">✦</span><button type="button" class="mq-l" data-lyric="Funny how you love me when I’m nonchalant-y" data-song="12" data-at="61.0" tabindex="-1">Funny how you love me when I’m nonchalant-y</button><span class="mq-s" aria-hidden="true">✦</span><button type="button" class="mq-l" data-lyric="Return to sad-turn" data-song="9" data-at="73.9" tabindex="-1">Return to sad-turn</button><span class="mq-s" aria-hidden="true">✦</span><button type="button" class="mq-l" data-lyric="I showed up in my birthday suit" data-song="1" data-at="92.14" tabindex="-1">I showed up in my birthday suit</button><span class="mq-s" aria-hidden="true">✦</span><button type="button" class="mq-l" data-lyric="It’s alive!" data-song="13" data-at="139.48" tabindex="-1">It’s alive!</button><span class="mq-s" aria-hidden="true">✦</span></span>
+</div>
+</div>
+
+<section id="reading" style="background: #101013; color: #F9D9A6; overflow: hidden;">
+<div style="max-width: 1360px; margin: 0 auto; padding: 112px 32px; display: flex; flex-wrap: wrap; align-items: center; gap: 72px;">
+<div class="draw-wrap" style="flex: 0 1 360px; margin: 0 auto;">
+<img id="drawnCard" src="" alt="" style="width: 100%; aspect-ratio: 720 / 1073; object-fit: contain; display: block; filter: drop-shadow(12px 12px 0 #F52B7B);">
+</div>
+<div style="flex: 1 1 420px; display: flex; flex-direction: column; gap: 24px;">
+<p id="drawKick" style="margin: 0; font-size: 13px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: #ABD33F;">The crystal ball says</p>
+<p style="margin: 0; font-family: 'Bodoni Moda', serif; font-style: italic; font-weight: 600; font-size: clamp(36px, 4.4vw, 64px); line-height: 1.05; letter-spacing: -1px;">“<span id="drawnLine"></span>”</p>
+<p style="margin: 0; font-size: 16px;"><span id="drawnMeta"></span></p>
+<div style="display: flex; flex-wrap: wrap; gap: 12px; padding-top: 8px;">
+<button type="button" data-act="playDrawn" class="layl-btn" style="cursor: pointer; background: #ABD33F; color: #101013; padding: 16px 28px; border-radius: 999px; font-weight: 700; font-size: 15px; border: 2px solid #ABD33F; font-family: inherit;">Play this song</button>
+<button type="button" data-act="draw" class="layl-btn" style="cursor: pointer; background: transparent; color: #F9D9A6; padding: 16px 28px; border-radius: 999px; font-weight: 700; font-size: 15px; border: 2px solid #F9D9A6; font-family: inherit;">Draw another card</button>
+</div>
+</div>
+</div>
+</section>
+
+<section id="spread" class="spread" style="background: #F9D9A6; color: #101013; overflow: hidden;">
+<div style="max-width: 1360px; margin: 0 auto; padding: 112px 32px 96px;">
+<div style="display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 32px; padding-bottom: 24px; border-bottom: 2px solid #101013;">
+<div style="display: flex; align-items: flex-end; gap: 28px; flex-wrap: wrap;">
+<img src="site2-cover.jpg" alt="Album cover: the four members of LAY-L" style="width: 148px; height: 148px; object-fit: cover; display: block; border: 2px solid #101013; border-radius: 4px;">
+<div style="display: flex; flex-direction: column; gap: 8px;">
+<p style="margin: 0; font-size: 13px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase;">The spread · 14 cards · 54:30</p>
+<h2 style="margin: 0; font-family: 'Bodoni Moda', serif; font-weight: 600; font-size: clamp(44px, 5vw, 72px); line-height: 1; letter-spacing: -1px;">Every song is a card</h2>
+</div>
+</div>
+<p style="margin: 0; font-size: 15px; max-width: 320px; line-height: 1.5;">Tap any card to play it. Pre-master mixes, private preview.</p>
+</div>
+<div id="acts"></div>
+</div>
+</section>
+
+<section id="single" class="single" style="background: #ABD33F; color: #101013; position: relative; overflow: hidden;">
+<span class="single-ghost" aria-hidden="true">Voodoo</span>
+<div class="single-in" style="position: relative; max-width: 1360px; margin: 0 auto; padding: 112px 32px; display: flex; flex-wrap: wrap; align-items: center; gap: 64px;">
+<div class="single-art" style="flex: 1.4 1 560px;">
+<img src="posters-p-voodoo.jpg" alt="Voodoo Doll poster: Lilac pinning a voodoo doll" style="width: 100%; aspect-ratio: 1344 / 768; object-fit: cover; display: block; border-radius: 4px;">
+</div>
+<div class="single-copy" style="flex: 1 1 340px; display: flex; flex-direction: column; gap: 20px;">
+<p style="margin: 0; font-size: 13px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: #101013;">First single · Friday 22 January 2027</p>
+<h2 class="single-title"><span>Voodoo</span> <span class="i">Doll</span></h2>
+<p style="margin: 0; font-size: 17px; line-height: 1.55; max-width: 420px;">A clever bit of payback with a beat drop. Pre-save it, then hand someone your purse.</p>
+<div style="display: flex; flex-wrap: wrap; gap: 12px;">
+<button type="button" data-act="playVoodoo" class="layl-btn" style="cursor: pointer; background: #101013; color: #F9D9A6; padding: 16px 28px; border-radius: 999px; font-weight: 700; font-size: 15px; border: 2px solid #101013; font-family: inherit;">Play Voodoo Doll</button>
+<button type="button" data-notify="Voodoo Doll pre-save" class="layl-btn" style="cursor: pointer; font-family: inherit; background: transparent; color: #101013; padding: 16px 28px; border-radius: 999px; font-weight: 700; font-size: 15px; border: 2px solid #101013;">Pre-save</button>
+</div>
+</div>
+</div>
+</section>
+
+<section id="band" style="background: #101013; border-top: 1px solid #2A2A2D;">
+<div style="max-width: 1360px; margin: 0 auto; padding: 112px 32px;">
+<div style="display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 24px; padding-bottom: 56px;">
+<h2 style="margin: 0; font-family: 'Bodoni Moda', serif; font-weight: 600; font-size: clamp(44px, 5vw, 72px); line-height: 1; letter-spacing: -1px;">Four readers. <span style="font-style: italic; color: #ABD33F;">One table.</span></h2>
+<p style="margin: 0; font-size: 15px; max-width: 360px; line-height: 1.5;">LAY-L is an animated band, made with AI tools and directed by people.</p>
+</div>
+<div class="band-grid">
+<div id="members"></div>
+</div>
+</div>
+</section>
+
+<section id="posters" class="gallery" aria-labelledby="galH" style="background: #101013; border-top: 1px solid #2A2A2D;">
+<div class="g-head">
+<h2 id="galH">From the reading <span>room</span></h2>
+<p class="g-dek">Every song on the album has its own title card. Swipe, drag or use the arrows. Tap ▸ to hear one.</p>
+<div class="g-ctrl"><button type="button" class="g-btn" data-g="-1" aria-label="Previous artwork">←</button><button type="button" class="g-btn" data-g="1" aria-label="Next artwork">→</button></div>
+</div>
+<div class="g-strip" id="gStrip" tabindex="0" role="region" aria-label="Artwork gallery, scrolls sideways">
+<figure class="g-it g-xl g-start"><img src="site2-cover.jpg" alt="Album cover: Lilac, Asmar, Yamm and Lattam under swirling pink LAY-L lettering" loading="lazy" width="1254" height="1254"><figcaption><span class="g-no">LAYL–000</span><span class="g-t">The cover</span><span class="g-m">I Guess the Fortuneteller Is Right… · 7 May 2027</span></figcaption></figure>
+<div class="g-note g-center" aria-hidden="true"><span class="g-big">14</span><span class="g-vert">songs · fourteen title cards · one reading</span></div>
+<figure class="g-it g-l g-end g-vcap"><img src="posters-p-boo.jpg" alt="Boo poster: the band surrounded by green ghosts" loading="lazy" width="1344" height="768"><figcaption><span class="g-no">LAYL–P01</span><span class="g-t">Boo, the poster</span></figcaption></figure>
+<figure class="g-it g-l g-end"><img src="site3-boo.jpg" alt="Boo: title artwork" loading="lazy" width="1400" height="788"><figcaption><span class="g-no">LAYL–001</span><span class="g-t">Boo</span><span class="g-m">Track I · Act I</span><button type="button" class="g-play" data-play="0" aria-label="Play Boo">▸ Play</button></figcaption></figure>
+<figure class="g-it g-s g-start"><img src="site3-costume.jpg" alt="Costume Party: title artwork" loading="lazy" width="1400" height="788"><figcaption><span class="g-no">LAYL–002</span><span class="g-t">Costume Party</span><span class="g-m">Track II · Act I</span><button type="button" class="g-play" data-play="1" aria-label="Play Costume Party">▸ Play</button></figcaption></figure>
+<figure class="g-it g-m g-center"><img src="site3-frog.jpg" alt="Frog in a Prince Suit: title artwork" loading="lazy" width="1400" height="788"><figcaption><span class="g-no">LAYL–003</span><span class="g-t">Frog in a Prince Suit</span><span class="g-m">Track III · Act I</span><button type="button" class="g-play" data-play="2" aria-label="Play Frog in a Prince Suit">▸ Play</button></figcaption></figure>
+<figure class="g-it g-s g-end g-vcap"><img src="site3-auntie.jpg" alt="Auntie A.I.: title artwork" loading="lazy" width="1400" height="788"><figcaption><span class="g-no">LAYL–004</span><span class="g-t">Auntie A.I.</span><span class="g-m">Track IV · Act I</span><button type="button" class="g-play" data-play="3" aria-label="Play Auntie A.I.">▸ Play</button></figcaption></figure>
+<figure class="g-it g-l g-start"><img src="site3-why.jpg" alt="Why Are You Behaving Like This?: title artwork" loading="lazy" width="1400" height="788"><figcaption><span class="g-no">LAYL–005</span><span class="g-t">Why Are You Behaving Like This?</span><span class="g-m">Track V · Act II</span><button type="button" class="g-play" data-play="4" aria-label="Play Why Are You Behaving Like This?">▸ Play</button></figcaption></figure>
+<figure class="g-it g-m g-center"><img src="site3-moon.jpg" alt="Blame the Moon: title artwork" loading="lazy" width="1400" height="788"><figcaption><span class="g-no">LAYL–006</span><span class="g-t">Blame the Moon</span><span class="g-m">Track VI · Act II</span><button type="button" class="g-play" data-play="5" aria-label="Play Blame the Moon">▸ Play</button></figcaption></figure>
+<figure class="g-it g-s g-end"><img src="site3-soboard.jpg" alt="So Board: title artwork" loading="lazy" width="1400" height="788"><figcaption><span class="g-no">LAYL–007</span><span class="g-t">So Board</span><span class="g-m">Track VII · Act II</span><button type="button" class="g-play" data-play="6" aria-label="Play So Board">▸ Play</button></figcaption></figure>
+<div class="g-note g-start" aria-hidden="true"><span class="g-vert g-vert-l">Act II · The Unravelling</span><span class="g-big g-big-o">II</span></div>
+<figure class="g-it g-l g-start g-vcap"><img src="site3-autopsy.jpg" alt="Friendship Autopsy: title artwork" loading="lazy" width="1400" height="788"><figcaption><span class="g-no">LAYL–008</span><span class="g-t">Friendship Autopsy</span><span class="g-m">Track VIII · Act II</span><button type="button" class="g-play" data-play="7" aria-label="Play Friendship Autopsy">▸ Play</button></figcaption></figure>
+<figure class="g-it g-m g-end"><img src="site3-crickets.jpg" alt="Crickets: title artwork" loading="lazy" width="1400" height="788"><figcaption><span class="g-no">LAYL–009</span><span class="g-t">Crickets</span><span class="g-m">Track IX · Act II</span><button type="button" class="g-play" data-play="8" aria-label="Play Crickets">▸ Play</button></figcaption></figure>
+<figure class="g-it g-s g-center"><img src="site3-sadturn.jpg" alt="SAdTURN: title artwork" loading="lazy" width="1400" height="788"><figcaption><span class="g-no">LAYL–010</span><span class="g-t">SAdTURN</span><span class="g-m">Track X · Act III</span><button type="button" class="g-play" data-play="9" aria-label="Play SAdTURN">▸ Play</button></figcaption></figure>
+<figure class="g-it g-m g-start"><img src="site3-voodoo.jpg" alt="Voodoo Doll: title artwork" loading="lazy" width="1400" height="788"><figcaption><span class="g-no">LAYL–011</span><span class="g-t">Voodoo Doll</span><span class="g-m">Track XI · Act III</span><button type="button" class="g-play" data-play="10" aria-label="Play Voodoo Doll">▸ Play</button></figcaption></figure>
+<figure class="g-it g-l g-end g-vcap"><img src="site3-selfprot.jpg" alt="Self Protection: title artwork" loading="lazy" width="1400" height="788"><figcaption><span class="g-no">LAYL–012</span><span class="g-t">Self Protection</span><span class="g-m">Track XII · Act III</span><button type="button" class="g-play" data-play="11" aria-label="Play Self Protection">▸ Play</button></figcaption></figure>
+<figure class="g-it g-s g-center"><img src="site3-birdie.jpg" alt="Bye Bye Birdie: title artwork" loading="lazy" width="1400" height="788"><figcaption><span class="g-no">LAYL–013</span><span class="g-t">Bye Bye Birdie</span><span class="g-m">Track XIII · Act III</span><button type="button" class="g-play" data-play="12" aria-label="Play Bye Bye Birdie">▸ Play</button></figcaption></figure>
+<figure class="g-it g-m g-start"><img src="site3-frankenstein.jpg" alt="Frankenstein: title artwork" loading="lazy" width="1400" height="788"><figcaption><span class="g-no">LAYL–014</span><span class="g-t">Frankenstein</span><span class="g-m">Track XIV · Act III</span><button type="button" class="g-play" data-play="13" aria-label="Play Frankenstein">▸ Play</button></figcaption></figure>
+</div>
+<div class="g-progress" aria-hidden="true"><span id="gBar"></span></div>
+</section>
+
+<section id="videos" style="background: #ABD33F; color: #101013;">
+<div style="max-width: 1360px; margin: 0 auto; padding: 112px 32px; display: flex; flex-wrap: wrap; gap: 48px; align-items: center;">
+<div style="flex: 1 1 300px; display: flex; flex-direction: column; gap: 16px;">
+<p style="margin: 0; font-size: 13px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase;">Watch</p>
+<h2 style="margin: 0; font-family: 'Bodoni Moda', serif; font-weight: 600; font-size: 64px; line-height: 0.95; letter-spacing: -1px;">The album <span style="font-style: italic;">teaser</span></h2>
+<p style="margin: 0; font-size: 16px; line-height: 1.55;">36 seconds on a mountaintop, then the ghosts arrive. Sound on.</p>
+</div>
+<div style="flex: 2 1 560px; border: 2px solid #101013; border-radius: 12px; padding: 10px; background: #101013;">
+<video id="teaser" controls preload="metadata" playsinline poster="vid-teaser-poster.jpg" src="vid-album-teaser.mp4" aria-label="LAY-L album teaser" style="width: 100%; aspect-ratio: 16 / 9; display: block; border-radius: 6px; background: #101013;"></video>
+</div>
+</div>
+</section>
+
+<section id="shop" class="shopban" aria-labelledby="shopH">
+<span class="shopban-ghost" aria-hidden="true">Shop</span>
+<div class="shopban-in">
+<div class="shopban-copy">
+<p class="shopban-k">The curiosity shop · coming 2027</p>
+<h2 id="shopH">Wear the band. <em>Pour the potion.</em></h2>
+<p class="shopban-p">Plush curses, palm-frond gold, potion shots and a spirit board that sometimes says “I don’t know.” Eighteen oddities from the world of LAY-L.</p>
+<button type="button" class="shopban-btn" data-act="openShop" aria-haspopup="dialog">Open the shop <span aria-hidden="true">✦</span></button>
+</div>
+<button type="button" class="shopban-fan" data-act="openShop" aria-label="Open the shop"><img src="merch/fan-lamp.webp" alt="" loading="lazy" width="440" height="550" style="--i:0"><img src="merch/fan-headwrap.webp" alt="" loading="lazy" width="440" height="550" style="--i:1"><img src="merch/fan-keychain.webp" alt="" loading="lazy" width="440" height="550" style="--i:2"><img src="merch/fan-cat.webp" alt="" loading="lazy" width="440" height="550" style="--i:3"><img src="merch/fan-voodoo.webp" alt="" loading="lazy" width="440" height="550" style="--i:4"></button>
+</div>
+</section>
+
+
+
+<footer id="follow" style="background: #101013;">
+<div class="board-wrap">
+<div class="board" id="board" aria-hidden="true">
+<span class="b-yes" data-k="YES">Yes</span><span class="b-no" data-k="NO">No</span>
+<div class="b-letters" id="bLetters"></div>
+<span class="b-bye" data-k="BYE">Goodbye</span>
+<img src="icons2-planchette.webp" alt="" class="planchette" id="planchette">
+</div>
+<form id="signupForm" class="signup" action="https://formspree.io/f/" method="POST" novalidate>
+<h2 class="signup-h">Get your reading <span style="font-style: italic; color: #ABD33F;">first.</span></h2>
+<label for="email" class="signup-l">The album and every single, the day they land. Type your email and watch the board.</label>
+<div class="signup-row">
+<input id="email" name="email" type="email" required autocomplete="email" placeholder="you@example.com">
+<input type="hidden" name="interest" value="Newsletter">
+<input type="text" name="_gotcha" tabindex="-1" autocomplete="off" class="hp" aria-hidden="true">
+<button type="submit" class="layl-btn">Sign up</button>
+</div>
+<p class="signup-msg" role="status" aria-live="polite"></p>
+</form>
+</div>
+<div style="max-width: 1360px; margin: 0 auto; padding: 24px 32px 56px; display: flex; flex-wrap: wrap; gap: 56px; justify-content: space-between;">
+<div class="foot-col">
+<span class="foot-k">Listen</span>
+<p style="margin: 0; max-width: 320px; line-height: 1.5;">Voodoo Doll lands Friday 22 January 2027 on Spotify, Apple Music, YouTube Music and Anghami. Until then, every song plays right here.</p>
+<a href="#spread">Play the private preview ↑</a>
+</div>
+<div class="foot-col">
+<span class="foot-k">Follow</span>
+<a href="https://www.instagram.com/wearelayl/" target="_blank" rel="noopener">Instagram @wearelayl ↗</a>
+<a href="https://www.tiktok.com/@wearelayl" target="_blank" rel="noopener">TikTok @wearelayl ↗</a>
+<a href="https://www.youtube.com/@LAY-LMUSIC" target="_blank" rel="noopener">YouTube @LAY-LMUSIC ↗</a>
+</div>
+<div class="foot-col">
+<span class="foot-k">Read</span>
+<a href="lyrics.html">All the lyrics</a>
+<a href="#band">Meet the band</a>
+<a href="#shop">The shop</a>
+</div>
+</div>
+<div style="max-width: 1360px; margin: 0 auto; padding: 24px 32px 40px; border-top: 1px solid #2A2A2D; font-size: 13px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px;">
+<span class="foot-brand"><img src="brand/layl-logo-pink.svg" alt="LAY-L" width="130" height="57"><span>© 2027 QAUS Productions</span></span>
+<span>LAY-L is an animated band made with AI tools, directed by people.</span>
+</div>
+</footer>
+
+<dialog id="shopDlg" class="shopdlg" aria-labelledby="shopDlgH">
+<div class="shopdlg-head">
+<div><p class="shopban-k" style="color:#F52B7B">The shop · coming 2027</p><h2 id="shopDlgH">The curiosity shop</h2></div>
+<form method="dialog" style="margin:0"><button class="shopdlg-x" aria-label="Close the shop">Close ×</button></form>
+</div>
+<div class="shop-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 24px;">
+<div id="shopGrid"></div>
+</div>
+<p style="margin: 28px 0 0; font-size: 13px; color: #BFB39A;">Nothing is for sale yet. Tap “Notify me” and we’ll tell you when it is. Vinyl pre-orders open after the album. Potion Shots ship with a “Pay attention!” warning card. Please drink responsibly.</p>
+</dialog>
+<dialog id="zoomDlg" class="zdlg" aria-label="Product photo"><form method="dialog" style="margin:0"><button class="zdlg-x" aria-label="Close">×</button></form><img id="zImg" src="" alt=""><p id="zName"></p></dialog>
+<dialog id="notifyDlg" class="ndlg" aria-labelledby="ndlgH">
+<form method="dialog" class="ndlg-x-f"><button class="ndlg-x" aria-label="Close">×</button></form>
+<p class="ndlg-k" id="ndlgK">Notify me</p>
+<h2 id="ndlgH" class="ndlg-h"></h2>
+<p id="ndlgP" class="ndlg-p"></p>
+<form id="notifyForm" class="signup-row" action="https://formspree.io/f/" method="POST" novalidate>
+<input name="email" type="email" required autocomplete="email" placeholder="you@example.com" aria-label="Email">
+<input type="hidden" name="interest" value="">
+<input type="text" name="_gotcha" tabindex="-1" autocomplete="off" class="hp" aria-hidden="true">
+<button type="submit" class="layl-btn">Notify me</button>
+</form>
+<p class="signup-msg" role="status" aria-live="polite"></p>
+</dialog>
+
+<div id="lyPanel" role="dialog" aria-label="Lyrics" hidden>
+<div class="lyp-head"><div><span class="lyp-k">Lyrics · <span id="lypNum"></span></span><span id="lypTitle" class="lyp-t"></span></div>
+<button type="button" data-act="lyclose" class="lyp-x" aria-label="Close lyrics">Close</button></div>
+<div id="lypBody" class="lyp-body"></div>
+<a id="lypFull" href="lyrics.html" target="_blank" rel="noopener" class="lyp-full">Open the full lyrics page in a new tab</a>
+</div>
+<div id="nowbar" hidden role="region" aria-label="Now playing" style="position: fixed; left: 16px; right: 16px; bottom: 16px; z-index: 10; max-width: 980px; margin: 0 auto; background: #101013; color: #F9D9A6; border: 2px solid #ABD33F; border-radius: 16px; padding: 10px 14px; display: flex; flex-wrap: wrap; align-items: center; gap: 14px; box-sizing: border-box;">
+<div id="karaoke" aria-hidden="true" hidden><p id="kLine"></p><p id="kNext"></p></div>
+<div style="flex: 1 1 280px; min-width: 0; display: flex; flex-wrap: nowrap; align-items: center; gap: 14px;">
+<img id="nowObj" src="" alt="" style="flex: 0 0 72px; width: 72px; height: 72px; object-fit: contain; display: block; margin: -20px 0 -8px; filter: drop-shadow(0 4px 10px rgba(0,0,0,0.6));">
+<div style="flex: 1 1 auto; min-width: 0; display: flex; flex-direction: column; gap: 2px;">
+<span style="font-size: 11px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; color: #ABD33F;">Now playing · <span id="nowNum"></span></span>
+<span style="font-family: 'Bodoni Moda', serif; font-style: italic; font-weight: 700; font-size: 20px; line-height: 1.15;" id="nowTitle"></span>
+</div>
+</div>
+<audio id="player" controls aria-label="Now playing" style="flex: 1 1 260px; height: 40px; color-scheme: dark;"></audio>
+<a id="nowLyrics" href="lyrics.html" data-act="lyrics" role="button" aria-expanded="false" aria-controls="lyPanel" class="layl-btn" style="text-decoration: none; background: transparent; color: #ABD33F; border: 2px solid #ABD33F; border-radius: 999px; padding: 10px 18px; font-weight: 700; font-size: 13px;">Lyrics</a>
+<button type="button" data-act="next" class="layl-btn" style="cursor: pointer; background: transparent; color: #F9D9A6; border: 2px solid #F9D9A6; border-radius: 999px; padding: 10px 18px; font-weight: 700; font-size: 13px; font-family: inherit;">Next card</button>
+</div>
+
+
+</div>
+
+<script>
+const MAP={"c0c6ced60fdc14cd375ceea6a59b1d29": "site2-cover.jpg", "2dfc50861c7efcaa3151fe5dfa99174a": "band-ball2.webp", "7f8d313d94b859eb3256e17336150b65": "v1-ball-teaser2.mp4", "a59b1ddb6d52042662069449ae99fcd5": "v1-poster2.jpg", "ae011844041852d42edfefb2d380ba98": "vid-album-teaser.mp4", "31ebe0ac2732509023d119609b4029c3": "vid-teaser-poster.jpg", "387d6d9883b3f1b3e0e9748f8edc8cfe": "posters-p-voodoo.jpg", "3bf8f09092183e4c2b6afb71195923c4": "posters-p-boo.jpg", "fc7dcc50eccf873c18c4f312dcb9a948": "port-lilac_1536x2048.jpg", "2e262753e8336227d6246ed24823443d": "port-asmar_1536x2048.jpg", "0e89cd1ce10a794e8f268718cf4a19f0": "port-yamm_1536x2048.jpg", "19831b338b929d3a304159659cdb5bd8": "port-lattam_1536x2048.jpg", "e4ce63d7e0b62c23d48e7fc2ee0ddf17": "icons2-ghosts.webp", "0741205406c263acb0cf16107055318d": "icons2-mask2.webp", "97f7fb528741f904e90554df10191832": "icons2-frog.webp", "97be3ab33c0f2fc8c57d7de809fa0570": "icons2-computer.webp", "5dad0d60d102df047c1d9adb2420ea3f": "icons2-gram1.webp", "984c24b2b3305504ae27a2d09ce08e86": "icons2-moon.webp", "c971c929b20cd8d1d84187037000cc13": "icons2-planchette.webp", "c152115921b5498fb72ef41521587f31": "icons-scalpel.webp", "79120e2ec3a54e42522d07f7d6cfa987": "icons2-jar.webp", "d19c8dd29e66f2322e8c3206c278cd18": "icons2-planet.webp", "aa93056e6f94a8e7a32a9018465a966b": "icons2-doll.webp", "f9bbac44a97688f01ac57ad8432a1149": "icons2-eye.webp", "677480e32081c6149699f2318d308d53": "icons2-feather.webp", "dfe91f82b6a4c5f12f5326915e212fa0": "icons2-heart.webp", "f6fffcf5739245ddbd6513af13ca3922": "site3-boo.jpg", "9a1c1211245a335ae3e6e9fbb2ef604c": "site3-costume.jpg", "d376dafadc3eb6b6300aed8b33985509": "site3-frog.jpg", "2d7d2f9e783b3d6ee19a72ecd54687d9": "site3-auntie.jpg", "77a68842a1f87809285d2d9f2e7e7734": "site3-why.jpg", "c0b34eea2e3996deaf470e828e364c7e": "site3-moon.jpg", "20b3deecaaed5709abef72726dbaf965": "site3-soboard.jpg", "752154adc9a463960df974056eaaeee0": "site3-autopsy.jpg", "f03d241439d071073b6b45ccbcb86deb": "site3-crickets.jpg", "8e13fc4b50f593a5777564486c67a625": "site3-sadturn.jpg", "def08b95880ccae29b7acddca955d47f": "site3-voodoo.jpg", "df59be32ab6f132ae48e421ff69431dc": "site3-selfprot.jpg", "7204e1d57fdbbf4e0148377dea153d2a": "site3-birdie.jpg", "0773c2e30db2ef6eacb466a7fd6ba091": "site3-frankenstein.jpg", "520ab19cc1094280158fb19abf7fcdc3": "m4-boo.mp4", "4550d5f5ca96f2b81f32def40e477bb5": "m4-costume-party.mp4", "23838ded4766aac56b8b4e221c2a4222": "m4-frog-in-a-prince-suit.mp4", "536d07bba4ba22ceb2e0aa4833ef575a": "m4-auntie-ai.mp4", "00c5f4028ec3c9b722cda8eb781e861d": "m4-why-are-you-behaving-like-this.mp4", "d253ece9d74b44f300103b45746c804f": "m4-blame-the-moon.mp4", "03b20abd8607040887a59507e7bc9b33": "m4-so-board.mp4", "eff3dba88f78fa8916946d07fb7079cb": "m4-friendship-autopsy.mp4", "72374fdf834d10aca01b937092032a60": "m4-crickets.mp4", "0e0f6c09ca534acbfaad4f0179c33bd9": "m4-sadturn.mp4", "ed10dfcb6c2f502a12790638150dad9f": "m4-voodoo-doll.mp4", "8cf0f0f297cc09b8490b4d26d89dc61b": "m4-self-protection.mp4", "2cf91c64f310d9ef11ec3e9a0388a31e": "m4-bye-bye-birdie.mp4", "0550f5182fe318c862e224ea773cea97": "m4-frankenstein.mp4", "a75fb43c56b34630a3b6272dc806ef34": "shop-doll.jpg", "f407ee513dbc1f6ba591d0d391a7e204": "shop-keychain.jpg", "6a592f4933d556ebd10c955a3cc2370c": "shop-soboard.jpg", "8621d20095a2e2d8fc729fc63738f976": "shop-earring.jpg", "56392f2488d867d177c44e0b796bbd02": "shop-potion.jpg", "8aecd74a7a76e91b684eb098a6454af6": "shop-cap.jpg", "2f7f56b08496dd621a47512159de88a9": "shop-bandana.jpg", "acb5a598ed4c808cf3db0387b2c27cd2": "shop-tote.jpg", "da571eb8610262bb9f896a7c43348c94": "shop-bracelet.jpg", "ea5178696c01b77a246654b605ba8cf0": "shop-pins.jpg", "0c86b813b92148d268209b8efd38a252": "shop-lamp.jpg", "fd76773b3c93fb0ff90681f22c1989a5": "shop-vinyl.jpg", "f46c7f0614490a41e791f7ef283c296d": "shop-tees.jpg", "197e5b10279a6ec8e836926ce07164dc": "shop-mug.jpg", "25dbcd655ef4a62c731d58f2206265c7": "deck2-card01.webp", "06d47dfb2964442109d5987f605c1f02": "deck2-card02.webp", "85fe138f8b061afe8c4a425061cffabc": "deck2-card03.webp", "d23394cf0398bdeac55db00682774f1e": "deck2-card04.webp", "9621ba4e03aaf19c011008d1ea992742": "deck2-card05.webp", "561dc3ec486994e3a0eaa3dd2f0ae422": "deck2-card06.webp", "430d57f871473c3133f254bac37e1972": "deck2-card07.webp", "56978c2c954684f010a84125ec9cb05a": "deck2-card08.webp", "7033a04929681fb77cfd44ec3426d08d": "deck2-card09.webp", "5640e0af19223680783a2caf130889c7": "deck2-card10.webp", "f939f03a749d46cf9c18e075babfa3f4": "deck2-card11.webp", "83c01f1dc8b23349dc1513d6c0702c6d": "deck2-card12.webp", "a96d7d10f958628e73458b6d5f3b7ca4": "deck2-card13.webp", "bb80c0aeb8f3987ad39ce89066c9d868": "deck2-card14.webp"};
+const B=id=>MAP[id]||('missing/'+id);
+const R=['I','II','III','IV','V','VI','VII','VIII','IX','X','XI','XII','XIII','XIV'];
+const OBJ=['e4ce63d7e0b62c23d48e7fc2ee0ddf17','0741205406c263acb0cf16107055318d','97f7fb528741f904e90554df10191832','97be3ab33c0f2fc8c57d7de809fa0570','5dad0d60d102df047c1d9adb2420ea3f','984c24b2b3305504ae27a2d09ce08e86','c971c929b20cd8d1d84187037000cc13','c152115921b5498fb72ef41521587f31','79120e2ec3a54e42522d07f7d6cfa987','d19c8dd29e66f2322e8c3206c278cd18','aa93056e6f94a8e7a32a9018465a966b','f9bbac44a97688f01ac57ad8432a1149','677480e32081c6149699f2318d308d53','dfe91f82b6a4c5f12f5326915e212fa0']; const CARDS=['25dbcd655ef4a62c731d58f2206265c7','06d47dfb2964442109d5987f605c1f02','85fe138f8b061afe8c4a425061cffabc','d23394cf0398bdeac55db00682774f1e','9621ba4e03aaf19c011008d1ea992742','561dc3ec486994e3a0eaa3dd2f0ae422','430d57f871473c3133f254bac37e1972','56978c2c954684f010a84125ec9cb05a','7033a04929681fb77cfd44ec3426d08d','5640e0af19223680783a2caf130889c7','f939f03a749d46cf9c18e075babfa3f4','83c01f1dc8b23349dc1513d6c0702c6d','a96d7d10f958628e73458b6d5f3b7ca4','bb80c0aeb8f3987ad39ce89066c9d868'];
+const T=[
+      ['Boo', '3:33', 'f6fffcf5739245ddbd6513af13ca3922', '520ab19cc1094280158fb19abf7fcdc3', 'Boo! (Not you!) Boo! (Someone new!)', 'The Spectacle'],
+      ['Costume Party', '4:22', '9a1c1211245a335ae3e6e9fbb2ef604c', '4550d5f5ca96f2b81f32def40e477bb5', 'Everybody came disguised. I showed up in my birthday suit.', 'The Spectacle'],
+      ['Frog in a Prince Suit', '3:30', 'd376dafadc3eb6b6300aed8b33985509', '23838ded4766aac56b8b4e221c2a4222', 'You are not as cute as your brain computes.', 'The Spectacle'],
+      ['Auntie A.I.', '4:54', '2d7d2f9e783b3d6ee19a72ecd54687d9', '536d07bba4ba22ceb2e0aa4833ef575a', 'The vision is human, the machine just replies.', 'The Spectacle'],
+      ['Why Are You Behaving Like This?', '3:50', '77a68842a1f87809285d2d9f2e7e7734', '00c5f4028ec3c9b722cda8eb781e861d', 'Why are you behaving like this, nana?', 'The Unravelling'],
+      ['Blame the Moon', '4:39', 'c0b34eea2e3996deaf470e828e364c7e', 'd253ece9d74b44f300103b45746c804f', 'We crash on purpose then pretend it’s the moon.', 'The Unravelling'],
+      ['So Board', '3:33', '20b3deecaaed5709abef72726dbaf965', '03b20abd8607040887a59507e7bc9b33', 'If it points to no, then I guess I’ll know.', 'The Unravelling'],
+      ['Friendship Autopsy', '4:02', '752154adc9a463960df974056eaaeee0', 'eff3dba88f78fa8916946d07fb7079cb', 'Thought we were chosen family.', 'The Unravelling'],
+      ['Crickets', '3:03', 'f03d241439d071073b6b45ccbcb86deb', '72374fdf834d10aca01b937092032a60', 'I thought we were losing touch. Turns out I was the touch.', 'The Unravelling'],
+      ['SAdTURN', '4:04', '8e13fc4b50f593a5777564486c67a625', '0e0f6c09ca534acbfaad4f0179c33bd9', 'Return to Saturn. Return to sad-turn.', 'The Response'],
+      ['Voodoo Doll', '3:30', 'def08b95880ccae29b7acddca955d47f', 'ed10dfcb6c2f502a12790638150dad9f', 'Hey girl, hold my purse.', 'The Response'],
+      ['Self Protection', '4:17', 'df59be32ab6f132ae48e421ff69431dc', '8cf0f0f297cc09b8490b4d26d89dc61b', 'Baby, this ain’t love. This is just your self-protection.', 'The Response'],
+      ['Bye Bye Birdie', '3:54', '7204e1d57fdbbf4e0148377dea153d2a', '2cf91c64f310d9ef11ec3e9a0388a31e', 'Funny how you love me when I’m nonchalant-y.', 'The Response'],
+      ['Frankenstein', '3:20', '0773c2e30db2ef6eacb466a7fd6ba091', '0550f5182fe318c862e224ea773cea97', 'Dead or alive, zombies for life.', 'The Response']
+    ];
+const SHOP=[
+        { kind: 'Jewellery', name: 'Lilac\u2019s Palm-Frond Earring', line: 'Sold single, the way she wears it. For the girls who keep the pins.', img: 'merch/merch-palm-earring.webp', fit: 'cover', alt: 'A pair of long gold palm-frond drop earrings on a cream background' },
+        { kind: 'Headwear', name: 'Asmar\u2019s Cap', line: 'Black, green strap, worn backwards. Same cut, same attitude.', img: 'merch/merch-asmar-cap.webp', fit: 'cover', alt: 'Black distressed cap with acid-green stitching and pink LAY-L embroidery' },
+        { kind: 'Plush', name: 'LUV Cat Plush', line: 'Black velvet cat, acid-lime eyes, pink bow and a gold bell. Lilac\u2019s favourite.', img: 'merch/merch-luv-cat.webp', fit: 'cover', alt: 'Black cat plush with green eyes, pink bow, gold bell and LAY-L on its paw' },
+        { kind: 'Headwear', name: 'Yamm\u2019s Headwrap', line: 'Cream silk with gold suns and moons. Wrap it the way he does.', img: 'merch/merch-yamm-headwrap.webp', fit: 'cover', alt: 'Cream headwrap printed with gold suns, moons and stars, with a LAY-L label' },
+        { kind: 'Bandana', name: 'Lattam\u2019s Bandana', line: 'Navy, starred. Says nothing. Like him.', img: 'merch/merch-lattam-bandana.webp', fit: 'cover', alt: 'Navy bandana printed with cream moons and stars, tied, with pink LAY-L print' },
+        { kind: 'Lamp', name: 'Crickets Jar Lamp', line: 'A glowing jar of drifting cricket silhouettes. No fight. No goodbye.', img: 'merch/merch-crickets-lamp.webp', fit: 'cover', alt: 'Glowing glass jar lamp with a cricket, moon and stars inside and a LAY-L base' },
+        { kind: 'Spirit board', name: 'So Board', line: 'Custom board and planchette. Ask wisely. It might say I don\u2019t know.', img: 'merch/merch-soboard.webp', fit: 'cover', alt: 'Black and gold LAY-L spirit board with planchette' },
+        { kind: 'Bracelet', name: 'Self Protection Bracelet', line: 'Charms for protection. This ain\u2019t love, it\u2019s self-protection.', img: 'merch/merch-self-protection-bracelet.webp', fit: 'cover', alt: 'Gold charm bracelet with evil eye, palm frond, black cat, LAY-L, voodoo doll and frog prince charms' },
+        { kind: 'Plush', name: 'The LAY-L Voodoo Doll', line: 'Lime, pink stitches, removable pin. A little bad luck for the right people.', img: 'merch/merch-voodoo-plush.webp', fit: 'cover', alt: 'Acid-lime voodoo doll plush with pink stitching, black button eyes and pins in a stitched heart' },
+        { kind: 'Bag charm', name: 'Hey Girl, Hold My Purse', line: 'A hot-pink heart that says it for you. Gold hardware, cat and palm-frond charms.', img: 'merch/merch-hold-my-purse.webp', fit: 'cover', alt: 'Hot-pink heart bag charm reading Hey girl hold my purse, hanging from a black handbag' },
+        { kind: 'Vinyl', name: 'I Guess the Fortuneteller Is Right\u2026', line: 'The album on 12\u2033 vinyl, with lyric insert and poster.', img: 'merch/merch-vinyl.webp', fit: 'cover', alt: 'The album sleeve with the four members of LAY-L under pink lettering' },
+        { kind: 'Tote', name: 'LAY-L Tote Bag', line: 'Black canvas, pink LAY-L. For essentials, spells and drama.', img: 'merch/merch-tote.webp', fit: 'cover', alt: 'Black canvas tote bag printed with the pink LAY-L logo' },
+        { kind: 'Keychain', name: 'BOO! Keychain', line: 'Hot-pink enamel BOO! with a black-cat charm. Clip it on and haunt your keys.', img: 'merch/merch-keychain.webp', fit: 'cover', alt: 'Gold keychain with a hot-pink enamel BOO! charm and a small black cat charm, on a black LAY-L backing card' },
+        { kind: 'Glassware', name: 'Potion Shot', line: 'Four crystal shot glasses, one per member, each with a jewel stopper. Drink responsibly.', img: 'merch/merch-potion.webp', fit: 'cover', alt: 'Four jewel-toned glass potion shots with gem stoppers, printed with Lilac, Asmar, Yamm and Lattam, in front of a LAY-L gift box' },
+        { kind: 'Pins', name: 'LAY-L Enamel Pin Set', line: 'All four members. Four cards, one band.', img: 'merch/merch-pins.webp', fit: 'cover', alt: 'Four gold-edged enamel pins of Lilac, Asmar, Yamm and Lattam on a black LAY-L backing card' },
+        { kind: 'Apparel', name: 'LAY-L T-Shirts', line: 'Black and cream. The whole band on your chest.', img: 'merch/merch-tees.webp', fit: 'cover', alt: 'Cream T-shirt printed with four panels of Lilac, Asmar, Yamm and Lattam above a pink LAY-L logo' },
+        { kind: 'Apparel', name: 'LAY-L Hoodies', line: 'Heavyweight fleece in black, cream, navy and acid lime.', img: 'merch/merch-hoodie.webp', fit: 'cover', alt: 'Acid-lime hoodie printed with a black cat, pink stars and the LAY-L logo' },
+        { kind: 'Mug', name: 'LAY-L Mug', line: 'For coffee, tea or potions.', img: 'merch/merch-mug.webp', fit: 'cover', alt: 'Three LAY-L mugs: black with the pink logo, cream with the black cat, and cream with Arabic lettering' }
+      ];
+const MEMBERS=[
+        { name: 'Lilac', role: 'Lead vocal', arcana: 'II · The High Priestess', img: B('fc7dcc50eccf873c18c4f312dcb9a948'), alt: 'Lilac as The High Priestess, seated on a throne with a black cat', accent: '#C9A4E0', line: 'Never forgets. Keeps the pins.' },
+        { name: 'Asmar', role: 'Guitar, vocal', arcana: 'XIII · Death', img: B('2e262753e8336227d6246ed24823443d'), alt: 'Asmar as Death, arms crossed beneath a reaper banner', accent: '#3FC4A4', line: 'Pulled the Death card. Shrugged.' },
+        { name: 'Yamm', role: 'Bass', arcana: 'I · The Magician', img: B('0e89cd1ce10a794e8f268718cf4a19f0'), alt: 'Yamm as The Magician, holding the Magician card', accent: '#D9B26A', line: 'Already saw how this ends.' },
+        { name: 'Lattam', role: 'Drums', arcana: 'IX · The Hermit', img: B('19831b338b929d3a304159659cdb5bd8'), alt: 'Lattam as The Hermit, beside a lantern marked IX', accent: '#8FA6D9', line: 'Says nothing. Reads everything.' }
+      ];
+const tracks=T.map((r,i)=>({title:r[0],len:r[1],audio:B(r[3]),line:r[4],num:R[i],card:B(CARDS[i]),obj:B(OBJ[i])}));
+let cur=null, drawn=10;
+const $=id=>document.getElementById(id);
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const hero=$('hero'), player=$('player');
+function renderActs(){
+  const acts=[['I','The Spectacle',0,4],['II','The Unravelling',4,9],['III','The Response',9,14]];
+  const R=[-4,2.5,-1.5,3.5,-2.5,1.5,-3,2], Y=[0,34,-8,22,6,40,-4,18];
+  $('acts').innerHTML=acts.map(a=>`<div class="act"><span class="act-num" aria-hidden="true">${a[0]}</span><h3 class="act-name"><em>${a[0]}</em>${a[1]}</h3><div class="act-cards">`+
+   tracks.slice(a[2],a[3]).map((t,j)=>{const i=a[2]+j,on=i===cur;return `<button type="button" data-play="${i}" class="layl-card spread-card" aria-label="Play ${esc(t.title)}" style="--r:${R[i%8]}deg;--y:${Y[(i+3)%8]}px;cursor: pointer; font-family: inherit; color: #101013; background: transparent; border: 0; padding: 0; display: flex; flex-direction: column; gap: 10px; align-items: stretch;"><img src="${t.card}" alt="" loading="lazy" width="720" height="1073" style="width: 100%; height: auto; aspect-ratio: 720 / 1073; object-fit: contain; display: block;${on?' filter: drop-shadow(0 0 0 #F52B7B) drop-shadow(0 0 12px #F52B7B);':''}"><span style="font-size: 12px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; text-align: center; color: ${on?'#F52B7B':'#101013'};">${on?'Playing':'Play'} · ${esc(t.title)}</span></button>`}).join('')+`</div></div>`).join('');
+}
+let firstDraw=true; const deck=[];
+function renderDrawn(){const t=tracks[drawn]; $('drawnCard').src=t.card; $('drawnCard').alt='Tarot card '+t.num+': '+t.title; $('drawnLine').textContent=t.line;
+  if(firstDraw){ $('drawKick').textContent='Your first card is our first single'; $('drawnMeta').textContent='Track '+t.num+', '+t.title+' · out Friday 22 January 2027'; }
+  else { $('drawKick').textContent='The crystal ball says'; $('drawnMeta').textContent='From track '+t.num+', '+t.title+' · '+t.len; } }
+function drawNext(){
+  if(!deck.length){ for(let i=0;i<14;i++) if(i!==drawn) deck.push(i); for(let i=deck.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[deck[i],deck[j]]=[deck[j],deck[i]];} }
+  firstDraw=false; drawn=deck.pop(); const c=$('drawnCard');
+  if(matchMedia('(prefers-reduced-motion: reduce)').matches){ renderDrawn(); return; }
+  c.classList.add('flip'); setTimeout(()=>{ renderDrawn(); c.style.setProperty('--tilt',(Math.random()*8-4).toFixed(1)+'deg'); c.classList.remove('flip'); },260);
+}
+function renderStatic(){
+  $('members').outerHTML=MEMBERS.map((m,i)=>`<div class="member" style="--r:${i%2?1.5:-1.5}deg"><div style="position: relative;"><img src="${m.img}" alt="${esc(m.alt)}" loading="lazy" style="border: 2px solid ${m.accent};"><span class="member-arc" style="color: ${m.accent}; border: 1px solid ${m.accent};">${m.arcana}</span></div><span class="member-name">${m.name}</span><span class="member-role" style="color: ${m.accent};">${m.role}</span><p style="margin: 0; font-size: 15px; line-height: 1.5;">${esc(m.line)}</p></div>`).join('');
+  $('shopGrid').outerHTML=SHOP.map(p=>`<div style="display: flex; flex-direction: column; background: #F9D9A6; color: #101013; border-radius: 10px; overflow: hidden;"><div style="aspect-ratio: 4 / 5; background: #0B0B0D;"><button type="button" class="shop-img" data-zoom="${p.img}" data-zname="${esc(p.name)}" data-zalt="${esc(p.alt)}" aria-label="View ${esc(p.name)} larger"><img src="${p.img}" alt="${esc(p.alt)}" loading="lazy" decoding="async" style="width: 100%; height: 100%; object-fit: ${p.fit}; display: block;"></button></div><div style="padding: 16px 18px 18px; display: flex; flex-direction: column; gap: 6px; flex: 1;"><span style="font-size: 12px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: #7A1E46;">${p.kind}</span><span style="font-family: 'Bodoni Moda', serif; font-weight: 700; font-size: 22px; line-height: 1.15;">${esc(p.name)}</span><span style="font-size: 14px; line-height: 1.45; flex: 1;">${esc(p.line)}</span><button type="button" data-notify="${esc(p.name)}" class="layl-btn" style="cursor: pointer; font-family: inherit; margin-top: 10px; align-self: flex-start; background: #101013; color: #F9D9A6; padding: 10px 18px; border-radius: 999px; font-weight: 700; font-size: 13px; border: 2px solid #101013;">Notify me</button></div></div>`).join('');
+}
+function setSound(on){ hero.muted=!on; if(on){ hero.currentTime=0; hush('hero'); } hero.play().catch(()=>{}); $('soundLabel').textContent=on?'Sound off':'Sound on'; $('soundBtn').setAttribute('aria-pressed',String(on)); }
+function play(i,at){ cur=i; setSound(false); const t=tracks[i]; $('nowbar').hidden=false; document.body.style.paddingBottom='120px'; $('nowObj').src=t.obj; $('nowNum').textContent=t.num; $('nowTitle').textContent=t.title; player.src=t.audio; kReset(); if(LP.open){ lpBuild(); } if(at){ player.addEventListener('loadedmetadata',()=>{ player.currentTime=at; },{once:true}); } player.play().catch(()=>{}); renderActs(); }
+const nextIdx=()=>cur===null?0:(cur+1)%14;
+player.addEventListener('ended',()=>play(nextIdx()));
+const K={line:-1,word:-1,raf:0,data:null};
+function kReset(){K.line=-2;K.word=-1;K.data=(window.LYRICS_SYNC||{})[cur]||null;$('karaoke').hidden=!K.data;$('kLine').innerHTML='';$('kNext').textContent='';$('kLine').className='';document.body.style.paddingBottom=K.data?'190px':'120px';}
+function kFind(arr,t,get){let lo=0,hi=arr.length-1,r=-1;while(lo<=hi){const m=(lo+hi)>>1;if(get(arr[m])<=t){r=m;lo=m+1}else hi=m-1}return r;}
+function kTick(){
+  K.raf=0; if(!K.data) return;
+  const t=player.currentTime, L=K.data, kl=$('kLine');
+  let li=kFind(L,t+0.05,l=>l.t);
+  let show=li, gap=false;
+  if(li<0 || t>L[li].e){ const nx=li+1; if(nx<L.length && L[nx].t-t<1.8) show=nx; else gap=true; }
+  const key=gap?'gap'+li:show;
+  if(key!==K.line){
+    K.line=key; K.word=-2;
+    if(gap){ kl.className='gap'; kl.textContent='♪'; }
+    else { kl.className=''; kl.innerHTML=L[show].w.map(w=>'<span>'+esc(w[0])+'</span>').join(' '); }
+    const nx=L[gap?li+1:show+1]; $('kNext').textContent=nx?nx.w.map(w=>w[0]).join(' '):'';
+  }
+  if(!gap){
+    const ws=L[show].w, wi=t<ws[0][1]-0.05?-1:kFind(ws,t+0.05,w=>w[1]);
+    if(wi!==K.word){ K.word=wi; const sp=kl.children; for(let k=0;k<sp.length;k++) sp[k].className=k<wi?'on':(k===wi?'now':''); }
+  }
+  lpTick(false);
+  if(!player.paused) K.raf=requestAnimationFrame(kTick);
+}
+
+const LP={open:false,line:-1,word:-2,userAt:0};
+function lpBuild(){
+  const t=tracks[cur], L=K.data; $('lypNum').textContent=t.num; $('lypTitle').textContent=t.title;
+  $('lypFull').href='lyrics.html#'+t.title.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'');
+  $('lypBody').innerHTML=L?L.map((l,i)=>'<p data-i="'+i+'"'+(i&&l.t-L[i-1].e>1.5?' class="gapb"':'')+'>'+l.w.map(w=>'<span>'+esc(w[0])+'</span>').join(' ')+'</p>').join(''):'<p>No lyrics for this one.</p>';
+  LP.line=-1; LP.word=-2;
+}
+function nowbarH(){ const nb=$('nowbar'); document.documentElement.style.setProperty('--nowbar-h',Math.round(innerHeight-nb.getBoundingClientRect().top+12)+'px'); }
+function lpOpen(on){ LP.open=on; $('lyPanel').hidden=!on; $('nowLyrics').setAttribute('aria-expanded',String(on)); if(on){ nowbarH(); lpBuild(); LP.userAt=0; lpTick(true); } }
+function lpTick(force){
+  if(!LP.open||!K.data) return;
+  const t=player.currentTime, L=K.data, ps=$('lypBody').children;
+  let li=kFind(L,t+0.05,l=>l.t);
+  if(li!==LP.line||force){
+    for(let k=0;k<ps.length;k++){ ps[k].classList.toggle('past',k<li); ps[k].classList.toggle('cur',k===li); if(k!==li) for(const sp of ps[k].children) sp.className=''; }
+    LP.line=li; LP.word=-2;
+    if(li>=0 && Date.now()-LP.userAt>4000){ const p=ps[li], b=$('lypBody'); b.scrollTo({top:p.offsetTop-b.clientHeight*0.4,behavior:force?'auto':'smooth'}); }
+  }
+  if(li>=0){ const ws=L[li].w, wi=kFind(ws,t+0.05,w=>w[1]); if(wi!==LP.word){ LP.word=wi; const sp=ps[li].children; for(let k=0;k<sp.length;k++) sp[k].className=k<wi?'on':(k===wi?'now':''); } }
+}
+['wheel','touchmove'].forEach(ev=>$('lypBody').addEventListener(ev,()=>{LP.userAt=Date.now();},{passive:true}));
+$('lypBody').addEventListener('click',e=>{ const p=e.target.closest('p[data-i]'); if(!p||!K.data) return; player.currentTime=Math.max(0,K.data[+p.dataset.i].t-0.15); LP.userAt=0; if(player.paused) player.play().catch(()=>{}); });
+document.addEventListener('click',e=>{
+  const n=e.target.closest('[data-navlyrics]'); if(n && cur!==null && !player.paused){ e.preventDefault(); lpOpen(true); return; }
+  const a=e.target.closest('[data-act="lyrics"],[data-act="lyclose"]'); if(!a) return; e.preventDefault(); e.stopPropagation();
+  lpOpen(a.dataset.act==='lyrics' ? !LP.open : false);
+},true);
+document.addEventListener('keydown',e=>{ if(e.key==='Escape'&&LP.open) lpOpen(false); });
+window.addEventListener('resize',()=>{ if(LP.open) nowbarH(); });
+player.addEventListener('play',()=>{ if(!K.raf) K.raf=requestAnimationFrame(kTick); });
+player.addEventListener('seeked',()=>{ K.line=-2; LP.line=-2; kTick(); });
+player.addEventListener('loadedmetadata',()=>{ kReset(); if(LP.open){ lpBuild(); lpTick(true); } });
+
+document.addEventListener('click',e=>{
+  const p=e.target.closest('[data-play]'); if(p){play(+p.dataset.play);return;}
+  const a=e.target.closest('[data-act]'); if(!a) return; const k=a.dataset.act;
+  if(k==='playAll') play(0); else if(k==='playVoodoo') play(10); else if(k==='playDrawn') play(drawn);
+  else if(k==='next') play(nextIdx());
+  else if(k==='draw') drawNext();
+  else if(k==='toggleSound') setSound(hero.muted);
+});
+
+/* ---- one source of sound at a time ---- */
+const teaser=$('teaser');
+function hush(keep){
+  if(keep!=='player' && !player.paused) player.pause();
+  if(keep!=='teaser' && teaser && !teaser.paused) teaser.pause();
+  if(keep!=='hero' && !hero.muted){ hero.muted=true; $('soundLabel').textContent='Sound on'; $('soundBtn').setAttribute('aria-pressed','false'); }
+}
+player.addEventListener('play',()=>hush('player'));
+if(teaser) teaser.addEventListener('play',()=>hush('teaser'));
+
+/* ---- marquee lyrics play their song from that line (start times verified against the synced lyrics) ---- */
+document.addEventListener('click',e=>{
+  const b=e.target.closest('.mq-l'); if(!b||b.dataset.song===undefined) return;
+  play(+b.dataset.song, +b.dataset.at||0);
+  document.querySelectorAll('.mq-l').forEach(x=>x.classList.toggle('on',x.dataset.lyric===b.dataset.lyric));
+});
+
+/* ---- signup (Formspree) ---- */
+const FORMSPREE_ID='';   // paste the Formspree form ID here, e.g. 'xyzabcd'
+function wireForm(form,onDone){
+  const msg=form.parentElement.querySelector('.signup-msg')||form.querySelector('.signup-msg');
+  form.addEventListener('submit',async e=>{
+    e.preventDefault();
+    const em=form.querySelector('input[type=email]'); const btn=form.querySelector('button[type=submit]');
+    msg.className='signup-msg';
+    if(!em.value || !em.checkValidity()){ msg.textContent='That email doesn’t look right yet.'; msg.classList.add('err'); em.focus(); return; }
+    if(!FORMSPREE_ID){ msg.textContent='Sign-ups open very soon. Follow @wearelayl in the meantime.'; msg.classList.add('err'); return; }
+    btn.disabled=true; msg.textContent='Sending…';
+    try{
+      const r=await fetch('https://formspree.io/f/'+FORMSPREE_ID,{method:'POST',body:new FormData(form),headers:{Accept:'application/json'}});
+      if(!r.ok) throw 0;
+      form.reset(); msg.textContent='You’re on the list. The cards will find you.'; msg.classList.add('ok'); onDone&&onDone(true);
+    }catch(_){ msg.textContent='The spirits dropped that one. Please try again.'; msg.classList.add('err'); onDone&&onDone(false); }
+    btn.disabled=false;
+  });
+}
+const dlg=$('notifyDlg');
+const NOTE={'Voodoo Doll pre-save':['Pre-save Voodoo Doll','Pre-save opens soon. Leave your email and we’ll send you the link the moment it’s live, then the song on 22 January.']};
+document.addEventListener('click',e=>{
+  const b=e.target.closest('[data-notify]'); if(!b) return;
+  const n=b.dataset.notify, t=NOTE[n]||['Tell me when the '+n.replace(/^The /,'')+' drops','The shop opens in 2027. One email when it’s ready, nothing else.'];
+  $('ndlgK').textContent=n.includes('pre-save')?'First single':'The shop';
+  $('ndlgH').textContent=t[0]; $('ndlgP').textContent=t[1];
+  const f=$('notifyForm'); f.reset(); f.querySelector('[name=interest]').value=n; f.querySelector('button').textContent=n.includes('pre-save')?'Remind me':'Notify me';
+  dlg.querySelector('.signup-msg').textContent='';
+  if(dlg.showModal) dlg.showModal(); else dlg.setAttribute('open','');
+  setTimeout(()=>f.querySelector('input[type=email]').focus(),50);
+});
+wireForm($('notifyForm'),ok=>{ if(ok) setTimeout(()=>dlg.close(),1600); });
+
+/* ---- spirit board: the planchette reads what you type ---- */
+(function(){
+  const board=$('board'), box=$('bLetters'), pl=$('planchette'); if(!board) return;
+  const rows=['ABCDEFGHIJKLM','NOPQRSTUVWXYZ','1234567890'];
+  const pos={};
+  rows.forEach((r,ri)=>{ [...r].forEach((ch,ci)=>{
+    const n=r.length, f=n>1?ci/(n-1):.5;
+    const spread=ri===2?.5:.84, x=50+(f-.5)*100*spread;
+    const arc=ri===2?0:Math.sin(f*Math.PI)*(ri===0?16:12);
+    const y=(ri===0?40:ri===1?60:80)-arc;
+    const sp=document.createElement('span'); sp.textContent=ch; sp.style.left=x+'%'; sp.style.top=y+'%'; if(ri===2) sp.style.fontSize='clamp(14px,1.6vw,22px)';
+    box.appendChild(sp); pos[ch]=[x,y,sp];
+  }); });
+  const yes=board.querySelector('.b-yes'), no=board.querySelector('.b-no');
+  pos.YES=[6,12,yes]; pos.NO=[94,12,no];
+  let lit=null;
+  function go(k){ const p=pos[k]; if(!p) return; pl.style.left=p[0]+'%'; pl.style.top=p[1]+'%'; pl.style.setProperty('--pr',((p[0]-50)/50*12).toFixed(1)+'deg'); if(lit) lit.classList.remove('lit'); lit=p[2]; lit.classList.add('lit'); }
+  const em=$('email'); let last='';
+  em.addEventListener('input',()=>{ const v=em.value; if(v.length>last.length){ const c=v[v.length-1].toUpperCase(); if(pos[c]) go(c); else if(c==='@') go('YES'); } last=v; });
+  em.addEventListener('blur',()=>{ if(lit){ lit.classList.remove('lit'); lit=null; } });
+  wireForm($('signupForm'),ok=>go(ok?'YES':'NO'));
+  // idle drift until someone types
+  const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches; let idle=0;
+  if(!reduce){ const word=['L','A','Y','L']; setInterval(()=>{ if(document.activeElement===em||em.value) return; if(board.getBoundingClientRect().top>innerHeight) return; go(word[idle++%4]); setTimeout(()=>{ if(lit&&document.activeElement!==em){ lit.classList.remove('lit'); lit=null; } },900); },1600); }
+})();
+
+/* ---- gallery: arrows, keys, drag, progress ---- */
+(function(){
+  const st=$('gStrip'), bar=$('gBar'); if(!st) return;
+  const step=()=>Math.max(260,st.clientWidth*0.7);
+  const go=d=>st.scrollBy({left:d*step(),behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'});
+  document.querySelectorAll('[data-g]').forEach(b=>b.addEventListener('click',()=>go(+b.dataset.g)));
+  st.addEventListener('keydown',e=>{ if(e.key==='ArrowRight'){e.preventDefault();go(1);} if(e.key==='ArrowLeft'){e.preventDefault();go(-1);} });
+  const upd=()=>{ const max=st.scrollWidth-st.clientWidth; const f=max>0?st.scrollLeft/max:1; bar.style.width=(8+f*92)+'%'; };
+  st.addEventListener('scroll',upd,{passive:true}); window.addEventListener('resize',upd); upd();
+  let down=false,sx=0,sl=0,moved=false;
+  st.addEventListener('pointerdown',e=>{ if(e.pointerType!=='mouse'||e.target.closest('button')) return; down=true;moved=false;sx=e.clientX;sl=st.scrollLeft;st.classList.add('drag'); });
+  window.addEventListener('pointermove',e=>{ if(!down) return; const dx=e.clientX-sx; if(Math.abs(dx)>4) moved=true; st.scrollLeft=sl-dx; });
+  window.addEventListener('pointerup',()=>{ if(!down) return; down=false; st.classList.remove('drag'); });
+  st.addEventListener('click',e=>{ if(moved){ e.preventDefault(); e.stopPropagation(); moved=false; } },true);
+})();
+
+/* ---- shop: view one product photo larger ---- */
+document.addEventListener('click',e=>{
+  const b=e.target.closest('[data-zoom]'); if(!b) return;
+  const d=$('zoomDlg'); $('zImg').src=b.dataset.zoom; $('zImg').alt=b.dataset.zalt; $('zName').textContent=b.dataset.zname;
+  if(d.showModal) d.showModal(); else d.setAttribute('open','');
+});
+$('zoomDlg').addEventListener('click',e=>{ if(e.target.id==='zoomDlg') e.target.close(); });
+
+/* ---- shop popup ---- */
+document.addEventListener('click',e=>{ if(!e.target.closest('[data-act="openShop"]')) return; const d=$('shopDlg'); d.showModal?d.showModal():d.setAttribute('open',''); d.scrollTop=0; });
+
+hero.muted=true; hero.play().catch(()=>{});
+renderStatic(); renderActs(); renderDrawn();
+</script>
+</body>
+</html>
