@@ -1,5 +1,6 @@
 <!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Lyrics — Okinawa… One Way.. — LAY-L</title><meta name="description" content="Lyrics for every channel of Okinawa… One Way.. by LAY-L.">
+<title>Lyrics · Okinawa… One Way.. · LAY-L</title><meta name="description" content="Full lyrics for all fourteen songs on Okinawa… One Way.. by LAY-L, from One Missed Call.. Two… to Voodoo Doll.">
+<link rel="canonical" href="https://khalednadershah-spec.github.io/Laylmusichub/okinawa/lyrics.html"><meta property="og:title" content="Lyrics · Okinawa… One Way.. · LAY-L"><meta property="og:description" content="Every lyric on the album, in running order."><meta name="twitter:card" content="summary_large_image"><meta name="theme-color" content="#16110e">
 <meta property="og:image" content="https://khalednadershah-spec.github.io/Laylmusichub/okinawa/og.jpg?v=3"><link rel="icon" href="../favicon.svg" type="image/svg+xml">
 <link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@500;700;900&family=Shippori+Mincho:wght@400;700;800&display=swap" rel="stylesheet">
 <style>
@@ -28,14 +29,32 @@ h2{font:clamp(30px,4.4vw,46px)/1.05 "Knewave";transform:skewX(-4deg);transform-o
 .top{display:inline-block;margin-top:22px;font:700 10px "Zen Kaku Gothic New";letter-spacing:.18em;text-transform:uppercase;color:var(--red);text-decoration:none}
 .tba{max-width:1100px;margin:0 auto;padding:30px 20px;border-top:2px solid var(--ink);font:700 15px "Zen Kaku Gothic New";color:var(--ink2)}
 footer{background:var(--night);color:#a8977c;text-align:center;padding:30px 16px;font:700 10px "Zen Kaku Gothic New";letter-spacing:.18em;text-transform:uppercase}footer a{color:var(--ivory)}
-@media(max-width:760px){.song{grid-template-columns:1fr;gap:22px;padding:36px 16px}.side{position:static;max-width:300px}.hero,.chips{padding-left:16px;padding-right:16px}.ly{font-size:16px}}
+a:focus-visible{outline:2px solid #1e7f76;outline-offset:3px}
+.bar a{min-height:44px;display:inline-flex;align-items:center}
+.play{min-height:40px;padding:13px 16px}.top{min-height:40px;display:inline-flex;align-items:center}
+.chip:focus-visible{outline-offset:2px}
+.ly{text-wrap:pretty}
+@media(max-width:760px){.ly{columns:1;line-height:1.8}.side{display:flex;gap:16px;align-items:center;max-width:none}.side img{width:120px;flex:none}.side .play{margin-top:0}.chips{grid-template-columns:repeat(auto-fill,minmax(64px,1fr));gap:8px}.chip b{font-size:14px}
+.song{grid-template-columns:1fr;gap:22px;padding:36px 16px}.side{position:static;max-width:300px}.hero,.chips{padding-left:16px;padding-right:16px}.ly{font-size:16px}}
 </style><script>(function(){
-  if (window.parent === window){ location.replace("./?open=" + encodeURIComponent(location.pathname.split("/").pop() + location.hash)); return; }
+  // Inside the album page's reading overlay: hand play / close back to the album so music keeps going.
+  // Opened directly (search, shared link): behave as a normal standalone page.
+  var inFrame = window.parent !== window;
+  if (!inFrame) return;
+  document.documentElement.classList.add("in-ovl");
+  var page = location.pathname.split("/").pop();
+  function post(m){ try { parent.postMessage(m, location.origin); } catch(e){} }
+  function pos(){ post({t:"pos", p: page + (location.hash || "")}); }
   document.addEventListener("click", function(e){ var a = e.target.closest && e.target.closest("a"); if (!a) return; var h = a.getAttribute("href") || "";
     var m = /^\.\/\?play=(\d+)/.exec(h);
-    if (m){ e.preventDefault(); e.stopPropagation(); parent.postMessage({t:"play", i:+m[1]}, location.origin); return; }
-    if (h === "./" || h.indexOf("./#") === 0){ e.preventDefault(); e.stopPropagation(); parent.postMessage({t:"close"}, location.origin); }
+    if (m){ e.preventDefault(); e.stopPropagation(); post({t:"play", i:+m[1]}); return; }
+    if (h === "./" || h.indexOf("./#") === 0){ e.preventDefault(); e.stopPropagation(); post({t:"close", h: h.slice(2)}); return; }
+    if (/^(magazine|lyrics)\.html/.test(h) && h.split("#")[0] !== page){ e.preventDefault(); e.stopPropagation(); location.replace(h); return; }
+    if (h.charAt(0) === "#" && h.length > 1){ var t = document.getElementById(h.slice(1)); if (t){ e.preventDefault(); t.scrollIntoView({behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth"}); history.replaceState(null, "", h); } }
   }, true);
+  document.addEventListener("keydown", function(e){ if (e.key === "Escape" && !e.defaultPrevented) post({t:"close"}); });
+  addEventListener("hashchange", pos);
+  var rs = history.replaceState; history.replaceState = function(){ var r = rs.apply(history, arguments); pos(); return r; };
 })();</script>
 </head><body id="top">
 <header class="bar"><a href="./">← Album</a><span class="t">Lyrics</span><a href="magazine.html">In-flight magazine</a></header>

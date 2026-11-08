@@ -1,9 +1,9 @@
 <!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>LAY-L AIR — In-flight magazine</title>
+<title>In-flight magazine · LAY-L AIR · Okinawa… One Way..</title>
 <meta name="description" content="LAY-L AIR in-flight magazine, Issue 001: fourteen channels of in-flight entertainment from Okinawa… One Way..">
 <meta property="og:title" content="LAY-L AIR — In-flight magazine"><meta property="og:description" content="Fourteen channels, one cinematic universe.">
 <meta property="og:image" content="https://khalednadershah-spec.github.io/Laylmusichub/okinawa/og.jpg"><meta name="twitter:card" content="summary_large_image">
-<meta name="theme-color" content="#1e2a45"><link rel="icon" href="../favicon.svg" type="image/svg+xml"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@700;900&family=El+Messiri:wght@400&display=swap" rel="stylesheet"><style>
+<meta name="theme-color" content="#1e2a45"><link rel="canonical" href="https://khalednadershah-spec.github.io/Laylmusichub/okinawa/magazine.html"><link rel="icon" href="../favicon.svg" type="image/svg+xml"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@700;900&family=El+Messiri:wght@400&display=swap" rel="stylesheet"><style>
 .vbar{position:fixed;top:0;left:0;right:0;height:52px;z-index:10;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:0 16px;background:#111215;border-bottom:1px solid #2a2c31;color:#efe4cf}
 .vbar a{color:#efe4cf;text-decoration:none;font:700 10.5px "Zen Kaku Gothic New";letter-spacing:.16em;text-transform:uppercase}.vbar a:hover{color:#ff5a4c}
 .vbar .t{font:900 22px "Knewave";letter-spacing:-.01em}.vbar .t small{font:700 9px "Zen Kaku Gothic New";letter-spacing:.2em;color:#c62a1f;margin-left:8px;text-transform:uppercase}
@@ -152,6 +152,18 @@ h2.big{white-space:nowrap;font:italic 900 46px/1 "Barlow Condensed";letter-spaci
 .adtx{position:absolute;left:40px;right:40px;bottom:60px;color:var(--cream)}
 .adtx span{font:700 10px "Barlow";letter-spacing:.24em}.adtx b{display:block;font:italic 900 84px/.9 "Barlow Condensed";text-transform:uppercase;margin:10px 0}
 .adtx em{display:block;font:italic 500 15px "Barlow";margin-bottom:18px}
+.vr{display:flex;align-items:center;gap:14px}
+.zbtn{display:none;font:700 10px "Barlow";letter-spacing:.16em;text-transform:uppercase;color:var(--cream);background:transparent;border:1px solid rgba(244,228,196,.5);border-radius:999px;padding:0 12px;min-height:34px;cursor:pointer}
+.one .zbtn{display:inline-flex;align-items:center}.zoom .zbtn{background:var(--cream);color:var(--navy)}
+.spacer{position:absolute;left:0;top:0;width:0;height:0;pointer-events:none}
+.zoom .stage{overflow:auto;-webkit-overflow-scrolling:touch;touch-action:pan-x pan-y pinch-zoom}
+.zoom .book{transform-origin:0 0!important;margin:4px}
+.zoom .nav{opacity:.35}
+a:focus-visible,button:focus-visible,.ti:focus-visible{outline:2px solid #2fd6c6;outline-offset:3px}
+.ti{cursor:pointer}
+.vbar a,.nav{min-height:44px}.vbar a{display:inline-flex;align-items:center}
+@media (prefers-reduced-motion:reduce){.leaf,.slot.in,.slot.inb{animation:none!important;transition:none!important}}
+@media (max-width:420px){.vbar .t small{display:none}.vbar{gap:6px}.vbar a{font-size:9.5px}.vr{gap:8px}}
 /* viewer bar in the same voice */
 .vbar{background:var(--navy)!important;border-bottom:3px solid var(--red)!important}
 .vbar .t{font:italic 900 24px "Barlow Condensed"!important;color:var(--cream)}.vbar .t small{font:600 9px "Barlow"!important;color:var(--cream)!important;opacity:.8}
@@ -172,15 +184,26 @@ h2.big{white-space:nowrap;font:italic 900 46px/1 "Barlow Condensed";letter-spaci
 .ly i{display:block;font:italic 900 11px/1 "Barlow Condensed";color:var(--red);text-transform:uppercase}
 .ly q{display:block;font:italic 800 13.3px/1.1 "Barlow Condensed";text-transform:uppercase;margin-top:3px;quotes:"“" "”"}
 </style><script>(function(){
-  if (window.parent === window){ location.replace("./?open=" + encodeURIComponent(location.pathname.split("/").pop() + location.hash)); return; }
+  // Inside the album page's reading overlay: hand play / close back to the album so music keeps going.
+  // Opened directly (search, shared link): behave as a normal standalone page.
+  var inFrame = window.parent !== window;
+  if (!inFrame) return;
+  document.documentElement.classList.add("in-ovl");
+  var page = location.pathname.split("/").pop();
+  function post(m){ try { parent.postMessage(m, location.origin); } catch(e){} }
+  function pos(){ post({t:"pos", p: page + (location.hash || "")}); }
   document.addEventListener("click", function(e){ var a = e.target.closest && e.target.closest("a"); if (!a) return; var h = a.getAttribute("href") || "";
     var m = /^\.\/\?play=(\d+)/.exec(h);
-    if (m){ e.preventDefault(); e.stopPropagation(); parent.postMessage({t:"play", i:+m[1]}, location.origin); return; }
-    if (h === "./" || h.indexOf("./#") === 0){ e.preventDefault(); e.stopPropagation(); parent.postMessage({t:"close"}, location.origin); }
+    if (m){ e.preventDefault(); e.stopPropagation(); post({t:"play", i:+m[1]}); return; }
+    if (h === "./" || h.indexOf("./#") === 0){ e.preventDefault(); e.stopPropagation(); post({t:"close", h: h.slice(2)}); return; }
+    if (/^(magazine|lyrics)\.html/.test(h) && h.split("#")[0] !== page){ e.preventDefault(); e.stopPropagation(); location.replace(h); return; }
+    if (h.charAt(0) === "#" && h.length > 1){ var t = document.getElementById(h.slice(1)); if (t){ e.preventDefault(); t.scrollIntoView({behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth"}); history.replaceState(null, "", h); } }
   }, true);
-})();</script>
-</head><body>
-<header class="vbar"><a href="./">← Album</a><span class="t">LAY-L AIR<small>In-flight magazine · 機内誌</small></span><a href="./#rows">Listen ▸︎</a></header>
+  document.addEventListener("keydown", function(e){ if (e.key === "Escape" && !e.defaultPrevented) post({t:"close"}); });
+  addEventListener("hashchange", pos);
+  var rs = history.replaceState; history.replaceState = function(){ var r = rs.apply(history, arguments); pos(); return r; };
+})();</script></head><body>
+<header class="vbar"><a href="./">← Album</a><span class="t">LAY-L AIR<small>In-flight magazine · 機内誌</small></span><span class="vr"><button type="button" class="zbtn" id="zoombtn" aria-pressed="false">Zoom to read</button><a href="./#rows">Listen ▸︎</a></span></header>
 <main class="stage" id="stage" aria-label="Magazine pages"></main>
 <button class="nav" id="prev" aria-label="Previous page">‹</button><button class="nav" id="next" aria-label="Next page">›</button>
 <div class="foot2"><span id="pc">01 / 30</span><span class="prog2"><i id="bar"></i></span></div>
@@ -197,32 +220,32 @@ h2.big{white-space:nowrap;font:italic 900 46px/1 "Barlow Condensed";letter-spaci
 <div class="folio"><span>LAY-L AIR · ONE WAY · ISSUE 001</span><b>07</b></div></section></template><template><section class="pg ife-pg"><div class="mast"><div class="mw"><span class="speed"><i></i><i></i><i></i></span><b>LAY-L AIR</b></div>
 <div class="ms">IN-FLIGHT MAGAZINE <span lang="ja">機内誌</span></div><div class="mi">ISSUE 001<br>2026</div><svg class="plane" viewBox="0 0 64 24" aria-hidden="true"><path fill="currentColor" d="M2 13l10-1 9-9h5l-5 9 16-1 7-5h4l-4 7 4 7h-4l-7-5-16-1 5 9h-5l-9-9-10-1z"/></svg></div><div class="ifeh"><svg viewBox="0 0 32 28" aria-hidden="true"><rect x="2" y="7" width="28" height="19" rx="3" fill="none" stroke="currentColor" stroke-width="2.6"/><path d="M10 2l6 5 6-5" fill="none" stroke="currentColor" stroke-width="2.6"/><circle cx="25" cy="13" r="1.6" fill="currentColor"/><circle cx="25" cy="19" r="1.6" fill="currentColor"/></svg><h2>IN-FLIGHT ENTERTAINMENT</h2><span lang="ja">機内エンターテインメント</span></div><div class="swoosh w"></div>
 <div class="np"><img src="mag/p-01.webp" alt=""><div><div class="ribbon">NOW PLAYING<b>CH 01</b></div><h3>ONE MISSED CALL.. TWO…</h3><em lang="ja">不在着信…2件…</em>
-<p>Someone keeps calling, convinced persistence will earn a reply.</p><div class="mini"><span>GENRE<b>Modern Japanese Hip-Hop / Club Rap</b></span><span>RUNTIME<b>02:05</b></span><span>RATING<b class="rate">18+</b></span></div>
+<p>Someone keeps calling, convinced persistence will earn a reply.</p><div class="mini"><span>GENRE<b>Modern Japanese Hip-Hop / Club Rap</b></span><span>RUNTIME<b>02:04</b></span><span>RATING<b class="rate">18+</b></span></div>
 <a class="play sm" href="./?play=0"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M8 5v14l11-7z"/></svg> Play now</a></div></div>
 <div class="lbar"><b>ENTERTAINMENT LINEUP</b><span lang="ja">上映プログラム</span><i>OKINAWA… ONE WAY.. (14 TRACKS)</i></div>
 <div class="lineup"><div><div class="ti lr"><span class="n" hidden>9</span><span class="chb">CH<b>01</b></span><img src="mag/p-01.webp" alt="" loading="lazy">
-<span class="lt"><i>ONE MISSED CALL.. TWO…</i><em lang="ja">不在着信…2件…</em></span><span class="lrt">2:05</span><span class="rate">18+</span></div><div class="ti lr"><span class="n" hidden>10</span><span class="chb">CH<b>02</b></span><img src="mag/p-02.webp" alt="" loading="lazy">
+<span class="lt"><i>ONE MISSED CALL.. TWO…</i><em lang="ja">不在着信…2件…</em></span><span class="lrt">2:04</span><span class="rate">18+</span></div><div class="ti lr"><span class="n" hidden>10</span><span class="chb">CH<b>02</b></span><img src="mag/p-02.webp" alt="" loading="lazy">
 <span class="lt"><i>SAKURA</i><em lang="ja">桜</em></span><span class="lrt">4:09</span><span class="rate">15+</span></div><div class="ti lr"><span class="n" hidden>11</span><span class="chb">CH<b>03</b></span><img src="mag/p-03.webp" alt="" loading="lazy">
-<span class="lt"><i>LOST IN JAPAN</i><em lang="ja">日本で迷子</em></span><span class="lrt">3:26</span><span class="rate">15+</span></div><div class="ti lr"><span class="n" hidden>12</span><span class="chb">CH<b>04</b></span><img src="mag/p-04.webp" alt="" loading="lazy">
-<span class="lt"><i>WHY WOULD I?</i><em lang="ja">なぜ、私が？</em></span><span class="lrt">3:44</span><span class="rate">15+</span></div><div class="ti lr"><span class="n" hidden>13</span><span class="chb">CH<b>05</b></span><img src="mag/p-05.webp" alt="" loading="lazy">
-<span class="lt"><i>AUNTIE A.I.</i><em lang="ja">アンティー・A.I.</em></span><span class="lrt">3:43</span><span class="rate">18+</span></div><div class="ti lr"><span class="n" hidden>14</span><span class="chb">CH<b>06</b></span><img src="mag/p-06.webp" alt="" loading="lazy">
-<span class="lt"><i>THE VOICE AT PLATFORM TWO</i><em lang="ja">二番線の声</em></span><span class="lrt">4:44</span><span class="rate">15+</span></div><div class="ti lr"><span class="n" hidden>15</span><span class="chb">CH<b>07</b></span><img src="mag/p-07.webp" alt="" loading="lazy">
+<span class="lt"><i>LOST IN JAPAN</i><em lang="ja">日本で迷子</em></span><span class="lrt">3:25</span><span class="rate">15+</span></div><div class="ti lr"><span class="n" hidden>12</span><span class="chb">CH<b>04</b></span><img src="mag/p-04.webp" alt="" loading="lazy">
+<span class="lt"><i>WHY WOULD I?</i><em lang="ja">なぜ、私が？</em></span><span class="lrt">3:43</span><span class="rate">15+</span></div><div class="ti lr"><span class="n" hidden>13</span><span class="chb">CH<b>05</b></span><img src="mag/p-05.webp" alt="" loading="lazy">
+<span class="lt"><i>AUNTIE A.I.</i><em lang="ja">アンティー・A.I.</em></span><span class="lrt">3:42</span><span class="rate">18+</span></div><div class="ti lr"><span class="n" hidden>14</span><span class="chb">CH<b>06</b></span><img src="mag/p-06.webp" alt="" loading="lazy">
+<span class="lt"><i>THE VOICE AT PLATFORM TWO</i><em lang="ja">二番線の声</em></span><span class="lrt">4:43</span><span class="rate">15+</span></div><div class="ti lr"><span class="n" hidden>15</span><span class="chb">CH<b>07</b></span><img src="mag/p-07.webp" alt="" loading="lazy">
 <span class="lt"><i>PLASTIC FLOWER</i><em lang="ja">プラスチック・フラワー</em></span><span class="lrt">3:12</span><span class="rate">15+</span></div></div><div><div class="ti lr"><span class="n" hidden>16</span><span class="chb">CH<b>08</b></span><img src="mag/p-08.webp" alt="" loading="lazy">
 <span class="lt"><i>CRICKETS</i><em lang="ja">コオロギ</em></span><span class="lrt">3:03</span><span class="rate">PG</span></div><div class="ti lr"><span class="n" hidden>17</span><span class="chb">CH<b>09</b></span><img src="mag/p-09.webp" alt="" loading="lazy">
-<span class="lt"><i>SADTURN</i><em lang="ja">土星</em></span><span class="lrt">4:04</span><span class="rate">PG</span></div><div class="ti lr"><span class="n" hidden>18</span><span class="chb">CH<b>10</b></span><img src="mag/p-10.webp" alt="" loading="lazy">
-<span class="lt"><i>ASMR STIMULATION</i><em lang="ja">ASMR・スティミュレーション</em></span><span class="lrt">3:21</span><span class="rate">15+</span></div><div class="ti lr"><span class="n" hidden>19</span><span class="chb">CH<b>11</b></span><img src="mag/p-11.webp" alt="" loading="lazy">
+<span class="lt"><i>SADTURN</i><em lang="ja">土星</em></span><span class="lrt">4:03</span><span class="rate">PG</span></div><div class="ti lr"><span class="n" hidden>18</span><span class="chb">CH<b>10</b></span><img src="mag/p-10.webp" alt="" loading="lazy">
+<span class="lt"><i>ASMR STIMULATION</i><em lang="ja">ASMR・スティミュレーション</em></span><span class="lrt">3:20</span><span class="rate">15+</span></div><div class="ti lr"><span class="n" hidden>19</span><span class="chb">CH<b>11</b></span><img src="mag/p-11.webp" alt="" loading="lazy">
 <span class="lt"><i>REFRIGERATOR</i><em lang="ja">冷蔵庫</em></span><span class="lrt">3:03</span><span class="rate">PG</span></div><div class="ti lr"><span class="n" hidden>20</span><span class="chb">CH<b>12</b></span><img src="mag/p-12.webp" alt="" loading="lazy">
 <span class="lt"><i>THE WIND CALLED IN SICK</i><em lang="ja">風が病欠した日</em></span><span class="lrt">3:09</span><span class="rate">G</span></div><div class="ti lr"><span class="n" hidden>21</span><span class="chb">CH<b>13</b></span><img src="mag/p-13.webp" alt="" loading="lazy">
-<span class="lt"><i>TAMAGOTCHI LUV</i><em lang="ja">たまごっち・ラヴ</em></span><span class="lrt">4:07</span><span class="rate">PG</span></div><div class="ti lr"><span class="n" hidden>22</span><span class="chb">CH<b>14</b></span><img src="mag/p-14.webp" alt="" loading="lazy">
-<span class="lt"><i>VOODOO DOLL</i><em lang="ja">藁人形</em></span><span class="lrt">4:14</span><span class="rate">15+</span></div></div></div>
+<span class="lt"><i>TAMAGOTCHI LUV</i><em lang="ja">たまごっち・ラヴ</em></span><span class="lrt">4:06</span><span class="rate">PG</span></div><div class="ti lr"><span class="n" hidden>22</span><span class="chb">CH<b>14</b></span><img src="mag/p-14.webp" alt="" loading="lazy">
+<span class="lt"><i>VOODOO DOLL</i><em lang="ja">藁人形</em></span><span class="lrt">4:13</span><span class="rate">15+</span></div></div></div>
 <div class="opts"><span>AUDIO OPTIONS <em lang="ja">音声</em></span><span><i class="on"></i>STEREO</span><span>SUBTITLES <em lang="ja">字幕</em></span><span><i class="on"></i>SYNCED LYRICS</span></div><div class="folio"><span>LAY-L AIR · ONE WAY · ISSUE 001</span><b>08</b></div></section></template><template><section class="pg chp"><div class="chtag">LAY-L AIR<br>CHANNEL 01</div><div class="rule2"></div>
 <img class="post" src="mag/p-01.webp" alt="One Missed Call.. Two… poster">
 <div class="info"><div><p class="tja" lang="ja">三度目は、ない。</p><p class="ten">There won’t be a third.</p></div>
-<dl><dt>GENRE</dt><dd>Modern Japanese Hip-Hop / Club Rap</dd><dt>RUNTIME</dt><dd>02:05</dd><dt>RATING</dt><dd><span class="rate">18+</span></dd></dl></div><div class="rule2"></div>
+<dl><dt>GENRE</dt><dd>Modern Japanese Hip-Hop / Club Rap</dd><dt>RUNTIME</dt><dd>02:04</dd><dt>RATING</dt><dd><span class="rate">18+</span></dd></dl></div><div class="rule2"></div>
 <img class="badge" src="mag/i-01.webp" alt="" loading="lazy"><div class="theme">Indifference, boundaries and the power of silence</div>
 <blockquote class="q">“Tick-tock, running late / You still don’t know how to play the game”</blockquote><p class="syn">Someone keeps calling, convinced persistence will earn a reply. It won’t. As the missed calls pile up, a would-be confrontation turns into a gleeful display of indifference: the joy of refusing to take part in someone else’s drama.</p>
 <p class="jn"><b>JAPAN <span lang="ja">日本</span></b>A hypnotic three-note shamisen riff over bass-heavy club rap, and a title that echoes Takashi Miike’s 2003 J-horror One Missed Call (着信アリ).</p>
-<a class="play" href="./?play=0"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M8 5v14l11-7z"/></svg> Play channel 01 · 2:05</a><div class="folio"><span>LAY-L AIR · ONE WAY · ISSUE 001</span><b>09</b></div></section></template><template><section class="pg chp"><div class="chtag">LAY-L AIR<br>CHANNEL 02</div><div class="rule2"></div>
+<a class="play" href="./?play=0"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M8 5v14l11-7z"/></svg> Play channel 01 · 2:04</a><div class="folio"><span>LAY-L AIR · ONE WAY · ISSUE 001</span><b>09</b></div></section></template><template><section class="pg chp"><div class="chtag">LAY-L AIR<br>CHANNEL 02</div><div class="rule2"></div>
 <img class="post" src="mag/p-02.webp" alt="Sakura poster">
 <div class="info"><div><p class="tja" lang="ja">朝になれば、<br>いない人。</p><p class="ten">Someone who’s gone by morning.</p></div>
 <dl><dt>GENRE</dt><dd>Late-90s Alt R&amp;B / Neo-Soul</dd><dt>RUNTIME</dt><dd>04:09</dd><dt>RATING</dt><dd><span class="rate">15+</span></dd></dl></div><div class="rule2"></div>
@@ -232,32 +255,32 @@ h2.big{white-space:nowrap;font:italic 900 46px/1 "Barlow Condensed";letter-spaci
 <a class="play" href="./?play=1"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M8 5v14l11-7z"/></svg> Play channel 02 · 4:09</a><div class="folio"><span>LAY-L AIR · ONE WAY · ISSUE 001</span><b>10</b></div></section></template><template><section class="pg chp"><div class="chtag">LAY-L AIR<br>CHANNEL 03</div><div class="rule2"></div>
 <img class="post" src="mag/p-03.webp" alt="Lost in Japan poster">
 <div class="info"><div><p class="tja" lang="ja">迷子で、いい。</p><p class="ten">It’s fine to be lost.</p></div>
-<dl><dt>GENRE</dt><dd>90s Gospel-R&amp;B / Y2K Alt Pop</dd><dt>RUNTIME</dt><dd>03:26</dd><dt>RATING</dt><dd><span class="rate">15+</span></dd></dl></div><div class="rule2"></div>
+<dl><dt>GENRE</dt><dd>90s Gospel-R&amp;B / Y2K Alt Pop</dd><dt>RUNTIME</dt><dd>03:25</dd><dt>RATING</dt><dd><span class="rate">15+</span></dd></dl></div><div class="rule2"></div>
 <img class="badge" src="mag/i-03.webp" alt="" loading="lazy"><div class="theme">Travel, and familiar feelings in unfamiliar places</div>
 <blockquote class="q">“Funny how a city you’ve never seen / Can feel familiar on the first night”</blockquote><p class="syn">A trip through Japan turns unexpectedly emotional. Matcha from a vending machine, the wrong train, a paper fortune carried off by the breeze: every new detail brings back someone who isn’t there. Hushed verses burst into huge gospel choruses.</p>
 <p class="jn"><b>JAPAN <span lang="ja">日本</span></b>The album’s most explicit link to Japan: Shibuya, train stations and vending machines, with a harmonising shamisen beneath the choir.</p>
-<a class="play" href="./?play=2"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M8 5v14l11-7z"/></svg> Play channel 03 · 3:26</a><div class="folio"><span>LAY-L AIR · ONE WAY · ISSUE 001</span><b>11</b></div></section></template><template><section class="pg chp"><div class="chtag">LAY-L AIR<br>CHANNEL 04</div><div class="rule2"></div>
+<a class="play" href="./?play=2"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M8 5v14l11-7z"/></svg> Play channel 03 · 3:25</a><div class="folio"><span>LAY-L AIR · ONE WAY · ISSUE 001</span><b>11</b></div></section></template><template><section class="pg chp"><div class="chtag">LAY-L AIR<br>CHANNEL 04</div><div class="rule2"></div>
 <img class="post" src="mag/p-04.webp" alt="Why Would I? poster">
 <div class="info"><div><p class="tja" lang="ja">直せる。でも、<br>なぜ？</p><p class="ten">I could fix it. But why?</p></div>
-<dl><dt>GENRE</dt><dd>1970s Japanese City Pop / Disco</dd><dt>RUNTIME</dt><dd>03:44</dd><dt>RATING</dt><dd><span class="rate">15+</span></dd></dl></div><div class="rule2"></div>
+<dl><dt>GENRE</dt><dd>1970s Japanese City Pop / Disco</dd><dt>RUNTIME</dt><dd>03:43</dd><dt>RATING</dt><dd><span class="rate">15+</span></dd></dl></div><div class="rule2"></div>
 <img class="badge" src="mag/i-04.webp" alt="" loading="lazy"><div class="theme">Self-respect and personal choice</div>
 <blockquote class="q">“There’s a little difference / Between what I can and what I choose”</blockquote><p class="syn">She could fix it. She could compromise, try again, make it work. Instead she asks a simpler question: why would I? No confrontation and no tears, just a disco groove and the easy confidence of choosing not to.</p>
 <p class="jn"><b>JAPAN <span lang="ja">日本</span></b>Rooted in the golden age of Japanese city pop, the era of Miki Matsubara’s 1979 classic Mayonaka no Door (Stay With Me).</p>
-<a class="play" href="./?play=3"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M8 5v14l11-7z"/></svg> Play channel 04 · 3:44</a><div class="folio"><span>LAY-L AIR · ONE WAY · ISSUE 001</span><b>12</b></div></section></template><template><section class="pg chp"><div class="chtag">LAY-L AIR<br>CHANNEL 05</div><div class="rule2"></div>
+<a class="play" href="./?play=3"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M8 5v14l11-7z"/></svg> Play channel 04 · 3:43</a><div class="folio"><span>LAY-L AIR · ONE WAY · ISSUE 001</span><b>12</b></div></section></template><template><section class="pg chp"><div class="chtag">LAY-L AIR<br>CHANNEL 05</div><div class="rule2"></div>
 <img class="post" src="mag/p-05.webp" alt="Auntie A.I. poster">
 <div class="info"><div><p class="tja" lang="ja">アンティーは、<br>まだ止まったまま。</p><p class="ten">Auntie is still stuck in time.</p></div>
-<dl><dt>GENRE</dt><dd>Japanese Electro Dark New Wave / Y2K Dance-Rock</dd><dt>RUNTIME</dt><dd>03:43</dd><dt>RATING</dt><dd><span class="rate">18+</span></dd></dl></div><div class="rule2"></div>
+<dl><dt>GENRE</dt><dd>Japanese Electro Dark New Wave / Y2K Dance-Rock</dd><dt>RUNTIME</dt><dd>03:42</dd><dt>RATING</dt><dd><span class="rate">18+</span></dd></dl></div><div class="rule2"></div>
 <img class="badge" src="mag/i-05.webp" alt="" loading="lazy"><div class="theme">Hypocrisy, convenience and getting with the times</div>
 <blockquote class="q">“You can hate the way I made it / Doesn’t mean you made it right”</blockquote><p class="syn">Auntie has an opinion about everything new, posted from a phone with the beauty filter running. This is a smug, strutting reply to everyone who calls a new tool cheating until it’s theirs to use, and it dares you not to dance.</p>
 <p class="jn"><b>JAPAN <span lang="ja">日本</span></b>Built on 1980s Japanese technopop, from the years when the synthesizer was called the death of real music, right before it became the sound of Tokyo.</p>
-<a class="play" href="./?play=4"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M8 5v14l11-7z"/></svg> Play channel 05 · 3:43</a><div class="folio"><span>LAY-L AIR · ONE WAY · ISSUE 001</span><b>13</b></div></section></template><template><section class="pg chp"><div class="chtag">LAY-L AIR<br>CHANNEL 06</div><div class="rule2"></div>
+<a class="play" href="./?play=4"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M8 5v14l11-7z"/></svg> Play channel 05 · 3:42</a><div class="folio"><span>LAY-L AIR · ONE WAY · ISSUE 001</span><b>13</b></div></section></template><template><section class="pg chp"><div class="chtag">LAY-L AIR<br>CHANNEL 06</div><div class="rule2"></div>
 <img class="post" src="mag/p-06.webp" alt="The Voice at Platform Two poster">
 <div class="info"><div><p class="tja" lang="ja">今も、<br>黄色い線の内側に。</p><p class="ten">Still standing behind the yellow line.</p></div>
-<dl><dt>GENRE</dt><dd>1970s Enka / Kayōkyoku</dd><dt>RUNTIME</dt><dd>04:44</dd><dt>RATING</dt><dd><span class="rate">15+</span></dd></dl></div><div class="rule2"></div>
+<dl><dt>GENRE</dt><dd>1970s Enka / Kayōkyoku</dd><dt>RUNTIME</dt><dd>04:43</dd><dt>RATING</dt><dd><span class="rate">15+</span></dd></dl></div><div class="rule2"></div>
 <img class="badge" src="mag/i-06.webp" alt="" loading="lazy"><div class="theme">Attachment to the familiar, and unexpected grief</div>
 <blockquote class="q">“I watched a woman disappear / Who’d never lived at all”</blockquote><p class="syn">Every morning the same recorded voice asks passengers to stand behind the yellow line. One Tuesday it’s replaced. The trains still run on time and nobody notices, except her. A routine software update becomes a quiet, genuine tragedy.</p>
 <p class="jn"><b>JAPAN <span lang="ja">日本</span></b>Inspired by Meiko Kaji’s Shura no Hana, theme of the 1973 film Lady Snowblood, later used by Tarantino in Kill Bill: Vol. 1.</p>
-<a class="play" href="./?play=5"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M8 5v14l11-7z"/></svg> Play channel 06 · 4:44</a><div class="folio"><span>LAY-L AIR · ONE WAY · ISSUE 001</span><b>14</b></div></section></template><template><section class="pg chp"><div class="chtag">LAY-L AIR<br>CHANNEL 07</div><div class="rule2"></div>
+<a class="play" href="./?play=5"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M8 5v14l11-7z"/></svg> Play channel 06 · 4:43</a><div class="folio"><span>LAY-L AIR · ONE WAY · ISSUE 001</span><b>14</b></div></section></template><template><section class="pg chp"><div class="chtag">LAY-L AIR<br>CHANNEL 07</div><div class="rule2"></div>
 <img class="post" src="mag/p-07.webp" alt="Plastic Flower poster">
 <div class="info"><div><p class="tja" lang="ja">犯人は、<br>ウェイトレス。</p><p class="ten">The culprit: the waitress.</p></div>
 <dl><dt>GENRE</dt><dd>1960s Japanese Garage Rock / Surf</dd><dt>RUNTIME</dt><dd>03:12</dd><dt>RATING</dt><dd><span class="rate">15+</span></dd></dl></div><div class="rule2"></div>
@@ -274,18 +297,18 @@ h2.big{white-space:nowrap;font:italic 900 46px/1 "Barlow Condensed";letter-spaci
 <a class="play" href="./?play=7"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M8 5v14l11-7z"/></svg> Play channel 08 · 3:03</a><div class="folio"><span>LAY-L AIR · ONE WAY · ISSUE 001</span><b>16</b></div></section></template><template><section class="pg chp"><div class="chtag">LAY-L AIR<br>CHANNEL 09</div><div class="rule2"></div>
 <img class="post" src="mag/p-09.webp" alt="SAdTURN poster">
 <div class="info"><div><p class="tja" lang="ja">また、同じ傷へ。</p><p class="ten">Back to the same wound.</p></div>
-<dl><dt>GENRE</dt><dd>1970s Psychedelic Rock / Alternative Rock</dd><dt>RUNTIME</dt><dd>04:04</dd><dt>RATING</dt><dd><span class="rate">PG</span></dd></dl></div><div class="rule2"></div>
+<dl><dt>GENRE</dt><dd>1970s Psychedelic Rock / Alternative Rock</dd><dt>RUNTIME</dt><dd>04:03</dd><dt>RATING</dt><dd><span class="rate">PG</span></dd></dl></div><div class="rule2"></div>
 <img class="badge" src="mag/i-09.webp" alt="" loading="lazy"><div class="theme">Patterns, nostalgia and the comfort of sadness</div>
 <blockquote class="q">“Must be a pattern / Return to Saturn, return to sad-turn”</blockquote><p class="syn">Some people always reach for the songs that bruise: the minor keys, the endings they already know by heart. SAdTURN is about that loop, choosing the familiar ache over peace, and the question underneath it all: when will you learn?</p>
 <p class="jn"><b>JAPAN <span lang="ja">日本</span></b>The title folds three meanings into one word: sadness, the astrological “Saturn return”, and a nod to the 1990s Japanese game console that shared the planet’s name. The cover’s CONTINUE? screen asks the song’s question in arcade language.</p>
-<a class="play" href="./?play=8"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M8 5v14l11-7z"/></svg> Play channel 09 · 4:04</a><div class="folio"><span>LAY-L AIR · ONE WAY · ISSUE 001</span><b>17</b></div></section></template><template><section class="pg chp"><div class="chtag">LAY-L AIR<br>CHANNEL 10</div><div class="rule2"></div>
+<a class="play" href="./?play=8"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M8 5v14l11-7z"/></svg> Play channel 09 · 4:03</a><div class="folio"><span>LAY-L AIR · ONE WAY · ISSUE 001</span><b>17</b></div></section></template><template><section class="pg chp"><div class="chtag">LAY-L AIR<br>CHANNEL 10</div><div class="rule2"></div>
 <img class="post" src="mag/p-10.webp" alt="ASMR Stimulation poster">
 <div class="info"><div><p class="tja" lang="ja">急がないで。</p><p class="ten">Don’t hurry.</p></div>
-<dl><dt>GENRE</dt><dd>Dark Electro-Funk / Alt R&amp;B</dd><dt>RUNTIME</dt><dd>03:21</dd><dt>RATING</dt><dd><span class="rate">15+</span></dd></dl></div><div class="rule2"></div>
+<dl><dt>GENRE</dt><dd>Dark Electro-Funk / Alt R&amp;B</dd><dt>RUNTIME</dt><dd>03:20</dd><dt>RATING</dt><dd><span class="rate">15+</span></dd></dl></div><div class="rule2"></div>
 <img class="badge" src="mag/i-10.webp" alt="" loading="lazy"><div class="theme">Auditory pleasure and the seduction of anticipation</div>
 <blockquote class="q">“Don’t get to the point / I prefer the scenic route”</blockquote><p class="syn">An ordinary conversation becomes a seduction. Pauses, breaths, pronunciation and polite bureaucratic phrases take on double meanings, and the whole game is in the waiting. Clicks, whispers and binaural stereo make the sound itself the object of desire.</p>
 <p class="jn"><b>JAPAN <span lang="ja">日本</span></b>Drawn from Japan’s deep ASMR culture: mimikaki (耳かき), binaural recording and intimate “situation voice” (シチュエーションボイス) performances.</p>
-<a class="play" href="./?play=9"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M8 5v14l11-7z"/></svg> Play channel 10 · 3:21</a><div class="folio"><span>LAY-L AIR · ONE WAY · ISSUE 001</span><b>18</b></div></section></template><template><section class="pg chp"><div class="chtag">LAY-L AIR<br>CHANNEL 11</div><div class="rule2"></div>
+<a class="play" href="./?play=9"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M8 5v14l11-7z"/></svg> Play channel 10 · 3:20</a><div class="folio"><span>LAY-L AIR · ONE WAY · ISSUE 001</span><b>18</b></div></section></template><template><section class="pg chp"><div class="chtag">LAY-L AIR<br>CHANNEL 11</div><div class="rule2"></div>
 <img class="post" src="mag/p-11.webp" alt="Refrigerator poster">
 <div class="info"><div><p class="tja" lang="ja">英語、むずかしい。</p><p class="ten">English is hard.</p></div>
 <dl><dt>GENRE</dt><dd>Y2K Cheer Pop / Hip-Pop</dd><dt>RUNTIME</dt><dd>03:03</dd><dt>RATING</dt><dd><span class="rate">PG</span></dd></dl></div><div class="rule2"></div>
@@ -302,18 +325,18 @@ h2.big{white-space:nowrap;font:italic 900 46px/1 "Barlow Condensed";letter-spaci
 <a class="play" href="./?play=11"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M8 5v14l11-7z"/></svg> Play channel 12 · 3:09</a><div class="folio"><span>LAY-L AIR · ONE WAY · ISSUE 001</span><b>20</b></div></section></template><template><section class="pg chp"><div class="chtag">LAY-L AIR<br>CHANNEL 13<small>BONUS FLIGHT</small></div><div class="rule2"></div>
 <img class="post" src="mag/p-13.webp" alt="Tamagotchi Luv poster">
 <div class="info"><div><p class="tja" lang="ja">それは、<br>愛なのか——？</p><p class="ten">Is that love—?</p></div>
-<dl><dt>GENRE</dt><dd>Dark R&amp;B / Alt R&amp;B</dd><dt>RUNTIME</dt><dd>04:07</dd><dt>RATING</dt><dd><span class="rate">PG</span></dd></dl></div><div class="rule2"></div>
+<dl><dt>GENRE</dt><dd>Dark R&amp;B / Alt R&amp;B</dd><dt>RUNTIME</dt><dd>04:06</dd><dt>RATING</dt><dd><span class="rate">PG</span></dd></dl></div><div class="rule2"></div>
 <img class="badge" src="mag/i-13.webp" alt="" loading="lazy"><div class="theme">Conditional affection and the need to be needed</div>
 <blockquote class="q">“You call it love but it’s luv with a u / You can’t call it love when it’s only you”</blockquote><p class="syn">Love as a virtual pet: fed when it’s convenient, ignored when it isn’t, kept alive at a distance. A 90s toy’s innocence against the control games of adult relationships, and the question of whether you care for someone or just like being needed.</p>
 <p class="jn"><b>JAPAN <span lang="ja">日本</span></b>Built on Tamagotchi, the virtual pet Bandai launched in Japan in November 1996.</p>
-<a class="play" href="./?play=12"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M8 5v14l11-7z"/></svg> Play channel 13 · 4:07</a><div class="folio"><span>LAY-L AIR · ONE WAY · ISSUE 001</span><b>21</b></div></section></template><template><section class="pg chp"><div class="chtag">LAY-L AIR<br>CHANNEL 14<small>BONUS FLIGHT</small></div><div class="rule2"></div>
+<a class="play" href="./?play=12"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M8 5v14l11-7z"/></svg> Play channel 13 · 4:06</a><div class="folio"><span>LAY-L AIR · ONE WAY · ISSUE 001</span><b>21</b></div></section></template><template><section class="pg chp"><div class="chtag">LAY-L AIR<br>CHANNEL 14<small>BONUS FLIGHT</small></div><div class="rule2"></div>
 <img class="post" src="mag/p-14.webp" alt="Voodoo Doll poster">
 <div class="info"><div><p class="tja" lang="ja">呪われたのは、誰？</p><p class="ten">Who’s the cursed one?</p></div>
-<dl><dt>GENRE</dt><dd>Yé-yé Pop / Dark Pop</dd><dt>RUNTIME</dt><dd>04:14</dd><dt>RATING</dt><dd><span class="rate">15+</span></dd></dl></div><div class="rule2"></div>
+<dl><dt>GENRE</dt><dd>Yé-yé Pop / Dark Pop</dd><dt>RUNTIME</dt><dd>04:13</dd><dt>RATING</dt><dd><span class="rate">15+</span></dd></dl></div><div class="rule2"></div>
 <img class="badge" src="mag/i-14.webp" alt="" loading="lazy"><div class="theme">Revenge, theatre and a wink</div>
 <blockquote class="q">“Hocus pocus, can’t you see? / The only disappearing act is you leaving me”</blockquote><p class="syn">He cheated; she’s a witch. Voodoo Doll is a theatrical revenge spell with a wink: the purse goes to a friend, the pin goes in the doll, and the only disappearing act left is him leaving.</p>
 <p class="jn"><b>JAPAN <span lang="ja">日本</span></b>Japan has its own curse doll: the wara ningyō, a straw figure nailed to a shrine tree at the hour of the ox, between 1 and 3 a.m. On the cover it wears a striped necktie, so there is no doubt who it is for.</p>
-<a class="play" href="./?play=13"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M8 5v14l11-7z"/></svg> Play channel 14 · 4:14</a><div class="folio"><span>LAY-L AIR · ONE WAY · ISSUE 001</span><b>22</b></div></section></template><template><section class="pg duty-pg"><img class="bleed fill" src="mag/x-duty.webp" alt="Duty-free catalog: LAY-L AIR select goods"><a class="dutylink" href="./#shop">See the shop ▸︎</a><b class="dpn">23</b></section></template><template><section class="pg art"><img class="bleed fill" src="mag/x-travel1.webp" alt="Travel guide: illustrated map of Okinawa with six highlights"></section></template><template><section class="pg art"><img class="bleed fill" src="mag/x-travel2.webp" alt="Six Okinawa highlights"><div class="cap" style="left:2.8%;top:33.6%"><b>Shuri Castle 首里城</b> Former royal palace of the Ryukyu Kingdom, in Naha. Part of a UNESCO World Heritage site.</div><div class="cap" style="left:51.5%;top:33.6%"><b>Kokusai-dōri 国際通り</b> Naha’s main street: about 1.6 km of shops, bars and late-night neon.</div><div class="cap" style="left:2.8%;top:62.8%"><b>Makishi Market 牧志公設市場</b> Pick your fish downstairs, have it cooked upstairs. Try umibudō, “sea grapes”.</div><div class="cap" style="left:51.5%;top:62.8%"><b>Cape Manzamo 万座毛</b> A cliff shaped like an elephant’s trunk, on the west coast at Onna.</div><div class="cap" style="left:2.8%;top:92.3%"><b>Churaumi Aquarium 美ら海水族館</b> Whale sharks glide past one of the biggest aquarium windows in the world.</div><div class="cap" style="left:51.5%;top:92.3%"><b>Kouri Island 古宇利島</b> Reached by a bridge almost 2 km long over clear turquoise water.</div></section></template><template><section class="pg art"><img class="bleed fill" src="mag/x-btm1.webp?v=2" alt="LAY-L in the studio">
+<a class="play" href="./?play=13"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M8 5v14l11-7z"/></svg> Play channel 14 · 4:13</a><div class="folio"><span>LAY-L AIR · ONE WAY · ISSUE 001</span><b>22</b></div></section></template><template><section class="pg duty-pg"><img class="bleed fill" src="mag/x-duty.webp" alt="Duty-free catalog: LAY-L AIR select goods"><a class="dutylink" href="./#shop">See the shop ▸︎</a><b class="dpn">23</b></section></template><template><section class="pg art"><img class="bleed fill" src="mag/x-travel1.webp" alt="Travel guide: illustrated map of Okinawa with six highlights"></section></template><template><section class="pg art"><img class="bleed fill" src="mag/x-travel2.webp" alt="Six Okinawa highlights"><div class="cap" style="left:2.8%;top:33.6%"><b>Shuri Castle 首里城</b> Former royal palace of the Ryukyu Kingdom, in Naha. Part of a UNESCO World Heritage site.</div><div class="cap" style="left:51.5%;top:33.6%"><b>Kokusai-dōri 国際通り</b> Naha’s main street: about 1.6 km of shops, bars and late-night neon.</div><div class="cap" style="left:2.8%;top:62.8%"><b>Makishi Market 牧志公設市場</b> Pick your fish downstairs, have it cooked upstairs. Try umibudō, “sea grapes”.</div><div class="cap" style="left:51.5%;top:62.8%"><b>Cape Manzamo 万座毛</b> A cliff shaped like an elephant’s trunk, on the west coast at Onna.</div><div class="cap" style="left:2.8%;top:92.3%"><b>Churaumi Aquarium 美ら海水族館</b> Whale sharks glide past one of the biggest aquarium windows in the world.</div><div class="cap" style="left:51.5%;top:92.3%"><b>Kouri Island 古宇利島</b> Reached by a bridge almost 2 km long over clear turquoise water.</div></section></template><template><section class="pg art"><img class="bleed fill" src="mag/x-btm1.webp?v=2" alt="LAY-L in the studio">
 <div class="box" style="left:6%;top:72.5%;width:88%;height:24.5%"><p class="body s m">LAY-L is one crew of four: Lilac, Asmar, Yamm and Lattam. Every song on <i>Okinawa… One Way..</i> is a soundtrack to a film that doesn’t exist, each from a different decade of Japanese film and music.</p>
 <p class="body s m">The band makes its music with modern tools, AI included, and says so openly. Channel 05, <i>Auntie A.I.</i>, is the band’s answer to anyone who calls that cheating.</p>
 <p class="sign s">— Four different rhythms, one journey.</p></div></section></template><template><section class="pg art"><img class="bleed fill" src="mag/x-btm2.webp" alt="From idea to take-off: how a LAY-L song is made"><p class="step" style="top:22.4%">Every song starts as a small, true feeling: a missed call, a broken fridge, a voice on a platform.</p><p class="step" style="top:38.2%">Lyrics come first, rewritten until every line sounds like something you’d actually say out loud.</p><p class="step" style="top:55.0%">Each song picks a decade and a genre from Japanese film and music, and the sound is built around the voice.</p><p class="step" style="top:71.6%">Every track gets a poster for a film that doesn’t exist, in the style of its era.</p><p class="step" style="top:88.1%">Storyboards, keyframes and animation turn the poster into a music video.</p></section></template><template><section class="pg"><div class="lyhead"><img src="mag/x-lyrhead.webp?v=2" alt="Lyrics selections"></div>
@@ -321,7 +344,7 @@ h2.big{white-space:nowrap;font:italic 900 46px/1 "Barlow Condensed";letter-spaci
 <div class="box" style="left:5%;top:78.5%;width:58%;height:17%"><p class="body s"><b>Music &amp; words</b> LAY-L · <b>Contact</b> <a href="mailto:layl.musicband@gmail.com">layl.musicband@gmail.com</a></p>
 <div class="links s"><a href="./">Departures board ▸︎</a><a href="./?play=0">Play from channel 01 ▸︎</a><a href="lyrics.html">All the lyrics ▸︎</a></div>
 <p class="body s">Thank you for flying LAY-L AIR.<br><span lang="ja">ご搭乗ありがとうございました。</span></p></div></section></template><template><section class="pg cover"><img class="bleed fill" src="mag/x-back3.webp" alt="Fly one way. LAY-L AIR back cover ad"></section></template><script>
-(function(){
+(function(){ var PH=849;
   var tpls=[].slice.call(document.querySelectorAll("template")), N=tpls.length, one=false, V=[];
   var stage=document.getElementById("stage"), book=document.createElement("div"); book.className="book"; stage.appendChild(book);
   var L=document.createElement("div"),R=document.createElement("div"),sp=document.createElement("div");
@@ -330,8 +353,13 @@ h2.big{white-space:nowrap;font:italic 900 46px/1 "Barlow Condensed";letter-spaci
     V.push([null,0]); for(var i=1;i<N-1;i+=2) V.push([i,i+1<N-1?i+1:null]); V.push([N-1,null]); }
   function page(i){ if(i===null||i===undefined) return null; var d=document.createElement("div"); d.appendChild(tpls[i].content.cloneNode(true)); return d.firstElementChild; }
   function fill(slot,i){ slot.innerHTML=""; var e=page(i); if(e) slot.appendChild(e); }
-  var cur=0, busy=false;
-  function size(){ var r=stage.getBoundingClientRect(), w=one?600:1200, pad=innerWidth<820?8:76, s=Math.min((r.width-pad*2)/w,(r.height-16)/849);
+  var cur=0, busy=false, zoom=false, RM=matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var spacer=document.createElement("div"); spacer.className="spacer"; stage.appendChild(spacer);
+  function size(){ var r=stage.getBoundingClientRect();
+    if(zoom){ var z=Math.min(1.3,(r.width-8)/600*1.55); book.style.left="0"; book.style.top="0"; book.style.transform="scale("+z+")";
+      spacer.style.width=(600*z+8)+"px"; spacer.style.height=(PH*z+8)+"px"; return; }
+    book.style.left=""; book.style.top=""; spacer.style.width=spacer.style.height="0";
+    var  w=one?600:1200, pad=innerWidth<820?8:76, s=Math.min((r.width-pad*2)/w,(r.height-16)/849);
     book.style.transform="scale("+s+") translate("+(-w/2)+"px,-424.5px)"; }
   function pad2(n){return (n<10?"0":"")+n;}
   function first(){ return V[cur].filter(function(x){return typeof x==="number";})[0]; }
@@ -345,7 +373,7 @@ h2.big{white-space:nowrap;font:italic 900 46px/1 "Barlow Condensed";letter-spaci
   function go(p){ for(var q=0;q<V.length;q++) if(V[q].indexOf(p)>=0){ cur=q; show(); return; } }
   function flip(dir){
     if(busy) return; var k=cur+dir; if(k<0||k>=V.length) return;
-    if(one){ cur=k; L.classList.remove("in","inb"); void L.offsetWidth; fill(L,V[cur][0]); L.classList.add(dir>0?"in":"inb"); status(); return; }
+    if(zoom) setZoom(false); if(one||RM){ cur=k; L.classList.remove("in","inb"); void L.offsetWidth; fill(L,V[cur][0]); if(!RM) L.classList.add(dir>0?"in":"inb"); if(!one) fill(R,V[cur][1]); status(); stage.scrollTop=0; return; }
     busy=true;
     var A=V[cur], Bv=V[k], leaf=document.createElement("div"), fr=document.createElement("div"), bk=document.createElement("div");
     fr.className="face f"; bk.className="face b";
@@ -356,7 +384,7 @@ h2.big{white-space:nowrap;font:italic 900 46px/1 "Barlow Condensed";letter-spaci
     requestAnimationFrame(function(){ requestAnimationFrame(function(){ leaf.style.transform="rotateY("+(dir>0?-180:180)+"deg)"; }); });
     setTimeout(function(){ cur=k; if(dir>0) fill(L,Bv[0]); else fill(R,Bv[1]); leaf.remove(); status(); busy=false; }, 780);
   }
-  function mode(){ var o=innerWidth<820||innerHeight>innerWidth*1.05; if(o===one&&V.length) return size();
+  function mode(){ var o=innerWidth<820||innerHeight>innerWidth*1.05; if(o===one&&V.length) return size(); if(!o&&zoom) setZoom(false);
     var p=V.length?first():0; one=o; document.body.classList.toggle("one",one); build(); cur=0; go(p); size(); }
   document.getElementById("prev").onclick=function(){flip(-1);};
   document.getElementById("next").onclick=function(){flip(1);};
@@ -364,6 +392,14 @@ h2.big{white-space:nowrap;font:italic 900 46px/1 "Barlow Condensed";letter-spaci
   stage.addEventListener("click",function(e){ if(e.target.closest("a")) return; var ti=e.target.closest(".ti"); if(!ti||busy) return;
     var n=parseInt((ti.querySelector(".n")||{}).textContent,10); if(n) go(n-1); });
   addEventListener("resize",mode);
+  function setZoom(on){ zoom=on; document.body.classList.toggle("zoom",on); var zb=document.getElementById("zoombtn"); if(zb){ zb.setAttribute("aria-pressed",on?"true":"false"); zb.textContent=on?"Fit page":"Zoom to read"; }
+    size(); if(on){ stage.scrollTop=0; stage.scrollLeft=0; } }
+  var zb=document.getElementById("zoombtn"); if(zb) zb.onclick=function(){ setZoom(!zoom); };
+  var tx=0,ty=0,tt=0,lastTap=0;
+  stage.addEventListener("touchstart",function(e){ if(e.touches.length!==1) return; tx=e.touches[0].clientX; ty=e.touches[0].clientY; tt=Date.now(); },{passive:true});
+  stage.addEventListener("touchend",function(e){ if(e.changedTouches.length!==1) return; var dx=e.changedTouches[0].clientX-tx, dy=e.changedTouches[0].clientY-ty, dt=Date.now()-tt;
+    if(!zoom && dt<600 && Math.abs(dx)>50 && Math.abs(dx)>Math.abs(dy)*1.5 && !(e.target.closest&&e.target.closest("a"))){ flip(dx<0?1:-1); return; }
+    if(one && dt<250 && Math.abs(dx)<10 && Math.abs(dy)<10 && !(e.target.closest&&e.target.closest("a,.ti"))){ var n=Date.now(); if(n-lastTap<320){ setZoom(!zoom); lastTap=0; } else lastTap=n; } },{passive:true});
   var m=/#p(\d+)/.exec(location.hash), start=m?+m[1]-1:0;
   one=innerWidth<820||innerHeight>innerWidth*1.05; document.body.classList.toggle("one",one); build(); go(start); size();
 })();
