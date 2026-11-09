@@ -81,9 +81,9 @@ a{color:inherit}
 .bhead{display:flex;align-items:baseline;justify-content:space-between;gap:12px;border-bottom:1px solid #222836;padding-bottom:12px;margin-bottom:6px}
 .bhead h2{font-family:var(--jp);font-weight:900;font-size:clamp(20px,3vw,30px);letter-spacing:.06em;color:#f2f4f7}
 .bhead h2 span{color:var(--amber);margin-right:.4em}
-.bhead p{font-size:11px;letter-spacing:.2em;color:#6f7787;text-transform:uppercase}
+.bhead p{font-size:11px;letter-spacing:.2em;color:#858d9b;text-transform:uppercase}
 .cols,.row{display:grid;grid-template-columns:76px minmax(0,1fr) 64px 46px 150px;align-items:center;gap:14px}
-.cols{font-size:10.5px;letter-spacing:.22em;color:#6f7787;text-transform:uppercase;padding:8px 10px}
+.cols{font-size:10.5px;letter-spacing:.22em;color:#858d9b;text-transform:uppercase;padding:8px 10px}
 .row{width:100%;text-align:left;background:transparent;border:0;color:inherit;font:inherit;cursor:pointer;padding:12px 10px;border-radius:10px;border-top:1px solid #161a22;position:relative}
 .row:hover{background:#121620}
 .row:focus-visible{outline:2px solid var(--sea);outline-offset:2px}
@@ -98,14 +98,14 @@ a{color:inherit}
 .rm i{width:8px;height:8px;border-radius:50%;background:var(--amber);flex:none}
 .row.bonus{border-top:1px dashed #2a3140}.row.bonus .rm{color:var(--sea)}.row.bonus .rm i{background:var(--sea)}
 .row.on .rm{color:var(--hibiscus)}.row.on .rm i{background:var(--hibiscus);animation:blink 1s steps(2,start) infinite}
-.row.done .rm{color:#6f7787}.row.done .rm i{background:#6f7787}
+.row.done .rm{color:#858d9b}.row.done .rm i{background:#858d9b}
 .row.tba{cursor:default;opacity:.38}.row.tba:hover{background:transparent}
 @keyframes blink{to{visibility:hidden}}
-.bfoot{display:flex;justify-content:space-between;gap:12px;font-size:10.5px;letter-spacing:.2em;color:#4f5664;text-transform:uppercase;padding:12px 10px 4px;border-top:1px solid #161a22}
+.bfoot{display:flex;justify-content:space-between;gap:12px;font-size:10.5px;letter-spacing:.2em;color:#858d9b;text-transform:uppercase;padding:12px 10px 4px;border-top:1px solid #161a22}
 
 /* boarding pass */
 .passzone{padding:34px 0 70px;display:grid;place-items:center}
-.hint{font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:#6f7787;text-align:center}
+.hint{font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:#858d9b;text-align:center}
 .hint b{color:var(--amber)}
 .fly{position:fixed;inset:0;z-index:50;display:none;place-items:center;padding:16px;background:rgba(4,5,8,.74);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px)}
 .fly.open{display:grid}
@@ -242,13 +242,13 @@ footer a{text-decoration:none}footer a:hover{color:var(--amber)}
 /* lyrics panel v2: plain block, no transforms */
 .lyrbox{display:block;position:relative;flex:none;background:var(--paper);padding:0 16px 12px;cursor:pointer}
 #lyrin{display:block;background:#111318;border-radius:8px;padding:10px 14px;min-height:92px}
-.lyrbox .ln{display:block;font-family:var(--jp);font-weight:700;font-size:14px;line-height:1.35;color:#5d6372;min-height:19px;overflow:hidden;white-space:nowrap;text-overflow:ellipsis}
+.lyrbox .ln{display:block;font-family:var(--jp);font-weight:700;font-size:14px;line-height:1.35;color:#858d9b;min-height:19px;overflow:hidden;white-space:nowrap;text-overflow:ellipsis}
 .lyrbox .ln.cur{color:#fff3d6;font-size:16px;white-space:normal;margin:3px 0}
 .lyrbox .ln.cur .s{color:#ffb22e}
-.lyrbox .exp{position:absolute;right:24px;bottom:16px;font-size:8.5px;letter-spacing:.2em;text-transform:uppercase;color:#6f7787}
+.lyrbox .exp{position:absolute;right:24px;bottom:16px;font-size:8.5px;letter-spacing:.2em;text-transform:uppercase;color:#858d9b}
 .fly.big .lyrbox .ln{white-space:normal}
 .fly.big #lyrin{min-height:0}
-.lyrbox .none{color:#6f7787;font-size:11px;letter-spacing:.25em;text-transform:uppercase;text-align:center;padding:26px 0}
+.lyrbox .none{color:#858d9b;font-size:11px;letter-spacing:.25em;text-transform:uppercase;text-align:center;padding:26px 0}
 @media (max-width:820px){.lyrbox{padding:0 12px 10px}.lyrbox .exp{right:20px;bottom:14px}}
 
 /* magazine link */
@@ -275,7 +275,7 @@ footer a{text-decoration:none}footer a:hover{color:var(--amber)}
 .mz-intro p{margin:0 0 16px}
 .mz-kb{margin:22px 0 0;border-left:3px solid var(--hibiscus);padding:12px 16px;background:#11141b;border-radius:0 10px 10px 0;font-size:14.5px;color:#d9dde4}
 .mz-kb b{display:block;font-family:var(--mono);font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--hibiscus);margin-bottom:4px}
-.mz-sub{font-size:11px;letter-spacing:.26em;text-transform:uppercase;color:#6f7787;margin:46px 0 16px;text-align:center}
+.mz-sub{font-size:11px;letter-spacing:.26em;text-transform:uppercase;color:#858d9b;margin:46px 0 16px;text-align:center}
 .mz-route ol{list-style:none;display:grid;grid-template-columns:repeat(8,minmax(0,1fr));position:relative;padding:0;margin:0}
 .mz-route ol::before{content:"";position:absolute;left:6%;right:6%;top:9px;border-top:2px dashed #2f3746}
 .mz-route li{position:relative;text-align:center;padding:26px 4px 0;font-size:12px;color:#c4c9d2;line-height:1.35}
@@ -353,7 +353,7 @@ footer a{text-decoration:none}footer a:hover{color:var(--amber)}
 .item .ph.full img{width:100%;height:100%;object-fit:cover;filter:none}
 .item .soon{position:absolute;top:10px;left:10px;font-family:var(--mono);font-size:9px;font-weight:800;letter-spacing:.18em;text-transform:uppercase;background:var(--ink);color:var(--paper);padding:4px 7px;border-radius:4px}
 .item div.t{padding:12px 14px 16px}.item h3{font-family:var(--jp);font-weight:900;font-size:16px;margin:0 0 4px}.item p{font-family:var(--jp);font-size:13px;line-height:1.5;color:var(--ink2);margin:0}
-.item .k{font-family:var(--mono);font-size:9.5px;letter-spacing:.18em;text-transform:uppercase;color:#a06a10;margin-bottom:4px;display:block}
+.item .k{font-family:var(--mono);font-size:9.5px;letter-spacing:.18em;text-transform:uppercase;color:#8a5a08;margin-bottom:4px;display:block}
 .contact{display:grid;grid-template-columns:1fr 1fr;gap:14px}
 .ct{display:flex;align-items:center;justify-content:space-between;gap:12px;background:var(--board);border:1px solid #1f2430;border-radius:14px;padding:18px;text-decoration:none;color:#f2f4f7}
 .ct:hover{border-color:var(--amber)}.ct b{font-family:var(--jp);font-weight:900;font-size:18px}.ct span{font-family:var(--mono);font-size:11px;letter-spacing:.14em;color:#8b93a1}
@@ -403,7 +403,7 @@ a:focus-visible,button:focus-visible,[tabindex]:focus-visible,summary:focus-visi
 /* passenger list */
 .plist{margin-top:8px;background:var(--paper);color:var(--ink);border-radius:16px;display:grid;grid-template-columns:1fr auto;overflow:hidden}
 .plist .pl-main{padding:22px 24px}
-.plist .pl-k{font-size:10px;font-weight:800;letter-spacing:.22em;text-transform:uppercase;color:#a06a10}
+.plist .pl-k{font-size:10px;font-weight:800;letter-spacing:.22em;text-transform:uppercase;color:#8a5a08}
 .plist h3{font-family:var(--jp);font-weight:900;font-size:clamp(22px,3vw,30px);margin:6px 0 4px;letter-spacing:.02em}
 .plist p{font-family:var(--jp);font-size:14px;line-height:1.55;color:var(--ink2);margin:0 0 14px}
 .plist form{display:flex;gap:8px;flex-wrap:wrap}
@@ -413,7 +413,7 @@ a:focus-visible,button:focus-visible,[tabindex]:focus-visible,summary:focus-visi
 .plist button{min-height:46px;border:0;border-radius:999px;padding:0 20px;background:var(--ink);color:var(--paper);font:inherit;font-size:12px;font-weight:800;letter-spacing:.18em;text-transform:uppercase;cursor:pointer}
 .plist button:hover{background:#000}
 .plist .hp{position:absolute;left:-9999px;width:1px;height:1px;opacity:0}
-.plist .pl-note{font-size:11px;color:#7a6f5d;margin:10px 0 0;font-family:var(--jp)}
+.plist .pl-note{font-size:11px;color:#665b4a;margin:10px 0 0;font-family:var(--jp)}
 .plist .pl-msg{font-size:13px;font-weight:700;margin-top:10px;min-height:1em;font-family:var(--jp)}
 .plist .pl-stub{width:150px;border-left:2px dashed #c9b996;display:grid;place-items:center;padding:16px;text-align:center;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:#7a6f5d}
 .plist .pl-stub b{display:block;font-size:22px;letter-spacing:.08em;color:var(--ink);margin:6px 0}
@@ -421,10 +421,10 @@ a:focus-visible,button:focus-visible,[tabindex]:focus-visible,summary:focus-visi
 /* videos */
 .vids figcaption a{color:var(--amber);text-decoration:none;margin-left:6px}
 /* footer */
-footer{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px 18px;padding:40px 0 30px;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#6f7787}
+footer{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px 18px;padding:40px 0 30px;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#858d9b}
 footer a{text-decoration:none;min-height:44px;display:inline-flex;align-items:center}
 footer a:hover{color:var(--amber)}
-footer .fnote{flex-basis:100%;text-transform:none;letter-spacing:.04em;font-family:var(--jp);font-size:12px;color:#5d6372}
+footer .fnote{flex-basis:100%;text-transform:none;letter-spacing:.04em;font-family:var(--jp);font-size:12px;color:#8b93a1}
 /* overlay */
 #ovl iframe{background:#16110e}
 @media (max-width:820px){.shop-feat{grid-template-columns:1fr 1fr}.shop-feat .item:first-child{grid-column:1/-1}.shop-feat .item:first-child .ph{aspect-ratio:16/10}}
@@ -432,6 +432,32 @@ footer .fnote{flex-basis:100%;text-transform:none;letter-spacing:.04em;font-fami
 html.ovl .mini{bottom:calc(4px + env(safe-area-inset-bottom));transform:translateX(-50%);padding:9px;gap:0;width:44px;height:44px;justify-content:center}
 html.ovl .mini span{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
 @media (max-width:480px){.cta{gap:0 18px;margin-top:10px}.cta a{font-size:11px;letter-spacing:.14em}.sub{letter-spacing:.18em}}
+
+/* shop: catalogue hierarchy */
+.shop-feat{grid-template-columns:1.5fr 1fr 1fr;align-items:stretch}
+.item{height:100%}
+.item div.t{flex:1;display:flex;flex-direction:column}
+.item.flag h3{font-size:23px}.item.flag p{font-size:14px}
+.item.feat div.t{padding:16px 18px 20px}
+.item h3{line-height:1.2}
+.item .k{margin-bottom:6px}
+.item:focus-within{box-shadow:0 0 0 2px var(--sea)}
+@media (hover:none){.item:active{transform:scale(.99)}}
+.notify{font:inherit;background:none;border:0;border-bottom:1px solid rgba(255,178,46,.55);cursor:pointer;padding:0 2px}
+.notify.top{margin:0 0 22px}
+@media (max-width:820px){.shop-feat{grid-template-columns:1fr 1fr}.shop-feat .item.flag{grid-column:1/-1}.shop-feat .item.flag .ph{aspect-ratio:16/11}.item.flag h3{font-size:20px}}
+@media (max-width:380px){.shop-grid,.shop-feat{grid-template-columns:1fr 1fr;gap:8px}.item h3{font-size:14px}}
+/* sign-up panel (opens only when asked) */
+dialog.land{border:0;padding:0;border-radius:18px;background:var(--paper);color:var(--ink);width:min(460px,calc(100vw - 24px));box-shadow:0 30px 80px rgba(0,0,0,.6)}
+dialog.land::backdrop{background:rgba(4,5,8,.72);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)}
+dialog.land .plist{margin:0;border-radius:18px;grid-template-columns:1fr}
+dialog.land .pl-stub{display:none}
+dialog.land .x{position:absolute;top:10px;right:10px;width:40px;height:40px;border-radius:50%;border:1px solid #c9b996;background:var(--paper);color:var(--ink);font-size:18px;cursor:pointer}
+/* follow row */
+.follow{display:flex;flex-wrap:wrap;align-items:center;gap:8px 16px;margin-top:14px;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#858d9b}
+.follow a{color:#e7eaf0;text-decoration:none;min-height:40px;display:inline-flex;align-items:center;border-bottom:1px solid #2a3140}
+.follow a:hover{color:var(--amber);border-color:var(--amber)}
+.plist .pl-h{font-family:var(--jp);font-weight:900;font-size:clamp(22px,3vw,30px);margin:6px 0 4px;letter-spacing:.02em;color:var(--ink)}
 </style>
 </head>
 <body id="top">
@@ -532,21 +558,34 @@ if("IntersectionObserver" in window)new IntersectionObserver(function(es){es.for
   </section>
   <section class="sec" id="shop"><div class="sec-k">Duty-free · 免税店</div><h2>The in-flight shop<small>Coming soon</small></h2>
     <p class="sec-lede">One-way souvenirs from every channel on the album. Nothing is for sale yet: follow us to hear first when the shop opens.</p>
-    <div class="shop-feat"><article class="item feat"><div class="ph full"><img src="shop/pass.webp" alt="Cream canvas tote printed as a LAY-L AIR one-way boarding pass" loading="lazy" width="800" height="800"><span class="soon">Coming soon</span></div><div class="t"><span class="tag">Flagship product</span><span class="k">Bag</span><h3>Boarding Pass Tote</h3><p>Heavy cream canvas printed as a LAY-L AIR one-way ticket. Seat 1A, no return.</p></div></article><article class="item feat"><div class="ph full"><img src="shop/cover.webp" alt="ONE WAY in-flight magazine, print edition" loading="lazy" width="800" height="800"><span class="soon">Coming soon</span></div><div class="t"><span class="tag">Signature collectible</span><span class="k">Print</span><h3>ONE WAY Magazine, print edition</h3><p>The in-flight magazine on real paper. Complimentary on board.</p></div></article><article class="item feat"><div class="ph full"><img src="shop/09.webp" alt="SAdTURN single on a 90s-style cassette tape" loading="lazy" width="800" height="800"><span class="soon">Coming soon</span></div><div class="t"><span class="tag">Music collectible</span><span class="k">Music</span><h3>SAdTURN Cassette</h3><p>The single on a 90s-style tape. Press play. Continue?</p></div></article></div><div class="shop-grid"><article class="item"><div class="ph full"><img src="shop/07.webp" alt="Enamel pins of album motifs on a departures-board card" loading="lazy" width="800" height="800"><span class="soon">Coming soon</span></div><div class="t"><span class="k">Pin set</span><h3>Channel Pin Set</h3><p>Fourteen enamel pins, one per channel, on a departures-board card.</p></div></article><article class="item"><div class="ph full"><img src="shop/03.webp" alt="Enamel omikuji fortune-slip keychain" loading="lazy" width="800" height="800"><span class="soon">Coming soon</span></div><div class="t"><span class="k">Keychain</span><h3>Omikuji Keychain</h3><p>A folded fortune slip in enamel. Unfold it for your track of the day.</p></div></article><article class="item"><div class="ph full"><img src="shop/04.webp" alt="Ceramic bowl with cherry blossoms, half mended in gold kintsugi" loading="lazy" width="800" height="800"><span class="soon">Coming soon</span></div><div class="t"><span class="k">Homeware</span><h3>Why Would I? Kintsugi Bowl</h3><p>Ceramic bowl, half mended in gold. The other half is your call.</p></div></article><article class="item"><div class="ph full"><img src="shop/12.webp" alt="Glass furin wind chime painted with a hibiscus" loading="lazy" width="800" height="800"><span class="soon">Coming soon</span></div><div class="t"><span class="k">Homeware</span><h3>Furin Wind Chime</h3><p>Hand-painted glass chime with a blank paper strip. Waits for the wind.</p></div></article><article class="item"><div class="ph full"><img src="shop/08.webp" alt="House slippers with an embroidered cricket" loading="lazy" width="800" height="800"><span class="soon">Coming soon</span></div><div class="t"><span class="k">Homeware</span><h3>Crickets Guest Slippers</h3><p>A pair of house slippers with an embroidered cricket. For the friends who actually show up.</p></div></article><article class="item"><div class="ph full"><img src="shop/14.webp" alt="Straw curse-doll plush wearing a striped tie" loading="lazy" width="800" height="800"><span class="soon">Coming soon</span></div><div class="t"><span class="k">Plush</span><h3>Wara Ningyō Doll</h3><p>Straw curse doll plush in a striped tie. Pins sold separately. Just kidding.</p></div></article><article class="item"><div class="ph full"><img src="shop/11.webp?v=2" alt="Vintage English flashcard magnet for Refrigerator, marked wrong in red pen" loading="lazy" width="800" height="800"><span class="soon">Coming soon</span></div><div class="t"><span class="k">Magnet</span><h3>Refrigerator Flashcard Magnet</h3><p>A vintage English flashcard for your fridge, marked wrong in red pen. Stick it where it belongs.</p></div></article></div>
-    <a class="notify" href="#passengers" data-interest="duty-free">Notify me when we land <i aria-hidden="true">→</i></a>
+    <button type="button" class="notify top" data-land>Notify me when we land <i aria-hidden="true">→</i></button>
+    <div class="shop-feat"><article class="item feat flag"><div class="ph full"><img src="shop/pass.webp" alt="Cream canvas tote printed as a LAY-L AIR one-way boarding pass" loading="lazy" width="800" height="800"><span class="soon">Coming soon</span></div><div class="t"><span class="k">Bag · Flagship product</span><h3>Boarding Pass Tote</h3><p>Heavy cream canvas printed as a LAY-L AIR one-way ticket. Seat 1A, no return.</p></div></article><article class="item feat"><div class="ph full"><img src="shop/cover.webp" alt="ONE WAY in-flight magazine, print edition" loading="lazy" width="800" height="800"><span class="soon">Coming soon</span></div><div class="t"><span class="k">Print · Signature collectible</span><h3>ONE WAY Magazine, print edition</h3><p>The in-flight magazine on real paper. Complimentary on board.</p></div></article><article class="item feat"><div class="ph full"><img src="shop/09.webp" alt="SAdTURN single on a 90s-style cassette tape" loading="lazy" width="800" height="800"><span class="soon">Coming soon</span></div><div class="t"><span class="k">Cassette · Music collectible</span><h3>SAdTURN Cassette</h3><p>The single on a 90s-style tape. Press play. Continue?</p></div></article></div><div class="shop-grid"><article class="item"><div class="ph full"><img src="shop/07.webp" alt="Enamel pins of album motifs on a departures-board card" loading="lazy" width="800" height="800"><span class="soon">Coming soon</span></div><div class="t"><span class="k">Pin set</span><h3>Channel Pin Set</h3><p>Fourteen enamel pins, one per channel, on a departures-board card.</p></div></article><article class="item"><div class="ph full"><img src="shop/03.webp" alt="Enamel omikuji fortune-slip keychain" loading="lazy" width="800" height="800"><span class="soon">Coming soon</span></div><div class="t"><span class="k">Keychain</span><h3>Omikuji Keychain</h3><p>A folded fortune slip in enamel. Unfold it for your track of the day.</p></div></article><article class="item"><div class="ph full"><img src="shop/04.webp" alt="Ceramic bowl with cherry blossoms, half mended in gold kintsugi" loading="lazy" width="800" height="800"><span class="soon">Coming soon</span></div><div class="t"><span class="k">Homeware</span><h3>Why Would I? Kintsugi Bowl</h3><p>Ceramic bowl, half mended in gold. The other half is your call.</p></div></article><article class="item"><div class="ph full"><img src="shop/12.webp" alt="Glass furin wind chime painted with a hibiscus" loading="lazy" width="800" height="800"><span class="soon">Coming soon</span></div><div class="t"><span class="k">Homeware</span><h3>Furin Wind Chime</h3><p>Hand-painted glass chime with a blank paper strip. Waits for the wind.</p></div></article><article class="item"><div class="ph full"><img src="shop/08.webp" alt="House slippers with an embroidered cricket" loading="lazy" width="800" height="800"><span class="soon">Coming soon</span></div><div class="t"><span class="k">Homeware</span><h3>Crickets Guest Slippers</h3><p>A pair of house slippers with an embroidered cricket. For the friends who actually show up.</p></div></article><article class="item"><div class="ph full"><img src="shop/14.webp" alt="Straw curse-doll plush wearing a striped tie" loading="lazy" width="800" height="800"><span class="soon">Coming soon</span></div><div class="t"><span class="k">Plush</span><h3>Wara Ningyō Doll</h3><p>Straw curse doll plush in a striped tie. Pins sold separately. Just kidding.</p></div></article><article class="item"><div class="ph full"><img src="shop/11.webp?v=2" alt="Vintage English flashcard magnet for Refrigerator, marked wrong in red pen" loading="lazy" width="800" height="800"><span class="soon">Coming soon</span></div><div class="t"><span class="k">Magnet</span><h3>Refrigerator Flashcard Magnet</h3><p>A vintage English flashcard for your fridge, marked wrong in red pen. Stick it where it belongs.</p></div></article></div>
+    <button type="button" class="notify" data-land>Notify me when we land <i aria-hidden="true">→</i></button>
   </section>
   <section class="sec" id="passengers" aria-labelledby="pl-h"><div class="sec-k">Passenger list · 乗客名簿</div>
-    <div class="plist"><div class="pl-main"><span class="pl-k">LAY-L AIR</span><h3 id="pl-h">Join the passenger list</h3>
+    <div class="plist"><div class="pl-main"><span class="pl-k">LAY-L AIR</span><h2 class="pl-h" id="pl-h">Join the passenger list</h2>
       <p>Flight updates, new music, and duty-free arrivals. No return ticket required.</p>
-      <form id="plform" novalidate><label class="vh" for="plemail">Email address</label>
+      <form class="plform" id="plform" novalidate><label class="vh" for="plemail">Email address</label>
         <input type="email" id="plemail" name="email" autocomplete="email" inputmode="email" placeholder="you@example.com" required>
         <input class="hp" type="text" name="seat" tabindex="-1" autocomplete="off" aria-hidden="true">
-        <input type="hidden" name="interest" id="plinterest" value="general">
+        <input type="hidden" name="interest" value="general">
         <button type="submit">Board</button></form>
-      <p class="pl-msg" id="plmsg" role="status" aria-live="polite"></p>
+      <p class="pl-msg" role="status" aria-live="polite"></p>
       <p class="pl-note">We only use your email to send LAY-L news. Unsubscribe any time.</p></div>
       <div class="pl-stub" aria-hidden="true">Seat<b>1A</b>One way</div></div>
+    <p class="follow">Follow the flight <a href="https://instagram.com/wearelayl/" target="_blank" rel="noopener" data-social="1">Instagram ↗</a><a href="https://www.tiktok.com/@wearelayl" target="_blank" rel="noopener" data-social="1">TikTok ↗</a><a href="https://www.youtube.com/@LAY-LMUSIC" target="_blank" rel="noopener" data-social="1">YouTube ↗</a></p>
   </section>
+  <dialog class="land" id="land" aria-labelledby="land-h"><button type="button" class="x" data-close aria-label="Close">✕</button>
+    <div class="plist"><div class="pl-main"><span class="pl-k">Duty-free · 免税店</span><h2 class="pl-h" id="land-h">Notify me when we land</h2>
+      <p>One email when the in-flight shop opens. Nothing else unless you join the passenger list.</p>
+      <form class="plform" novalidate><label class="vh" for="landemail">Email address</label>
+        <input type="email" id="landemail" name="email" autocomplete="email" inputmode="email" placeholder="you@example.com" required>
+        <input class="hp" type="text" name="seat" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <input type="hidden" name="interest" value="duty-free">
+        <button type="submit">Notify me</button></form>
+      <p class="pl-msg" role="status" aria-live="polite"></p>
+      <p class="pl-note">We only use your email for this. Unsubscribe any time.</p></div></div>
+  </dialog>
   <section class="sec" id="contact"><div class="sec-k">Contact · お問い合わせ</div><h2>Get in touch</h2>
     <p class="sec-lede">Press, bookings, collaborations or just a message for the crew. Email reaches the band directly.</p>
     <div class="contact">
@@ -863,24 +902,34 @@ if (window.LAYL_CONFIG.goatcounter){ var gs = document.createElement("script"); 
   function navHint(){ nw.classList.toggle("more", sn.scrollLeft + sn.clientWidth < sn.scrollWidth - 4); }
   sn.addEventListener("scroll", navHint, {passive:true}); addEventListener("resize", navHint); navHint();
   document.addEventListener("click", function(e){ var a = e.target.closest && e.target.closest("[data-social]"); if (a) track("social_click", {to: a.hostname}); });
-  // passenger list
-  var plf = document.getElementById("plform"), plmsg = document.getElementById("plmsg"), plint = document.getElementById("plinterest");
-  document.querySelectorAll("[data-interest]").forEach(function(a){ a.addEventListener("click", function(){ plint.value = a.getAttribute("data-interest"); track("shop_notify_click", {}); setTimeout(function(){ document.getElementById("plemail").focus({preventScroll:true}); }, 400); }); });
-  plf.addEventListener("submit", function(e){
-    e.preventDefault(); var em = plf.email.value.trim();
-    if (plf.seat.value){ return; }                                            // bot filled the hidden field
-    if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(em)){ plmsg.textContent = "Please enter a valid email address."; plf.email.setAttribute("aria-invalid","true"); plf.email.focus(); return; }
-    plf.email.removeAttribute("aria-invalid");
-    var C = window.LAYL_CONFIG || {};
-    if (C.signupAction){                                                          // provider configured: post for real
-      var fd = new FormData(); fd.append("email", em); fd.append("tag", plint.value); plmsg.textContent = "Boarding…";
-      fetch(C.signupAction, {method: "POST", body: fd, mode: "no-cors"}).then(function(){ plmsg.textContent = "You’re on the passenger list. Check your inbox to confirm."; plf.reset(); track("signup", {interest: plint.value}); })
-        .catch(function(){ plmsg.textContent = "We couldn’t reach the sign-up service. Please try again."; });
-    } else {                                                                      // no provider yet: hand over to the visitor's mail app
-      location.href = "mailto:layl.musicband@gmail.com?subject=" + encodeURIComponent("Passenger list" + (plint.value === "duty-free" ? " · duty-free" : "")) + "&body=" + encodeURIComponent("Please add " + em + " to the LAY-L passenger list.");
-      plmsg.textContent = "Your email app should open with the request ready. Press send to join.";
-      track("signup_mailto", {interest: plint.value});
-    }
+  // passenger list + "notify me when we land" panel share one sign-up handler
+  var land = document.getElementById("land"), landFrom = null;
+  function openLand(){ landFrom = document.activeElement; track("shop_notify_click", {});
+    if (land.showModal) land.showModal(); else land.setAttribute("open", "");
+    setTimeout(function(){ document.getElementById("landemail").focus(); }, 30); }
+  function closeLand(){ if (land.close) land.close(); else land.removeAttribute("open"); }
+  land.addEventListener("close", function(){ if (landFrom && landFrom.focus) landFrom.focus({preventScroll:true}); });
+  land.addEventListener("click", function(e){ if (e.target === land || (e.target.closest && e.target.closest("[data-close]"))) closeLand(); });
+  document.querySelectorAll("[data-land]").forEach(function(btn){ btn.addEventListener("click", openLand); });
+  document.querySelectorAll(".plform").forEach(function(f){
+    var msg = f.parentNode.querySelector(".pl-msg");
+    f.addEventListener("submit", function(e){
+      e.preventDefault(); var em = f.email.value.trim(), tag = f.interest.value;
+      if (f.seat.value) return;                                                   // hidden field filled: a bot
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(em)){ msg.textContent = "Please enter a valid email address."; f.email.setAttribute("aria-invalid","true"); f.email.focus(); return; }
+      f.email.removeAttribute("aria-invalid");
+      var C = window.LAYL_CONFIG || {};
+      if (C.signupAction){                                                        // mailing-list provider configured
+        var fd = new FormData(); fd.append("email", em); fd.append("tag", tag); msg.textContent = "Boarding…";
+        fetch(C.signupAction, {method: "POST", body: fd, mode: "no-cors"})
+          .then(function(){ msg.textContent = "Request sent. Check your inbox to confirm your seat."; f.reset(); track("signup", {interest: tag}); })
+          .catch(function(){ msg.textContent = "We couldn’t reach the sign-up service. Please try again."; });
+      } else {                                                                    // no provider yet: the request goes by email, nothing is stored here
+        location.href = "mailto:layl.musicband@gmail.com?subject=" + encodeURIComponent(tag === "duty-free" ? "Notify me when the shop opens" : "Passenger list") + "&body=" + encodeURIComponent("Please add " + em + (tag === "duty-free" ? " to the duty-free launch list." : " to the LAY-L passenger list."));
+        msg.textContent = "Your email app should open with the request ready. Press send to finish.";
+        track("signup_mailto", {interest: tag});
+      }
+    });
   });
   // Okinawa clock (JST)
   function tick(){
