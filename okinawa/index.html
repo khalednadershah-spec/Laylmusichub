@@ -459,6 +459,7 @@ dialog.land .x{position:absolute;top:10px;right:10px;width:40px;height:40px;bord
 .follow a{color:#e7eaf0;text-decoration:none;min-height:40px;display:inline-flex;align-items:center;border-bottom:1px solid #2a3140}
 .follow a:hover{color:var(--amber);border-color:var(--amber)}
 .plist .pl-h{font-family:var(--jp);font-weight:900;font-size:clamp(22px,3vw,30px);margin:6px 0 4px;letter-spacing:.02em;color:var(--ink)}
+.strip .nmi{gap:7px;padding-left:9px}.strip .nmi img.mi{height:36px;width:auto;margin:-10px 0 -10px -2px;filter:drop-shadow(0 1px 2px rgba(0,0,0,.4));transition:transform .2s}.strip .nmi:hover img.mi{transform:rotate(-6deg) scale(1.08)}@media (max-width:600px){.strip .nmi img.mi{height:32px;margin:-9px 0 -9px -2px}.strip .nmi{padding-left:7px;gap:6px}}@media (max-width:420px){.strip .nmi .nl{display:none}}@media (max-width:360px){.strip > a img{height:24px}.strip .navmag{letter-spacing:.12em;padding-right:10px}.strip .navmag:not(.nmi){padding-left:10px}.strip-r{gap:6px}}
 </style>
 </head>
 <body id="top">
@@ -466,7 +467,7 @@ dialog.land .x{position:absolute;top:10px;right:10px;width:40px;height:40px;bord
 <div class="wrap">
   <nav class="strip" aria-label="Site">
     <a href="./" aria-label="LAY-L · Okinawa… One Way.."><img src="../brand/layl-logo-2026.webp" alt="LAY-L" width="421" height="160"></a>
-    <span class="strip-r"><a href="lyrics.html" class="navmag">Lyrics</a> <a href="magazine.html" class="navmag">In-flight magazine</a><span class="clk">OKA · <span class="clock" id="clock">--:--</span> JST</span></span>
+    <span class="strip-r"><a href="lyrics.html" class="navmag">Lyrics</a> <a href="magazine.html" class="navmag nmi"><img class="mi" src="mag-icon.webp" alt="" width="112" height="128"><span class="nl">In-flight </span>magazine</a><span class="clk">OKA · <span class="clock" id="clock">--:--</span> JST</span></span>
   </nav>
 
   <main id="main">
