@@ -73,8 +73,8 @@ a{color:inherit}
 .sub{margin-top:26px;font-size:clamp(12px,1.4vw,14px);letter-spacing:.24em;text-transform:uppercase;color:#8b93a1}
 .sub b{color:#e7eaf0;font-weight:700}
 .cover{position:relative;margin:-40px calc(50% - 50vw) -30px;width:100vw;overflow:hidden}
-.cover img,.cover video{display:block;width:100%;height:clamp(300px,52vw,760px);object-fit:cover;object-position:22% 50%;-webkit-mask-image:linear-gradient(to bottom,transparent 0%,#000 26%,#000 66%,transparent 100%);mask-image:linear-gradient(to bottom,transparent 0%,#000 26%,#000 66%,transparent 100%)}
-@media (max-width:820px){.cover{margin-top:-6px}.cover img,.cover video{height:auto;aspect-ratio:4/3;object-fit:cover;object-position:50% 50%}}
+.cover img,.cover video{display:block;width:100%;height:auto;aspect-ratio:16/9;object-fit:contain;background:#0b0d12;-webkit-mask-image:linear-gradient(to bottom,transparent 0%,#000 5%,#000 92%,transparent 100%);mask-image:linear-gradient(to bottom,transparent 0%,#000 5%,#000 92%,transparent 100%)}.snd{position:absolute;right:max(16px,calc(50vw - 640px));top:max(70px,12%);z-index:3;display:flex;align-items:center;gap:8px;font:700 11px/1 var(--mono,monospace);letter-spacing:.18em;text-transform:uppercase;color:#fff;background:rgba(11,13,18,.62);border:1.5px solid rgba(255,255,255,.55);border-radius:999px;padding:10px 14px;cursor:pointer;-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)}.snd:hover,.snd:focus-visible{border-color:#fff;background:rgba(11,13,18,.8)}.snd svg{width:16px;height:16px}
+@media (max-width:820px){.cover{margin-top:-6px}.snd{padding:8px 11px;font-size:10px;top:auto;bottom:7%}}
 
 /* board */
 .board{margin:34px 0 0;background:var(--board);border:1px solid #1f2430;border-radius:14px;padding:18px clamp(12px,2.4vw,26px) 10px;box-shadow:0 30px 80px rgba(0,0,0,.55),inset 0 1px 0 rgba(255,255,255,.03)}
@@ -478,13 +478,28 @@ dialog.land .x{position:absolute;top:10px;right:10px;width:40px;height:40px;bord
     </h1>
     <p class="sub">LAY-L · <b>a new album</b> · in progress</p>
     <nav class="cta" aria-label="Start here"><a href="#rows">Explore departures <i aria-hidden="true">→</i></a><a href="magazine.html">Read the in-flight magazine <i aria-hidden="true">→</i></a></nav>
-    <figure class="cover"><video id="heroVid" autoplay muted loop playsinline webkit-playsinline disablepictureinpicture disableremoteplayback preload="auto" poster="hero-poster-sm.webp?v=4" aria-label="The crew’s luggage rides past on a baggage carousel, then the title Okinawa… One Way.. appears"><source src="hero-loop-sm.mp4?v=4" type="video/mp4" media="(max-width: 819px)"><source src="hero-loop.mp4?v=4" type="video/mp4"></video>
-<script>(function(){var v=document.getElementById("heroVid");if(innerWidth>=820)v.poster="hero-poster.webp?v=4";v.muted=true;v.defaultMuted=true;v.setAttribute("muted","");
-function go(){if(!v.paused)return;var p=v.play();if(p&&p.catch)p.catch(function(){});}
-go();v.addEventListener("loadeddata",go);v.addEventListener("canplay",go);
-["touchstart","pointerdown","scroll","keydown"].forEach(function(e){window.addEventListener(e,go,{passive:true});});
+    <figure class="cover"><video id="heroVid" autoplay muted loop playsinline webkit-playsinline disablepictureinpicture disableremoteplayback preload="auto" poster="hero-poster-sm.webp?v=4" aria-label="The crew’s luggage rides past on a baggage carousel, then the title Okinawa… One Way.. appears"><source src="hero-loop.mp4?v=5" type="video/mp4"></video>
+<button type="button" class="snd" id="heroSnd" aria-pressed="false" hidden><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5 6 9H3v6h3l5 4z"/><path class="w" d="M15.5 8.5a5 5 0 0 1 0 7M18.5 5.5a9 9 0 0 1 0 13"/><path class="x" d="m16 9 6 6m0-6-6 6" style="display:none"/></svg><span>Sound on</span></button>
+<script>(function(){var v=document.getElementById("heroVid"),btn=document.getElementById("heroSnd"),W=innerWidth,px=W*(window.devicePixelRatio||1);
+var src=W<820?"hero-loop-sm.mp4?v=5":(px>=2400&&!(navigator.connection&&navigator.connection.saveData)?"hero-loop-4k.mp4?v=1":"hero-loop.mp4?v=5");
+if(W>=820)v.poster="hero-poster.webp?v=4";
+if(v.currentSrc.indexOf(src.split("?")[0])<0){v.innerHTML="";v.src=src;}
+var userMuted=false,songOn=false,autoMuted=false;
+function ui(){var on=!v.muted;btn.hidden=false;btn.setAttribute("aria-pressed",String(on));btn.querySelector("span").textContent=on?"Sound off":"Sound on";btn.setAttribute("aria-label",on?"Mute the banner video":"Play the banner video with sound");btn.querySelector(".w").style.display=on?"":"none";btn.querySelector(".x").style.display=on?"none":"";}
+function muted(){v.muted=true;var p=v.play();if(p&&p.catch)p.catch(function(){});ui();}
+function go(){if(!v.paused)return;var p=v.play();if(p&&p.catch)p.catch(function(){muted();});}
+/* try with sound first; browsers that block it fall back to muted with a Sound on button */
+v.muted=false;v.removeAttribute("muted");var p0=v.play();if(p0&&p0.then)p0.then(ui,muted);else ui();
+v.addEventListener("loadeddata",go);v.addEventListener("canplay",go);
+btn.addEventListener("click",function(e){e.stopPropagation();if(v.muted){if(window.LAYL_pauseSong)window.LAYL_pauseSong();v.muted=false;userMuted=false;go();}else{v.muted=true;userMuted=true;}ui();});
+/* first real tap or key press turns the sound on, unless a song is playing or they muted it */
+function first(e){if(e.target&&e.target.closest&&e.target.closest("#heroSnd"))return;["pointerdown","keydown"].forEach(function(t){removeEventListener(t,first,true);});if(!userMuted&&!songOn&&v.muted){v.muted=false;go();ui();}}
+["pointerdown","keydown"].forEach(function(t){addEventListener(t,first,true);});
+window.LAYL_heroQuiet=function(){songOn=true;if(!v.muted){v.muted=true;ui();}};
+window.LAYL_songStopped=function(){songOn=false;};
+["touchstart","scroll"].forEach(function(e){window.addEventListener(e,go,{passive:true});});
 document.addEventListener("visibilitychange",function(){if(!document.hidden)go();});
-if("IntersectionObserver" in window)new IntersectionObserver(function(es){es.forEach(function(x){if(x.isIntersecting)go();});}).observe(v);})();</script></figure>
+if("IntersectionObserver" in window)new IntersectionObserver(function(es){es.forEach(function(x){if(x.isIntersecting){go();if(autoMuted&&!userMuted&&!songOn){v.muted=false;ui();}autoMuted=false;}else if(!v.muted){v.muted=true;autoMuted=true;ui();}});}).observe(v);})();</script></figure>
   </header>
 
   <section class="board" aria-label="Departures: the tracks">
@@ -691,6 +706,8 @@ if (window.LAYL_CONFIG.goatcounter){ var gs = document.createElement("script"); 
 
   // player
   var audio = document.getElementById("audio"), cur = -1;
+  window.LAYL_pauseSong = function(){ if (!audio.paused) audio.pause(); };
+  audio.addEventListener("pause", function(){ if (window.LAYL_songStopped) LAYL_songStopped(); });
   var pass = document.getElementById("pass"), hint = document.getElementById("hint");
   var playBtn = document.getElementById("play"), playIcon = document.getElementById("playicon");
   var path = document.getElementById("path"), fill = document.getElementById("fill"), plane = document.getElementById("plane");
@@ -808,7 +825,7 @@ if (window.LAYL_CONFIG.goatcounter){ var gs = document.createElement("script"); 
   audio.addEventListener("loadedmetadata", function(){ if (!isFinite(audio.duration)) return; DUR[cur] = audio.duration;
     document.getElementById("dur").textContent = fmt(audio.duration); document.getElementById("stime").textContent = fmt(audio.duration);
     if (rows[cur]) rows[cur].querySelector(".tm").textContent = fmt(audio.duration); msPos(); });
-  audio.addEventListener("play", function(){ stopVideos(); playIcon.innerHTML = PAUSE; playBtn.setAttribute("aria-label","Pause"); if (rows[cur]) rows[cur].querySelector(".rm span").textContent = "Now playing"; });
+  audio.addEventListener("play", function(){ if (window.LAYL_heroQuiet) LAYL_heroQuiet(); stopVideos(); playIcon.innerHTML = PAUSE; playBtn.setAttribute("aria-label","Pause"); if (rows[cur]) rows[cur].querySelector(".rm span").textContent = "Now playing"; });
   audio.addEventListener("pause", function(){ playIcon.innerHTML = PLAY; playBtn.setAttribute("aria-label","Play"); if (rows[cur] && !audio.ended) rows[cur].querySelector(".rm span").textContent = "On hold"; });
   audio.addEventListener("timeupdate", function(){
     var d = audio.duration || DUR[cur];
