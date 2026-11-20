@@ -654,23 +654,26 @@ if (window.LAYL_CONFIG.goatcounter){ var gs = document.createElement("script"); 
   // privacy-friendly analytics hook: does nothing until a GoatCounter site is configured in LAYL_CONFIG
   function track(name, props){ try { var gc = window.goatcounter; if (gc && gc.count) gc.count({path: "event/" + name + (props && props.track ? "/" + props.track : props && props.video ? "/" + props.video : ""), title: name, event: true}); } catch(e){} }
   var TRACKS = [
-    {id:"LYL 001", title:"ONE MISSED CALL.. TWO…", name:"One Missed Call.. Two…", src:"one-missed-call.mp4", art:"art-01.webp?v=3", kanji:"着信", gate:"01", seat:"1A", from:"Missed call"},
-    {id:"LYL 002", title:"SAKURA", name:"Sakura", src:"sakura.mp4", art:"art-02.webp?v=3", kanji:"桜", gate:"02", seat:"7C", from:"7:30 flight"},
-    {id:"LYL 003", title:"LOST IN JAPAN", name:"Lost in Japan", src:"lost-in-japan.mp4", art:"art-03.webp?v=3", kanji:"迷子", gate:"03", seat:"3K", from:"Wrong train"},
-    {id:"LYL 004", title:"WHY WOULD I?", name:"Why Would I?", src:"why-would-i.mp4?v=2", art:"art-07.webp?v=3", kanji:"なぜ", gate:"04", seat:"4D", from:"Line cut"},
-    {id:"LYL 005", title:"AUNTIE A.I.", name:"Auntie A.I.", src:"auntie-ai.mp4?v=4", art:"art-14.webp?v=2", kanji:"アンティー", gate:"05", seat:"5A", from:"Comment section"},
-    {id:"LYL 006", title:"THE VOICE AT PLATFORM TWO", name:"The Voice at Platform Two", src:"the-voice-at-platform-two.mp4", art:"art-04.webp?v=3", kanji:"2番線", gate:"06", seat:"6B", from:"Platform 2"},
-    {id:"LYL 007", title:"PLASTIC FLOWER", name:"Plastic Flower", src:"plastic-flower.mp4", art:"art-05.webp?v=3", kanji:"造花", gate:"07", seat:"7F", from:"Last stop"},
-    {id:"LYL 008", title:"CRICKETS", name:"Crickets", src:"../m4-crickets.mp4", art:"art-11.webp?v=3", kanji:"虫の音", gate:"08", seat:"8C", from:"Silent phone"},
-    {id:"LYL 009", title:"SADTURN", name:"SAdTURN", src:"../m4-sadturn.mp4", art:"art-13.webp?v=3", kanji:"土星", gate:"09", seat:"9S", from:"Saturn return"},
-    {id:"LYL 010", title:"ASMR STIMULATION", name:"ASMR Stimulation", src:"asmr-stimulation.mp4", art:"art-06.webp?v=4", kanji:"囁き", gate:"10", seat:"10A", from:"Headphones on"},
-    {id:"LYL 011", title:"REFRIGERATOR", name:"Refrigerator", src:"refrigerator.mp4", art:"art-10.webp?v=3", kanji:"冷蔵庫", gate:"11", seat:"11R", from:"Cold front"},
-    {id:"LYL 012", title:"THE WIND CALLED IN SICK", name:"The Wind Called In Sick", src:"the-wind-called-in-sick.mp4", art:"art-08.webp?v=3", kanji:"風", gate:"12", seat:"12A", from:"Final call"},
-    {id:"LYL 013", title:"TAMAGOTCHI LUV (BONUS TRACK)", name:"Tamagotchi Luv (Bonus Track)", src:"tamagotchi-luv.mp4", art:"art-09.webp?v=4", kanji:"愛", gate:"13", seat:"13X", from:"Bonus flight", bonus:true},
-    {id:"LYL 014", title:"VOODOO DOLL (BONUS TRACK)", name:"Voodoo Doll (Bonus Track)", src:"voodoo-doll.mp4", art:"art-12.webp?v=3", kanji:"藁人形", gate:"14", seat:"14V", from:"Bonus flight", bonus:true}
+    {id:"LYL 001", title:"ONE MISSED CALL.. TWO…", name:"One Missed Call.. Two…", src:"preview/01.m4a?v=1", art:"art-01.webp?v=3", kanji:"着信", gate:"01", seat:"1A", from:"Missed call"},
+    {id:"LYL 002", title:"SAKURA", name:"Sakura", src:"preview/02.m4a?v=1", art:"art-02.webp?v=3", kanji:"桜", gate:"02", seat:"7C", from:"7:30 flight"},
+    {id:"LYL 003", title:"LOST IN JAPAN", name:"Lost in Japan", src:"preview/03.m4a?v=1", art:"art-03.webp?v=3", kanji:"迷子", gate:"03", seat:"3K", from:"Wrong train"},
+    {id:"LYL 004", title:"WHY WOULD I?", name:"Why Would I?", src:"preview/04.m4a?v=1", art:"art-07.webp?v=3", kanji:"なぜ", gate:"04", seat:"4D", from:"Line cut"},
+    {id:"LYL 005", title:"AUNTIE A.I.", name:"Auntie A.I.", src:"preview/05.m4a?v=1", art:"art-14.webp?v=2", kanji:"アンティー", gate:"05", seat:"5A", from:"Comment section"},
+    {id:"LYL 006", title:"THE VOICE AT PLATFORM TWO", name:"The Voice at Platform Two", src:"preview/06.m4a?v=1", art:"art-04.webp?v=3", kanji:"2番線", gate:"06", seat:"6B", from:"Platform 2"},
+    {id:"LYL 007", title:"PLASTIC FLOWER", name:"Plastic Flower", src:"preview/07.m4a?v=1", art:"art-05.webp?v=3", kanji:"造花", gate:"07", seat:"7F", from:"Last stop"},
+    {id:"LYL 008", title:"CRICKETS", name:"Crickets", src:"preview/08.m4a?v=1", art:"art-11.webp?v=3", kanji:"虫の音", gate:"08", seat:"8C", from:"Silent phone"},
+    {id:"LYL 009", title:"SADTURN", name:"SAdTURN", src:"preview/09.m4a?v=1", art:"art-13.webp?v=3", kanji:"土星", gate:"09", seat:"9S", from:"Saturn return"},
+    {id:"LYL 010", title:"ASMR STIMULATION", name:"ASMR Stimulation", src:"preview/10.m4a?v=1", art:"art-06.webp?v=4", kanji:"囁き", gate:"10", seat:"10A", from:"Headphones on"},
+    {id:"LYL 011", title:"REFRIGERATOR", name:"Refrigerator", src:"preview/11.m4a?v=1", art:"art-10.webp?v=3", kanji:"冷蔵庫", gate:"11", seat:"11R", from:"Cold front"},
+    {id:"LYL 012", title:"THE WIND CALLED IN SICK", name:"The Wind Called In Sick", src:"preview/12.m4a?v=1", art:"art-08.webp?v=3", kanji:"風", gate:"12", seat:"12A", from:"Final call"},
+    {id:"LYL 013", title:"TAMAGOTCHI LUV (BONUS TRACK)", name:"Tamagotchi Luv (Bonus Track)", src:"preview/13.m4a?v=1", art:"art-09.webp?v=4", kanji:"愛", gate:"13", seat:"13X", from:"Bonus flight", bonus:true},
+    {id:"LYL 014", title:"VOODOO DOLL (BONUS TRACK)", name:"Voodoo Doll (Bonus Track)", src:"preview/14.m4a?v=1", art:"art-12.webp?v=3", kanji:"藁人形", gate:"14", seat:"14V", from:"Bonus flight", bonus:true}
   ];
   var TBA = {};
-  var DUR = [124.6, 249.2, 205.6, 223.6, 244.0, 284.0, 192.0, 183.2, 243.6, 200.8, 183.2, 189.4, 246.8, 253.5];
+  // full song lengths for the departure board; the player itself streams 30-second previews
+  var FULL = [124.6, 249.2, 205.6, 223.6, 244.0, 284.0, 192.0, 183.2, 243.6, 200.8, 183.2, 189.4, 246.8, 253.5];
+  var PV = [21.0, 60.0, 39.8, 34.8, 12.5, 57.5, 47.2, 22.5, 46.8, 50.3, 25.5, 39.8, 66.0, 69.6]; // preview start in the full song (s)
+  var DUR = FULL.map(function(){ return 30; });
   var reduce = window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches;
   var GLYPHS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789.:…()";
   function fmt(s){ s = Math.max(0, Math.floor(s||0)); return Math.floor(s/60) + ":" + ("0"+(s%60)).slice(-2); }
@@ -704,8 +707,8 @@ if (window.LAYL_CONFIG.goatcounter){ var gs = document.createElement("script"); 
   TRACKS.forEach(function(t, i){
     var b = document.createElement("button");
     b.className = "row"; b.type = "button";
-    b.setAttribute("aria-label", "Play " + t.name + ", " + fmt(DUR[i]));
-    b.innerHTML = '<span class="fl"></span><span class="cells tt"></span><span class="tp" aria-hidden="true"></span><span class="tm">'+fmt(DUR[i])+'</span><span class="gt">'+t.gate+'</span><span class="rm"><i></i><span>'+(t.bonus?'Bonus':'Boarding')+'</span></span><span class="go" aria-hidden="true">▶ Board</span>';
+    b.setAttribute("aria-label", "Play a 30-second preview of " + t.name + ", " + fmt(FULL[i]));
+    b.innerHTML = '<span class="fl"></span><span class="cells tt"></span><span class="tp" aria-hidden="true"></span><span class="tm">'+fmt(FULL[i])+'</span><span class="gt">'+t.gate+'</span><span class="rm"><i></i><span>'+(t.bonus?'Bonus':'Boarding')+'</span></span><span class="go" aria-hidden="true">▶ Board</span>';
     if (t.bonus) b.classList.add("bonus");
     if (TBA[t.id]){ var d = document.createElement("div"); d.className = "row tba"; d.setAttribute("aria-hidden","true");
       d.innerHTML = '<span class="fl">'+TBA[t.id]+'</span><span class="cells tt"></span><span class="tm">--:--</span><span class="gt">--</span><span class="rm"><i></i><span>Scheduled</span></span>';
@@ -749,11 +752,11 @@ if (window.LAYL_CONFIG.goatcounter){ var gs = document.createElement("script"); 
     hideErr(); setBusy(true);
     audio.src = t.src; audio.load();
     document.getElementById("ptitle").textContent = t.name;
-    document.getElementById("from").textContent = t.from;
+    document.getElementById("from").textContent = t.from + " · 30-sec preview";
     document.getElementById("sflight").textContent = t.id;
     document.getElementById("sgate").textContent = t.gate;
     document.getElementById("sseat").textContent = t.seat;
-    document.getElementById("stime").textContent = fmt(DUR[i]);
+    document.getElementById("stime").textContent = fmt(FULL[i]);
     document.getElementById("dur").textContent = fmt(DUR[i]);
     setArt(t);
     buildLyrics(i); openFly();
@@ -762,7 +765,7 @@ if (window.LAYL_CONFIG.goatcounter){ var gs = document.createElement("script"); 
       r.querySelector(".rm span").textContent = k===i ? "Now playing" : (r.classList.contains("done") ? "Departed" : (r.classList.contains("bonus") ? "Bonus" : "Boarding"));
     });
     progress(0);
-    say("Now boarding: " + t.name);
+    say("Now boarding: " + t.name + ", 30-second preview");
     if (autoplay) safePlay(); else setBusy(false);
   }
   // one sound at a time: stop every video before the music plays
@@ -796,7 +799,9 @@ if (window.LAYL_CONFIG.goatcounter){ var gs = document.createElement("script"); 
   lyr.addEventListener("keydown", function(e){ if (e.key === "Enter" || e.key === " "){ e.preventDefault(); toggleBig(); } });
   function buildLyrics(i){
     var data = (window.OKA_LYRICS || [])[i] || [];
-    LINES = data.map(function(L){ return {t:L[0], e:L[1], w:L[2]}; }); curLine = -2;
+    var o = PV[i] || 0;
+    LINES = data.filter(function(L){ return L[1] > o + 0.3 && L[0] < o + 30; })
+      .map(function(L){ return {t:L[0]-o, e:L[1]-o, w:L[2].map(function(w){ return [w[0], w[1]-o]; })}; }); curLine = -2;
     if (!LINES.length){ lyrin.innerHTML = '<div class="none">Lyrics boarding soon</div>'; return; }
     renderLyrics(-1);
   }
