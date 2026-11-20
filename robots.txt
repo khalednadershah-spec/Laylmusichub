@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://khalednadershah-spec.github.io/Laylmusichub/sitemap.xml
+Sitemap: https://lay-l.com/sitemap.xml
