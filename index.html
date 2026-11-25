@@ -22,7 +22,7 @@
 html{background:var(--bg)}
 body{margin:0;background:linear-gradient(180deg,#2a1520 0%,#1a0f14 55%,#120a0e 100%);color:var(--ink);font:17px/1.75 "Tajawal",system-ui,sans-serif;-webkit-font-smoothing:antialiased}
 a{color:inherit}
-.hero{position:relative;width:100%;aspect-ratio:4096/2255;max-height:92vh;overflow:hidden;background:#3b1f22}
+.hero{position:relative;width:100%;aspect-ratio:1672/941;max-height:92vh;overflow:hidden;background:#3b1f22}
 .hero img{width:100%;height:100%;object-fit:cover;display:block}
 .hero::after{content:"";position:absolute;inset:auto 0 0 0;height:28%;background:linear-gradient(180deg,transparent,var(--bg))}
 .wrap{max-width:980px;margin:0 auto;padding:0 16px}
@@ -45,6 +45,10 @@ a{color:inherit}
 .story h2{font:600 26px/1.6 "Noto Naskh Arabic",serif;margin:0 0 12px;color:var(--warm)}
 .story p{margin:0 0 14px}
 .story .en{direction:ltr;text-align:left;color:var(--muted);font-size:15px;border-top:1px solid var(--line);padding-top:14px;margin-top:18px}
+.lines{margin:72px 0 0}
+.lines h2{font:600 26px/1.6 "Noto Naskh Arabic",serif;margin:0 0 16px;color:var(--warm);text-align:center}
+.lines img{display:block;width:100%;height:auto;border-radius:18px;box-shadow:0 20px 60px rgba(0,0,0,.4)}
+.lines .pair{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:16px}
 .credits{margin:64px 0 0;padding:24px;border:1px solid var(--line);border-radius:18px;background:var(--card);display:flex;flex-wrap:wrap;justify-content:center;gap:10px 40px;text-align:center}
 .credits div span{display:block;font-size:13px;color:var(--muted)}
 .credits div b{font-weight:500}
@@ -62,7 +66,7 @@ footer a{text-decoration:none}footer a:hover{color:var(--ink)}
 </style>
 </head>
 <body>
-<header class="hero"><img src="platform2/title-wall-2400.webp" srcset="platform2/title-wall-1200.webp 1200w, platform2/title-wall-2400.webp 2400w" sizes="100vw" alt="صوت ثاني رصيف: العنوان مكتوب على جدار رصيف محطة عند الغروب، أمامه مقعد فارغ"></header>
+<header class="hero"><img src="platform2/hero-2400.webp" srcset="platform2/hero-1200.webp 1200w, platform2/hero-2400.webp 2400w" sizes="100vw" alt="صوت ثاني رصيف: مغنية بعباءة سوداء على رصيف مترو الرياض، وقطار يمر، وبرج المملكة في الأفق"></header>
 
 <main class="wrap">
  <section class="lead">
@@ -84,8 +88,17 @@ footer a{text-decoration:none}footer a:hover{color:var(--ink)}
   </div>
  </section>
 
+ <section class="lines" aria-label="من كلمات الأغنية">
+  <h2>من الأغنية</h2>
+  <img class="wide" src="platform2/line-train.webp" loading="lazy" alt="نداك يسوى ألف قطار: مكتوبة على قطار مترو الرياض عند الغروب">
+  <div class="pair">
+   <img src="platform2/line-yellow.webp" loading="lazy" alt="خلّكم ورا الخط الأصفر">
+   <img src="platform2/line-attention.webp" loading="lazy" alt="انتباه يا ركّاب! مع مكبّر صوت المحطة">
+  </div>
+ </section>
+
  <section class="story">
-  <img src="platform2/cover-1000.webp" width="1000" height="1000" loading="lazy" alt="غلاف صوت ثاني رصيف: مغنية بعباءة سوداء على رصيف مترو الرياض تغني في ميكروفون المحطة">
+  <img src="platform2/title-wall-sq.webp" width="1000" height="1000" loading="lazy" alt="صوت ثاني رصيف مكتوبة على جدار رصيف المحطة، أمامها مقعد فارغ">
   <div>
    <h2>عن الأغنية</h2>
    <p>«صوت ثاني رصيف» عن الأشخاص الذين يصنعون فرقًا في حياتنا دون أن نلاحظ. حضورهم ثابت لدرجة أننا ننسى أن نراهم، ولا ننتبه لقيمتهم إلا حين يغيبون.</p>
