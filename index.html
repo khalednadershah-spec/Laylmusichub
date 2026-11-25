@@ -14,58 +14,111 @@
 <link rel="canonical" href="https://lay-l.com/">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Naskh+Arabic:wght@400;600&family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Aref+Ruqaa:wght@700&family=Noto+Naskh+Arabic:wght@400;600&family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"MusicRecording","name":"صوت ثاني رصيف","alternateName":"The Voice at Platform Two (Arabic Version)","byArtist":{"@type":"MusicGroup","name":"LAY-L","url":"https://lay-l.com/","sameAs":["https://instagram.com/wearelayl/","https://www.youtube.com/@LAY-LMUSIC"]},"datePublished":"2026-11-27","image":"https://lay-l.com/platform2/cover-1000.webp","url":"https://lay-l.com/"}</script>
 <style>
-:root{--bg:#1a0f14;--ink:#f6e7d2;--muted:#d9b99c;--warm:#f4a259;--rose:#e07a6b;--card:rgba(255,236,214,.06);--line:rgba(246,231,210,.16)}
+:root{--bg:#1a0f14;--ink:#f6e7d2;--muted:#d9b99c;--warm:#f4a259;--card:rgba(255,236,214,.06);--line:rgba(246,231,210,.16);--navy:#06103a;--yellow:#f8c514;--red:#e8261b;--amber:#ffb547;--metro:#7b2d8e}
 *{box-sizing:border-box}
 html{background:var(--bg)}
-body{margin:0;background:linear-gradient(180deg,#2a1520 0%,#1a0f14 55%,#120a0e 100%);color:var(--ink);font:17px/1.75 "Tajawal",system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+body{margin:0;background:linear-gradient(180deg,#2a1520 0%,#1a0f14 55%,#120a0e 100%);color:var(--ink);font:17px/1.75 "Tajawal",system-ui,sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden}
 a{color:inherit}
-.hero{position:relative;width:100%;aspect-ratio:1672/941;max-height:92vh;overflow:hidden;background:#3b1f22}
+.hide{display:none!important}
+
+/* انتباه يا ركّاب: the station PA strip */
+.pa{position:sticky;top:0;z-index:20;display:flex;align-items:center;gap:0;background:var(--yellow);color:#1c1006;height:46px;overflow:hidden;box-shadow:0 4px 18px rgba(0,0,0,.35)}
+.pa button{flex:none;display:flex;align-items:center;gap:8px;height:100%;padding:0 14px;border:0;background:var(--red);color:#fff;font:800 16px "Tajawal";cursor:pointer}
+.pa button svg{width:22px;height:22px}
+.pa button.on svg .w{animation:wave .6s ease-in-out infinite alternate}
+@keyframes wave{from{opacity:.2}to{opacity:1}}
+.pa .tape{flex:1;overflow:hidden;white-space:nowrap;mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent)}
+.pa .tape span{display:inline-block;padding-inline-start:100%;font:700 16px/46px "Tajawal";animation:tape 26s linear infinite}
+@keyframes tape{from{transform:translateX(0)}to{transform:translateX(100%)}}
+
+.hero{position:relative;width:100%;aspect-ratio:1672/941;max-height:88vh;overflow:hidden;background:#123b44}
 .hero img{width:100%;height:100%;object-fit:cover;display:block}
-.hero::after{content:"";position:absolute;inset:auto 0 0 0;height:28%;background:linear-gradient(180deg,transparent,var(--bg))}
+.hero::after{content:"";position:absolute;inset:auto 0 0 0;height:26%;background:linear-gradient(180deg,transparent,var(--bg))}
 .wrap{max-width:980px;margin:0 auto;padding:0 16px}
 .lead{text-align:center;margin:8px auto 0;position:relative;z-index:1}
-.kick{font-size:14px;letter-spacing:.08em;color:var(--warm);margin:0 0 6px}
+.kick{font-size:14px;letter-spacing:.06em;color:var(--warm);margin:0 0 4px}
 .lead h1{font:600 clamp(26px,4.6vw,40px)/1.5 "Noto Naskh Arabic",serif;margin:0}
-.lead .en{direction:ltr;font-size:14px;color:var(--muted);margin-top:4px;letter-spacing:.02em}
-.count{display:flex;justify-content:center;gap:10px;margin:28px 0 8px;direction:rtl}
-.count div{min-width:74px;padding:12px 8px;border:1px solid var(--line);border-radius:14px;background:var(--card);text-align:center}
-.count b{display:block;font:700 30px/1 "Tajawal";color:var(--ink);font-variant-numeric:tabular-nums}
-.count span{font-size:13px;color:var(--muted)}
-.when{text-align:center;color:var(--muted);font-size:15px;margin:6px 0 0}
-.btns{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;margin:28px 0 0}
-.btn{display:inline-flex;align-items:center;gap:8px;padding:14px 26px;border-radius:999px;text-decoration:none;font-weight:700;font-size:16px;border:1px solid var(--line)}
+.lead .en{direction:ltr;font-size:14px;color:var(--muted);margin:2px 0 0}
+
+/* Departures board */
+.board{margin:36px auto 0;max-width:640px;background:#0b0d12;border:1px solid #2b2f3a;border-radius:14px;padding:14px 16px 16px;box-shadow:inset 0 0 40px rgba(0,0,0,.8),0 20px 50px rgba(0,0,0,.4);font-family:"Tajawal";color:var(--amber)}
+.board .top{display:flex;justify-content:space-between;font-size:13px;color:#8d8f99;border-bottom:1px dashed #2b2f3a;padding-bottom:8px;margin-bottom:10px}
+.board .top b{color:var(--amber);font-weight:700}
+.row{display:grid;grid-template-columns:1fr auto;align-items:center;padding:6px 0;border-bottom:1px solid #191c24}
+.row:last-child{border:0}
+.row span{color:#8d8f99;font-size:14px}
+.row b{font-weight:800;font-size:19px;letter-spacing:.02em;text-shadow:0 0 10px rgba(255,181,71,.45)}
+.flaps{display:flex;gap:6px;direction:rtl;justify-content:flex-end}
+.flap{display:flex;flex-direction:column;align-items:center}
+.flap i{font-style:normal;display:block;min-width:46px;padding:6px 6px 4px;background:linear-gradient(180deg,#1b1e27 50%,#14161d 50%);border-radius:6px;font:800 26px/1 "Tajawal";color:#ffe1ad;text-align:center;font-variant-numeric:tabular-nums;box-shadow:inset 0 -1px 0 #000}
+.flap i.flip{animation:flip .35s ease}
+@keyframes flip{0%{transform:rotateX(0)}50%{transform:rotateX(90deg)}100%{transform:rotateX(0)}}
+.flap small{font-size:11px;color:#8d8f99;margin-top:3px}
+.status{display:inline-block;padding:1px 10px;border-radius:4px;background:#183d22;color:#7dffa0;font-size:15px!important;text-shadow:none!important}
+.status.go{background:#4a1310;color:#ff8f7a;animation:blink 1s steps(2) infinite}
+@keyframes blink{50%{opacity:.35}}
+
+/* خلّكم ورا الخط الأصفر */
+.platform{position:relative;margin:56px 0 0;padding:0 0 0}
+.behind{text-align:center;font:700 clamp(28px,6vw,50px)/1.4 "Aref Ruqaa",serif;color:var(--ink);margin:0 0 6px}
+.btns{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;padding:10px 0 26px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:14px 26px;border-radius:999px;text-decoration:none;font-weight:800;font-size:16px;border:1px solid var(--line);transition:transform .2s}
 .btn.main{background:var(--warm);color:#2a1218;border-color:transparent}
-.btn.main:hover{background:#f7b577}
-.btn.alt:hover{background:var(--card)}
+.btn.alt{background:rgba(255,255,255,.04)}
+.btn:hover{transform:translateY(-3px)}
+.yline{position:relative;height:30px;margin:0 calc(50% - 50vw);background:var(--yellow);background-image:radial-gradient(circle,rgba(0,0,0,.18) 2.4px,transparent 2.8px);background-size:14px 14px;box-shadow:0 -1px 0 #ffe27a,0 6px 20px rgba(248,197,20,.25)}
+.yline.warn{animation:warn .5s ease 3}
+@keyframes warn{50%{filter:brightness(1.6) saturate(1.3)}}
+.edge{height:70px;margin:0 calc(50% - 50vw);background:linear-gradient(180deg,#2c2a2f,#121015)}
+
+/* نداك يسوى ألف قطار */
+.track{position:relative;margin:0 calc(50% - 50vw);height:min(30vw,250px);min-height:150px;overflow:hidden;background:linear-gradient(180deg,#5a2a5c 0%,#d8566a 62%,#f39a6a 100%)}
+.track .sky{position:absolute;inset:0;background:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 120'><path fill='%23361a3d' d='M0 120V96h40v-14h18v14h26V70h22v26h30V84h24v12h40V60h14v-8h10v8h16v36h44V80h30v16h36V66h26v30h52V40h10l8-16 8 16h10v56h40V78h28v18h60V72h22v24h50V88h34v8h40V64h26v32h44V82h30v14h56V74h20v22h44v24z'/></svg>") bottom/1200px 90px repeat-x}
+.track .rail{position:absolute;left:0;right:0;bottom:0;height:26%;background:linear-gradient(180deg,#3a3440,#1c1820);border-top:3px solid #8a7f8f}
+.train{position:absolute;bottom:22%;left:0;height:62%;aspect-ratio:1500/200;width:auto;animation:train 13s cubic-bezier(.45,0,.2,1) infinite;will-change:transform}
+.train svg{height:100%;width:100%;display:block}
+@keyframes train{0%{transform:translateX(-105%)}28%,62%{transform:translateX(calc(50vw - 50%))}100%{transform:translateX(110vw)}}
+
+/* Story + credits */
 .story{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);gap:40px;align-items:center;margin:72px 0 0}
 .story img{width:100%;height:auto;aspect-ratio:1/1;object-fit:cover;border-radius:18px;display:block;box-shadow:0 20px 60px rgba(0,0,0,.45)}
 .story h2{font:600 26px/1.6 "Noto Naskh Arabic",serif;margin:0 0 12px;color:var(--warm)}
 .story p{margin:0 0 14px}
 .story .en{direction:ltr;text-align:left;color:var(--muted);font-size:15px;border-top:1px solid var(--line);padding-top:14px;margin-top:18px}
-.lines{margin:72px 0 0}
-.lines h2{font:600 26px/1.6 "Noto Naskh Arabic",serif;margin:0 0 16px;color:var(--warm);text-align:center}
-.lines img{display:block;width:100%;height:auto;border-radius:18px;box-shadow:0 20px 60px rgba(0,0,0,.4)}
-.lines .pair{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:16px}
 .credits{margin:64px 0 0;padding:24px;border:1px solid var(--line);border-radius:18px;background:var(--card);display:flex;flex-wrap:wrap;justify-content:center;gap:10px 40px;text-align:center}
 .credits div span{display:block;font-size:13px;color:var(--muted)}
 .credits div b{font-weight:500}
 footer{margin:64px 0 0;padding:28px 0 40px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;font-size:14px;color:var(--muted)}
 footer nav{display:flex;gap:18px}
 footer a{text-decoration:none}footer a:hover{color:var(--ink)}
-.hide{display:none!important}
 @media (max-width:720px){
  body{font-size:16px}
+ .pa button span{display:none}
  .story{grid-template-columns:1fr;gap:24px;margin-top:52px}
- .count div{min-width:64px}
- .count b{font-size:26px}
+ .flap i{min-width:40px;font-size:22px}
+ .row b{font-size:16px}
  footer{flex-direction:column;align-items:center;text-align:center}
+}
+@media (prefers-reduced-motion:reduce){
+ .pa .tape span{animation:none;padding:0 12px}
+ .train{animation:none;transform:translateX(calc(50vw - 50%))}
+ .flap i.flip,.status.go,.yline.warn{animation:none}
 }
 </style>
 </head>
 <body>
+
+<div class="pa" role="region" aria-label="إعلان المحطة">
+ <button type="button" id="ding" aria-label="انتباه يا ركّاب! تشغيل نغمة المحطة">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10v4h4l5 4V6L7 10H3z" fill="currentColor"/><path class="w" d="M16 9a4 4 0 0 1 0 6"/><path class="w" d="M19 6.5a8 8 0 0 1 0 11"/></svg>
+  <span>انتباه يا ركّاب!</span>
+ </button>
+ <div class="tape"><span id="tape">انتباه يا ركّاب! «صوت ثاني رصيف» يصل إلى الرصيف رقم ٢ · العرض الأول للفيديو الخميس ٢٦ نوفمبر الساعة ٩ مساءً · الأغنية على جميع المنصات عند منتصف الليل · نرجو من الركّاب البقاء خلف الخط الأصفر</span></div>
+</div>
+
 <header class="hero"><img src="platform2/hero-2400.webp" srcset="platform2/hero-1200.webp 1200w, platform2/hero-2400.webp 2400w" sizes="100vw" alt="صوت ثاني رصيف: مغنية بعباءة سوداء على رصيف مترو الرياض، وقطار يمر، وبرج المملكة في الأفق"></header>
 
 <main class="wrap">
@@ -74,29 +127,61 @@ footer a{text-decoration:none}footer a:hover{color:var(--ink)}
   <h1>صوتٌ سمعناه كل يوم… حتى اختفى.</h1>
   <p class="en">The Voice at Platform Two · Arabic Version</p>
 
-  <div class="count" id="count" aria-live="polite">
-   <div><b id="d">–</b><span>يوم</span></div>
-   <div><b id="h">–</b><span>ساعة</span></div>
-   <div><b id="m">–</b><span>دقيقة</span></div>
-   <div><b id="s">–</b><span>ثانية</span></div>
+  <div class="board" aria-live="polite">
+   <div class="top"><span>لوحة المغادرة</span><b>LAY-L</b></div>
+   <div class="row"><span>الرحلة</span><b>صوت ثاني رصيف</b></div>
+   <div class="row"><span>الرصيف</span><b>٢</b></div>
+   <div class="row" id="countrow"><span>العرض الأول بعد</span>
+    <div class="flaps">
+     <div class="flap"><i id="d">–</i><small>يوم</small></div>
+     <div class="flap"><i id="h">–</i><small>ساعة</small></div>
+     <div class="flap"><i id="m">–</i><small>دقيقة</small></div>
+     <div class="flap"><i id="s">–</i><small>ثانية</small></div>
+    </div>
+   </div>
+   <div class="row"><span>الحالة</span><b class="status" id="status">في الموعد</b></div>
   </div>
-  <p class="when" id="when">العرض الأول للفيديو: الخميس ٢٦ نوفمبر، ٩ مساءً بتوقيت الرياض · الأغنية على جميع المنصات عند منتصف الليل</p>
+ </section>
 
+ <section class="platform" aria-label="الروابط">
+  <p class="behind">خلّكم ورا الخط الأصفر</p>
   <div class="btns">
    <a class="btn main" id="watch" href="https://www.youtube.com/watch?v=1kEj7GG8tQ8" target="_blank" rel="noopener">▶︎ <span id="watchtxt">ذكّرني بالعرض الأول</span></a>
    <a class="btn alt" id="listen" href="https://distrokid.com/hyperfollow/layl5/--" target="_blank" rel="noopener"><span id="listentxt">احفظ الأغنية مسبقًا</span></a>
   </div>
+  <div class="yline" id="yline" aria-hidden="true"></div>
+  <div class="edge" aria-hidden="true"></div>
  </section>
+</main>
 
- <section class="lines" aria-label="من كلمات الأغنية">
-  <h2>من الأغنية</h2>
-  <img class="wide" src="platform2/line-train.webp" loading="lazy" alt="نداك يسوى ألف قطار: مكتوبة على قطار مترو الرياض عند الغروب">
-  <div class="pair">
-   <img src="platform2/line-yellow.webp" loading="lazy" alt="خلّكم ورا الخط الأصفر">
-   <img src="platform2/line-attention.webp" loading="lazy" alt="انتباه يا ركّاب! مع مكبّر صوت المحطة">
-  </div>
- </section>
+<section class="track" aria-label="نداك يسوى ألف قطار">
+ <div class="sky"></div>
+ <div class="rail"></div>
+ <div class="train" aria-hidden="true">
+  <svg viewBox="0 0 1500 200">
+   <defs><linearGradient id="win" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffd896"/><stop offset="1" stop-color="#f29a45"/></linearGradient></defs>
+   <g>
+    <path d="M40 40 Q40 18 70 18 H1440 Q1480 18 1490 60 L1496 150 Q1496 182 1462 182 H60 Q40 182 40 160 Z" fill="#f3ece6"/>
+    <path d="M40 40 Q40 18 70 18 H1440 Q1480 18 1490 60 L1492 78 H40 Z" fill="#2b2233"/>
+    <rect x="40" y="150" width="1456" height="12" fill="#7b2d8e"/>
+    <path d="M1380 18 Q1470 18 1490 70 L1496 150 Q1496 182 1462 182 H1380 Z" fill="#7b2d8e"/>
+    <path d="M1400 32 H1452 Q1474 36 1480 70 H1400 Z" fill="#1a1420"/>
+    <rect x="1450" y="120" width="34" height="8" rx="4" fill="#ffcf7a"/>
+    <g fill="url(#win)">
+     <rect x="90" y="32" width="70" height="38" rx="6"/><rect x="180" y="32" width="70" height="38" rx="6"/><rect x="270" y="32" width="70" height="38" rx="6"/>
+     <rect x="420" y="32" width="70" height="38" rx="6"/><rect x="510" y="32" width="70" height="38" rx="6"/><rect x="600" y="32" width="70" height="38" rx="6"/>
+     <rect x="750" y="32" width="70" height="38" rx="6"/><rect x="840" y="32" width="70" height="38" rx="6"/><rect x="930" y="32" width="70" height="38" rx="6"/>
+     <rect x="1080" y="32" width="70" height="38" rx="6"/><rect x="1170" y="32" width="70" height="38" rx="6"/><rect x="1260" y="32" width="70" height="38" rx="6"/>
+    </g>
+    <g stroke="#cbbfc4" stroke-width="3"><line x1="375" y1="20" x2="375" y2="180"/><line x1="705" y1="20" x2="705" y2="180"/><line x1="1035" y1="20" x2="1035" y2="180"/><line x1="1365" y1="20" x2="1365" y2="180"/></g>
+    <g fill="#2b2233"><circle cx="160" cy="190" r="10"/><circle cx="300" cy="190" r="10"/><circle cx="520" cy="190" r="10"/><circle cx="640" cy="190" r="10"/><circle cx="860" cy="190" r="10"/><circle cx="980" cy="190" r="10"/><circle cx="1190" cy="190" r="10"/><circle cx="1310" cy="190" r="10"/></g>
+    <text x="760" y="132" text-anchor="middle" font-family="Aref Ruqaa, serif" font-weight="700" font-size="66" fill="#5e1449" direction="rtl">نداك يسوى ألف قطار</text>
+   </g>
+  </svg>
+ </div>
+</section>
 
+<main class="wrap">
  <section class="story">
   <img src="platform2/title-wall-sq.webp" width="1000" height="1000" loading="lazy" alt="صوت ثاني رصيف مكتوبة على جدار رصيف المحطة، أمامها مقعد فارغ">
   <div>
@@ -128,31 +213,50 @@ footer a{text-decoration:none}footer a:hover{color:var(--ink)}
   var PREMIERE=Date.parse("2026-11-26T21:00:00+03:00"), RELEASE=Date.parse("2026-11-27T00:00:00+03:00");
   var ar=function(n){return String(n).replace(/\d/g,function(d){return "٠١٢٣٤٥٦٧٨٩"[d]})};
   var $=function(i){return document.getElementById(i)};
+  function set(id,v){var e=$(id);if(e.textContent!==v){e.textContent=v;e.classList.remove("flip");void e.offsetWidth;e.classList.add("flip")}}
   function tick(){
     var now=Date.now();
     if(now>=RELEASE){
-      $("count").classList.add("hide");
+      $("countrow").classList.add("hide");
       $("kick").textContent="متاحة الآن";
-      $("when").textContent="الأغنية متاحة على جميع المنصات";
+      $("status").textContent="وصلت";
       $("watchtxt").textContent="شاهد الفيديو";
       $("listentxt").textContent="استمع الآن";
+      $("tape").textContent="انتباه يا ركّاب! «صوت ثاني رصيف» وصلت إلى الرصيف رقم ٢ · متاحة الآن على جميع المنصات · نرجو من الركّاب البقاء خلف الخط الأصفر";
       return;
     }
     if(now>=PREMIERE){
-      $("count").classList.add("hide");
+      $("countrow").classList.add("hide");
       $("kick").textContent="العرض الأول الآن";
-      $("when").textContent="الفيديو يُعرض الآن على يوتيوب · الأغنية على جميع المنصات عند منتصف الليل";
+      $("status").textContent="يُعرض الآن";$("status").classList.add("go");
       $("watchtxt").textContent="شاهد العرض الأول الآن";
+      $("tape").textContent="انتباه يا ركّاب! العرض الأول لـ«صوت ثاني رصيف» يُعرض الآن على يوتيوب · الأغنية على جميع المنصات عند منتصف الليل";
       setTimeout(tick,30000); return;
     }
     var t=Math.floor((PREMIERE-now)/1000);
-    $("d").textContent=ar(Math.floor(t/86400));
-    $("h").textContent=ar(Math.floor(t%86400/3600));
-    $("m").textContent=ar(Math.floor(t%3600/60));
-    $("s").textContent=ar(t%60);
+    set("d",ar(Math.floor(t/86400)));set("h",ar(Math.floor(t%86400/3600)));set("m",ar(Math.floor(t%3600/60)));set("s",ar(t%60));
+    if(t<3600){$("status").textContent="يغادر قريبًا";$("status").classList.add("go")}
     setTimeout(tick,1000);
   }
   tick();
+
+  // Station chime: two-tone "ding-dong" on tap
+  var ctx; $("ding").addEventListener("click",function(){
+    var b=this; try{ctx=ctx||new (window.AudioContext||window.webkitAudioContext)();}catch(e){return}
+    b.classList.add("on");
+    [[659.25,0],[523.25,.55],[392,1.1]].forEach(function(n){
+      var o=ctx.createOscillator(),g=ctx.createGain(),t0=ctx.currentTime+n[1];
+      o.type="sine";o.frequency.value=n[0];g.gain.setValueAtTime(0,t0);g.gain.linearRampToValueAtTime(.25,t0+.02);g.gain.exponentialRampToValueAtTime(.001,t0+1.4);
+      o.connect(g);g.connect(ctx.destination);o.start(t0);o.stop(t0+1.5);
+    });
+    setTimeout(function(){b.classList.remove("on")},2600);
+  });
+
+  // Yellow line flashes when you reach the platform edge
+  var yl=$("yline");
+  if("IntersectionObserver" in window){
+    new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){yl.classList.remove("warn");void yl.offsetWidth;yl.classList.add("warn")}})},{threshold:1}).observe(yl);
+  }
 })();
 </script>
 </body>
