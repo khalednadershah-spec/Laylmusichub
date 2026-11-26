@@ -15,7 +15,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Aref+Ruqaa:wght@700&family=Noto+Naskh+Arabic:wght@400;600&family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"MusicRecording","name":"صوت ثاني رصيف","alternateName":"The Voice at Platform Two (Arabic Version)","byArtist":{"@type":"MusicGroup","name":"LAY-L","url":"https://lay-l.com/","sameAs":["https://instagram.com/wearelayl/","https://www.youtube.com/@LAY-LMUSIC"]},"datePublished":"2026-11-27","image":"https://lay-l.com/platform2/cover-1000.webp","url":"https://lay-l.com/"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"MusicRecording","name":"صوت ثاني رصيف","alternateName":"The Voice at Platform Two (Arabic Version)","byArtist":{"@type":"MusicGroup","name":"LAY-L","url":"https://lay-l.com/","sameAs":["https://instagram.com/wearelayl/","https://www.youtube.com/@LAY-LMUSIC"]},"datePublished":"2026-11-27","image":"https://lay-l.com/platform2/cover-1000.webp","url":"https://lay-l.com/","sameAs":["https://open.spotify.com/track/7hGZNjceZivdYSO8a2lsd3"]}</script>
 <style>
 :root{--bg:#1a0f14;--ink:#f6e7d2;--muted:#d9b99c;--warm:#f4a259;--card:rgba(255,236,214,.06);--line:rgba(246,231,210,.16);--navy:#06103a;--yellow:#f8c514;--red:#e8261b;--amber:#ffb547;--metro:#7b2d8e}
 *{box-sizing:border-box}
@@ -69,6 +69,7 @@ a{color:inherit}
 .btns{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;padding:10px 0 26px}
 .btn{display:inline-flex;align-items:center;gap:8px;padding:14px 26px;border-radius:999px;text-decoration:none;font-weight:800;font-size:16px;border:1px solid var(--line);transition:transform .2s}
 .btn.main{background:var(--warm);color:#2a1218;border-color:transparent}
+.btn.spot{background:#1DB954;color:#04140a;border-color:transparent}
 .btn.alt{background:rgba(255,255,255,.04)}
 .btn:hover{transform:translateY(-3px)}
 .yline{position:relative;height:30px;margin:0 calc(50% - 50vw);background:var(--yellow);background-image:radial-gradient(circle,rgba(0,0,0,.18) 2.4px,transparent 2.8px);background-size:14px 14px;box-shadow:0 -1px 0 #ffe27a,0 6px 20px rgba(248,197,20,.25)}
@@ -154,6 +155,7 @@ footer a{text-decoration:none}footer a:hover{color:var(--ink)}
   <div class="btns">
    <a class="btn main" id="watch" href="https://www.youtube.com/watch?v=1kEj7GG8tQ8" target="_blank" rel="noopener">▶︎ <span id="watchtxt">ذكّرني بالعرض الأول</span></a>
    <a class="btn alt" id="listen" href="https://distrokid.com/hyperfollow/layl5/--" target="_blank" rel="noopener"><span id="listentxt">احفظ الأغنية مسبقًا</span></a>
+   <a class="btn spot hide" id="spotify" href="https://open.spotify.com/track/7hGZNjceZivdYSO8a2lsd3" target="_blank" rel="noopener"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="#1DB954"/><path d="M6.5 9.3c3.6-1.1 7.7-.8 11 1M7.2 12.4c3-.9 6.3-.6 9.1.9M7.9 15.3c2.4-.6 5-.4 7.2.8" stroke="#000" stroke-width="1.7" fill="none" stroke-linecap="round"/></svg>Spotify</a>
   </div>
   <div class="yline" id="yline" aria-hidden="true"></div>
   <div class="edge" aria-hidden="true"></div>
@@ -227,7 +229,7 @@ footer a{text-decoration:none}footer a:hover{color:var(--ink)}
       $("kick").textContent="متاحة الآن";
       $("status").textContent="وصلت";
       $("watchtxt").textContent="شاهد الفيديو";
-      $("listentxt").textContent="استمع الآن";
+      $("listentxt").textContent="جميع المنصات";$("spotify").classList.remove("hide");
       $("tape").textContent="انتباه يا ركّاب! «صوت ثاني رصيف» وصلت إلى الرصيف رقم ٢ · متاحة الآن على جميع المنصات · نرجو من الركّاب البقاء خلف الخط الأصفر";
       return;
     }
