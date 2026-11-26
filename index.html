@@ -15,7 +15,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Aref+Ruqaa:wght@700&family=Noto+Naskh+Arabic:wght@400;600&family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"MusicRecording","name":"صوت ثاني رصيف","alternateName":"The Voice at Platform Two (Arabic Version)","byArtist":{"@type":"MusicGroup","name":"LAY-L","url":"https://lay-l.com/","sameAs":["https://instagram.com/wearelayl/","https://www.youtube.com/@LAY-LMUSIC"]},"datePublished":"2026-11-27","image":"https://lay-l.com/platform2/cover-1000.webp","url":"https://lay-l.com/","sameAs":["https://open.spotify.com/track/7hGZNjceZivdYSO8a2lsd3","https://music.apple.com/sa/album/6838766944?i=6838766945","https://open.anghami.com/d0IeN7jlo8b"]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"MusicRecording","name":"صوت ثاني رصيف","alternateName":"The Voice at Platform Two (Arabic Version)","byArtist":{"@type":"MusicGroup","name":"LAY-L","url":"https://lay-l.com/","sameAs":["https://instagram.com/wearelayl/","https://www.youtube.com/@LAY-LMUSIC"]},"datePublished":"2026-11-27","image":"https://lay-l.com/platform2/cover-1000.webp","url":"https://lay-l.com/","sameAs":["https://open.spotify.com/track/7hGZNjceZivdYSO8a2lsd3","https://music.apple.com/sa/album/6838766944?i=6838766945","https://open.anghami.com/d0IeN7jlo8b","https://music.youtube.com/watch?v=WeJrhTUHeSk"]}</script>
 <style>
 :root{--bg:#1a0f14;--ink:#f6e7d2;--muted:#d9b99c;--warm:#f4a259;--card:rgba(255,236,214,.06);--line:rgba(246,231,210,.16);--navy:#06103a;--yellow:#f8c514;--red:#e8261b;--amber:#ffb547;--metro:#7b2d8e}
 *{box-sizing:border-box}
@@ -72,6 +72,7 @@ a{color:inherit}
 .btn.spot{background:#1DB954;color:#04140a;border-color:transparent}
 .btn.apple{background:linear-gradient(135deg,#fa5c74,#fb2d4f);color:#fff;border-color:transparent}
 .btn.ang{background:linear-gradient(135deg,#9b3ff9,#6a28e8);color:#fff;border-color:transparent}
+.btn.ytm{background:#f00;color:#fff;border-color:transparent}
 .btn.alt{background:rgba(255,255,255,.04)}
 .btn:hover{transform:translateY(-3px)}
 .yline{position:relative;height:30px;margin:0 calc(50% - 50vw);background:var(--yellow);background-image:radial-gradient(circle,rgba(0,0,0,.18) 2.4px,transparent 2.8px);background-size:14px 14px;box-shadow:0 -1px 0 #ffe27a,0 6px 20px rgba(248,197,20,.25)}
@@ -160,6 +161,7 @@ footer a{text-decoration:none}footer a:hover{color:var(--ink)}
    <a class="btn spot hide" id="spotify" href="https://open.spotify.com/track/7hGZNjceZivdYSO8a2lsd3" target="_blank" rel="noopener"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="#1DB954"/><path d="M6.5 9.3c3.6-1.1 7.7-.8 11 1M7.2 12.4c3-.9 6.3-.6 9.1.9M7.9 15.3c2.4-.6 5-.4 7.2.8" stroke="#000" stroke-width="1.7" fill="none" stroke-linecap="round"/></svg>Spotify</a>
    <a class="btn apple hide" id="apple" href="https://music.apple.com/sa/album/6838766944?i=6838766945" target="_blank" rel="noopener"><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M16.4 1.5c0 1.1-.4 2.2-1.2 3-.8.9-1.9 1.4-3 1.3-.1-1.1.4-2.2 1.1-3 .8-.8 2-1.4 3.1-1.3zM20.5 17.4c-.6 1.3-.9 1.9-1.6 3-1 1.6-2.5 3.5-4.3 3.5-1.6 0-2-1-4.2-1-2.2 0-2.6 1-4.2 1-1.8 0-3.2-1.8-4.2-3.4C-.9 16.1-1.2 11 .8 8c1.2-1.9 3.1-3 4.9-3 1.9 0 3 1 4.5 1 1.5 0 2.4-1 4.5-1 1.6 0 3.3.9 4.5 2.4-4 2.2-3.3 7.9 1.3 10z"/></svg>Apple Music</a>
    <a class="btn ang hide" id="anghami" href="https://open.anghami.com/d0IeN7jlo8b" target="_blank" rel="noopener"><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="#fff"/><path d="M7 15.5c2.5-1.6 7.5-1.6 10 0M8.5 12c2-1 5-1 7 0" stroke="#7b2ff7" stroke-width="2" fill="none" stroke-linecap="round"/></svg>Anghami</a>
+   <a class="btn ytm hide" id="ytmusic" href="https://music.youtube.com/watch?v=WeJrhTUHeSk" target="_blank" rel="noopener"><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="#fff"/><circle cx="12" cy="12" r="6.5" fill="none" stroke="#f00" stroke-width="1.6"/><path d="M10.2 9.2v5.6l4.6-2.8z" fill="#f00"/></svg>YouTube Music</a>
   </div>
   <div class="yline" id="yline" aria-hidden="true"></div>
   <div class="edge" aria-hidden="true"></div>
@@ -233,7 +235,7 @@ footer a{text-decoration:none}footer a:hover{color:var(--ink)}
       $("kick").textContent="متاحة الآن";
       $("status").textContent="وصلت";
       $("watchtxt").textContent="شاهد الفيديو";
-      $("listentxt").textContent="جميع المنصات";$("spotify").classList.remove("hide");$("apple").classList.remove("hide");$("anghami").classList.remove("hide");
+      $("listentxt").textContent="جميع المنصات";$("spotify").classList.remove("hide");$("apple").classList.remove("hide");$("anghami").classList.remove("hide");$("ytmusic").classList.remove("hide");
       $("tape").textContent="انتباه يا ركّاب! «صوت ثاني رصيف» وصلت إلى الرصيف رقم ٢ · متاحة الآن على جميع المنصات · نرجو من الركّاب البقاء خلف الخط الأصفر";
       return;
     }
