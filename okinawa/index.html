@@ -489,7 +489,33 @@ dialog.land .x{position:absolute;top:10px;right:10px;width:40px;height:40px;bord
     </h1>
     <p class="sub">LAY-L · <b>a new album</b> · in progress</p>
     <nav class="cta" aria-label="Start here"><a href="#rows">Explore departures <i aria-hidden="true">→</i></a><a href="magazine.html">Read the in-flight magazine <i aria-hidden="true">→</i></a></nav>
-    <figure class="cover"><img src="cover-wide.webp" width="1920" height="1080" alt="Okinawa.. One Way… album cover: luggage on an airport baggage carousel"></figure>
+    <figure class="cover"><video id="heroVid" autoplay muted loop playsinline webkit-playsinline disablepictureinpicture disableremoteplayback preload="auto" poster="hero-poster-sm.webp?v=4" aria-label="The crew’s luggage rides past on a baggage carousel, then the title Okinawa.. One Way… appears"><source src="hero-loop.mp4?v=6" type="video/mp4"></video>
+<button type="button" class="htap" id="heroTap" aria-label="Play the banner video"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z" fill="currentColor"/></svg></button>
+<button type="button" class="snd" id="heroSnd" aria-pressed="false" hidden><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5 6 9H3v6h3l5 4z"/><path class="w" d="M15.5 8.5a5 5 0 0 1 0 7M18.5 5.5a9 9 0 0 1 0 13"/><path class="x" d="m16 9 6 6m0-6-6 6" style="display:none"/></svg><span>Sound on</span></button>
+<script>(function(){var v=document.getElementById("heroVid"),btn=document.getElementById("heroSnd"),W=innerWidth,px=W*(window.devicePixelRatio||1);
+var src=W<820?"hero-loop-sm.mp4?v=7":(px>=2400&&!(navigator.connection&&navigator.connection.saveData)?"hero-loop-4k.mp4?v=2":"hero-loop.mp4?v=6");
+v.poster="hero-poster.webp?v=4";
+/* muted + inline must be set before the source changes, or iPhones refuse to autoplay */
+v.muted=true;v.defaultMuted=true;v.setAttribute("muted","");v.setAttribute("playsinline","");v.setAttribute("autoplay","");v.loop=true;
+if(v.currentSrc.indexOf(src.split("?")[0])<0){v.innerHTML="";v.src=src;v.load();}
+var fig=v.parentNode,tap=document.getElementById("heroTap");
+var userMuted=false,songOn=false,autoMuted=false;
+function ui(){var on=!v.muted;btn.hidden=false;btn.setAttribute("aria-pressed",String(on));btn.querySelector("span").textContent=on?"Sound off":"Sound on";btn.setAttribute("aria-label",on?"Mute the banner video":"Play the banner video with sound");btn.querySelector(".w").style.display=on?"":"none";btn.querySelector(".x").style.display=on?"none":"";}
+function blocked(){fig.classList.add("needtap");}
+function muted(){v.muted=true;var p=v.play();if(p&&p.catch)p.catch(blocked);ui();}
+function go(){if(!v.paused){fig.classList.remove("needtap");return;}var p=v.play();if(p&&p.then)p.then(function(){fig.classList.remove("needtap");},function(){muted();});}
+v.addEventListener("playing",function(){fig.classList.remove("needtap");});
+tap.addEventListener("click",function(){v.muted=true;go();});
+/* always starts straight away, muted and looping; sound is opt-in via the button */
+v.muted=true;ui();go();
+v.addEventListener("loadeddata",go);v.addEventListener("canplay",go);
+btn.addEventListener("click",function(e){e.stopPropagation();if(v.muted){if(window.LAYL_pauseSong)window.LAYL_pauseSong();v.muted=false;userMuted=false;go();}else{v.muted=true;userMuted=true;}ui();});
+window.LAYL_heroQuiet=function(){songOn=true;if(!v.muted){v.muted=true;ui();}};
+window.LAYL_songStopped=function(){songOn=false;};
+["touchstart","touchend","pointerdown","click","scroll"].forEach(function(e){window.addEventListener(e,go,{passive:true});});
+setTimeout(function(){if(v.paused)blocked();},2500);
+document.addEventListener("visibilitychange",function(){if(!document.hidden)go();});
+if("IntersectionObserver" in window)new IntersectionObserver(function(es){es.forEach(function(x){if(x.isIntersecting){go();if(autoMuted&&!songOn){v.muted=false;ui();}autoMuted=false;}else if(!v.muted){v.muted=true;autoMuted=true;ui();}});}).observe(v);})();</script></figure>
   </header>
 
   <section class="board" aria-label="Departures: the tracks">
